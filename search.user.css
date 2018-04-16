@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.1.1
+@version 0.1.2
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1769,6 +1769,36 @@
 											.ZvwI0c {
 												popout();
 											}
+											/* report popup */
+												/* reason selection */
+													.abuseReportingCard {
+														background-color: main-bg;
+													}
+													/* heading */
+														.abuseReportingDialogComponent .abuseReportingCardHeader {
+															background-color: main-bg;
+														}
+														/* text */
+															.abuseReportingDialogComponent .abuseReportingCardHeaderText {
+																color: main-text;
+															}
+													/* buttons */
+														.abuseReportingCardOptions .abuseReportingCardButton {
+															background-color: main-bg-em;
+															color: main-text;
+														}
+														.abuseReportingDialogComponent .abuseReportingCardOptions .abuseReportingCardButton {
+															box-shadow: 1px 1px 5px 0px alpha(black, 0.7 * contrast);
+														}
+														/* hover */
+															.abuseReportingDialogComponent .abuseReportingCardOptions .abuseReportingCardButton:hover {
+																button-hover();
+																background-color: main-bg-em;
+															}
+												/* close button */
+													.g2ioZd {
+														color: main-text-minor;
+													}
 									/* answer */
 										/* answerer */
 											/* contribution counts */
@@ -1797,6 +1827,10 @@
 												a.kZIQde, a.kZIQde:hover, a.kZIQde:visited { //restore original style
 													color: #fff;
 												}
+								/* loading indicator */
+									.NJHV3e {
+										background-color: main-bg;
+									}
 						/* ask a question popup */
 							/* 'posting publicly' */
 								.RMevRc {
