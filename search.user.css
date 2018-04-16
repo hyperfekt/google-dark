@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.1.0
+@version 0.2.0
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -16,9 +16,9 @@
 @var text main-bg-off "Main Background (Darker)" #16
 @var text main-bg-container "Main Background (Container)" #1C
 @var text main-text "Main Text" #DD
-@var text main-emtext "Main Text (Lighter)" #E6
-@var text main-offtext "Main Text (Darker)" #AA
-@var text main-minortext "Main Text (Darkest)" #78
+@var text main-text-em "Main Text (Lighter)" #E6
+@var text main-text-off "Main Text (Darker)" #AA
+@var text main-text-minor "Main Text (Darkest)" #78
 @var text main-link "Main Link" #5A6EFF
 @var text main-link-visited "Main Link (Visited)" #9268D4
 @var text main-source "Main Source" #4DAB6F
@@ -28,48 +28,18 @@
 @var text main-separator "Main Separator" alpha(white, 0.15 * contrast)
 @var text header-bg "Header Background" #33
 @var text header-text "Header Text" #FF
-@var text header-offtext "Header Text (Darker)" #C8
+@var text header-text-off "Header Text (Darker)" #C8
 @var text footer-bg "Footer Background"  #33
 @var text footer-separator "Footer Separator" alpha(white, 0.2 * contrast)
 @var text footer-text "Footer Text" #FF
-@var text footer-offtext "Footer Text (Darker)" #B4
-@var text footer-minortext "Footer Text (Darkest)" #96
+@var text footer-text-off "Footer Text (Darker)" #B4
+@var text footer-text-minor "Footer Text (Darkest)" #96
 @var text dropdown-checkmark "Dropdown Checkmark Image" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAQAAAAZIo2TAAAArElEQVQ4y+2SoQoCURBFz1tWRLYLBuF9gwhGEYtNLCJGwWr2FxTTssW+wa/wI7RaDAYNImw0XPPb3Sds1ttm7hzmDgz8lNRSvRrQU6xhFaCvVHO3F34FJow4cXC7xjteY0GHs0nyjmeLIlZYLuyLXuAMJhorBDVZY7mRmHcRcYJpwIwrR6ZEPNiarCxB7hYt6QLwYmOe5aGDXJ1yBzJiH1B2eFs72aoP0uAvvz5jAi5lzdsukgAAAABJRU5ErkJggg==")
 @var text calculator-slider "Calculator Slider Image" url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg viewBox='0 0 26 14' xmlns='http://www.w3.org/2000/svg'%3E %3Cg id='grid' fill='gray'%3E %3Cuse href='%23row'/%3E %3Cuse href='%23row' transform='translate(0,4)'/%3E %3Cuse href='%23row' transform='translate(0,8)'/%3E %3Cuse href='%23row' transform='translate(0,12)'/%3E %3C/g%3E %3Cdefs%3E %3Crect id='dot' width='2' height='2'/%3E %3Cg id='row'%3E %3Cuse href='%23dot'/%3E %3Cuse href='%23dot' x='4'/%3E %3Cuse href='%23dot' x='8'/%3E %3Cuse href='%23dot' x='12'/%3E %3Cuse href='%23dot' x='16'/%3E %3Cuse href='%23dot' x='20'/%3E %3Cuse href='%23dot' x='24'/%3E %3C/g%3E %3C/defs%3E %3C/svg%3E") //using https://codepen.io/jakob-e/pen/doMoML
 @var text unfilled-star "Rating Star Background" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAgUlEQVQY042QQQqDQAxFX2xx42ARCoII3sD7X0csXXUluhmQdOE4zowuDHxCeIT8fLhb2sdzFqBy0yXk5XQJCydfohUNj9P5lVEmAc1pMRGa+YgFcWbeNB595RffXIK9JTUUGqlSaDYTWMD/+nS9ZGaQVSc6jOZij2yM1kFS9Z7TH6uMHsq9WjadAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAR0lEQVQY02Nk4GDACZiQOf+jcUr+j0aXZmJgINJYdMD4Pxmn1FImxqW4pBgYGCFeQXUITAP5DiJeEmYXzAUsMA5EgnEpsuMAsEwPjDLKA7oAAAAASUVORK5CYII=")
 ==/UserStyle== */
 
-/* variable initializations for manual compilation */
-	$main-bg = #20;
-	$main-bg-em = #32;
-	$main-bg-off = #16;
-	$main-bg-container = #1C;
-	$main-text = #DD;
-	$main-emtext = #E6;
-	$main-offtext = #AA;
-	$main-minortext = #78;
-	$main-link = #5A6EFF;
-	$main-link-visited = #9268D4;
-	$main-source = #4DAB6F;
-	$main-source-highlighted = #64C88C;
-	$contrast = 1.0;
-	$main-border = alpha(black, 0.9 * $contrast);
-	$main-separator = alpha(white, 0.15 * $contrast);
-	$header-bg = #33;
-	$header-text = #FF;
-	$header-offtext = #C8;
-	$footer-bg =  #33;
-	$footer-separator = alpha(white, 0.2 * $contrast);
-	$footer-text = #FF;
-	$footer-offtext = #B4;
-	$footer-minortext = #96;
-	$dropdown-checkmark = url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAQAAAAZIo2TAAAArElEQVQ4y+2SoQoCURBFz1tWRLYLBuF9gwhGEYtNLCJGwWr2FxTTssW+wa/wI7RaDAYNImw0XPPb3Sds1ttm7hzmDgz8lNRSvRrQU6xhFaCvVHO3F34FJow4cXC7xjteY0GHs0nyjmeLIlZYLuyLXuAMJhorBDVZY7mRmHcRcYJpwIwrR6ZEPNiarCxB7hYt6QLwYmOe5aGDXJ1yBzJiH1B2eFs72aoP0uAvvz5jAi5lzdsukgAAAABJRU5ErkJggg==");
-	$unfilled-star = url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAgUlEQVQY042QQQqDQAxFX2xx42ARCoII3sD7X0csXXUluhmQdOE4zowuDHxCeIT8fLhb2sdzFqBy0yXk5XQJCydfohUNj9P5lVEmAc1pMRGa+YgFcWbeNB595RffXIK9JTUUGqlSaDYTWMD/+nS9ZGaQVSc6jOZij2yM1kFS9Z7TH6uMHsq9WjadAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAR0lEQVQY02Nk4GDACZiQOf+jcUr+j0aXZmJgINJYdMD4Pxmn1FImxqW4pBgYGCFeQXUITAP5DiJeEmYXzAUsMA5EgnEpsuMAsEwPjDLKA7oAAAAASUVORK5CYII=");
-	$calculator-slider = grey;
-	$container-separator = alpha(black, 0.3 * $contrast);
-
 /* mixins */
-
 	global-definitions() {
 			/*
 		* Google/Gmail's 3D Loader in Pure CSS
@@ -112,45 +82,45 @@
 	}
 
 	popout($important = null) {
-		background-color: $main-bg $important;
-		border-color: alpha(black, 0.3 * $contrast) $important;
-		box-shadow: 0 2px 10px alpha(black, 0.3 * $contrast) $important;
-		color: $main-text $important;
+		background-color: main-bg $important;
+		border-color: alpha(black, 0.3 * contrast) $important;
+		box-shadow: 0 2px 10px alpha(black, 0.3 * contrast) $important;
+		color: main-text $important;
 	}
 	dropdown-hover($important = null) {
-		background-color: $main-bg-off $important;
+		background-color: main-bg-off $important;
 	}
 	button($important = null) {
-		background-image: linear-gradient(to bottom, alpha(black, 0.05 * $contrast), alpha(black, 0.1 * $contrast)) $important;
-		border-color: $main-separator $important;
-		color: $main-offtext $important;
+		background-image: linear-gradient(to bottom, alpha(black, 0.05 * contrast), alpha(black, 0.1 * contrast)) $important;
+		border-color: main-separator $important;
+		color: main-text-off $important;
 	}
 	button-hover($shadow = 1, $important = null) {
-		background-image: linear-gradient(to bottom, alpha(white, 0.02 * $shadow * $contrast), alpha(white, 0.01 * + $shadow * $contrast)) $important;
-		border-color: $main-separator $important;
-		color: $main-text $important;
-		box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * $contrast) $important;
+		background-image: linear-gradient(to bottom, alpha(white, 0.02 * $shadow * contrast), alpha(white, 0.01 * + $shadow * contrast)) $important;
+		border-color: main-separator $important;
+		color: main-text $important;
+		box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * contrast) $important;
 	}
 	generated-image($important = null) {
-		filter: invert((100% - lightness($main-bg-container)) * 0.998) grayscale(1) sepia(saturation($main-bg-container)) hue-rotate(hue($main-bg-container) - 47deg) $important; //TODO replace with SVG filter
+		filter: invert((100% - lightness(main-bg-container)) * 0.998) grayscale(1) sepia(saturation(main-bg-container)) hue-rotate(hue(main-bg-container) - 47deg) $important; //TODO replace with SVG filter
 	}
 
 	container($important = null) {
-		box-shadow: 0 2px 2px 0 alpha(black, 0.5 * $contrast), 0 0 0 1px alpha(black, 0.25 * $contrast) $important;
-		background-color: $main-bg-container $important;
+		box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast), 0 0 0 1px alpha(black, 0.25 * contrast) $important;
+		background-color: main-bg-container $important;
 	}
 
 	select($important = null) {
 		-moz-appearance: button $important;
-		background-color: $main-bg $important;
+		background-color: main-bg $important;
 		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALAgMAAADO/n87AAAACVBMVEVZWVn///+mpqZLDgy1AAAAAnRSTlMAAHaTzTgAAAAlSURBVAjXYwgTYYhqYchawLBqBUNoCAiJhoDYWUsYoqYwhIUAAJX0CVjuYJdhAAAAAElFTkSuQmCC") $important;
-		border-color: $main-separator $important;
-		color: $main-text $important;
+		border-color: main-separator $important;
+		color: main-text $important;
 	}
 	select-hover($important = null) {
-		background-color: $main-bg-em $important;
-		border-color: $main-separator $important;
-		box-shadow: 0 1px 1px alpha(black, 0.3 * $contrast) $important;
+		background-color: main-bg-em $important;
+		border-color: main-separator $important;
+		box-shadow: 0 1px 1px alpha(black, 0.3 * contrast) $important;
 	}
 
 /* functions */
@@ -204,51 +174,51 @@
 	}
 
 	body {
-		background-color: $main-bg;
-		color: $main-text;
+		background-color: main-bg;
+		color: main-text;
 	}
 
 	/* links */
 		a:link, .w, #prs a:visited, #prs a:active, .q:active, .q:visited, .kl:active, .tbotu {
-			color: $main-link;
+			color: main-link;
 		}
 
 	
 	/* main */
 		/* buttons */
 			.ab_button {
-				background-color: $main-bg-em;
+				background-color: main-bg-em;
 				button();
 			}
 			.ab_button:hover {
-				background-color: $main-bg-em;
+				background-color: main-bg-em;
 				button-hover(1,);
 			}
 			a.ab_button {
-				color: $main-offtext;
+				color: main-text-off;
 			}
 			a.ab_button:hover {
-				color: $main-text;
+				color: main-text;
 			}
 			.wr-button {
-				color: $main-offtext !important;
+				color: main-text-off !important;
 			}
 			.wr-button:hover {
-				color: $main-text !important;
+				color: main-text !important;
 			}
 
 		/* tools dropdowns */
 			/* arrows */
 				.mn-dwn-arw {
-					border-color: $main-offtext transparent;
+					border-color: main-text-off transparent;
 				}
 				.hdtb-mn-hd:hover .mn-dwn-arw, #hdtb-more:hover .mn-dwn-arw {
-					border-color: $main-text transparent;
+					border-color: main-text transparent;
 				}
 
 			/* text */
 				.hdtb-mn-hd {
-					color: $main-offtext;
+					color: main-text-off;
 				}
 
 			/* menu */
@@ -262,7 +232,7 @@
 					}
 					/* checkmark */
 						.hdtbSel, .hdtbSel #cdrlnk {
-							background-image: $dropdown-checkmark;
+							background-image: dropdown-checkmark;
 						}
 					/* hover */
 						#hdtb-more-mn a:hover, .hdtbItm.hdtbSel:hover, .hdtbItm a:hover, #cdrlnk:hover {
@@ -270,14 +240,14 @@
 						}
 				/* popup item */
 					.cdr_sep {
-						border-color: alpha(black, 0.2 * $contrast);
+						border-color: alpha(black, 0.2 * contrast);
 					}
 					#cdr_opt {
-						background-color: $main-bg;
+						background-color: main-bg;
 					}
 				/* item text */
 					.hdtbItm.hdtbSel, #hdtb .hdtbItm a, #hdtb-more-mn a, #cdrlnk {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 			/* custom date range select popup */
 				/* overlay */
@@ -286,8 +256,8 @@
 					}
 				/* window */
 					.cdr_dlg {
-						background-color: $main-bg;
-						border-color: $main-border;
+						background-color: main-bg;
+						border-color: main-border;
 					}
 					/* close button */
 						.cdr_cls {
@@ -296,100 +266,100 @@
 						}
 					/* heading */
 						.cdr_ttl {
-							color: $main-text !important;
+							color: main-text !important;
 						}
 					/* form */
 						/* labels */
 							.cdr_mml {
-								color: $main-text;
+								color: main-text;
 							}
 						/* fields */
 							#cdr_frm, #cdr_min, #cdr_max {
-								color: $main-text;
-								background-color: $main-bg-off;
-								border-color: $main-separator;
+								color: main-text;
+								background-color: main-bg-off;
+								border-color: main-separator;
 							}
 						/* submit */
 							.ksb {
 								button(!important);
-								background-color: $main-bg-em;
+								background-color: main-bg-em;
 							}
 							.ksb:hover {
 								button-hover(1, !important);
-								background-color: $main-bg-em;
+								background-color: main-bg-em;
 							}
 					/* calendar */
 						/* highlighting */
 							.cdr_highl {
-								background-color: $main-bg-em;
+								background-color: main-bg-em;
 							}
 							.cdr_dlg .goog-date-picker {
-								background-color: $main-bg-em;
+								background-color: main-bg-em;
 							}
 						/* paging */
 							button {
-								color: $main-text;
+								color: main-text;
 							}
 						/* separator */
 							.cdr_dlg .goog-date-picker table thead td {
-								border-color: $main-separator;
+								border-color: main-separator;
 							}
 						/* days */
 							/* previous month */
 								#cdr_cal tr:nth-child(2) .goog-date-picker-other-month {
-									color: $main-offtext !important;
+									color: main-text-off !important;
 								}
 							/* next month */
 								.cdr_dlg .goog-date-picker-other-month {
-									color: $main-minortext;
+									color: main-text-minor;
 								}
 							/* hover */
 								.cdr_dlg td.goog-date-picker-date:hover {
-									background-color: $main-bg-off;
+									background-color: main-bg-off;
 								}
 		/* result count */
 			#appbar {
-				background-color: $main-bg;
+				background-color: main-bg;
 			}
 			#resultStats {
-				color: $main-offtext;
+				color: main-text-off;
 			}
 		/* results */
 			/* single entry */
 				.s {
-					color: $main-text;
+					color: main-text;
 				}
 				/* emphasized */
 					.s .st em, .st.s.std em {
-						color: $main-emtext;
+						color: main-text-em;
 					}
 				/* offcolor links (date & source dropdown */
 				.f, .f a:link {
-					color: $main-offtext;
+					color: main-text-off;
 				}
 				/* visited links */
 					.mblink:visited, a:visited, .sbpqs_a, a.fl:visited, .st .f .fl:visited {
-						color: $main-link-visited;
+						color: main-link-visited;
 					}
 				/* anchors & Translate */
 					a.fl:link, .fl a, .flt, a.flt, .gl a:link, a.mblink, .mblink b {
-						color: $main-link;
+						color: main-link;
 					}
 				/* source */
 					.a, cite, cite a:link, cite a:visited, .cite, .cite:link, #nygTcd > i, .bc a:link {
-						color: $main-source;
+						color: main-source;
 					}
 					/* dropdown */
 					.GHDvEf, .GHDvEf:hover, .GHDvEf.selected, .GHDvEf.selected:hover {
-							background-color: $main-bg !important;
+							background-color: main-bg !important;
 							background-image: none !important;
 							box-shadow: none;
 						}
 						.action-menu .mn-dwn-arw {
-							border-color: $main-source transparent;
+							border-color: main-source transparent;
 						}
 						.action-menu:hover .mn-dwn-arw {
-							border-color: $main-source-highlighted transparent;
+							border-color: main-source-highlighted transparent;
 						}
 						/* menu */
 							/* main */
@@ -398,27 +368,27 @@
 								}
 							/* items */
 								.action-menu-item:hover {
-									background-color: $main-bg-off;
+									background-color: main-bg-off;
 								}
 								.action-menu-button, .action-menu-item a.fl, .action-menu-toggled-item div {
-									color: $main-text;
+									color: main-text;
 								}
 				/* ad */
 					/* indicator */
 						.Z98Wse {
 							background-color: transparent;
-							color: $main-source;
+							color: main-source;
 						}
 					/* source */
 						.ads-visurl cite {
-							color: $main-source;
+							color: main-source;
 						}
 						/* dropdown */
 							.C4eCVc .action-menu .mn-dwn-arw {
-								border-color: $main-source transparent;
+								border-color: main-source transparent;
 							}
 							.C4eCVc .action-menu:hover .mn-dwn-arw {
-								border-color: $main-source-highlighted transparent;
+								border-color: main-source-highlighted transparent;
 							}
 							/* menu */
 								.gws-ads-adinfo__ads-wta-dropdown {
@@ -426,53 +396,53 @@
 								}
 								/* hover */
 								.gws-ads-adinfo__ads-wta-dropdown:hover {
-									background-color: $main-bg-off;
+									background-color: main-bg-off;
 								}
 								/* ad explanation popup */
 									.Q3eSMc {
-										background-color: $main-bg;
+										background-color: main-bg;
 									}
 									/* switch */
 										/* knob */
 											.rBrJud {
-												background-color: $main-bg-em;
-												box-shadow: 0 1px 3px alpha(black, 0.7 * $contrast);
+												background-color: main-bg-em;
+												box-shadow: 0 1px 3px alpha(black, 0.7 * contrast);
 											}
 										/* slider */
 											.ITNV1 {
-												background-color: alpha(black, 0.8 * $contrast);
+												background-color: alpha(black, 0.8 * contrast);
 											}
 									/* buttons */
 										/* close */
 											.fE5Rge {
 												button();
-												background-color: $main-bg-em;
+												background-color: main-bg-em;
 											}
 											.fE5Rge:hover {
 												button-hover();
-												background-color: $main-bg-em;
+												background-color: main-bg-em;
 											}
 					/* text */
 						.ads-ad {
-							color: $main-text;
+							color: main-text;
 						}
 						/* emphasized */
 							.ads-creative b {
-								color: $main-emtext;
+								color: main-text-em;
 							}
 					/* rating */
 						/* text */
 							.ads-ad .pCA4Bd, .ads-ad .pCA4Bd a {
-								color: $main-minortext;
+								color: main-text-minor;
 							}
 					/* location */
 						/* icon */
 							.U5aBtb {
-								filter: colorize($main-offtext);
+								filter: colorize(main-text-off);
 							}
 				/* missing terms */
 					.s > div > div {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* site search */
 					/* search button */
@@ -485,7 +455,7 @@
 							}
 				/* tweet */
 					g-inner-card {
-						background-color: $main-bg;
+						background-color: main-bg;
 					}
 				/* stack overflow answers */
 				.waTp2e.waTp2e {
@@ -494,53 +464,53 @@
 				}
 				/* source */
 					.QHTnWc {
-						color: $main-source;
+						color: main-source;
 					}
 				/* more link */
 					.qWfpFe, .qWfpFe svg {
-						color: $main-link;
+						color: main-link;
 					}
 				/* carousel */
 					/* answer count */
 						.pIpgAc.KZCcaf {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* card */
 						.zDBTmf {
 							container();
 						}
 						.zDBTmf > div {
-							background-color: $main-bg-container;
+							background-color: main-bg-container;
 						}
 						/* header */
 							/* hover */
 								.EDUkIb:hover {
-									background-color: $main-bg-off;
+									background-color: main-bg-off;
 								}
 							/* vote count */
 								.ATPAKc {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 						/* text */
 							.eUrIee {
-								color: $main-text;
+								color: main-text;
 							}
 					/* paging buttons */
 						.c8dxme {
-							background-color: $main-bg-em;
+							background-color: main-bg-em;
 							
 						}
 						.dY8Pzf {
-							box-shadow: 0 0 0 1px alpha(black, 0.08 * $contrast), 0 4px 8px 0 alpha(black, 0.4 * $contrast);
+							box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast);
 						}
 			/* privacy notice */
 				/* heading */
 					.KJXbRb {
-						color: $main-text;
+						color: main-text;
 					}
 			/* info box */
 				.vk_c, .vk_cxp {
-					background-color: $main-bg;
+					background-color: main-bg;
 				}
 				.vk_c, .vk_cxp, #rhs .fIcnad {
 					container();
@@ -549,92 +519,92 @@
 				/* title */
 					/* divider */
 						.i29hTd .kR7nSc {
-							color: $main-text;
+							color: main-text;
 						}
 					/* property */
 						.i29hTd .qLLird {
-							color: $main-text;
+							color: main-text;
 						}
 				/* separator */
 				.E6Cqjb {
-					background-color: alpha(black, 0.25 * $contrast);
+					background-color: alpha(black, 0.25 * contrast);
 				}
 				/* according to */
 					div.nnbOwe a {
-						color: $main-link;
+						color: main-link;
 					}
 				/* snippet */
 				.Z0LcW {
-					color: $main-text;
+					color: main-text;
 				}
 					/* list */
 						/* more items */
 							.gv607c:link, .gv607c:visited {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 					/* table */
 						/* header row */
 							.knowledge-webanswers_table__webanswers-table th {
-								color: $main-text;
+								color: main-text;
 							}
 						/* borders */
 							.knowledge-webanswers_table__webanswers-table tr {
-								border-color: $main-separator;
+								border-color: main-separator;
 							}
 					/* date */
 						.wrk6pd {
-							color: $main-minortext;
+							color: main-text-minor;
 						}
 				/* footer */
 					/* links */
 						.kno-ftr a {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 						/* 'about this result' icon */
 						.GGw8Tb {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 						/* 'feedback' icon */
 						.RTZ84b {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 			/* module heading */
 			.Ss2Faf {
-				color: $main-text;
+				color: main-text;
 			}
 			/* people also search for */
 				/* heading */
 					.Ss2Faf a {
-						color: $main-text;
+						color: main-text;
 					}
 				/* context */
 					.xlBGCb {
-						color: $main-minortext;
+						color: main-text-minor;
 					}
 				/* frame */
 					/* inner */
 					*[id^="eobm_"] {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 					/* outer */
 						.exp-outline {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 				/* heading */
 					*[id^="eobp_"] {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* close button */
 					*[id^="eobs_"] {
-						filter: colorize($main-offtext);
+						filter: colorize(main-text-off);
 					}
 				/* view more */
 					a.EbH0bb {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* factoid */
 					.C9iYEe {
-						color: $main-text;
+						color: main-text;
 					}
 
 			/* precipitation */
@@ -645,68 +615,68 @@
 			/* days */
 				/* selected */
 					.wob_ds {
-						background-color: $main-bg-em;
-						border-color: $main-border;
+						background-color: main-bg-em;
+						border-color: main-border;
 					}
 				/* hover */
 					.wob_df:hover {
-						border-color: $main-border;
+						border-color: main-border;
 					}
 		/* tweets */
 			/* carousel */
 				/* paging buttons */
 					g-fab {
-						background-color: $main-bg-em !important;
-						color: $main-offtext !important;
-						box-shadow: 0 0 0 1px alpha(black, 0.08 * $contrast), 0 4px 8px 0 alpha(black, 0.4 * $contrast) !important;
+						background-color: main-bg-em !important;
+						color: main-text-off !important;
+						box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast) !important;
 					}
 					.Lu0opc.Lu0opc:hover g-fab {
-						color: $main-text !important;
+						color: main-text !important;
 					}
 				/* tweet */
 					/* links */
 						a.Ndm45b {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 						/* hover */
 							a.Ndm45b:hover {
-								color: $main-link;
+								color: main-link;
 							}
 		/* images */
 			/* header */
 				a.iu-card-header, a.iu-card-header:hover, a.iu-card-header:visited {
-					color: $main-link;
+					color: main-link;
 				}
 			/* more link */
 				g-more-link a span {
-					color: $main-link !important;
+					color: main-link !important;
 				}
 				g-more-link a:visited span {
-					color: $main-link-visited !important;
+					color: main-link-visited !important;
 				}
 			/* report */
 				#irl_r_a {
-					color: $main-offtext;
+					color: main-text-off;
 				}
 				#irl_r_a:hover {
-					color: $main-text;
+					color: main-text;
 				}
 		/* videos */
 			.th {
-				border-color: $main-border;
+				border-color: main-border;
 			}
 		/* question suggestion (people also ask) */
 			/* heading */
 				.cUnQKe .garHBe {
-					color: $main-offtext !important;
+					color: main-text-off !important;
 				}
 			/* question */
 				.related-question-pair {
-					background-color: $main-bg-container;
+					background-color: main-bg-container;
 				}
 				/* separators */
 					.m7VU0c {
-						border-color: $main-border;
+						border-color: main-border;
 					}
 				/* expand button */
 					.fYWO0d {
@@ -727,98 +697,98 @@
 			/* calculator */
 				/* calculation */
 				.cwletbl {
-					color: $main-offtext;	
+					color: main-text-off;	
 				}
 				/* display */
 					.cwtlb {
-						border-color: $main-separator;
-						background-color: $main-bg-em;
+						border-color: main-separator;
+						background-color: main-bg-em;
 					}
 					/* text */
 						.cwtltbl {
-							color: $main-text;
+							color: main-text;
 						}
 					/* below */
 						.cwtlwm {
-							background-color: $main-bg-container;
+							background-color: main-bg-container;
 						}
 				/* keyboard */
 							/* buttons */
 								calculator-button() {
-									color: $main-offtext;
-									border-color: $main-separator;
-									background-image: linear-gradient(to bottom, alpha(white, 0.02 * $contrast), alpha(white, 0.01 * $contrast));
+									color: main-text-off;
+									border-color: main-separator;
+									background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
 								}
 								calculator-button-hover() {
-									color: $main-text;
-									background-image: linear-gradient(to bottom, alpha(white, 0.15 * $contrast), alpha(white, 0.12 * $contrast));
-									border-color: $main-separator;
-									box-shadow: 0 1px 1px alpha(black, 0.5 * $contrast);
+									color: main-text;
+									background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
+									border-color: main-separator;
+									box-shadow: 0 1px 1px alpha(black, 0.5 * contrast);
 								}
 								/* digits or activated */
 									.cwlgb-tpl {
 										calculator-button();
-										background-color: $main-bg-em;
+										background-color: main-bg-em;
 									}
 									/* hover */
 										.cwbd:hover .cwlgb-tpl {
 											calculator-button-hover();
-											background-color: $main-bg-em;
+											background-color: main-bg-em;
 										}
 								/* functions */
 									.cwdgb-tpl {
 										calculator-button();
-										background-color: $main-bg-off;
+										background-color: main-bg-off;
 									}
 									/* hover */
 										.cwbd:hover .cwdgb-tpl {
 											calculator-button-hover();
-											background-color: $main-bg-off;
+											background-color: main-bg-off;
 										}
 								/* switch */
 									/* left */
 										.cwrb-tpl {
 											calculator-button();
-											background-color:	 $main-bg-off;
+											background-color:	 main-bg-off;
 										}
 									/* right */
 										.cwdb-tpl {
 											calculator-button();
-											background-color: $main-bg-off;
+											background-color: main-bg-off;
 										}
 									/* slider */
 										.cwdrsb-tpl {
 											calculator-button();
-											background-color: $main-bg-em;
-											background-image: calculator-slider-image($calculator-slider);
+											background-color: main-bg-em;
+											background-image: calculator-slider-image(calculator-slider);
 											background-size: 26px 14px;
 										}
 									/* result */
 										.cwbb-tpl {
 											calculator-button();
-											background-image: linear-gradient(to bottom, alpha(white, 0.02 * $contrast), alpha(white, 0.01 * $contrast));
+											background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
 											background-color: #0d50be;
 										}
 										/* hover */
 											.cwbd:hover .cwbb-tpl {
 												calculator-button-hover();
-												background-image: linear-gradient(to bottom, alpha(white, 0.15 * $contrast), alpha(white, 0.12 * $contrast));
+												background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
 												background-color: #0d50be;
 											}
 				/* function graph */
 				/* 2D axis labels */
 					#div_for_graph svg text {
-						fill: $main-offtext;
+						fill: main-text-off;
 					}
 				/* box */
 					#div_for_graph > div div[style*="box-shadow"] {
-						box-shadow: alpha(black, 0.8 * $contrast) 0px 0px 5px inset !important;
+						box-shadow: alpha(black, 0.8 * contrast) 0px 0px 5px inset !important;
 					}
 				/* geometry calculator */
 					/* 'solve for' dropdown */
 						/* button */
 							.lr-fy-sfb .lr-fy-dd {
-								border-color: $main-offtext transparent;
+								border-color: main-text-off transparent;
 							}
 						/* menu */
 							.goog-menu {
@@ -826,15 +796,15 @@
 							}
 							/* items */
 								.goog-menuitem, .goog-tristatemenuitem, .goog-filterobsmenuitem {
-									color: $main-text;
+									color: main-text;
 								}
 								/* hover */
 									.goog-menuitem-highlight, .goog-menuitem-hover {
-										background-color: $main-bg-off;
+										background-color: main-bg-off;
 									}
 									/* text */
 										.goog-menuitem-highlight .goog-menuitem-content, .goog-menuitem-hover .goog-menuitem-content {
-										color: $main-text;
+										color: main-text;
 									}
 									/* border */
 										.goog-menuitem-highlight, .goog-menuitem-hover {
@@ -842,30 +812,30 @@
 										}
 							/* separator */
 								.goog-menuseparator {
-									border-color: $main-separator;
+									border-color: main-separator;
 								}
 					/* equation */
 						.lr-fy-eq, .lr-fy-ovde, .lr-fy-ns {
-							color: $main-text;
+							color: main-text;
 						}
 						/* approximately equal */
 							.lr-fy-ovde {
-								color: $main-text !important;
+								color: main-text !important;
 							}
 						/* quotient */
 							.lr-fy-eq-add[style*="background-color:"] {
-								background-color: $main-text !important;
+								background-color: main-text !important;
 							}
 					/* variable entry */
 						/* label */
 							.lr-fy-in {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* input */
 							.lr-fy-tb {
-								background-color: $main-bg-em;
-								border-color: $main-separator;
-								color: $main-offtext;
+								background-color: main-bg-em;
+								border-color: main-separator;
+								color: main-text-off;
 							}
 							.lr-fy-tb:focus {
 								border-color: white;
@@ -873,24 +843,24 @@
 					/* visualization */
 						/* background */
 							.lr-fy-i-w {
-								fill: $main-bg-container;
+								fill: main-bg-container;
 							}
 						/* labels */
 							.lr-fy-i-lgf {
-								fill: $main-minortext;
+								fill: main-text-minor;
 							}
 						/* highlightable lines */
 							.lr-fy-i-ll {
-								stroke: $main-minortext;
+								stroke: main-text-minor;
 							}
 						/* shape */
 							.lr-fy-i-dl {
-								stroke: $main-offtext;
+								stroke: main-text-off;
 							}
 					/* solution */
 						/* heading */
 							.lr-fy-exl div {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 				/* unit converter */
 					/* unit selectors */
@@ -902,23 +872,23 @@
 						}
 					/* equality sign */
 						.jCkZnd {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* inputs */
 						.vXQmIe {
-							background-color: $main-bg;
-							color: $main-text;
-							border-color: $main-separator;
+							background-color: main-bg;
+							color: main-text;
+							border-color: main-separator;
 						}
 				/* shop carousel */
 					/* sponsored hint */
 						/* text */
 							.ptJHdc .richlist-wta, .ptJHdc .v7hl4d {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 						/* icon */
 							.FjdPod {
-								filter: colorize(darken($main-offtext, 40%));
+								filter: colorize(darken(main-text-off, 40%));
 							}
 					/* item */
 						.cu-container .mnr-c {
@@ -930,38 +900,38 @@
 							}
 							/* price */
 							.i3YBTb {
-								color: $main-text;
+								color: main-text;
 							}
 							/* shipping cost */
 							.Mxmg3 {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* shipping cost */
 							.mxB4Q {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* 'By Google' */
 							.FfKHB .KbpByd {
-								color: $main-link;
+								color: main-link;
 							}
 				/* color picker */
 					/* show more */
 						/* text */
 							.u2sJ0e .lA0GG {
-								color: $main-text;
+								color: main-text;
 							}
 						/* arrow */
 							.xrIqbe {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* top border */
 							.u2sJ0e {
-								border-color: $container-separator;
+								border-color: container-separator;
 							}
 				/* flight data */
 					/* day tabs */
 						g-paginated-tabs div {
-							color: $main-text !important;
+							color: main-text !important;
 						}
 						/* activated */
 						g-paginated-tabs div[aria-selected="true"] div {
@@ -970,59 +940,59 @@
 						/* separators */
 							/* horizontal */
 								.ndq6eb {
-									background-color: $main-separator;
+									background-color: main-separator;
 								}
 							/* vertical */
 								.t70XDb {
-									border-left-color: $main-separator;
+									border-left-color: main-separator;
 								}
 						/* info */
 							/* flight name */
 								.ZCLkpe {
-									color: $main-text;
+									color: main-text;
 								}
 							/* flight time */
 								.UbmFK {
-									color: $main-text;
+									color: main-text;
 								}
 								/* arrow */
 									.C2xaHb {
-										color: $main-text;
+										color: main-text;
 									}
 							/* expand arrow */
 								.vp45yf {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* bottom border */
 								.lBTQKc {
-									border-color: $main-border;
+									border-color: main-border;
 								}
 							/* expandable */
 								.kFX8M {
-									background-color: $main-bg-off;
+									background-color: main-bg-off;
 								}
 								/* bottom border */
 									.uL1L0 {
-										background-color: $main-border;
+										background-color: main-border;
 									}
 								/* card */
 									.WyBc1 {
-										background-color: $main-bg;
-										box-shadow: 0 4px 16px alpha(black, 0.7 * $contrast);
+										background-color: main-bg;
+										box-shadow: 0 4px 16px alpha(black, 0.7 * contrast);
 									}
 									/* update time */
 										.vk_txt {
-											color: $main-text !important;
+											color: main-text !important;
 										}
 									/* progress indicator */
 										/* plane */
 											.sE6sWb {
-												background-color: $main-bg;
+												background-color: main-bg;
 											}
 
 					/* footer */
 						.di8g3, .di8g3 a {
-							color: $main-offtext !important;
+							color: main-text-off !important;
 						}
 				/* your public ip address */
 					.ZINbbc { // also is stackoverflow integration)
@@ -1030,19 +1000,19 @@
 					}
 					/* separators */
 						hr {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 					/* address */
 						.XO51F {
-							color: $main-text;
+							color: main-text;
 						}
 					/* "your public IP address" */
 						.JTuIPc .KKgUze {
-							color: $main-offtext !important;
+							color: main-text-off !important;
 						}
 					/* arrow */
 						.aRH6Qe {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 				/* weather */
 			/* top stories */
@@ -1050,28 +1020,28 @@
 					container();
 				}
 				.KQvDId {
-					color: $main-offtext;
+					color: main-text-off;
 				}
 			/* map */
 				/* select opening hours */
 					.rllh__header-container > div {
-						background-color: $main-bg-container;
+						background-color: main-bg-container;
 					}
 					/* dropdown */
 						.F7IIOc {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 						/* hover */
 							.F7IIOc.rlf__open:not(.rlf__applied), .F7IIOc:not(.rlf__applied):hover {
-								color: $main-text;
+								color: main-text;
 							}
 						/* arrow */
 							.FZaw6b {
-								border-color: $main-offtext transparent;
+								border-color: main-text-off transparent;
 							}
 							/* hover */
 								.F7IIOc.rlf__open:not(.rlf__applied) .FZaw6b, .F7IIOc:not(.rlf__applied):hover .FZaw6b {
-									border-color: $main-text transparent;
+									border-color: main-text transparent;
 								}
 						/* expanded */
 							.czHJJ {
@@ -1080,58 +1050,58 @@
 							/* item */
 								/* hover */
 									.w3RMhb:hover {
-										background-color: $main-bg-off;
+										background-color: main-bg-off;
 									}
 								/* selected */
 									.w3RMhb.rlf__ami {
-										background-image: $dropdown-checkmark;
+										background-image: dropdown-checkmark;
 									}
 							/* separator */
 								.tGgE5d {
-									border-color: $main-border;
+									border-color: main-border;
 								}
 				/* select rating */
 					/* dropdown */
 						/* "and up" */
 							.w3RMhb .zFsEvf {
-								color: $main-text;
+								color: main-text;
 							}
 						/* stars */
 							/* unfilled */
 								.EBe2gf {
-									background-image: $unfilled-star;
+									background-image: unfilled-star;
 								}
 				/* separator */
 					.ccBEnf {
-						border-color: $main-border;
+						border-color: main-border;
 					}
 				/* place */
 					.uMdZh {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 					/* hover */
 						.uMdZh:hover {
-							background-color: $main-bg-em;
+							background-color: main-bg-em;
 						}
 					/* title */
 						.dbg0pd {
-							color: $main-text;
+							color: main-text;
 						}
 					/* border */
 						.wYWDAd {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 					/* active */
 						.rllt__link:active {
-							background-color: $main-bg-em;
+							background-color: main-bg-em;
 						}
 						.uMdZh:active, .rllt__local-item-selected {
-							background-color: $main-bg-em;
+							background-color: main-bg-em;
 						}
 				/* more places */
 					/* border */
 						.zkIadb {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 			/* stock */
 				.f196ee {
@@ -1139,121 +1109,121 @@
 				}
 				/* name, symbol and exchange */
 					.OiIFo {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 			/* sports results */
 				/* tabs */
 					.ie7Asb {
-						box-shadow: 0px 4px 2px -1px $main-border; //negative spread radius prevents side shadow
+						box-shadow: 0px 4px 2px -1px main-border; //negative spread radius prevents side shadow
 					}
 				/* match */
 					/* hover */
 						.imso-hov:hover {
-							background-color: $main-bg-em;
+							background-color: main-bg-em;
 						}
 					/* separator */
 						.imspo_mt__vs-c {
-							background: linear-gradient(to bottom, transparent 0%, transparent 12.5%,$main-separator) 12.5%,RGBA(main-separator) 87.5%, transparent 87.5%, transparent 100%;
+							background: linear-gradient(to bottom, transparent 0%, transparent 12.5%,main-separator) 12.5%,RGBA(main-separator) 87.5%, transparent 87.5%, transparent 100%;
 						}
 					/* teams */
 						/* winner */
 							.imspo_mt__dt-t {
-								color: $main-text;
+								color: main-text;
 							}
 							/* arrow */
 								.imspo_mt__triangle > polygon {
-									fill: $main-text !important;
+									fill: main-text !important;
 								}
 						/* loser */
 							.imspo_mt__lt-t {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 					/* meta */
 						.imspo_mt__match-sc {
-							color: $main-text;
+							color: main-text;
 						}
 						/* date */
 							.imspo_mt__cmd {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 					/* border */
 						.MoyuKc {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 						.eGNEZ {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 				/* footer */
 					.jTw2d {
-						background-color: $main-bg-off;
+						background-color: main-bg-off;
 					}
 					/* text */
 						.YIikAd {
-							color: $main-text;
+							color: main-text;
 						}
 			/* dictionary */
 				/* heading */
 					.vkc_np > div:first-child {
-						color: $main-text !important;
+						color: main-text !important;
 					}
 				/* search field */
 					/* overlayed */
 					.dw-sb-cont > div {
-						background-color: $main-bg;
+						background-color: main-bg;
 					}
 					/* input */
 						/* overlayed */
 							#dw-siw {
-								background-color: $main-bg;
+								background-color: main-bg;
 							}
 						/* actual */
 							.dw-sb-cont .dw-sbi {
-								background-color: $main-bg;
-								border-color: $main-separator;
-								color: $main-text;
+								background-color: main-bg;
+								border-color: main-separator;
+								color: main-text;
 							}
 					/* button */
 						.dw-sb-cont .dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn {
-							background-color: $main-bg-em;
-							border-color: $main-separator !important;
-							color: $main-offtext;
+							background-color: main-bg-em;
+							border-color: main-separator !important;
+							color: main-text-off;
 						}
 					/* fanout */ 
 						#dictionary-modules div[class^="gstl_5"] .sbdd_b {
-							box-shadow: 0 2px 4px alpha(black, 0.4 * $contrast);
-							border-color: $container-separator;
+							box-shadow: 0 2px 4px alpha(black, 0.4 * contrast);
+							border-color: container-separator;
 							border-top-color: transparent;
-							background-color: $main-bg;
+							background-color: main-bg;
 						}
 						#dictionary-modules div[class^="gstl_5"] .sbsb_a {
-							background-color: $main-bg;
+							background-color: main-bg;
 						}
 						/* items */
 							/* text */
 								.dw-sb-cont .dw-sbs {
-									color: $main-text;
+									color: main-text;
 								}
 							/* hover */
 								#dictionary-modules div[class^="gstl_5"] .sbsb_d {
-									background-color $main-bg-off;
+									background-color main-bg-off;
 								}
 				/* definition */
 					.vk_gy {
-						color: $main-offtext !important;
+						color: main-text-off !important;
 					}
 					/* synonyms */
 						/* dialect */
 							.lr_dct_lbl_box {
-								color: $main-emtext;
-								background-color: $main-bg-em;
+								color: main-text-em;
+								background-color: main-bg-em;
 							}
 						/* links */
 							.lr_dct_ent span[role='link'] {
-								color: $main-link;
+								color: main-link;
 							}
 							/* more */
 								.lr_dct_more_btn {
-									color: $main-link;
+									color: main-link;
 								}
 				/* pronounciation */
 					/* speaker */
@@ -1266,7 +1236,7 @@
 				}
 				/* separator */
 					.pVFdhc {
-						background-color: $container-separator;
+						background-color: container-separator;
 					}
 				/* translate */
 					/* select */
@@ -1277,17 +1247,17 @@
 							select-hover();
 						}
 						.vk_bk {
-							color: $main-text !important;
+							color: main-text !important;
 						}
 				/* similar-sounding words */
 					/* tip */
 					.vNr24d {
-						background-color: alpha(white, 0.4 * $contrast);
-						color: alpha(black, 1 * $contrast);
+						background-color: alpha(white, 0.4 * contrast);
+						color: alpha(black, 1 * contrast);
 					}
 					/* link */
 						.jMtmC {
-							color: $main-link;
+							color: main-link;
 						}
 				/* use over time */
 				#lr_dct_img_use {
@@ -1296,23 +1266,23 @@
 				/* expand footer */
 					/* arrow */
 						.vk_ard:after {
-							border-top-color: $main-bg-container;
+							border-top-color: main-bg-container;
 						}
 						.vk_aru:after {
-								border-bottom-color: $main-bg-container;
+								border-bottom-color: main-bg-container;
 						}
 						.vk_ard:before {
-								border-top-color: $main-bg-em;
+								border-top-color: main-bg-em;
 						}
 						.vk_aru:before {
-								border-bottom-color: $main-bg-em;
+								border-bottom-color: main-bg-em;
 						}
 						.vk_ard, .vk_aru {
-								background-color: $main-bg-em;
+								background-color: main-bg-em;
 						}
 					/* show more / show less */
 						.exp-txt-c {
-							color: $main-minortext !important;
+							color: main-text-minor !important;
 						}
 			/* SOS alert */
 				.BTZxle.YLAlMc, .Ri4g6c.VKzVKc.YLAlMc {
@@ -1324,62 +1294,62 @@
 					}
 					/* title */
 						.BTZxle .aRjnqc, .Ri4g6c.VKzVKc .aRjnqc {
-							color: $main-text;
+							color: main-text;
 						}
 					/* details */
 						.BTZxle .DV8vJc, .Ri4g6c.VKzVKc .DV8vJc {
-							color: $main-minortext;
+							color: main-text-minor;
 						}
 				/* share button */
 					.BTZxle kno-share-button svg, .Ri4g6c.VKzVKc kno-share-button svg {
-						fill: $main-minortext;
+						fill: main-text-minor;
 					}
 			/* alert map (affected area) */
 				/* header */
 					.XvZKZb {
-						background-color: $main-bg-off;
+						background-color: main-bg-off;
 					}
 					/* heading */
 						.N60dNb, .N60dNb a {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 				/* view on map */
 					.iA7C4 {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* footer */
 					.UNIhbb {
-						background-color: $main-bg-off;
+						background-color: main-bg-off;
 					}
 					/* feedback */
 						.sz486c a.duf3 {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 			/* find my phone */
 				#act-card {
-				background-color $main-bg-container;	
+				background-color main-bg-container;	
 				}
 				/* sign-in prompt */
 					.act-fmp-overlay-dialog {
-						background-color: $main-bg;
-						box-shadow: 0px 1px 4px 0px alpha(black, 0.4 * $contrast), 0px 2px 1px 0px alpha(black, 0.2 * $contrast);
+						background-color: main-bg;
+						box-shadow: 0px 1px 4px 0px alpha(black, 0.4 * contrast), 0px 2px 1px 0px alpha(black, 0.2 * contrast);
 					}
 				/* separator */
 					.act-row {
-						border-color: $container-separator;
+						border-color: container-separator;
 					}
 				/* device name */
 					.goog-menu-button {
-						color: $main-text;
+						color: main-text;
 					}
 				/* last synced */
 					.dOMhHf {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* dropdown */
 					/* button */
 						.tfbcfd {
-							border-color: $main-offtext transparent;
+							border-color: main-text-off transparent;
 						}
 					/* menu */
 						.hqo5mf .goog-menu {
@@ -1392,17 +1362,17 @@
 								}
 							/* text */
 								.goog-menuitem-content {
-									color: $main-text;
+									color: main-text;
 								}
 							/* separator */
 								.hqo5mf .goog-menuitem {
-									border-color: $main-border;
+									border-color: main-border;
 								}
 				/* actions */
 					/* disabled */
 						/* text */
 							#act-card .act-lnk.act-conf-disabled {
-								color: $main-minortext;	
+								color: main-text-minor;	
 							}
 						/* icon */
 							.act-img-disabled {
@@ -1415,25 +1385,25 @@
 			/* things to do */
 				/* separators */
 					.jktSrf td {
-						border-color: $main-border;
+						border-color: main-border;
 					}
 				/* text */
 					.tuHUkb {
-						color: $main-text;
+						color: main-text;
 					}
 				/* compass */
 					.KJ3c0b.M5mFPb {
-						filter: colorize($main-link); //TODO: find out why colors don't match
+						filter: colorize(main-link); //TODO: find out why colors don't match
 					}
 		/* related terms (searches related) */
 			/* heading */
 				#brs .med {
-					color: $main-text;
+					color: main-text;
 				}
 		/* pages */
 			/* selected */
 				#foot #navcnt .cur {
-					color: $main-text;
+					color: main-text;
 				}
 		/* knowledge panels */
 			/* main */
@@ -1442,11 +1412,11 @@
 				}
 			/* title */
 				.kno-ecr-pt {
-					color: $main-text;
+					color: main-text;
 				}
 				/* favorite star */
 					.stt-uf {
-						filter: invert(1) brightness($contrast); //TODO convert to colorize
+						filter: invert(1) brightness(contrast); //TODO convert to colorize
 					}
 			/* action buttons */
 				/* save */
@@ -1456,118 +1426,118 @@
 						}
 					/* items */
 						.common-jslayout-geo-personalplacelist__sheet-item {
-							background-color: $main-bg;
+							background-color: main-bg;
 						}
 						/* hover */
 							.common-jslayout-geo-personalplacelist__sheet-item:hover, .common-jslayout-geo-personalplacelist__sheet-item:focus {
-								background-color: $main-bg-off;
+								background-color: main-bg-off;
 							}
 						/* new list */
 							/* popup */
 								/* input label */
 									.yiGxXe label, .dh6FSe {
-										color: $main-offtext;
+										color: main-text-off;
 									}
 								/* input */
 									.a1T04e {
-										background-color: $main-bg-em;
-										border-color: $main-separator;
-										color: $main-text;
+										background-color: main-bg-em;
+										border-color: main-separator;
+										color: main-text;
 									}
 						/* icons */
 							/* saved indicator */
 								.QrqOyf {
-									border-color: $main-bg;
+									border-color: main-bg;
 								}
 								.common-jslayout-geo-personalplacelist__sheet-item:hover .QrqOyf, .common-jslayout-geo-personalplacelist__sheet-item:focus .QrqOyf {
-									border-color: $main-bg-off;
+									border-color: main-bg-off;
 								}
 			/* subtitle */
 				.sthby {
-					color: $main-offtext;
+					color: main-text-off;
 				}
 			/* main separator */
 				.kp-blk .xpdclose .farUxc, .kp-blk .xpdopen .mJ2Mod {
-					border-color: $container-separator;
+					border-color: container-separator;
 				}
 				/* url separator */
 				.xpdclose .a84NUc:not(:empty), .xpdopen .CQKTwc:not(:empty) {
-					border-color: $container-separator;
+					border-color: container-separator;
 				}
 			/* factoid listing */
 				/* titles */
 				.w8qArf .fl {
-					color: $main-text !important;
+					color: main-text !important;
 				}
 				/* MORE links */
 					.kno-fv .fl span {
-						color: $main-link !important;
+						color: main-link !important;
 					}
 				/* context (source, trending, ... */
 					.XJa8af a:link, .XJa8af a:visited {
-						color: $main-minortext;
+						color: main-text-minor;
 					}
 					.kno-fv span[style*="color:#777"], .kno-fv a[style*="color:#777"] {
-						color: $main-minortext !important;
+						color: main-text-minor !important;
 					}
 				/* source link */
 					.VQBFP a:link, .VQBFP a:visited {
-						color: $main-link;
+						color: main-link;
 					}
 				/* stock price */
 					/* exchange */
 						.r3IKmc {
-							color: $main-minortext;
+							color: main-text-minor;
 						}
 			/* share button */
 				kno-share-button {
-					color: $main-text;
+					color: main-text;
 				}
 			/* item-specific info */
 				/* movies */
 					/* play trailer on youtube */
 						/* icon */
 							.KRm7mb {
-								filter: colorize(darken($main-offtext, 65%));
+								filter: colorize(darken(main-text-off, 65%));
 							}
 					/* ratings */
 						/* sites */
 							.IZACzd {
-								color: $main-text;
+								color: main-text;
 							}
 						/* google */
 							.Ndq8Rb {
-								color: $main-text;
+								color: main-text;
 							}
 							/* google users */
 								.piVJ4d {
-									color: $main-minortext;
+									color: main-text-minor;
 								}
 							/* buttons */
 								.WKrsIc {
-									color: $main-minortext;
+									color: main-text-minor;
 								}
 								.WKrsIc:hover {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 						/* separators */
 							/* vertical */
 								.ksSzJd .TZahnb, .ksSzJd .NY3LVe {
-									border-color: $container-separator;
+									border-color: container-separator;
 								}
 							/* horizontal */
 								#rhs .cVqrTe {
-									border-color: $container-separator;
+									border-color: container-separator;
 								}
 					/* summary */
 						/* more */
 							.xXEKkb {
-								color: $main-link !important;
+								color: main-link !important;
 							}
 					/* critic reviews */
 						/* text */
 							.NIUoNb {
-								color: $main-text;
+								color: main-text;
 							}
 						/* logos */
 							/* shadow for legibility of black logos */
@@ -1578,43 +1548,43 @@
 					/* available on */
 						/* separators */
 							.scrt tr:first-child td {
-								border-top-color: $main-separator;
+								border-top-color: main-separator;
 							}
 							.scrt td {
-								border-color: $main-border;
+								border-color: main-border;
 							}
 							.scrt tr:last-child td {
-								border-bottom-color: $main-separator;
+								border-bottom-color: main-separator;
 							}
 						/* names */
 							.kno-fb-ctx .ellip .hl {
-								color: $main-text;
+								color: main-text;
 							}
 					/* events */
 						/* date */
 							.CAaTrb, .aXUuyd {
-								color: $main-text;	
+								color: main-text;	
 							}
 					/* songs */
 						.rl_item_base {
-							background-color: $main-bg-container;
-							border-color: $container-separator;
+							background-color: main-bg-container;
+							border-color: container-separator;
 						}
 						/* title */
 						.rl_item_base .title {
-							color: $main-text;
+							color: main-text;
 						}
 						/* interpret */
 						.rl_item_base .title + div {
-							color: $main-offtext !important;
+							color: main-text-off !important;
 						}
 						/* view more */
 							.ErlEM {
-								border-color: $container-separator;
+								border-color: container-separator;
 							}
 				/* quotes */
 					.Qynugf {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* nutrition facts */
 					/* amount dropdown */
@@ -1623,33 +1593,33 @@
 						}
 						/* arrow */
 							.ITcCnf {
-								filter: colorize(darken($main-text, 30%));
+								filter: colorize(darken(main-text, 30%));
 							}
 					/* table */
 						.AYBNrd {
-							border-color: $main-separator;
-							background-color: alpha(black, 0.15 * $contrast);
+							border-color: main-separator;
+							background-color: alpha(black, 0.15 * contrast);
 						}
 						.AYBNrd td {
-							border-color: $main-separator;
+							border-color: main-separator;
 						}
 				/* places */
 					/* opening hours */
 						/* expand arrow */
 							.BTP3Ac {
-								border-color: $main-link transparent;
+								border-color: main-link transparent;
 							}
 							/* days */
 								/* current day */
 									.BTP3Ac {
-										color: $main-text;
+										color: main-text;
 									}
 									.K7Ltle {
-										color: $main-text;
+										color: main-text;
 									}
 								/* suggest an edit */
 									.nRfCwb, .ubF8Rd {
-										color: $main-link;	
+										color: main-link;	
 									}
 					/* popular times */
 						/* help button */
@@ -1662,25 +1632,25 @@
 							}
 							/* selected */
 								.OxYkzd .lubh-sel {
-									background-color: $main-bg-off;
+									background-color: main-bg-off;
 								}
 							/* hover */
 								.OxYkzd li:hover {
-									background-color: $main-bg-off;
+									background-color: main-bg-off;
 								}
 						/* tooltip */
 							.P4cfIb {
-								background-color: $main-bg-em;
-								color: $main-text;
-								border-color: $main-separator;
+								background-color: main-bg-em;
+								color: main-text;
+								border-color: main-separator;
 							}
 							/* highlight line */
 								.upZjbd {
-									border-color: alpha($main-separator, alpha($main-separator) * 2.2);
+									border-color: alpha(main-separator, alpha(main-separator) * 2.2);
 								}
 						/* histogram */
 							.yPHXsc {
-								background-image: linear-gradient($main-separator 1px, rgba(255,255,255,0) 0);
+								background-image: linear-gradient(main-separator 1px, rgba(255,255,255,0) 0);
 								border-top-color: transparent;
 							}
 							/* Y axis */
@@ -1688,64 +1658,64 @@
 									/* short ticks */
 										/* left part */
 											.ChZgtd > div::before {
-												background-color: $main-separator;
+												background-color: main-separator;
 											}
 										/* right part */
 											.ChZgtd > div::after {
-												background-color: $main-separator;
+												background-color: main-separator;
 											}
 									/* long ticks */
 										.orgdxf::before {
-											background-color: $main-separator;
+											background-color: main-separator;
 										}
 									/* time labels */
 										.orgdxf {
-											background-color: $main-bg-container;
+											background-color: main-bg-container;
 										}
 										/* text */
 											.orgdxf > div {
-												color: $main-offtext;
+												color: main-text-off;
 											}
 								/* no bars */
 									.yPHXsc > div {
-										border-color: $main-separator;
+										border-color: main-separator;
 									}
 							/* text */
 								.ePSZhc {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 						/* paging buttons */
 							/* left */
 								.Lrszfb {
-									filter: colorize($main-offtext);
+									filter: colorize(main-text-off);
 								}
 							/* right */
 								.QeuQGc {
-									filter: colorize($main-offtext);
+									filter: colorize(main-text-off);
 								}
 					/* know this place */
 						.Y28wmf {
-							color: $main-text;
+							color: main-text;
 						}
 						/* separators */
 							.wlqJjf.gws-local-riddler__banner-shown {
-								border-color: $container-separator;
+								border-color: container-separator;
 							}
 						/* answer quick questions */
 							.GtMhHe {
-								color: $main-link;
+								color: main-link;
 							}
 					/* questions and answers */
 						/* answer count */
 							.IFGUre {
-								color: $main-minortext;
+								color: main-text-minor;
 							}
 						/* all questions popup */
 							.yZZ28b {
-								background-color: $main-bg;
-								box-shadow: 0 2px 4px $main-border;
-								border-color: $main-border;
-								color: $main-text;
+								background-color: main-bg;
+								box-shadow: 0 2px 4px main-border;
+								border-color: main-border;
+								color: main-text;
 							}
 							/* close button */
 								.oLLmo .Xvesr {
@@ -1753,11 +1723,11 @@
 								}
 							/* title */
 								.y4DTBc {
-									color: $main-text;
+									color: main-text;
 								}
 							/* subtitle */
 								.Xv46H {
-									color: $main-text;
+									color: main-text;
 								}
 							/* ask a question button */
 								a.EXgpke, a.EXgpke:visited, a.EXgpke:hover, a.EXgpke:active { //restore original style
@@ -1765,33 +1735,33 @@
 								}
 							/* separator */
 								.fm2dRd {
-									border-color: $main-separator;
+									border-color: main-separator;
 								}
 							/* listing */
 								/* separators */
 									.rbheYb {
-										border-color: $main-separator;
+										border-color: main-separator;
 									}
 								/* item */
 									.LR1OTe {
-										background-color: $main-bg-container;
+										background-color: main-bg-container;
 									}
 									/* question text */
 										.dFINPc {
-											color: $main-text;
+											color: main-text;
 										}
 									/* actions */
 										.yEKpFf {
-											background-color: $main-bg-container;
-											color: $main-minortext;
+											background-color: main-bg-container;
+											color: main-text-minor;
 										}
 										/* answer */
 											.rOd72e {
-												color: $main-minortext;
+												color: main-text-minor;
 											}
 									/* dropdown button */
 										.EZ61Wb {
-											color: $main-minortext;
+											color: main-text-minor;
 										}
 										/* dropdown menu */
 											.ZvwI0c {
@@ -1801,11 +1771,11 @@
 										/* answerer */
 											/* contribution counts */
 												.FYwGhe {
-													color: $main-minortext;
+													color: main-text-minor;
 												}
 										/* date */
 											.eIlJMe {
-												color: $main-minortext;
+												color: main-text-minor;
 											}
 										/* more answers */
 											a.M20PPb { // restore original style
@@ -1813,13 +1783,13 @@
 											}
 											/* question */
 												.EDNFOd {
-													color: $main-text;
+													color: main-text;
 												}
 											/* answer input */
 												.id0ZHZw1o9j__pqa-pta {
-													background-color: $main-bg-em;
-													color: $main-text;
-													border-color: $main-separator;
+													background-color: main-bg-em;
+													color: main-text;
+													border-color: main-separator;
 												}
 											/* post button */
 												a.kZIQde, a.kZIQde:hover, a.kZIQde:visited { //restore original style
@@ -1828,27 +1798,27 @@
 						/* ask a question popup */
 							/* 'posting publicly' */
 								.RMevRc {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* input field */
 								.uCWscpVYoPI__pqa-pta {
-									background-color: $main-bg-em;
-									border-color: $main-separator;
-									color: $main-text;
+									background-color: main-bg-em;
+									border-color: main-separator;
+									color: main-text;
 								}
 							/* cancel button */
 								a.UOpzSb, a.UOpzSb:hover, a.UOpzSb:visited {
-									background-color: $main-bg-em;
+									background-color: main-bg-em;
 									color: #4285f4; //restore original style
 								}
 					/* send to your phone */
 						/* separators */
 							.XQvBOc {
-								border-color: $container-separator;
+								border-color: container-separator;
 							}
 						/* icon */
 							.i8Msie {
-								filter: colorize($main-text);
+								filter: colorize(main-text);
 							}
 						/* popup */
 							.bq6vPc {
@@ -1856,35 +1826,35 @@
 							}
 							/* items */
 								.rG7IXe li:hover {
-									background-color: $main-bg-off;
+									background-color: main-bg-off;
 								}
 							/* separator */
 								.cphsSd {
-									border-color: $main-separator;
+									border-color: main-separator;
 								}
 					/* reviews */
 						/* write a review popup */
 							// TODO
 			/* posts */
 				.yOo6xe {
-					background-color: $main-bg-off;
+					background-color: main-bg-off;
 				}
 				/* name */
 					.NWO1Pd, .u2tuje .xjT6He {
-						color: $main-text	
+						color: main-text	
 					}
 				/* 'on google' */
 					.Z3DVab, .u2tuje .iGBaJe {
-						color: $main-offtext
+						color: main-text-off
 					}
 				/* card */
 					/* date */
 						.LmREXd {
-							color: $main-offtext;	
+							color: main-text-off;	
 						}
 					/* share button */
 						.KpG9if {
-							background-color: $main-bg-em;
+							background-color: main-bg-em;
 							button();
 						}
 						.KpG9if:hover {
@@ -1892,8 +1862,8 @@
 						}
 						/* share popup */
 							.fAwjXaCTMo5__content {
-								box-shadow: 0px 5px 26px 0px alpha(black, 0.4 * $contrast), 0px 20px 28px 0px alpha(black, 0.6 * $contrast);
-								background-color: $main-bg;	
+								box-shadow: 0px 5px 26px 0px alpha(black, 0.4 * contrast), 0px 20px 28px 0px alpha(black, 0.6 * contrast);
+								background-color: main-bg;	
 							}
 							/* overlay */
 								.lxG8Hd.fAwjXaCTMo5__visible {
@@ -1901,146 +1871,146 @@
 								}
 							/* title */
 								.n57WQd {
-									color: $main-text;	
+									color: main-text;	
 								}
 							/* close button */
 								.gSgKyf {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* platform name */
 								.ftKMt {
-									color: $main-text;
+									color: main-text;
 								}
 							/* email */
 								.jaKVod {
-									colorize($main-text);
+									colorize(main-text);
 								}
 							/* 'Copy URL' label */
 								.u5FVec {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* URl input */
 								.ZXb90b {
 									background-color: inherit;
-									border-color: $main-separator;
+									border-color: main-separator;
 								}
 								.rBpXA {
-									color: $main-text;
+									color: main-text;
 								}
 							/* popup */
 								.LXRtOe {
-									background-color: $main-bg;
-									box-shadow: 3px 0px 5px -3px alpha(black, 0.4 * $contrast), -3px 0px 5px -3px alpha(black, 0.4 * $contrast),0px -1px 2px -2px alpha(black, 0.2 * $contrast);
+									background-color: main-bg;
+									box-shadow: 3px 0px 5px -3px alpha(black, 0.4 * contrast), -3px 0px 5px -3px alpha(black, 0.4 * contrast),0px -1px 2px -2px alpha(black, 0.2 * contrast);
 								}
 								/* overlay */
 									.oLLmo {
-										background-color: alpha($main-bg-off, 0.85);
+										background-color: alpha(main-bg-off, 0.85);
 									}
 								/* header */
 									/* 'on Google' */
 										.DbNIbd, .gzxbbe .iGBaJe {
-											color: $main-offtext;	
+											color: main-text-off;	
 										}
 									/* share button */
 										.Uz88id {
-											color: $main-offtext;	
+											color: main-text-off;	
 										}
 									/* menu button */
 										.JfiX0c {
-											filter: colorize($main-offtext);
+											filter: colorize(main-text-off);
 										}
 									/* separator */
 										.kDenrb {
-											background-color: $main-separator;
+											background-color: main-separator;
 										}
 									/* close button */
 										.K60tkf {
-											color: $main-offtext;
+											color: main-text-off;
 										}
 								/* entry */
 									.zoDZIc {
-										box-shadow: 0 2px 6px alpha(black, 0.4 * $contrast);
-										background-color: $main-bg;
+										box-shadow: 0 2px 6px alpha(black, 0.4 * contrast);
+										background-color: main-bg;
 									}
 									/* date */
 										.N4pSac, .qROp {
-											color: $main-offtext;
+											color: main-text-off;
 										}
 									/* text */
 										.Rfjmec {
-											color: $main-text;
+											color: main-text;
 										}
 			/* 'see results about' container (knowledge suggestions) */
 				/* heading */
 					.garHBe {
-						color: $main-text;
+						color: main-text;
 					}
 				/* entry */
 					.y8Jpof:hover {
-						background: $main-bg-off;
+						background: main-bg-off;
 					}
 					/* title */
 						.mod .rhsvw div .ellip {
-							color: $main-link !important;
+							color: main-link !important;
 						}
 					/* text */
 						.mod .rhsvw div div {
-							color: $main-text;
+							color: main-text;
 						}
 					/* linked */
 						.zloOqf.ellip.zloOqf.ellip {
-							color: $main-text !important;
+							color: main-text !important;
 						}
 						.y8Jpof span {
-							color: $main-text !important;
+							color: main-text !important;
 						}
 			/* people also search for */
 				/* heading */
 				.Ss2Faf a {
-					color: $main-text;
+					color: main-text;
 				}
 			/* context */
 				.xlBGCb {
-					color: $main-offtext;
+					color: main-text-off;
 				}
 			/* 'more' expand footer */
 				/* separator */
 					.vk_arc {
-						border-color: $container-separator;
+						border-color: container-separator;
 					}
 			/* feedback */
 			a.duf3 {
-				color: $main-offtext;
+				color: main-text-off;
 			}
 	/* other categories */
 		/* News */
 			/* result */
 				/* text */
 					.ts > div {
-						color: $main-text;
+						color: main-text;
 					}
 				/* source */
 					.e8fRJf {
-						color: $main-source;
+						color: main-source;
 					}
 				/* highly cited */
 					.HgetDe {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* other sources image subtext */
 					.QJGxHc {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 		/* Search by Image */
 			/* searched image */
 					/* border */
 						#Z6bGOb .GMzDwb {
-							border-color: $main-separator;
+							border-color: main-separator;
 						}
 			/* pages that incclude matching images */
 				/* heading */
 					.normal-header div.rg-header {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 		/* Images */
 			/* related image search terms (improvement over original) */
@@ -2054,90 +2024,90 @@
 			/* selected */
 				/* main */
 					.irc_c {
-						background-color: $main-bg-em;
+						background-color: main-bg-em;
 					}
 				/* right */
 					#irc_cc {
-						background-color: $main-bg-em;
+						background-color: main-bg-em;
 					}
 				/* most right */
 					#irc_bgl {
-						background-color: $main-bg-em;
+						background-color: main-bg-em;
 					}
 				/* caret */
 					#irc_pc {
-						border-bottom-color: $main-bg-em;
+						border-bottom-color: main-bg-em;
 					}
 				/* close button */
 					#irc_cb {
 						filter: colorize(white);
-						opacity: 0.3 * $contrast;
+						opacity: 0.3 * contrast;
 					}
 					#irc_cb:hover {
-						opacity: 0.7 * $contrast;
+						opacity: 0.7 * contrast;
 					}
 				/* paging buttons */
 					.ex2D6e {
-						border-color: $main-border;
-						background-color: $main-bg;
+						border-color: main-border;
+						background-color: main-bg;
 					}
 					.ex2D6e:active, .ex2D6e:hover {
-						background-color: $main-bg-off;
+						background-color: main-bg-off;
 						box-shadow: none;
 					}
 				/* site info */
 					/* site title */
 						a.irc_pt {
-							color: $main-text;
+							color: main-text;
 						}
 					/* domain title */
 						.irc_hd a {
-							color: $main-minortext;
+							color: main-text-minor;
 						}
 					/* image title */
 						.irc_asc {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* buttons */
 						.irc_but_r a {
 							button();
-							background-color: $main-bg;
+							background-color: main-bg;
 							box-shadow: none;
 						}
 						.irc_but_r a:active, .irc_but_r a:hover {
 							button-hover();
-							background-color: $main-bg;
+							background-color: main-bg;
 						}
 				/* related images */
 					/* heading */
 						.yJbeqd {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 				/* image preview */
 					/* shadow */
 						.irc_mi {
-							box-shadow: 0 5px 35px alpha(black, .4 * $contrast);
+							box-shadow: 0 5px 35px alpha(black, .4 * contrast);
 						}
 					/* image dimensions */
 						.irc_idim {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* copyright notice */
 						.irc_bimg .Af3fH {
-							color: $main-minortext;
+							color: main-text-minor;
 						}
 				/* bottom links */
 					.irc_ft a {
-						color: $main-minortext;
+						color: main-text-minor;
 					}
 				/* vertical separator */
 					.irc_land .irc_sep {
-						background-color: $main-border;
+						background-color: main-border;
 						box-shadow: none;
 					}
 				/* horizontal separator */
 					.irc_land .irc_infosep {
-						background-color: $main-border;
+						background-color: main-border;
 						box-shadow: none;
 					}
 			/* footer */
@@ -2159,60 +2129,60 @@
 						}
 				/* show more results (date select 'go') */
 				.ksb {
-					background-color: $main-bg-em;
+					background-color: main-bg-em;
 					button()
 				}
 				.ksb:hover {
-					background-color: $main-bg-em;
+					background-color: main-bg-em;
 					button-hover();
 				}
 		/* Shopping */
 			/* location */
 				.CV7Lzb {
-					color: $main-offtext;
+					color: main-text-off;
 				}
 			/* filter */
 				/* headings */
 					.sh-dr__g > div {
-						color: $main-text;
+						color: main-text;
 					}
 				/* items */
 					.sh-dr__short * {
-						color: $main-offtext;
-						border-color: $main-offtext;
+						color: main-text-off;
+						border-color: main-text-off;
 					}
 				/* inputs */
 					.sh-dr__short input {
-						background-color: $main-bg;
-						color: $main-emtext;
+						background-color: main-bg;
+						color: main-text-em;
 					}
 				/* go */
 					.LfUe1b {
-						background-color: $main-bg;
-						color: $main-link;
+						background-color: main-bg;
+						color: main-link;
 					}
 				/* more */
 					.sh-dr__g div[role="button"] {
-						color: $main-link;
+						color: main-link;
 					}
 			/* results */
 				/* header */
 					/* view buttons */
 						.qa708e:not(.IYWnmd), .Ytbez:not(.IYWnmd) {
-							filter: colorize($main-minortext);
+							filter: colorize(main-text-minor);
 						}
 					/* vertical separator */
 						.sh-dtt__sort-by {
-							border-color: $main-separator;
+							border-color: main-separator;
 						}
 					/* text */
 						.sh-dtt__top-tools {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* sorting */
 						/* dropdown button*/
 							.Yf5aUd {
-								filter: colorize(darken($main-offtext, 50%));
+								filter: colorize(darken(main-text-off, 50%));
 							}
 							/* menu */
 								.o2ji6GoAIDp__menu {
@@ -2220,7 +2190,7 @@
 								}
 								/* items */
 									.kH0Dhc {
-										color: $main-offtext;	
+										color: main-text-off;	
 									}
 									/* hover */
 										.oLMvxj8HcwN__highlighted, .ErsxPb:active {
@@ -2228,16 +2198,16 @@
 										}
 									/* selected */
 										.oLMvxj8HcwN__selected {
-											background-image: $dropdown-checkmark;
+											background-image: dropdown-checkmark;
 										}
 					/* shortlist */
 						/* slideout button */
 							#gko-btn-arrow-down {
-								filter: colorize(darken($main-offtext, 40%));
+								filter: colorize(darken(main-text-off, 40%));
 							}
 							/* slideout */
 								#gko-sp.gko-open {
-									border-color: alpha(black, 0.4 * $contrast);
+									border-color: alpha(black, 0.4 * contrast);
 								}
 								/* shortlist icon */
 									.xqknTb {
@@ -2245,11 +2215,11 @@
 									}
 								/* products i'm considering */
 									.sh-gb__rs-bt {
-										color: $main-offtext;
+										color: main-text-off;
 									}
 									/* dropdown */
 										.sh-gb__rs-ba {
-											border-color: $main-offtext transparent;
+											border-color: main-text-off transparent;
 										}
 										/* menu */
 											._-J {
@@ -2257,7 +2227,7 @@
 											}
 											/* items */
 												._-I {
-													color: $main-offtext;
+													color: main-text-off;
 												}
 												/* hover */
 													.sh-gs__rs-sl:hover, ._-I:hover {
@@ -2273,27 +2243,27 @@
 										}
 									/* empty frames */
 										.gko-itms-e .gko-i {
-											border-color: $main-minortext;
+											border-color: main-text-minor;
 										}
 								/* options */
 									.gko-ctrl, .gko-ctrl:link, .gko-ctrl:visited {
-										color: $main-offtext;
+										color: main-text-off;
 									}
 					/* horizontal separator */
 						.sh-sp__line {
-							border-color: $main-separator;
+							border-color: main-separator;
 						}
 						/* sponsored hint */
 							#topstuff .sh-sp__pswtr {
-								background-color: $main-bg;
+								background-color: main-bg;
 							}
 							/* text */
 								.sh-sp__pswtr {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* info icon */
 								.cMW8pb {
-									filter: colorize(darken($main-offtext, 40%));
+									filter: colorize(darken(main-text-off, 40%));
 								}
 				/* results */
 					/* grid */
@@ -2307,15 +2277,15 @@
 								}
 							/* price */
 								.O8U6h {
-									color: $main-text;
+									color: main-text;
 								}
 							/* info */
 								.sh-dgr__grid-result, .sh-dgr__grid-result a {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* description */
 								.EI11Pd, .EI11Pd:link, .EI11Pd:visited {
-									color: $main-text;
+									color: main-text;
 								}
 					/* list */
 						/* card */
@@ -2328,71 +2298,71 @@
 								}
 							/* info */
 								.na4ICd, .UTJALc {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* review count */
 								.TxCHDf a {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* produce breadcrumbs */
 								.shop__secondary, .shop__secondary:link, .shop__secondary:visited {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 							/* option prices */
 								.dGWXMb {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 					/* related searches */
 						.sh-sr__shop-result-header {
-							color: $main-text;
+							color: main-text;
 						}
 					/* bottom separator */
 						.sh-sr__shop-result-group:last-of-type {
-							border-color: $main-separator;
+							border-color: main-separator;
 						}
 						.sh-sr__shop-result-group {
-							border-color: $main-separator;
+							border-color: main-separator;
 						}
 		/* Finance */
 			/* market summary */
 				.K20DDe {
-					background-color: $main-bg;
+					background-color: main-bg;
 				}
 				/* breadcrumb */
 					.HkooRb:link, .HkooRb:visited, .HkooRb:hover {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 					/* stock name */
 						.PyJv1b {
-							color: $main-text;
+							color: main-text;
 						}
 				/* exchange and symbol */
 					.wx62f {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* tabs */
 					.qLJQNc {
-						background-color: $main-bg;
+						background-color: main-bg;
 					}
 					.u8H8Fd {
 						box-shadow: none;
 					}
 					/* title */
 						g-tabs div[aria-selected="false"] div {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* selected */
 						/* title */
 							g-tabs div[aria-selected="true"] div {
-								color: $main-text !important;
+								color: main-text !important;
 							}
 						/* indicator */
 							g-tabs div[aria-selected="true"] {
-								border-color: alpha(white, 0.8 * $contrast) !important;
+								border-color: alpha(white, 0.8 * contrast) !important;
 							}
 				/* separator */
 				.QOsNac {
-					border-color: $main-separator;
+					border-color: main-separator;
 				}
 			/* Overview */
 				/* stock graph */
@@ -2401,187 +2371,187 @@
 					}
 					/* current price */
 						.NprOob {
-							color: $main-text;
+							color: main-text;
 						}
 						/* during update */
 							.fw-price-nc.IsqQVc {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* currency */
 							.knFDje {
-								color: $main-text;
+								color: main-text;
 							}
 					/* closing time */
 						.TgMHGc {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* disclaimer link */
 						.CVIh4c {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* after hours */
 						.qFiidc {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* day tabs */
 						.QcYZxe {
-							border-color: $main-separator;
+							border-color: main-separator;
 						}
 						/* selected */
 							.fw-ch-sel {
-								color: $main-text;
-								box-shadow: 0px 18px 0px -16px alpha(white, 0.8 * $contrast);
+								color: main-text;
+								box-shadow: 0px 18px 0px -16px alpha(white, 0.8 * contrast);
 							}
 						/* titles */
 							.NDTw3e {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 					/* graph */
 						/* axis labels */
 							.fw-ch-svg {
-								color: $main-offtext;
-								fill: $main-offtext;
+								color: main-text-off;
+								fill: main-text-off;
 							}
 							/* y axis label shadows */
 								.msyb7 {
-									fill: $main-bg-container;
-									stroke: $main-bg-container;
+									fill: main-bg-container;
+									stroke: main-bg-container;
 								}
 						/* highlight line */
 							.knowledge-finance-wholepage-chart__highlight-line {
-								background-image: linear-gradient(alpha(white, 0.38 * $contrast) 50%,alpha(white, 0 * $contrast) 0%);
+								background-image: linear-gradient(alpha(white, 0.38 * contrast) 50%,alpha(white, 0 * contrast) 0%);
 							}
 						/* horizontal lines */
 							.U8Athf line {
-								stroke: $main-separator;
+								stroke: main-separator;
 							}
 						/* x axis */
 							.U8Athf line.s2QnJb {
-								stroke: $main-separator;
+								stroke: main-separator;
 							}
 							/* ticks */
 								.knowledge-finance-wholepage-chart__xtg line {
-									stroke: $main-separator;
+									stroke: main-separator;
 								}
 						/* previous close line */
 							.csb9vb {
-								stroke: $main-offtext;
+								stroke: main-text-off;
 							}
 						/* previous close rectangle */
 							.CedBdc {
-								background-color: $main-bg-container;
+								background-color: main-bg-container;
 							}
 						/* tooltip */
 							.knowledge-finance-wholepage-chart__hover-card {
-								background-color: $main-bg;
-								box-shadow: 0 1px 3px 0 alpha(black, 0.4 * $contrast), 0 1px 1px 0 alpha(black, 0.3 * $contrast);
+								background-color: main-bg;
+								box-shadow: 0 1px 3px 0 alpha(black, 0.4 * contrast), 0 1px 1px 0 alpha(black, 0.3 * contrast);
 							}
 							/* value */
 								.knowledge-finance-wholepage-chart__hover-card-value {
-									color: $main-text;
+									color: main-text;
 								}
 							/* time */
 								.knowledge-finance-wholepage-chart__hover-card-time {
-									color: $main-offtext;
+									color: main-text-off;
 								}
 					/* info table */
 						/* label */
 							.JgXcPd {
-								color: $main-text;
+								color: main-text;
 							}
 						/* value */
 							.iyjjgb {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 				/* related company carousel */
 					/* exchange & symbol */
 						.wfbQZb {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* price */
 						.ojzJac {
-							color: $main-text;
+							color: main-text;
 						}
 					/* separator */
 						.tiM5gc {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 					/* compare button */
 						.JwgTNb {
-							color: $main-link;
+							color: main-link;
 						}
 						/* icon */
 							.VDl3z {
-								color: $main-link;
+								color: main-link;
 							}
 				/* News */
 					/* heading */
 						.CCb0ac, .CCb0ac a {
-							color: $main-text;
+							color: main-text;
 						}
 					/* item */
 						/* publisher */
 							.wqg8ad {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* dash */
 							.jpqGxc {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* date */
 							.FGlSad {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* image background (overlayed) */
 							.KNcnob {
-								background-color: $main-bg-off !important;
+								background-color: main-bg-off !important;
 							}
 				/* Quarterly Financials */
 					/* column heading */
 						.azqZUd {
-							color: $main-text;
+							color: main-text;
 						}
 					/* cells */
 					.iF8z4d td {
-						color: $main-text;
-						border-color: $main-border;
+						color: main-text;
+						border-color: main-border;
 					}
 					/* footer */
 						.ZEDj1b {
-							color: $main-text;
+							color: main-text;
 						}
 						/* more financials */
 							.LlMFmd {
-								color: $main-text;
+								color: main-text;
 							}
 						/* disclaimer */
 							.kVLSDc {
-								color: $main-minortext;
+								color: main-text-minor;
 							}
 				/* Related Markets */
 					/* item */
 						.QEsAKd {
-							background-color: $main-bg-container;
+							background-color: main-bg-container;
 						}
 						/* name */
 							.LTTD0 {
-								color: $main-link;
+								color: main-link;
 							}
 						/* points */
 							.E4K4Td {
-								color: $main-text;
+								color: main-text;
 							}
 						/* additional info */
 							.knowledge-finance-wholepage__additional-info {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 						/* time */
 							.TNcMZc {
-								color: $main-minortext;
+								color: main-text-minor;
 							}
 					/* separators */
 						.e17INc {
-							background-color: $main-border;
+							background-color: main-border;
 						}
 			/* Compare */
 				/* search */
@@ -2590,82 +2560,82 @@
 					}
 					/* search icon */
 						.aZa4J {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* input */
 						.KIdUu {
-							color: $main-text;
+							color: main-text;
 							background-color: transparent;
 						}
 					/* clear button */
 						.doAFBe {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* fanout */
 						.gstl_50.sbdd_a {
-							background-color: $main-bg-off;
-							border-color: $main-border;
+							background-color: main-bg-off;
+							border-color: main-border;
 						}
 						.gstl_50 .sbdd_b {
 							container();
-							border-color: $main-border;
+							border-color: main-border;
 						}
 						.gstl_50 .sbsb_a {
 							background-color: inherit;
 						}
 						/* item separator */
 							.gstl_50 .sbsb_b li .fisb_c {
-								border-color: $main-separator;
+								border-color: main-separator;
 							}
 				/* stock graph */
 					/* separator */
 						.BwZUW {
-							border-color: $container-separator;
+							border-color: container-separator;
 						}
 					/* legend */
 						/* text */
 							.qfx13b {
-								color: $main-text;
+								color: main-text;
 							}
 				/* table */
 					.eskLAf {
-						color: $main-text;
+						color: main-text;
 					}
 					/* row separators */
 						.yW8WD {
-							border-color: $main-separator;
+							border-color: main-separator;
 						}
 					/* column headers */
 						/* symbol & exchange */
 							.WuDkNe {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 				/* Related stocks */
 					/* heading */
 						.ChlgHf .HnYYW {
-							color: $main-text;
+							color: main-text;
 						}
 					/* stock name */
 						.knowledge-finance-wholepage__compare-item {
-							color: $main-text;
+							color: main-text;
 						}
 					/* additional info */
 						.knowledge-finance-wholepage__compare-item .knowledge-finance-wholepage__additional-info {
-							color: $main-offtext;
+							color: main-text-off;
 						}
 					/* separators */
 						.BBHxge {
-							border-color: $main-border;
+							border-color: main-border;
 						}
 			/* Financials */
 				/* Quarterly Financials */
 					/* quarter tabs */
 						.vCQYxb {
-							 background-color: $main-bg-off;
+							 background-color: main-bg-off;
 						}
 	/* language switch popup */
 		#Rzn5id {
-			box-shadow: 0 2px 4px alpha(black, 1 * $contrast) !important;
+			box-shadow: 0 2px 4px alpha(black, 1 * contrast) !important;
 		}
 	/* normalize popup font color */
 		.goog-modalpopup {
@@ -2681,14 +2651,14 @@
 
 	/* header */
 	main-border() {
-		border-color: alpha(black, 0.5 * $contrast);
+		border-color: alpha(black, 0.5 * contrast);
 	}
 
 	.sfbg, .sfbgx {
 		background: inherit !important;
 	}
 	.sfbgg {
-		background-color: $header-bg !important;
+		background-color: header-bg !important;
 		background-image: none;
 	}
 	/* loading border */	
@@ -2699,14 +2669,14 @@
 		/* entry */
 			/* icon */
 				.sbibod {
-					background-color: $main-bg;
+					background-color: main-bg;
 				}
 			/* input */
 				.sbib_a {
-					background-color: $main-bg;
+					background-color: main-bg;
 				}
 				#lst-ib {
-					color: $main-text;
+					color: main-text;
 					background: unset;
 				}
 				/* spell check */
@@ -2722,32 +2692,32 @@
 				}
 				/* search by image popup */
 					#qbp {
-						background: $main-bg;
+						background: main-bg;
 					}
 					/* file type */
 						.gscp_c {
-							color: $main-text;
+							color: main-text;
 						}
 						.gscp_c:hover, .gscp_a .gscp_d:hover {
-							color: $main-emtext;
+							color: main-text-em;
 						}
 					/* close button */
 						#qbx {
-							filter: colorize($main-offtext);
+							filter: colorize(main-text-off);
 						}
 					/* tab */
 						.qbtbha.sl {
-							background-color: $main-bg-off;
-							border-color: $main-border;
+							background-color: main-bg-off;
+							border-color: main-border;
 						}
 						.qbtbp {
-							background-color: $main-bg-off;
-							border-color: $main-border;
+							background-color: main-bg-off;
+							border-color: main-border;
 						}
 						/* active */
 							/*title */
 								.qbtbha .qbtbtxt.qbclr {
-									color: $main-text;
+									color: main-text;
 								}
 							/* question mark */
 								.qbh {
@@ -2755,28 +2725,28 @@
 								}
 								/* tooltip */
 									#qbut .qbctnt, #qbft .qbctnt {
-										background-color: $main-bg;
+										background-color: main-bg;
 									}
 									/* caret */
 										#qbut .qbptr, #qbft .qbptr {
-											border-bottom-color: $main-bg;
+											border-bottom-color: main-bg;
 										}
 						/* inactive title */
 							.qbtbtxt.qbclr {
-								color: $main-offtext;
+								color: main-text-off;
 							}
 							.qbtbtxt.qbclr:hover {
-								color: $main-text;
+								color: main-text;
 							}
 						/* paste */
 							/* input (also is site search) */
 								.ktf {
-									background-color: $main-bg-em;
-									border-color: $main-separator;
-									color: $main-text;
+									background-color: main-bg-em;
+									border-color: main-separator;
+									color: main-text;
 								}
 								.ktf:hover:not(:focus) {
-									border-color: $main-separator;
+									border-color: main-separator;
 								}
 							/* button (copy to avoid overwrite) */
 								.kpbb {
@@ -2793,13 +2763,13 @@
 						/* upload */
 							/* selected file */
 								.qbtbp {
-									color: $main-text;
+									color: main-text;
 								}
 					/* drop image */
 					#qbdp, #qbup {
-						background-color: $main-bg-off;
-						color: $main-offtext;
-						border-color: $main-border;
+						background-color: main-bg-off;
+						color: main-text-off;
+						border-color: main-border;
 					}
 						/* spinner */
 						.spin {
@@ -2807,39 +2777,39 @@
 						}
 			/* image box */
 				.gscp_a {
-					background-color: $main-bg-em;
-					border-color: alpha(white, 0.2 * $contrast);
-					box-shadow: 1px 1px 4px alpha(black, 0.6 * $contrast);
+					background-color: main-bg-em;
+					border-color: alpha(white, 0.2 * contrast);
+					box-shadow: 1px 1px 4px alpha(black, 0.6 * contrast);
 				}
 				.gscp_a:hover {
-					border-color: alpha(white, 0.6 * $contrast);
+					border-color: alpha(white, 0.6 * contrast);
 				}
 				/* dismiss button */
 					.gscp_d {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 					.gscp_a:hover .gscp_d {
-						color: $main-emtext;
+						color: main-text-em;
 					}
 		/* fanout */
 			.sbsb_a {
-				background-color: $main-bg;
+				background-color: main-bg;
 			}
 			.sbdd_b {
-				box-shadow: 0 3px 8px 0 alpha(black, 0.4 * $contrast),0 0 0 1px alpha(black, 0.15 * $contrast);
+				box-shadow: 0 3px 8px 0 alpha(black, 0.4 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
 			}
 			/* suggestion hover */
 				.sbsb_d {
-					background-color: $main-bg-off;
+					background-color: main-bg-off;
 				}
 			/* suggestion expanded text */
 				.sben_a {
-					color: $main-offtext;
+					color: main-text-off;
 				}
 		
 		/* report */
 			a.aciXEb {
-				background-color: alpha($main-bg, 0.9 * $contrast) !important;
+				background-color: alpha(main-bg, 0.9 * contrast) !important;
 			}
 	/* menus */
 		.gb_hc {
@@ -2852,15 +2822,15 @@
 				}
 			/* caret */
 				.gb_vb {
-					border-bottom-color: $main-bg;
+					border-bottom-color: main-bg;
 				}
 			/* inner */
 				.gb_ia {
-					background-color: $main-bg;
+					background-color: main-bg;
 				}
 				/* titles */
 					#gb#gb a.gb_O, #gb#gb span.gb_P {
-						color: $main-text;
+						color: main-text;
 					}
 					/* emphasis */
 					.gb_Z:hover .gb_3 {
@@ -2873,27 +2843,27 @@
 						margin: 7px 1px;
 					}
 					.gb_Z:hover a {
-						border-color: $main-border;
+						border-color: main-border;
 					}
 				/* add a shortcut */
 					.gb_va {
-						box-shadow: 0 1px 2px alpha(black, 0.2 * $contrast), 0 0 1px alpha(black, 0.2 * $contrast);
+						box-shadow: 0 1px 2px alpha(black, 0.2 * contrast), 0 0 1px alpha(black, 0.2 * contrast);
 					}
 					/* title */
 						.gb_wa {
-							color: $main-text;
+							color: main-text;
 						}
 				/* separator */
 					.gb_ka {
-						border-color: alpha(black, 0.4 * $contrast);
+						border-color: alpha(black, 0.4 * contrast);
 					}
 				/* more */
 					.gb_ja {
-						background-color: $main-bg-off;
+						background-color: main-bg-off;
 					}
 				/* even more */
 					#gb a.gb_ja, #gb a.gb_ja:visited, #gb a.gb_ja:active, #gb a.gb_ka, #gb a.gb_ka:visited {
-						color: $main-text;
+						color: main-text;
 					}
 		/* notification menu */
 			#gbsfw {
@@ -2901,78 +2871,78 @@
 			}
 			/* caret */
 				.gb_wb  {
-					border-bottom-color: alpha(black, 0.35 * $contrast) !important;
+					border-bottom-color: alpha(black, 0.35 * contrast) !important;
 				}
 				.gb_vb {
-					border-bottom-color: $main-bg !important;
+					border-bottom-color: main-bg !important;
 				}
 		/* account menu */
 			/* active account */
 				/* email */
 					.gb_Ib {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* links */
 					.gb_yb, #gb a.gb_yb.gb_yb, .gb_zb a, #gb .gb_zb.gb_zb a {
-						color: $main-link;
+						color: main-link;
 					}
 			/* secondary accounts */
 				.gb_Qb {
-					background-color: $main-bg-off;
-					border-color: $main-separator;
+					background-color: main-bg-off;
+					border-color: main-separator;
 				}
 				.gb_Sb:hover {
-					background-color: $main-bg-em;
+					background-color: main-bg-em;
 				}
 				/* name */
 					.gb_3b {
-						color: $main-text;
+						color: main-text;
 					}
 				/* email */
 					.gb_4b {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 				/* status */
 					.gb_5b {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 			/* loading bar */
 				.gb_pb {
-					background-color: alpha(black, 0.5 * $contrast);
+					background-color: alpha(black, 0.5 * contrast);
 				}
 			/* footer */
 				.gb_Kb {
-					background-color: $main-bg-off;
-					border-color: $main-separator;
+					background-color: main-bg-off;
+					border-color: main-separator;
 				}
 				/* buttons */
 					.gb_Ea {
-						background-color: $main-bg;
-						border-color: $main-separator;
+						background-color: main-bg;
+						border-color: main-separator;
 					}
 					.gb_Kb .gb_Jb:hover {
-						background-color: $main-bg;
+						background-color: main-bg;
 						button-hover(2);
 					}
 					.gb_Ea, #gb a.gb_Ea.gb_Ea, .gb_Fa {
-						color: $main-offtext;
+						color: main-text-off;
 					}
 
 	/* tabs */
 		#hdtb {
-			background-color: $header-bg;
+			background-color: header-bg;
 			main-border();
 		}
 		#hdtbSum {
-			background-color: $header-bg;
+			background-color: header-bg;
 		}
 		/* categories */
 			#hdtb .hdtb-mitem a {
-				color: $header-offtext;
+				color: header-text-off;
 			}
 			/* categories hover */
 				.hdtbItm label:hover, .hdtbItm a:hover, #hdtb-more-mn a:hover, #hdtb .hdtb-mitem a:hover, .hdtb-mn-hd:hover, #hdtb-more:hover, #hdtb-tls:hover {
-					color: $header-text;
+					color: header-text;
 				}
 	/* settings dropdown */
 		/* main */
@@ -2981,7 +2951,7 @@
 			}
 		/* items */
 			#lb > div > a {
-				color: $main-text;
+				color: main-text;
 			}
 			/* item hover */
 			#lb > div > a:hover {
@@ -2989,111 +2959,111 @@
 			}
 	/* tools */
 		#hdtb-msb #hdtb-more, #hdtb-msb #hdtb-tls {
-			color: $header-offtext;
+			color: header-text-off;
 		}
 		/* tools button */
 			#hdtb #hdtb-tls:active {
-				color: $header-text;
+				color: header-text;
 			}
 			#hdtb-tls:hover,
 			#hdtb-tls:active {
-				background: linear-gradient(to bottom, alpha(black, 0.02 * $contrast), alpha(black, 0.04 * $contrast));
+				background: linear-gradient(to bottom, alpha(black, 0.02 * contrast), alpha(black, 0.04 * contrast));
 			}
 			#hdtb-tls:hover {
-				border-color: alpha(black, 0.4 * $contrast);
-				box-shadow: 0 1px 1px alpha(black, 0.5 * $contrast);
-				color: $header-text !important;
+				border-color: alpha(black, 0.4 * contrast);
+				box-shadow: 0 1px 1px alpha(black, 0.5 * contrast);
+				color: header-text !important;
 			}
 			#hdtb-tls:active {
-				box-shadow: inset 0 1px 2px alpha(black, 0.7 * $contrast);
-				color: $header-text;
+				box-shadow: inset 0 1px 2px alpha(black, 0.7 * contrast);
+				color: header-text;
 			}
 			/* tools button active */
 				#hdtb-msb .hdtb-tl-sel, #hdtb-msb .hdtb-tl-sel:hover {
-					background: linear-gradient(to bottom, alpha(black, 0.05 * $contrast), alpha(black, 0.1 * $contrast));
-					border-color: alpha(black, 0.4 * $contrast);
-					box-shadow: inset 0 1px 2px 0 alpha(black, 0.5 * $contrast);
+					background: linear-gradient(to bottom, alpha(black, 0.05 * contrast), alpha(black, 0.1 * contrast));
+					border-color: alpha(black, 0.4 * contrast);
+					box-shadow: inset 0 1px 2px 0 alpha(black, 0.5 * contrast);
 				}
 	/* view saved & safesearch (Images) */
 		#top_nav a.ab_button {
-			color: $header-offtext !important;
+			color: header-text-off !important;
 		}
 		#top_nav a.ab_button:hover {
-			color: $header-text !important;
+			color: header-text !important;
 		}
 		/* safesearch */
 			#top_nav .ab_button > span.ab_icon {
-				filter: colorize(darken($header-offtext, 40%));
+				filter: colorize(darken(header-text-off, 40%));
 				opacity: 1;
 			}
 			#top_nav .ab_button:hover > span.ab_icon {
-				filter: colorize(darken($header-text, 40%));
+				filter: colorize(darken(header-text, 40%));
 				opacity: 1;
 			}
 			#appbar a.ab_button:active, a.ab_button.selected, a.ab_button.selected:hover {
-				color: $header-text !important;
+				color: header-text !important;
 			}
 			/* dropdown */
 				a.ab_dropdownlnk, a.ab_dropdownlnk:visited, a.ab_dropdownlnk:hover, #appbar a.ab_dropdownlnk:active {
-					color: $main-text;
+					color: main-text;
 				}
 				/* hover */
 					.ab_dropdownitem.selected {
-						background-color: $main-bg-off;
+						background-color: main-bg-off;
 					}
 					a.ab_dropdownlnkinfo, a.ab_dropdownlnkinfo:visited, a.ab_dropdownlnkinfo:hover, #appbar a.ab_dropdownlnkinfo:active {
-						color: $main-link;
+						color: main-link;
 					}
 				/* separator */
 					.ab_dropdownrule {
-						border-color: $main-separator;
+						border-color: main-separator;
 					}
 	/* feature */
 		div.rl_feature {
-			background-color: $header-bg;
+			background-color: header-bg;
 		}
 		/* tools dropdowns */
 			#hdtb.hdtba #hdtbMenus {
-				background-color: $header-bg;
-				border-color: alpha(black, 1 * $contrast);
+				background-color: header-bg;
+				border-color: alpha(black, 1 * contrast);
 			}
 			#hdtb.hdtba .hdtb-mn-hd:not(:hover) {
-				color: $header-offtext;
+				color: header-text-off;
 			}
 			/* arrows */
 				#hdtb.hdtba .mn-dwn-arw {
-					border-color: $header-offtext transparent;
+					border-color: header-text-off transparent;
 				}
 				#hdtb.hdtba .hdtb-mn-hd:hover .mn-dwn-arw, #hdtb.hdtba #hdtb-more:hover .mn-dwn-arw {
-					border-color: $header-text transparent;
+					border-color: header-text transparent;
 				}
 		/* carousel */
 			.rlc__slider {
-				background-color: $header-bg;
+				background-color: header-bg;
 			}
 			/* navigation */
 			.rl_feature .kxbcl {
-				color: $header-offtext;
+				color: header-text-off;
 			}
 				/* hover */
 					.kxbcl .kxbc:hover {
-						color: $header-text;
+						color: header-text;
 					}
 				/* connector */
 					.s8AAke {
-						filter: colorize(darken($header-offtext, 30%));
+						filter: colorize(darken(header-text-off, 30%));
 					}
 				/* selected */
 					.H1ccWd {
-						color: $header-text;
+						color: header-text;
 					}
 				/* not selected (overwrites rule above) */
 					.kxbcl {
-						color: $header-offtext;
+						color: header-text-off;
 					}
 			/* item container */
 				.rlc__slider-page {
-					background-color: $header-bg;
+					background-color: header-bg;
 				}
 		/* border */
 			.rl_center {
@@ -3101,7 +3071,7 @@
 			}
 	/* appbar */
 		.kappbar {
-			background-color: $header-bg;
+			background-color: header-bg;
 		}
 		/* border */
 			.klbar {
@@ -3109,68 +3079,68 @@
 			}
 		/* item */
 			.mlo-c {
-				background-color: $main-bg;
-				box-shadow: 0 2px 2px 0 alpha(black, 0.3 * $contrast), 0 0 0 1px alpha(black, 0.15 * $contrast);
+				background-color: main-bg;
+				box-shadow: 0 2px 2px 0 alpha(black, 0.3 * contrast), 0 0 0 1px alpha(black, 0.15 * contrast);
 			}
 			/* hover */
 				.klitem:hover {
-					background-color: $main-bg;
+					background-color: main-bg;
 				}
 				.MiPcId:hover {
-					box-shadow: 0 3px 8px 0 alpha(black, 0.4 * $contrast), 0 0 0 1px alpha(black, 0.15 * $contrast);
+					box-shadow: 0 3px 8px 0 alpha(black, 0.4 * contrast), 0 0 0 1px alpha(black, 0.15 * contrast);
 				}
 			/* selected */
 				.klitem.selected {
-					background-color: $main-bg;
+					background-color: main-bg;
 				}
 			/* title and factoid */
 				.kltat, .klfact {
-					color: $main-text;
+					color: main-text;
 				}
 			/* context */
 				.klmeta {
-					color: $main-minortext;
+					color: main-text-minor;
 				}
 	/* footer */
 	#fbar {
-		background-color: $footer-bg;
+		background-color: footer-bg;
 		main-border();
 	}
 	/* internal borders */
 		.fbar {
-			border-color: $footer-separator;
+			border-color: footer-separator;
 		}
 		/* separator */
 			#swml {
-				border-color: $footer-separator;
+				border-color: footer-separator;
 			}
 	/* location */
 		/* country */
 			.b0KoTc {
-				color: $footer-offtext;
+				color: footer-text-off;
 			}
 		/* city */
 			#swml {
-				color: $footer-minortext;
+				color: footer-text-minor;
 			}
 		#swml a {
-			color: $footer-offtext;
+			color: footer-text-off;
 		}
 		#swml a:hover {
-			color: $footer-text;
+			color: footer-text;
 		}
 	/* links */
 		.fbar p, .fbar a, #fsettl, #fsett a {
-			color: $footer-offtext;
+			color: footer-text-off;
 		}
 		.fbar a:hover, #fsett a:hover {
-			color: $footer-text;
+			color: footer-text;
 		}
 	/* home page */
 		/* body */
 			/* subsites */
 				#gb#gb a.gb_P {
-					color: $main-text;
+					color: main-text;
 				}
 				/* hover */
 				#gb#gb a.gb_P:hover {
@@ -3180,52 +3150,52 @@
 				/* input */
 					/* normal */
 						.sbibod {
-							box-shadow: 0 2px 2px 0 alpha(black, 0.5 * $contrast),0 0 0 1px alpha(black, 0.15 * $contrast);
+							box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
 						}
 					/* hover */
 						.sbhcn {
-							box-shadow: 0 3px 8px 0 alpha(black, 0.6 * $contrast),0 0 0 1px alpha(black, 0.15 * $contrast);
+							box-shadow: 0 3px 8px 0 alpha(black, 0.6 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
 						}
 					/* focus */
 						.sbfcn {
-							box-shadow: 0 3px 8px 0 alpha(black, 0.6 * $contrast),0 0 0 1px alpha(black, 0.15 * $contrast);
+							box-shadow: 0 3px 8px 0 alpha(black, 0.6 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
 						}
 				/* buttons */
 					.jhp input[type="submit"], .sbdd_a input, .gbqfba {
-						background-color: alpha(black, 0.25 * $contrast);
-						background-image: linear-gradient(to bottom, alpha(white, 0.02 * $contrast), alpha(white, 0.01 * $contrast));
+						background-color: alpha(black, 0.25 * contrast);
+						background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
 						border-color: transparent;
-						color: $main-minortext;
+						color: main-text-minor;
 					}
 					/* hover */
 						.jhp input[type="submit"]:hover, .sbdd_a input:hover, .gbqfba:hover {
-							background-color: alpha(black, 0.25 * $contrast);
-							border-color: $main-separator;
-							background-image: linear-gradient(to bottom, alpha(white, 0.03 * $contrast), alpha(white, 0.015 * $contrast));
-							box-shadow: 0 1px 1px alpha(black, 0.2 * $contrast);
-							color: $main-text;
+							background-color: alpha(black, 0.25 * contrast);
+							border-color: main-separator;
+							background-image: linear-gradient(to bottom, alpha(white, 0.03 * contrast), alpha(white, 0.015 * contrast));
+							box-shadow: 0 1px 1px alpha(black, 0.2 * contrast);
+							color: main-text;
 						}
 		/* footer */
 			/* privacy notice */
 				.Teq10 {
-					background-color: $main-bg;
-					border-color: $footer-separator;
+					background-color: main-bg;
+					border-color: footer-separator;
 				}
 				/* heading */
 				.OFfaL {
-					color: $main-text;
+					color: main-text;
 				}
 			/* separator */
 				.fbar > div {
-					border-color: $footer-separator;
+					border-color: footer-separator;
 				}
 			/* links */
 				.ftl, #footer a {
-					color: $footer-offtext;
+					color: footer-text-off;
 				}
 				/* hover */
 					.ftl:hover, #footer a:hover {
-						color: $footer-text;
+						color: footer-text;
 					}
 
 }
@@ -3237,74 +3207,74 @@
 	}
 	
 	body > c-wiz {
-		background-color: $main-bg !important;
+		background-color: main-bg !important;
 	}
 	/* header */
 		/* settings & dismiss*/
 			.iWO9fc .mUbCce svg {
-				fill: $main-offtext;
+				fill: main-text-off;
 			}
 			.iWO9fc .mUbCce:hover svg {
-				fill: $main-text;
+				fill: main-text;
 			}
 		/* logo */
 			.XSVuue {
-				fill: $main-offtext;
+				fill: main-text-off;
 			}
 	/* title */
 		.v7k2xf {
-			color: $main-text;
+			color: main-text;
 		}
 	/* cards */
 		.CxSKqd {
-			background-color: $main-bg-off;
+			background-color: main-bg-off;
 		}
 		.CxSKqd.PNdSh, .CxSKqd.Wj1LYb {
-			background-color: $main-bg-container;
+			background-color: main-bg-container;
 		}
 		.CxSKqd:nth-child(-n+2), .O9OsK.sMVRZe .CxSKqd {
-			box-shadow: 0 1px 2px alpha(black, 0.7 * $contrast);
+			box-shadow: 0 1px 2px alpha(black, 0.7 * contrast);
 		}
 		/* subtitle */
 			.OlDqke, .Vz68Kb {
-				color: $main-offtext;
+				color: main-text-off;
 			}
 		/* close button */
 			.Z5nyse {
-				fill: $main-offtext;
+				fill: main-text-off;
 			}
 			.yxaWLe:hover .Z5nyse {
-				fill: $main-text;
+				fill: main-text;
 			}
 	/* footer */
 		.fEjTrb {
-			background-color: $main-bg-off;
+			background-color: main-bg-off;
 		}
 		/* drawer icon */
 			.ajgU6 {
-				fill: $main-offtext;
+				fill: main-text-off;
 			}
 		/* expanded */
 			.jvWPmb.qs41qe .fEjTrb {
-				background-color: $main-bg-off;
+				background-color: main-bg-off;
 			}
 	/* settings page */
 		/* title */
 			.gMG7Fd {
-				color: $main-text;
+				color: main-text;
 			}
 		/* notification source name */
 			.wh73ab {
-				color: $main-text;
+				color: main-text;
 			}
 		/* switch */
 			/* knob */
 				.E7QdY {
-					border-color: $main-bg-em;
-					box-shadow: 0 1px 3px alpha(black, 0.7 * $contrast);
+					border-color: main-bg-em;
+					box-shadow: 0 1px 3px alpha(black, 0.7 * contrast);
 				}
 			/* slider */
 				.hh4xKf {
-					border-color: alpha(black, 0.8 * $contrast);
+					border-color: alpha(black, 0.8 * contrast);
 				}
 }
