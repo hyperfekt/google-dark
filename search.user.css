@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.1.2
+@version 0.1.3
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -196,7 +196,7 @@
 				background-color: main-bg-em;
 				button-hover(1,);
 			}
-			a.ab_button {
+			a.ab_button, a.ab_button:visited {
 				color: main-text-off;
 			}
 			a.ab_button:hover {
