@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.1.9
+@version 0.2.0
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -692,7 +692,7 @@
 				}
 				/* separators */
 					.m7VU0c {
-						border-color: main-border;
+						border-color: container-separator;
 					}
 				/* expand button */
 					.fYWO0d {
@@ -1135,7 +1135,7 @@
 								}
 				/* separator */
 					.ccBEnf {
-						border-color: main-border;
+						border-color: container-separator;
 					}
 				/* place */
 					.uMdZh {
@@ -1151,7 +1151,7 @@
 						}
 					/* border */
 						.wYWDAd {
-							border-color: main-border;
+							border-color: container-separator;
 						}
 					/* active */
 						.rllt__link:active {
@@ -1163,7 +1163,7 @@
 				/* more places */
 					/* border */
 						.zkIadb {
-							border-color: main-border;
+							border-color: container-separator;
 						}
 			/* stock */
 				.f196ee {
@@ -1185,7 +1185,7 @@
 						}
 					/* separator */
 						.imspo_mt__vs-c {
-							background: linear-gradient(to bottom, transparent 0%, transparent 12.5%,main-separator) 12.5%,RGBA(main-separator) 87.5%, transparent 87.5%, transparent 100%;
+							background: linear-gradient(to bottom, transparent 0%, transparent 12.5%, main-separator 12.5%, main-separator 87.5%, transparent 87.5%, transparent 100%);
 						}
 					/* teams */
 						/* winner */
@@ -2570,7 +2570,7 @@
 						}
 					/* separator */
 						.tiM5gc {
-							border-color: main-border;
+							border-color: container-separator;
 						}
 					/* compare button */
 						.JwgTNb {
@@ -2610,7 +2610,7 @@
 					/* cells */
 					.iF8z4d td {
 						color: main-text;
-						border-color: main-border;
+						border-color: container-separator;
 					}
 					/* footer */
 						.ZEDj1b {
@@ -2681,7 +2681,7 @@
 						}
 						/* item separator */
 							.gstl_50 .sbsb_b li .fisb_c {
-								border-color: main-separator;
+								border-color: container-separator;
 							}
 				/* stock graph */
 					/* separator */
@@ -2710,6 +2710,9 @@
 					/* heading */
 						.ChlgHf .HnYYW {
 							color: main-text;
+						}
+						.ChlgHf {
+							border-color: main-border;
 						}
 					/* stock name */
 						.knowledge-finance-wholepage__compare-item {
