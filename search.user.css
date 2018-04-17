@@ -638,21 +638,6 @@
 						color: main-text;
 					}
 
-			/* precipitation */
-				/* bars */
-					.XOKJuc {
-						background-color: #1878f0;
-					}
-			/* days */
-				/* selected */
-					.wob_ds {
-						background-color: main-bg-em;
-						border-color: main-border;
-					}
-				/* hover */
-					.wob_df:hover {
-						border-color: main-border;
-					}
 		/* tweets */
 			/* carousel */
 				/* paging buttons */
@@ -1054,6 +1039,21 @@
 							color: main-text-off;
 						}
 				/* weather */
+					/* precipitation */
+						/* bars */
+							.XOKJuc {
+								background-color: #1878f0;
+							}
+					/* days */
+						/* selected */
+							.wob_ds {
+								background-color: main-bg-em;
+								border-color: main-border;
+							}
+						/* hover */
+							.wob_df:hover {
+								border-color: main-border;
+							}
 			/* top stories */
 				.VoEfsd {
 					container();
@@ -1439,7 +1439,7 @@
 				#brs .med {
 					color: main-text;
 				}
-		/* pages */
+		/* paging */
 			/* selected */
 				#foot #navcnt .cur {
 					color: main-text;
@@ -2080,7 +2080,7 @@
 						#Z6bGOb .GMzDwb {
 							border-color: main-separator;
 						}
-			/* pages that incclude matching images */
+			/* pages that include matching images */
 				/* heading */
 					.normal-header div.rg-header {
 						color: main-text-off;
