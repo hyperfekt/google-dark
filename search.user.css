@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.2.6
+@version 0.2.7
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -472,7 +472,7 @@
 											border-bottom-color: main-bg;
 										}
 				/* missing terms */
-					.s > div > div {
+					.TXwUJf {
 						color: main-text-off;
 					}
 				/* site search */
@@ -484,6 +484,28 @@
 							.JOmIqc {
 								filter: colorize(white);
 							}
+				/* factoids */
+					.P1usbc {
+						color: main-text-off;
+					}
+				/* people also search for */
+					/* frame */
+						/* inner */
+						*[id^="eobm_"] {
+							border-color: main-border;
+						}
+					/* outer */
+						.exp-outline {
+							border-color: main-border;
+						}
+					/* heading */
+						*[id^="eobp_"] {
+							color: main-text-off;
+						}
+					/* close button */
+						*[id^="eobs_"] {
+							filter: colorize(main-text-off);
+						}
 				/* tweet */
 					g-inner-card {
 						background-color: main-bg;
@@ -612,32 +634,14 @@
 					.xlBGCb {
 						color: main-text-minor;
 					}
-				/* frame */
-					/* inner */
-					*[id^="eobm_"] {
-							border-color: main-border;
-						}
-					/* outer */
-						.exp-outline {
-							border-color: main-border;
-						}
-				/* heading */
-					*[id^="eobp_"] {
-						color: main-text-off;
-					}
-				/* close button */
-					*[id^="eobs_"] {
-						filter: colorize(main-text-off);
-					}
-				/* view more */
-					a.EbH0bb {
-						color: main-text-off;
-					}
-				/* factoid */
+				/* factoid */ //LOST AND FOUND
 					.C9iYEe {
 						color: main-text;
 					}
-
+				/* view XX+ */
+					a.EbH0bb { //restore original style
+						color: main-text-minor;
+					}
 		/* tweets */
 			/* carousel */
 				/* paging buttons */
@@ -1701,7 +1705,10 @@
 						.rl_item_base .title + div {
 							color: main-text-off !important;
 						}
-						/* view more */
+						/* view XX+ more */
+							.P7Vl4c .RCBpod {
+								color: main-text-minor;
+							}
 							.ErlEM {
 								border-color: container-separator;
 							}
