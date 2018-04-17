@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.2.0
+@version 0.2.1
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1178,7 +1178,23 @@
 					.ie7Asb {
 						box-shadow: 0px 4px 2px -1px main-border; //negative spread radius prevents side shadow
 					}
-				/* match */
+				/* upcoming match */
+					.imso_mh__mh-bd {
+						color: main-text-off;
+					}
+					/* team names */
+						.imso_mh__tm-nm {
+							color: main-text;
+						}
+					/* vs */
+						.imso_mh__vs-at-sep {
+							color: main-text-off;
+						}
+					/* separator */
+						.abhAW {
+							border-color: main-border;
+						}
+				/* matches */
 					/* hover */
 						.imso-hov:hover {
 							background-color: main-bg-em;
@@ -1186,6 +1202,10 @@
 					/* separator */
 						.imspo_mt__vs-c {
 							background: linear-gradient(to bottom, transparent 0%, transparent 12.5%, main-separator 12.5%, main-separator 87.5%, transparent 87.5%, transparent 100%);
+						}
+					/* context */
+						.imspo_mt__lg-st-c-np {
+							color: main-text-off;
 						}
 					/* teams */
 						/* winner */
@@ -1201,12 +1221,17 @@
 								color: main-text-off;
 							}
 					/* meta */
-						.imspo_mt__match-sc {
-							color: main-text;
-						}
-						/* date */
-							.imspo_mt__cmd {
-								color: main-text-off;
+						/* past */
+							.imspo_mt__match-sc {
+								color: main-text;
+							}
+							/* date */
+								.imspo_mt__cmd {
+									color: main-text-off;
+								}
+						/* future */
+							.imspo_mt__pm-inf {
+								color: main-text;
 							}
 					/* border */
 						.MoyuKc {
@@ -1214,6 +1239,10 @@
 						}
 						.eGNEZ {
 							border-color: main-border;
+						}
+					/* timezone hint */
+						.SXBRcc {
+							color: main-text-off;
 						}
 				/* footer */
 					.jTw2d {
