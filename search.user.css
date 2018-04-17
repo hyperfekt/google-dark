@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.2.5
+@version 0.2.6
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1671,13 +1671,13 @@
 					/* available on */
 						/* separators */
 							.scrt tr:first-child td {
-								border-top-color: main-separator;
+								border-top-color: container-separator;
 							}
 							.scrt td {
-								border-color: main-border;
+								border-color: container-separator;
 							}
 							.scrt tr:last-child td {
-								border-bottom-color: main-separator;
+								border-bottom-color: container-separator;
 							}
 						/* names */
 							.kno-fb-ctx .ellip .hl {
