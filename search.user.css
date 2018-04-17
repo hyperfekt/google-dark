@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.1.4
+@version 0.1.5
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -125,11 +125,11 @@
 	}
 
 /* functions */
-	colorize($color) {
+	colorize($color, $alpha-override = 1) {
 		$redpart = red($color) / 255;
 		$greenpart = green($color) / 255;
 		$bluepart = blue($color) / 255;
-		$alphapart = alpha($color);
+		$alphapart = alpha($color) * $alpha-override;
 		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='colorizer'> <feColorMatrix type='matrix' values='0 0 0 0 " + $redpart + " 0 0 0 0 " + $greenpart + " 0 0 0 0 " + $bluepart + " 0 0 0 " + $alphapart + " 0'/> </filter></svg>#colorizer");
 	}
 
@@ -919,16 +919,24 @@
 								}
 						/* icon */
 							.FjdPod {
-								filter: colorize(darken(main-text-off, 40%));
+								filter: colorize(main-text-off, 3);
 							}
 					/* item */
 						.cu-container .mnr-c {
 							container();
 						}
+						/* thumbnail */
+							.pla-unit-img-container {
+								background-color: white;
+							}
 						/* hover */
 							.pla-hovercard-container {
 								container();
 							}
+							/* thumbnail */
+								.pla-unit-hovercard-img-container {
+									background-color: white;
+								}
 							/* price */
 							.i3YBTb {
 								color: main-text;
