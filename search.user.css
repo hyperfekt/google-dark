@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.1.6
+@version 0.1.7
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -792,14 +792,14 @@
 												background-color: #0d50be;
 											}
 				/* function graph */
-				/* 2D axis labels */
-					#div_for_graph svg text {
-						fill: main-text-off;
-					}
-				/* box */
-					#div_for_graph > div div[style*="box-shadow"] {
-						box-shadow: alpha(black, 0.8 * contrast) 0px 0px 5px inset !important;
-					}
+					/* 2D axis labels */
+						#div_for_graph svg text {
+							fill: main-text-off;
+						}
+					/* box */
+						#div_for_graph > div div[style*="box-shadow"] {
+							box-shadow: alpha(black, 0.8 * contrast) 0px 0px 5px inset !important;
+						}
 				/* geometry calculator */
 					/* 'solve for' dropdown */
 						/* button */
@@ -895,6 +895,24 @@
 							background-color: main-bg;
 							color: main-text;
 							border-color: main-separator;
+						}
+				/* currency converter */
+					/* amounts */
+						.IxBI8c {
+							background-color: main-bg-em;
+							border-color: main-separator;
+						}
+					/* currencies */
+						.R9zNe, .uWmgv {
+							background-color: main-bg-em;
+						}
+						/* overlayed */
+							.J8cLR {
+								border-color: main-separator;
+							}
+					/* graph */
+						#knowledge-currency__chart {
+							generated-image();
 						}
 				/* shop carousel */
 					/* sponsored hint */
