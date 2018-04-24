@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.2.9
+@version 0.3.0
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -17,8 +17,9 @@
 @var text main-bg-container "Main Background (Container)" #1C
 @var text main-text "Main Text" #DD
 @var text main-text-em "Main Text (Lighter)" #E6
-@var text main-text-off "Main Text (Darker)" #AA
-@var text main-text-minor "Main Text (Darkest)" #78
+@var text main-text-off "Main Text (Darker)" #AB
+@var text main-text-minor "Main Text (Darkest)" #74
+@var text main-text-disabled "Main Text (Disabled)" #5F
 @var text main-link "Main Link" #5A6EFF
 @var text main-link-visited "Main Link (Visited)" #9268D4
 @var text main-source "Main Source" #4DAB6F
@@ -102,8 +103,8 @@
 		color: main-text $important;
 		box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * contrast) $important;
 	}
-	generated-image($important = null) {
-		filter: invert((100% - lightness(main-bg-container)) * 0.998) grayscale(1) sepia(saturation(main-bg-container)) hue-rotate(hue(main-bg-container) - 47deg) $important; //TODO replace with SVG filter
+	adapt-to-bg($color, $important = null) {
+		invert((100% - lightness($color)) * 0.998) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important; //TODO replace with SVG filter
 	}
 
 	container($important = null) {
@@ -193,7 +194,7 @@
 			}
 			.ab_button:hover {
 				background-color: main-bg-em;
-				button-hover(1,);
+				button-hover(1);
 			}
 			a.ab_button, a.ab_button:visited {
 				color: main-text-off;
@@ -282,12 +283,15 @@
 							}
 						/* submit */
 							.ksb {
-								button(!important);
+								button();
 								background-color: main-bg-em;
 							}
 							.ksb:hover {
-								button-hover(1, !important);
+								button-hover(1);
 								background-color: main-bg-em;
+							}
+							.cdr_go {
+								color: main-text !important;
 							}
 					/* calendar */
 						/* highlighting */
@@ -298,9 +302,13 @@
 								background-color: main-bg-em;
 							}
 						/* paging */
-							button {
+							.goog-date-picker-btn {
 								color: main-text;
 							}
+							/* disabled */
+								.goog-date-picker-btn.cdr_dd {
+									color: main-text-disabled;
+								}
 						/* separator */
 							.cdr_dlg .goog-date-picker table thead td {
 								border-color: main-separator;
@@ -423,6 +431,10 @@
 												button-hover();
 												background-color: main-bg-em;
 											}
+					/* phone number */
+						.PXnpre {
+							color: main-text-off;
+						}
 					/* text */
 						.ads-ad {
 							color: main-text;
@@ -434,13 +446,21 @@
 					/* rating */
 						/* text */
 							.ads-ad .pCA4Bd, .ads-ad .pCA4Bd a {
-								color: main-text-minor;
+								color: main-text-off;
 							}
 					/* location */
 						/* icon */
 							.U5aBtb {
 								filter: colorize(main-text-off);
 							}
+						/* opening hours */
+							.Pr5cgb {
+								color: main-text-off;
+							}
+							/* popout */
+								.Qxb7Ad {
+									color: main-text;	
+								}
 					/* plans */
 						/* price */
 							.UM96s {
@@ -570,6 +590,10 @@
 				}
 			/* answer box */
 				/* title */
+					/* object */
+						.N6Sb2c {
+							color: main-text-off;
+						}
 					/* divider */
 						.i29hTd .kR7nSc {
 							color: main-text;
@@ -579,17 +603,21 @@
 							color: main-text;
 						}
 				/* separator */
-				.E6Cqjb {
-					background-color: alpha(black, 0.25 * contrast);
-				}
+					.E6Cqjb {
+						background-color: alpha(black, 0.25 * contrast);
+					}
 				/* according to */
 					div.nnbOwe a {
 						color: main-link;
 					}
 				/* snippet */
-				.Z0LcW {
-					color: main-text;
-				}
+					.Z0LcW {
+						color: main-text;
+					}
+					/* subtitle */
+						.yxAsKe {
+							color: main-text-off;
+						}
 					/* list */
 						/* more items */
 							.gv607c:link, .gv607c:visited {
@@ -603,6 +631,10 @@
 						/* borders */
 							.knowledge-webanswers_table__webanswers-table tr {
 								border-color: main-separator;
+							}
+						/* X more rows */
+							.KQFvIf {
+								color: main-text-off;
 							}
 					/* date */
 						.wrk6pd {
@@ -622,17 +654,21 @@
 							color: main-text-off;
 						}
 			/* module heading */
-			.Ss2Faf {
-				color: main-text;
-			}
+				.Ss2Faf {
+					color: main-text;
+				}
 			/* people also search for */
 				/* heading */
 					.Ss2Faf a {
 						color: main-text;
 					}
+				/* images */
+					.XQ6p1d {
+						background-color: white;
+					}
 				/* context */
 					.xlBGCb {
-						color: main-text-minor;
+						color: main-text-off;
 					}
 				/* factoid */ //LOST AND FOUND
 					.C9iYEe {
@@ -640,7 +676,7 @@
 					}
 				/* view XX+ */
 					a.EbH0bb { //restore original style
-						color: main-text-minor;
+						color: main-text-off;
 					}
 		/* tweets */
 			/* carousel */
@@ -839,6 +875,10 @@
 										.goog-menuitem-highlight, .goog-menuitem-hover {
 											border-color: transparent;
 										}
+								/* disabled */
+									.goog-menuitem-disabled .goog-menuitem-accel, .goog-menuitem-disabled .goog-menuitem-content {
+										color: main-text-disabled !important;
+									}
 							/* separator */
 								.goog-menuseparator {
 									border-color: main-separator;
@@ -909,6 +949,26 @@
 							color: main-text;
 							border-color: main-separator;
 						}
+				/* nutrition */
+					/* selectors */
+						.k6J3K {
+							border-color: main-separator;
+						}
+						.Cc3NMb, .ZIxWWd {
+							background-color: main-bg-em;
+						}
+						/* labels */
+							.shDvCe {
+								color: main-text-off;
+							}
+						/* text */
+							.Cc3NMb {
+								color: main-text;
+							}
+						/* arrows */
+							.WZ1JJe {
+								filter: colorize(darken(main-text, 30%));
+							}
 				/* currency converter */
 					/* amounts */
 						.IxBI8c {
@@ -925,7 +985,7 @@
 							}
 					/* graph */
 						#knowledge-currency__chart {
-							generated-image();
+							filter: adapt-to-bg(main-bg-container);
 						}
 				/* shop carousel */
 					/* sponsored hint */
@@ -937,6 +997,11 @@
 							.FjdPod {
 								filter: colorize(main-text-off, 3);
 							}
+						/* popout */
+							/* text */
+								.v4YOu {
+									color: main-text-off;
+								}
 					/* item */
 						.cu-container .mnr-c {
 							container();
@@ -950,7 +1015,7 @@
 								container();
 							}
 							/* thumbnail */
-								.pla-unit-hovercard-img-container {
+								.Gor6zc {
 									background-color: white;
 								}
 							/* price */
@@ -965,6 +1030,11 @@
 							.mxB4Q {
 								color: main-text-off;
 							}
+						/* ratings */
+							/* rating count */
+								.QhqGkb {
+									color: main-text-off;
+								}
 						/* 'By Google' */
 							.FfKHB .KbpByd {
 								color: main-link;
@@ -986,7 +1056,7 @@
 				/* lyrics */
 					/* attribution */
 						.R5GB6b div {
-							color: main-text-minor;
+							color: main-text-off;
 						}
 				/* flight data */
 					/* day tabs */
@@ -1042,7 +1112,7 @@
 									}
 									/* update time */
 										.vk_txt {
-											color: main-text !important;
+											color: main-text-off !important;
 										}
 									/* progress indicator */
 										/* plane */
@@ -1053,6 +1123,11 @@
 					/* footer */
 						.di8g3, .di8g3 a {
 							color: main-text-off !important;
+						}
+				/* user agent */
+					/* heading */
+						.n77Cfb {
+							color: main-text-off;
 						}
 				/* your public ip address */
 					.ZINbbc { // also is stackoverflow integration)
@@ -1336,7 +1411,7 @@
 						}
 				/* origin */
 				img[id^="lr_dct_img_origin_"] {
-					generated-image();
+					filter: adapt-to-bg(main-bg-container);
 				}
 				/* separator */
 					.pVFdhc {
@@ -1365,7 +1440,7 @@
 						}
 				/* use over time */
 				#lr_dct_img_use {
-					generated-image();
+					filter: adapt-to-bg(main-bg-container);
 				}
 				/* expand footer */
 					/* arrow */
@@ -1376,17 +1451,17 @@
 								border-bottom-color: main-bg-container;
 						}
 						.vk_ard:before {
-								border-top-color: main-bg-em;
+								border-top-color: darken(main-text-off, 40%);
 						}
 						.vk_aru:before {
-								border-bottom-color: main-bg-em;
+								border-bottom-color: darken(main-text-off, 40%);
 						}
 						.vk_ard, .vk_aru {
-								background-color: main-bg-em;
+								background-color: darken(main-text-off, 40%);
 						}
 					/* show more / show less */
-						.exp-txt-c {
-							color: main-text-minor !important;
+						.iXqz2e .exp-txt-c {
+							color: main-text-off !important; //important needed ?
 						}
 			/* SOS alert */
 				.BTZxle.YLAlMc, .Ri4g6c.VKzVKc.YLAlMc {
@@ -1431,7 +1506,7 @@
 						}
 			/* find my phone */
 				#act-card {
-				background-color main-bg-container;	
+					background-color main-bg-container;	
 				}
 				/* sign-in prompt */
 					.act-fmp-overlay-dialog {
@@ -1476,16 +1551,35 @@
 					/* disabled */
 						/* text */
 							#act-card .act-lnk.act-conf-disabled {
-								color: main-text-minor;	
+								color: main-text-disabled;
 							}
 						/* icon */
 							.act-img-disabled {
-								filter: colorize(white);
+								filter: colorize(darken(main-text-disabled, 80%));
+								opacity: 1;
 							}
 				/* 'trying to help a friend' */
 					.act-fmp-help-a-friend-wrapper a, .act-fmp-help-a-friend-wrapper a:visited, .act-fmp-help-a-friend-wrapper a:hover { //restore original style
 						color: #3c80f6;
 					}
+				/* footer */
+					/* feedback */
+						a.act-fbk-lnk {
+							color: main-text-off;
+						}
+						/* popup */
+							/* overlay */
+								#feedback-annotator canvas {
+									filter: colorize(black);
+								}
+							/*  description input */
+								div[key="feedback-panel-container"] textarea {
+									background: main-bg;
+								}
+								/* placeholder text */
+								div[key="feedback-panel-container"] div[style*="color: rgb(189"] { //commas here break stylus
+									color: red;
+								}
 			/* things to do */
 				/* separators */
 					.jktSrf td {
@@ -1499,6 +1593,70 @@
 					.KJ3c0b.M5mFPb {
 						filter: colorize(main-link); //TODO: find out why colors don't match
 					}
+			/* vote survey */
+				.wdQ5Cf {
+					background-color: main-bg-off;
+				}
+				/* header */
+					.NcAwsd {
+						background-color: main-bg-container;	
+					}
+					/* question */
+						.geWDq {
+							color: main-text-off;
+						}
+				/* options */
+					/* card */
+						/* radio button */
+							.LE373 {
+								border-color: main-text-off;
+							}
+				/* footer */
+					/* vote button */
+						/* disabled */
+							.Gfzyee:disabled, .Gfzyee[disabled]:not([disabled="false"]) {
+								background-color: main-bg;
+								color: main-text-disabled !important;	
+							}
+					/* share button */
+						.JxsAf, .bC24W {
+							background-color: main-bg-em;
+						}
+			/* cinema showtimes */
+				/* date select */
+					.tb_l {
+						border-left-color: main-separator;
+					}
+				/* time select */
+					.lr_c_tf {
+						background-color: main-bg-off;
+					}
+					/* disabled */
+						.lr_c_fi.disabled {
+							color: main-text-disabled;
+						}
+				/* cinema */
+					/* times */
+						.wcluHf {
+							color: main-link;
+						}
+						/* buy tickets popup */
+							/* text */
+								.MBoHTc {
+									color: main-text;
+								}
+							/* 'date' and 'time' */
+								.gkToze {
+									color: main-text-off;
+								}
+							/* film icon */
+								.GVLnMb {
+									filter: adapt-to-bg(main-bg);
+								}
+							/* domain */
+								.std-li-a {
+									color: main-text;
+								}
 			/* feedback popup */
 				/* give dialog*/
 					/* select response */
@@ -1520,7 +1678,7 @@
 						/* send button */
 							/* disabled */
 								.U8shWc.Vy8nid:disabled, .U8shWc.Vy8nid[disabled]:not([disabled="false"]) {
-									color: alpha(main-text-minor, alpha(main-text-minor) * 0.5) !important;
+									color: main-text-disabled !important;
 								}
 				/* confirmation dialog */
 					div.duf3d {
@@ -1610,7 +1768,7 @@
 					}
 				/* context (source, trending, ... */
 					.XJa8af a:link, .XJa8af a:visited {
-						color: main-text-minor;
+						color: main-text-off;
 					}
 					.kno-fv span[style*="color:#777"], .kno-fv a[style*="color:#777"] {
 						color: main-text-minor !important;
@@ -1625,9 +1783,46 @@
 							color: main-text-minor;
 						}
 			/* share button */
-				kno-share-button {
+				.RrxxYe {
 					color: main-text;
 				}
+				/* share popup */
+					.EF2Bkc {
+						box-shadow: 0px 5px 26px 0px alpha(black, 0.4 * contrast), 0px 20px 28px 0px alpha(black, 0.6 * contrast);
+						background-color: main-bg;	
+					}
+					/* title */
+						.muUXmb {
+							color: main-text;	
+						}
+					/* close button */
+						.ULejkd {
+							color: main-text-off;
+						}
+					/* platform name */
+						.DssFqf {
+							color: main-text;
+						}
+					/* email */
+						.UN0Fyc {
+							color: main-text;
+						}
+						/* icon */
+							.OIQuDd .o5aEMd {
+								filter: colorize(darken(main-text, 50%));
+							}
+					/* 'Share link' label */
+						.jCOogd {
+							color: main-text-off;
+						}
+					/* URl input */
+						.ZXb90b {
+							background-color: inherit;
+							border-color: main-separator;
+						}
+						input.NBMVc {
+							color: main-text;
+						}
 			/* item-specific info */
 				/* soccer teams */
 					/* roster */
@@ -1722,7 +1917,7 @@
 						}
 						/* view XX+ more */
 							.P7Vl4c .RCBpod {
-								color: main-text-minor;
+								color: main-text-off;
 							}
 							.ErlEM {
 								border-color: container-separator;
@@ -1748,6 +1943,10 @@
 						.AYBNrd td {
 							border-color: main-separator;
 						}
+						/* GDA disclaimer */
+							.JuE4Vc {
+								background-color: main-bg-container;
+							}
 				/* places */
 					/* opening hours */
 						/* expand arrow */
@@ -2086,7 +2285,7 @@
 								.rBpXA {
 									color: main-text;
 								}
-							/* popup */
+							/* popup */ //LOST AND FOUND
 								.LXRtOe {
 									background-color: main-bg;
 									box-shadow: 3px 0px 5px -3px alpha(black, 0.4 * contrast), -3px 0px 5px -3px alpha(black, 0.4 * contrast),0px -1px 2px -2px alpha(black, 0.2 * contrast);
@@ -2158,15 +2357,87 @@
 					.vk_arc {
 						border-color: container-separator;
 					}
-			/* feedback */
-				a.duf3 {
-					color: main-text-off;
+			/* footer */
+				.kno-ftr {
+					color: main-text-off;	
 				}
-				/* edit mode */
-					/* values */
-						.kno-fb-d3 .kno-fb-ctx .fl, .kno-fb-d3 .kno-fb-ctx .gl {
-							color: main-text;
-						}
+				/* feedback */
+					a.duf3 {
+						color: main-text-off;
+					}
+					/* edit mode */
+						/* values */
+							.kno-fb-d3 .kno-fb-ctx .fl, .kno-fb-d3 .kno-fb-ctx .gl {
+								color: main-text;
+							}
+		/* product panel */
+			/* product name */
+				.ixFi3 {
+					color: main-text;
+				}
+			/* 'shop now' */
+				.vA2fGc {
+					color: main-text;
+				}
+				/* separator */
+					.hZQzR {
+						border-color: main-separator;
+					}
+			/* options select */
+				.z9pYxf {
+					color: main-text;
+				}
+				/* dropdown */
+					/* items */
+						/* text */
+							.VapCmc {
+								color: main-text;
+							}
+						/* separator */
+							.RZvace {
+								border-color: main-border;
+							}
+						/* selected */
+							.RZvace.B8QPCf {
+								background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAYElEQVQ4y2NgGAW4wH8t0pSH/P/9vwHCZiJGOcNyBhbSTP8PM38wK//P+n/V/0ASTP8f8f///1//g0hwzP+G/////4ZoIdLtUC3BJHgVqoWkkGn4/58E5VAtDaOZDQ0AAHppa1mGsf3/AAAAAElFTkSuQmCC");
+							}
+						/* hover */
+							.RZvace:hover {
+								background-color: main-bg-off;
+							}
+				/* separator */
+					.gZDese {
+						border-color: main-separator;
+					}
+			/* offers */
+				.gkMlQe {
+					border-color: main-border;
+				}
+				/* hover */
+					.gkMlQe:hover {
+						background-color: main-bg-off;
+					}
+				/* price */
+					.rgc6j {
+						color: main-text;
+					}
+				/* hover merchant underline */
+					.jackpot-merchant {
+						color: main-link;
+					}
+				/* additional info */
+					.zlWddc {
+						color: main-text-off;
+					}
+			/* product details */
+				/* heading */
+					.XWDade {
+						color: main-text;
+					}
+				/* title */
+					.mfmMfd {
+						color: main-text;
+					}
 	/* other categories */
 		/* News */
 			/* result */
@@ -2398,7 +2669,7 @@
 									.xqknTb {
 										background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAZBAMAAAAh5QiZAAAAElBMVEUAAABo4PtSxfg9q/RBnPJHkPBhnHLTAAAABnRSTlMAM12GzfZ+cougAAAAOklEQVQY02NgQABG01AwMGRgYIawQoMZGFihzNChwwxRVIEyQxQYGFTAzBABkBdFgEwmAYh3hRmwAwDAHDS53fDN1AAAAABJRU5ErkJggg==");
 									}
-								/* products i'm considering */
+								/* shortlist selector */
 									.sh-gb__rs-bt {
 										color: main-text-off;
 									}
@@ -2418,6 +2689,7 @@
 													.sh-gs__rs-sl:hover, ._-I:hover {
 														dropdown-hover();
 													}
+											/* create new */ //TODO
 								/* item carousel */
 									/* paging buttons */
 										.gko-pg-l {
@@ -2460,6 +2732,14 @@
 								.sh-dgr__grid-result .sh-dgr__thumbnail {
 									background-color: white;
 								}
+								/* discount */
+									.NA0ooc {
+										background-color: main-bg-em;
+									}
+									/* text */
+										.w3MEU {
+											color: main-text-off;
+										}
 							/* price */
 								.O8U6h {
 									color: main-text;
@@ -2478,7 +2758,7 @@
 								container();
 							}
 							/* thumbnail */
-								.sh-dlr__thumbnail {
+								.JRlvE {
 									background-color: white;
 								}
 							/* info */
@@ -2496,6 +2776,12 @@
 							/* option prices */
 								.dGWXMb {
 									color: main-text-off;
+								}
+					/* filter */
+						/* categories */
+							/* images */
+								.sh-img__image {
+									background-color: white;
 								}
 					/* related searches */
 						.sh-sr__shop-result-header {
@@ -2606,6 +2892,10 @@
 							.knowledge-finance-wholepage-chart__highlight-line {
 								background-image: linear-gradient(alpha(white, 0.38 * contrast) 50%,alpha(white, 0 * contrast) 0%);
 							}
+						/* highlight dot */
+							.knowledge-finance-wholepage-chart__fw-hdot-cs {
+								background-color: 
+							}
 						/* horizontal lines */
 							.U8Athf line {
 								stroke: main-separator;
@@ -2625,6 +2915,10 @@
 						/* previous close rectangle */
 							.CedBdc {
 								background-color: main-bg-container;
+							}
+						/* lunch break rectangle */
+							.JpyPld rect {
+								fill: main-bg-container;
 							}
 						/* tooltip */
 							.knowledge-finance-wholepage-chart__hover-card {
@@ -2711,7 +3005,7 @@
 							}
 						/* disclaimer */
 							.kVLSDc {
-								color: main-text-minor;
+								color: main-text-off;
 							}
 				/* Related Markets */
 					/* item */
@@ -3001,7 +3295,7 @@
 			}
 	/* menus */
 		.gb_hc {
-			filter: invert(1);
+			filter: invert(1) brightness(contrast);
 		}
 		/* appmenu */
 			/* outer */
@@ -3253,6 +3547,16 @@
 				.rlc__slider-page {
 					background-color: header-bg;
 				}
+			/* sort */
+				.lx_ctl .ksb.ab_button { //restore original style
+					background-color: none;
+					box-shadow: none;
+					color: header-text;
+				}
+				/* arrow */
+					.lx_ctl .kxctl-dd-arrow {
+						border-top-color: darken(header-text, 15%);
+					}
 		/* border */
 			.rl_center {
 				main-border();
@@ -3289,6 +3593,14 @@
 				.klmeta {
 					color: main-text-minor;
 				}
+			/* image */
+				/* overlayed */
+					.klic {
+						background-color: transparent;
+					}
+					.klic > g-img {
+						background-color: white !important;
+					}
 	/* footer */
 	#fbar {
 		background-color: footer-bg;
