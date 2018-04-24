@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.0
+@version 0.3.1
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -103,8 +103,11 @@
 		color: main-text $important;
 		box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * contrast) $important;
 	}
-	adapt-to-bg($color, $important = null) {
+	invert-with-bg($color, $important = null) {
 		invert((100% - lightness($color)) * 0.998) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important; //TODO replace with SVG filter
+	}
+	adapt-to-bg($color, $important = null) {
+		brightness(lightness($color)) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important;
 	}
 
 	container($important = null) {
@@ -985,7 +988,7 @@
 							}
 					/* graph */
 						#knowledge-currency__chart {
-							filter: adapt-to-bg(main-bg-container);
+							filter: invert-with-bg(main-bg-container);
 						}
 				/* shop carousel */
 					/* sponsored hint */
@@ -1411,7 +1414,7 @@
 						}
 				/* origin */
 				img[id^="lr_dct_img_origin_"] {
-					filter: adapt-to-bg(main-bg-container);
+					filter: invert-with-bg(main-bg-container);
 				}
 				/* separator */
 					.pVFdhc {
@@ -1440,7 +1443,7 @@
 						}
 				/* use over time */
 				#lr_dct_img_use {
-					filter: adapt-to-bg(main-bg-container);
+					filter: invert-with-bg(main-bg-container);
 				}
 				/* expand footer */
 					/* arrow */
@@ -1651,7 +1654,7 @@
 								}
 							/* film icon */
 								.GVLnMb {
-									filter: adapt-to-bg(main-bg);
+									filter: invert-with-bg(main-bg);
 								}
 							/* domain */
 								.std-li-a {
@@ -2722,6 +2725,14 @@
 								.cMW8pb {
 									filter: colorize(darken(main-text-off, 40%));
 								}
+							/* popout */
+								.sh-sp__tt {
+									popout();
+								}
+								/* caret */
+									.sh-sp__tt span.sh-sp__tt-arrow-l, .sh-sp__tt span.sh-sp__tt-arrow-r {
+										filter: adapt-to-bg(main-bg);
+									}
 				/* results */
 					/* grid */
 						/* card */
