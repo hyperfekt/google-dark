@@ -1583,6 +1583,7 @@
 								div[key="feedback-panel-container"] div[style*="color: rgb(189"] { //commas here break stylus
 									color: red;
 								}
+								// TODO
 			/* things to do */
 				/* separators */
 					.jktSrf td {
@@ -3143,7 +3144,7 @@
 	}
 
 	/* header */
-	main-border() {
+	site-separator() {
 		border-color: alpha(black, 0.5 * contrast);
 	}
 
@@ -3424,7 +3425,7 @@
 	/* tabs */
 		#hdtb {
 			background-color: header-bg;
-			main-border();
+			site-separator();
 		}
 		#hdtbSum {
 			background-color: header-bg;
@@ -3570,7 +3571,7 @@
 					}
 		/* border */
 			.rl_center {
-				main-border();
+				site-separator();
 			}
 	/* appbar */
 		.kappbar {
@@ -3578,7 +3579,7 @@
 		}
 		/* border */
 			.klbar {
-				main-border();
+				site-separator();
 			}
 		/* item */
 			.mlo-c {
@@ -3615,7 +3616,7 @@
 	/* footer */
 	#fbar {
 		background-color: footer-bg;
-		main-border();
+		site-separator();
 	}
 	/* internal borders */
 		.fbar {
