@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.3
+@version 0.3.4
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2912,10 +2912,6 @@
 							.knowledge-finance-wholepage-chart__highlight-line {
 								background-image: linear-gradient(alpha(white, 0.38 * contrast) 50%,alpha(white, 0 * contrast) 0%);
 							}
-						/* highlight dot */
-							.knowledge-finance-wholepage-chart__fw-hdot-cs {
-								background-color: 
-							}
 						/* horizontal lines */
 							.U8Athf line {
 								stroke: main-separator;
@@ -3613,14 +3609,6 @@
 				.klmeta {
 					color: main-text-minor;
 				}
-			/* image */
-				/* overlayed */
-					.klic {
-						background-color: transparent;
-					}
-					.klic > g-img {
-						background-color: white !important;
-					}
 	/* footer */
 	#fbar {
 		background-color: footer-bg;
