@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.2
+@version 0.3.3
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -98,7 +98,7 @@
 		color: main-text-off $important;
 	}
 	button-hover($shadow = 1, $important = null) {
-		background-image: linear-gradient(to bottom, alpha(white, 0.02 * $shadow * contrast), alpha(white, 0.01 * + $shadow * contrast)) $important;
+		background-image: linear-gradient(to bottom, alpha(white, 0.02 * $shadow * contrast), alpha(white, 0.01 * $shadow * contrast)) $important;
 		border-color: main-separator $important;
 		color: main-text $important;
 		box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * contrast) $important;
@@ -1395,7 +1395,7 @@
 								}
 							/* hover */
 								#dictionary-modules div[class^="gstl_5"] .sbsb_d {
-									background-color main-bg-off;
+									background-color: main-bg-off;
 								}
 				/* definition */
 					.vk_gy {
@@ -1517,7 +1517,7 @@
 						}
 			/* find my phone */
 				#act-card {
-					background-color main-bg-container;	
+					background-color: main-bg-container;	
 				}
 				/* sign-in prompt */
 					.act-fmp-overlay-dialog {
