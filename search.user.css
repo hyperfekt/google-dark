@@ -11,15 +11,15 @@
 @license Network Extended License (https://github.com/hyperfekt/google-dark/blob/master/LICENSE.md)
 @preprocessor less
 
-@var text main-bg "Main Background" #20
-@var text main-bg-em "Main Background (Lighter)" #32
-@var text main-bg-off "Main Background (Darker)" #16
-@var text main-bg-container "Main Background (Container)" #1C
-@var text main-text "Main Text" #DD
-@var text main-text-em "Main Text (Lighter)" #E6
-@var text main-text-off "Main Text (Darker)" #AB
-@var text main-text-minor "Main Text (Darkest)" #74
-@var text main-text-disabled "Main Text (Disabled)" #5F
+@var text main-bg "Main Background" #202020
+@var text main-bg-em "Main Background (Lighter)" #323232
+@var text main-bg-off "Main Background (Darker)" #161616
+@var text main-bg-container "Main Background (Container)" #1C1C1C
+@var text main-text "Main Text" #DDDDDD
+@var text main-text-em "Main Text (Lighter)" #E6E6E6
+@var text main-text-off "Main Text (Darker)" #ABABAB
+@var text main-text-minor "Main Text (Darkest)" #747474
+@var text main-text-disabled "Main Text (Disabled)" #5F5F5F
 @var text main-link "Main Link" #5A6EFF
 @var text main-link-visited "Main Link (Visited)" #9268D4
 @var text main-source "Main Source" #4DAB6F
@@ -27,14 +27,14 @@
 @var text contrast "Contrast Multiplier" 1
 @var text main-border "Main Border" fade(black, 0.9 * @contrast)
 @var text main-separator "Main Separator" fade(white, 0.15 * @contrast)
-@var text header-bg "Header Background" #33
-@var text header-text "Header Text" #FF
-@var text header-text-off "Header Text (Darker)" #C8
-@var text footer-bg "Footer Background"  #33
+@var text header-bg "Header Background" #333333
+@var text header-text "Header Text" #FFFFFF
+@var text header-text-off "Header Text (Darker)" #C8C8C8
+@var text footer-bg "Footer Background"  #333333
 @var text footer-separator "Footer Separator" fade(white, 0.2 * @contrast)
-@var text footer-text "Footer Text" #FF
-@var text footer-text-off "Footer Text (Darker)" #B4
-@var text footer-text-minor "Footer Text (Darkest)" #96
+@var text footer-text "Footer Text" #FFFFFF
+@var text footer-text-off "Footer Text (Darker)" #B4B4B4
+@var text footer-text-minor "Footer Text (Darkest)" #969696
 @var text dropdown-checkmark "Dropdown Checkmark Image" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAQAAAAZIo2TAAAArElEQVQ4y+2SoQoCURBFz1tWRLYLBuF9gwhGEYtNLCJGwWr2FxTTssW+wa/wI7RaDAYNImw0XPPb3Sds1ttm7hzmDgz8lNRSvRrQU6xhFaCvVHO3F34FJow4cXC7xjteY0GHs0nyjmeLIlZYLuyLXuAMJhorBDVZY7mRmHcRcYJpwIwrR6ZEPNiarCxB7hYt6QLwYmOe5aGDXJ1yBzJiH1B2eFs72aoP0uAvvz5jAi5lzdsukgAAAABJRU5ErkJggg==")
 @var text unfilled-star "Rating Star Background" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAgUlEQVQY042QQQqDQAxFX2xx42ARCoII3sD7X0csXXUluhmQdOE4zowuDHxCeIT8fLhb2sdzFqBy0yXk5XQJCydfohUNj9P5lVEmAc1pMRGa+YgFcWbeNB595RffXIK9JTUUGqlSaDYTWMD/+nS9ZGaQVSc6jOZij2yM1kFS9Z7TH6uMHsq9WjadAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAR0lEQVQY02Nk4GDACZiQOf+jcUr+j0aXZmJgINJYdMD4Pxmn1FImxqW4pBgYGCFeQXUITAP5DiJeEmYXzAUsMA5EgnEpsuMAsEwPjDLKA7oAAAAASUVORK5CYII=")
 @var text calculator-slider "Calculator Slider Image" grey
@@ -136,11 +136,11 @@
     @ret: ~"brightness(@{lightness}) grayscale(1) sepia(@{saturation}) hue-rotate(@{hue})"; //TODO replace with SVG filter
 }
 
-.colorize(@color; @alpha-override: 1) {
+.colorize(@color; @alpha-multiplicator: 1) {
     @redpart: red(@color) / 255;
     @greenpart: green(@color) / 255;
     @bluepart: blue(@color) / 255;
-    @alphapart: alpha(@color) * @alpha-override;
+    @alphapart: alpha(@color) * @alpha-multiplicator;
     @ret: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='colorizer'> <feColorMatrix type='matrix' values='0 0 0 0 @{redpart} 0 0 0 0 @{greenpart} 0 0 0 0 @{bluepart} 0 0 0 @{alphapart} 0'/> </filter></svg>#colorizer");
 }
 
@@ -1192,7 +1192,7 @@
 				}
 			/* map */
 				/* select opening hours */
-					.rllh__@header-container > div {
+					.rllh__header-container > div {
 						background-color: @main-bg-container;
 					}
 					/* dropdown */
