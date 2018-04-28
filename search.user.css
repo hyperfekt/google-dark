@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.1
+@version 0.3.4
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -98,7 +98,7 @@
     color: @main-text-off;
 }
 .button-hover(@shadow: 1) {
-    background-image: linear-gradient(to bottom, fade(white, 0.02 * @shadow * @contrast), fade(white, 0.01 * + @shadow * @contrast));
+    background-image: linear-gradient(to bottom, fade(white, 0.02 * @shadow * @contrast), fade(white, 0.01 * @shadow * @contrast));
     border-color: @main-separator;
     color: @main-text;
     box-shadow: 0 1px 1px fade(black, 0.5 * @shadow * @contrast);
@@ -619,6 +619,14 @@
 					.E6Cqjb {
 						background-color: fade(black, 0.25 * @contrast);
 					}
+				/* search term as answer */
+					a.FLP8od {
+						color: @main-text;
+					}
+					/* hover */
+						.FLP8od:hover {
+							color: @main-link;
+						}
 				/* according to */
 					div.nnbOwe a {
 						color: @main-link;
@@ -1402,7 +1410,7 @@
 								}
 							/* hover */
 								#dictionary-modules div[class^="gstl_5"] .sbsb_d {
-									background-color @main-bg-off;
+									background-color: @main-bg-off;
 								}
 				/* definition */
 					.vk_gy {
@@ -1527,7 +1535,7 @@
 						}
 			/* find my phone */
 				#act-card {
-					background-color @main-bg-container;	
+					background-color: @main-bg-container;	
 				}
 				/* sign-in prompt */
 					.act-fmp-overlay-dialog {
@@ -2940,10 +2948,6 @@
 							.knowledge-finance-wholepage-chart__highlight-line {
 								background-image: linear-gradient(fade(white, 0.38 * @contrast) 50%,fade(white, 0 * @contrast) 0%);
 							}
-						/* highlight dot */
-							.knowledge-finance-wholepage-chart__fw-hdot-cs {
-								background-color: 
-							}
 						/* horizontal lines */
 							.U8Athf line {
 								stroke: @main-separator;
@@ -3647,14 +3651,6 @@
 				.klmeta {
 					color: @main-text-minor;
 				}
-			/* image */
-				/* overlayed */
-					.klic {
-						background-color: transparent;
-					}
-					.klic > g-img {
-						background-color: white !important;
-					}
 	/* footer */
 	#fbar {
 		background-color: @footer-bg;
