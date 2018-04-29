@@ -2307,7 +2307,7 @@
 					}
 				/* card */
 					/* date */
-						.jyC4xe {
+						.LmREXd {
 							color: main-text-off;	
 						}
 					/* share button */
@@ -2692,8 +2692,21 @@
 					.sh-dr__g div[role="button"] {
 						color: main-link;
 					}
+					/* expanded sellers */
+						/* names */
+							.vjtvke, .vjtvke:link, .vjtvke:visited {
+								color: main-text-off;
+							}
+						/* checkboxes */
+							.nZbkuc {
+								border-color: main-text-off;
+							}
 			/* results */
 				/* header */
+					/* breadcrumbs */
+						.QCKch a:link, .QCKch a:visited {
+							color: main-text-off;
+						}
 					/* view buttons */
 						.qa708e:not(.IYWnmd), .Ytbez:not(.IYWnmd) {
 							filter: colorize(main-text-minor);
