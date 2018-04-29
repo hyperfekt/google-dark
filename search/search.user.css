@@ -533,10 +533,10 @@
 						background-color: main-bg;
 					}
 				/* stack overflow answers */
-				.waTp2e.waTp2e {
-					background-color: inherit;
-					box-shadow: none;
-				}
+					.waTp2e.waTp2e {
+						background-color: inherit;
+						box-shadow: none;
+					}
 				/* source */
 					.QHTnWc {
 						color: main-source;
@@ -792,68 +792,68 @@
 							background-color: main-bg-container;
 						}
 				/* keyboard */
-							/* buttons */
-								calculator-button() {
-									color: main-text-off;
-									border-color: main-separator;
+					/* buttons */
+						calculator-button() {
+							color: main-text-off;
+							border-color: main-separator;
+							background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
+						}
+						calculator-button-hover() {
+							color: main-text;
+							background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
+							border-color: main-separator;
+							box-shadow: 0 1px 1px alpha(black, 0.5 * contrast);
+						}
+						/* digits or activated */
+							.cwlgb-tpl {
+								calculator-button();
+								background-color: main-bg-em;
+							}
+							/* hover */
+								.cwbd:hover .cwlgb-tpl {
+									calculator-button-hover();
+									background-color: main-bg-em;
+								}
+						/* functions */
+							.cwdgb-tpl {
+								calculator-button();
+								background-color: main-bg-off;
+							}
+							/* hover */
+								.cwbd:hover .cwdgb-tpl {
+									calculator-button-hover();
+									background-color: main-bg-off;
+								}
+						/* switch */
+							/* left */
+								.cwrb-tpl {
+									calculator-button();
+									background-color:	 main-bg-off;
+								}
+							/* right */
+								.cwdb-tpl {
+									calculator-button();
+									background-color: main-bg-off;
+								}
+							/* slider */
+								.cwdrsb-tpl {
+									calculator-button();
+									background-color: main-bg-em;
+									background-image: calculator-slider-image(calculator-slider);
+									background-size: 26px 14px;
+								}
+							/* result */
+								.cwbb-tpl {
+									calculator-button();
 									background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
+									background-color: #0d50be;
 								}
-								calculator-button-hover() {
-									color: main-text;
-									background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
-									border-color: main-separator;
-									box-shadow: 0 1px 1px alpha(black, 0.5 * contrast);
-								}
-								/* digits or activated */
-									.cwlgb-tpl {
-										calculator-button();
-										background-color: main-bg-em;
+								/* hover */
+									.cwbd:hover .cwbb-tpl {
+										calculator-button-hover();
+										background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
+										background-color: #0d50be;
 									}
-									/* hover */
-										.cwbd:hover .cwlgb-tpl {
-											calculator-button-hover();
-											background-color: main-bg-em;
-										}
-								/* functions */
-									.cwdgb-tpl {
-										calculator-button();
-										background-color: main-bg-off;
-									}
-									/* hover */
-										.cwbd:hover .cwdgb-tpl {
-											calculator-button-hover();
-											background-color: main-bg-off;
-										}
-								/* switch */
-									/* left */
-										.cwrb-tpl {
-											calculator-button();
-											background-color:	 main-bg-off;
-										}
-									/* right */
-										.cwdb-tpl {
-											calculator-button();
-											background-color: main-bg-off;
-										}
-									/* slider */
-										.cwdrsb-tpl {
-											calculator-button();
-											background-color: main-bg-em;
-											background-image: calculator-slider-image(calculator-slider);
-											background-size: 26px 14px;
-										}
-									/* result */
-										.cwbb-tpl {
-											calculator-button();
-											background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
-											background-color: #0d50be;
-										}
-										/* hover */
-											.cwbd:hover .cwbb-tpl {
-												calculator-button-hover();
-												background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
-												background-color: #0d50be;
-											}
 				/* function graph */
 					/* 2D axis labels */
 						#div_for_graph svg text {
@@ -3250,21 +3250,21 @@
 	}
 
 	/* header */
-	site-separator() {
-		border-color: alpha(black, 0.5 * contrast);
-	}
+		site-separator() {
+			border-color: alpha(black, 0.5 * contrast);
+		}
 
-	.sfbg, .sfbgx {
-		background: inherit !important;
-	}
-	.sfbgg {
-		background-color: header-bg !important;
-		background-image: none;
-	}
+		.sfbg, .sfbgx {
+			background: inherit !important;
+		}
+		.sfbgg {
+			background-color: header-bg !important;
+			background-image: none;
+		}
 	/* loading border */	
-	.sfbgx {
-		border-bottom-color: transparent;
-	}
+		.sfbgx {
+			border-bottom-color: transparent;
+		}
 	/* search bar */
 		/* entry */
 			/* icon */
