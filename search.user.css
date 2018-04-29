@@ -514,7 +514,7 @@
 				/* people also search for */
 					/* frame */
 						/* inner */
-						*[id^="eobm_"] {
+						.AUiS2 {
 							border-color: main-border;
 						}
 					/* outer */
@@ -522,11 +522,11 @@
 							border-color: main-border;
 						}
 					/* heading */
-						*[id^="eobp_"] {
+						.eJ7tvc {
 							color: main-text-off;
 						}
 					/* close button */
-						*[id^="eobs_"] {
+						.XCKyNd {
 							filter: colorize(main-text-off);
 						}
 				/* tweet */
