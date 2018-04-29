@@ -2016,6 +2016,14 @@
 							.uw3YZe {
 								color: main-text-minor;
 							}
+							/* hover underline */
+								.hqe1lb:hover .uw3YZe {
+									text-decoration: underline; //divergent cause it looks real weird
+								}
+						/* vertical separators */
+							.tzhtse .hqe1lb {
+								border-color: container-separator;
+							}
 					/* popular times */
 						/* help button */
 							.A9x0mb {
