@@ -592,6 +592,10 @@
 					container();
 				}
 			/* answer box */
+				/* top border */
+					.oRYXbe {
+						border-color: transparent; //divergent, not necessary because of container background
+					}
 				/* title */
 					/* object */
 						.N6Sb2c {
