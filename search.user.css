@@ -23,7 +23,7 @@
 @var text main-link "Main Link" #5A6EFF
 @var text main-link-visited "Main Link (Visited)" #9268D4
 @var text main-source "Main Source" #4DAB6F
-@var text main-source-highlighted "Main Source (Highlighted" #64C88C
+@var text main-source-highlighted "Main Source (Highlighted)" #64C88C
 @var text contrast "Contrast Multiplier" 1
 @var text main-border "Main Border" alpha(black, 0.9 * contrast)
 @var text main-separator "Main Separator" alpha(white, 0.15 * contrast)
