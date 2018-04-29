@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.6
+@version 0.3.7
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1065,6 +1065,10 @@
 							}
 						/* top border */
 							.u2sJ0e {
+								border-color: container-separator;
+							}
+						/* row borders */
+							.uUgsp {
 								border-color: container-separator;
 							}
 				/* lyrics */
