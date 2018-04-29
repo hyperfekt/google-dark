@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.7
+@version 0.3.8
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1993,6 +1993,24 @@
 								background-color: main-bg-container;
 							}
 				/* places */
+					/* edit mode */
+						/* report */
+							/* text */
+								.ayvroc {
+									color: main-text;
+								}
+							/* button */
+								.Gfzyee {
+									button(!important);
+									background-color: main-bg-em;
+								}
+								.Gfzyee:hover {
+									button-hover();
+								}
+							/* separator */
+								.rYL5lb {
+									border-color: container-separator;	
+								}
 					/* opening hours */
 						/* expand arrow */
 							.BTP3Ac {
@@ -3856,4 +3874,40 @@
 				.hh4xKf {
 					border-color: alpha(black, 0.8 * contrast);
 				}
+}
+
+@-moz-document regexp("https?://www\.google\.(com|([a-z]{2}))(\.[a-z]{2})?/local/place/rap/editattribute.*") {
+	:root {
+		global-definitions();
+	}
+
+	body {
+		color: main-text;
+	}
+
+	/* removal reason select */
+		.vgPDcc.jgvuAb {
+			border-color: main-separator;
+		}
+		/* arrow */
+			.e2CuFe {
+				border-color: darken(main-text-off, 25%) transparent;
+			}
+		/* text */
+			.MocG8c.DEh1R {
+				color: main-text-off;
+			}
+		/* dropdown */
+			.ncFHed {
+				popout();
+			}
+			/* item */
+				/* text */
+					.MocG8c {
+						color: main-text;
+					}
+				/* hover */
+					.ncFHed .MocG8c.KKjvXb {
+						background-color: main-bg-off;
+					}
 }
