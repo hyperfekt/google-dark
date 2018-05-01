@@ -40,6 +40,63 @@
 @var text container-separator "Container Separator" alpha(black, 0.3 * contrast)
 ==/UserStyle== */
 
+/* Uncomment for manual compilation
+	// Main Background
+	main-bg = #20;
+	// Main Background (Lighter)
+	main-bg-em = #32;
+	// Main Background (Darker)
+	main-bg-off = #16;
+	// Main Background (Container)
+	main-bg-container = #1C;
+	// Main Text
+	main-text = #DD;
+	// Main Text (Lighter)
+	main-text-em = #E6;
+	// Main Text (Darker)
+	main-text-off = #AB;
+	// Main Text (Darkest)
+	main-text-minor = #74;
+	// Main Text (Disabled)
+	main-text-disabled = #5F;
+	// Main Link
+	main-link = #5A6EFF;
+	// Main Link (Visited)
+	main-link-visited = #9268D4;
+	// Main Source
+	main-source = #4DAB6F;
+	// Contrast Multiplier
+	contrast = 1;
+	// Main Border
+	main-border = alpha(black, 0.9 * contrast);
+	// Main Separator
+	main-separator = alpha(white, 0.15 * contrast);
+	// Header Background
+	header-bg = #33;
+	// Header Text
+	header-text = #FF;
+	// Header Text (Darker)
+	header-text-off = #C8;
+	// Footer Background
+	footer-bg =  #33;
+	// Footer Separator
+	footer-separator = alpha(white, 0.2 * contrast);
+	// Footer Text
+	footer-text = #FF;
+	// Footer Text (Darker)
+	footer-text-off = #B4;
+	// Footer Text (Darkest)
+	footer-text-minor = #96;
+	// Dropdown Checkmark Image
+	dropdown-checkmark = url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAQAAAAZIo2TAAAArElEQVQ4y+2SoQoCURBFz1tWRLYLBuF9gwhGEYtNLCJGwWr2FxTTssW+wa/wI7RaDAYNImw0XPPb3Sds1ttm7hzmDgz8lNRSvRrQU6xhFaCvVHO3F34FJow4cXC7xjteY0GHs0nyjmeLIlZYLuyLXuAMJhorBDVZY7mRmHcRcYJpwIwrR6ZEPNiarCxB7hYt6QLwYmOe5aGDXJ1yBzJiH1B2eFs72aoP0uAvvz5jAi5lzdsukgAAAABJRU5ErkJggg==");
+	// Rating Star Background
+	unfilled-star = url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAgUlEQVQY042QQQqDQAxFX2xx42ARCoII3sD7X0csXXUluhmQdOE4zowuDHxCeIT8fLhb2sdzFqBy0yXk5XQJCydfohUNj9P5lVEmAc1pMRGa+YgFcWbeNB595RffXIK9JTUUGqlSaDYTWMD/+nS9ZGaQVSc6jOZij2yM1kFS9Z7TH6uMHsq9WjadAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAR0lEQVQY02Nk4GDACZiQOf+jcUr+j0aXZmJgINJYdMD4Pxmn1FImxqW4pBgYGCFeQXUITAP5DiJeEmYXzAUsMA5EgnEpsuMAsEwPjDLKA7oAAAAASUVORK5CYII=");
+	// Calculator Slider Image
+	calculator-slider = grey;
+	// Container Separator
+	container-separator = alpha(black, 0.3 * contrast);
+*/
+
 /* mixins */
 global-definitions() {
 	/*
