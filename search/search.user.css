@@ -38,6 +38,7 @@
 @var text unfilled-star "Rating Star Background" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAgUlEQVQY042QQQqDQAxFX2xx42ARCoII3sD7X0csXXUluhmQdOE4zowuDHxCeIT8fLhb2sdzFqBy0yXk5XQJCydfohUNj9P5lVEmAc1pMRGa+YgFcWbeNB595RffXIK9JTUUGqlSaDYTWMD/+nS9ZGaQVSc6jOZij2yM1kFS9Z7TH6uMHsq9WjadAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAR0lEQVQY02Nk4GDACZiQOf+jcUr+j0aXZmJgINJYdMD4Pxmn1FImxqW4pBgYGCFeQXUITAP5DiJeEmYXzAUsMA5EgnEpsuMAsEwPjDLKA7oAAAAASUVORK5CYII=")
 @var text calculator-slider "Calculator Slider Image" grey
 @var text container-separator "Container Separator" alpha(black, 0.3 * contrast)
+@var text popout-border "Popout Border" alpha(black, 0.3 * contrast)
 ==/UserStyle== */
 
 /* Uncomment for manual compilation
@@ -141,7 +142,7 @@ global-definitions() {
 
 popout($important = null) {
 background-color: main-bg $important;
-border-color: alpha(black, 0.3 * contrast) $important;
+border-color: popout-border $important;
 box-shadow: 0 2px 10px alpha(black, 0.3 * contrast) $important;
 color: main-text $important;
 }
@@ -544,7 +545,7 @@ a:link, .w, #prs a:visited, #prs a:active, .q:active, .q:visited, .kl:active, .t
 						/* caret */
 							/* outer */
 								.g-bbl-triangle-bg {
-									border-color: alpha(black, 0.3 * contrast) transparent;
+									border-color: popout-border transparent;
 								}
 							/* inner */
 								.g-bbl-triangle-fg {
@@ -3534,7 +3535,7 @@ site-separator() {
 	}
 	/* caret */
 		.gb_wb  {
-			border-bottom-color: alpha(black, 0.35 * contrast) !important;
+			border-bottom-color: popout-border !important;
 		}
 		.gb_vb {
 			border-bottom-color: main-bg !important;
