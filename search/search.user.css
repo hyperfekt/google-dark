@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.9
+@version 0.3.10
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1734,6 +1734,74 @@ a:link, .w, #prs a:visited, #prs a:active, .q:active, .q:visited, .kl:active, .t
 						.std-li-a {
 							color: main-text;
 						}
+	/* translate */
+		/* language select */
+			/* border */
+				.tw-lang-selector-wrapper {
+					border-color: transparent;
+				}
+			/* text */
+				.tw-lang-selector {
+					color: main-text-off;
+				}
+				.tw-lang-selector:hover {
+					color: main-text;
+				}
+			/* dropdown arrow */
+				.tw-lang-selector-wrapper::after {
+					border-color: darken(main-text-off, 10%) transparent;
+				}
+				.tw-lang-selector-wrapper:hover::after {
+					border-color: darken(main-text, 10%) transparent;
+				}
+		/* top buttons (pronunciation, language swap & copy) */
+			/* icon */
+				.tw-menu-btn {
+					color: darken(main-text-off, 20%);
+				}
+				/* hover */
+					.tw-menu-btn:not(.tw-menu-btn-disabled):hover {
+						color: darken(main-text, 20%);
+					}
+				/* disabled */
+					.tw-menu-btn.tw-menu-btn-disabled {
+						color: main-text-disabled;
+					}
+			/* button */
+				.tw-menu-btn:not(.tw-menu-btn-disabled):hover .tw-menu-btn-image:first-child {
+					button-hover();
+					background-color: main-bg-container;
+				}
+			/* copy button tooltip */
+				.Xy35sb {
+					popout();
+				}
+				/* caret */
+					/* inner */
+						.PiP5T {
+							border-bottom-color: main-bg;
+						}
+					/* outer */
+						.yieLWc {
+							border-bottom-color: popout-border;
+						}
+		/* correct input language ('translate from') */
+			/* language link */
+				#tw-lsst {
+					color: main-link;
+				}
+		/* input text */
+			#tw-source-text-ta {
+				color: main-text;
+			}
+		/* output text */
+			.tw-data-text {
+				color: main-text !important;
+			}
+		/* vertical separator */
+			.DHcWmd {
+				background-color: main-separator;
+			}
 	/* animal sounds */
 		.het5x {
 			background-color: main-bg-container;
