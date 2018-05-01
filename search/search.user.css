@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.10
+@version 0.3.11
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -3431,6 +3431,47 @@ site-separator() {
 				background-image: url("data:image/gif;base64,R0lGODlhCgAEAIABAP9CGv///yH5BAEKAAEALAAAAAAKAAQAAAIKjI8GcKvPgmuoAAA7");
 				/* move upwards */
 				background-position-y: 85%;
+			}
+	/* voice search */
+		/* overlay */
+			.s2tb .spchc, .s2tb-h .spchc {
+				background-color: header-bg;
+			}
+			/* voice search status */
+				.spcht {
+					color: header-text-off !important;
+				}
+				/* try again */
+					.spchta {
+						color: main-link;
+					}
+			/* mic button */
+				.button {
+					background-color: header-bg;
+					border-color: main-separator;
+					box-shadow: 0 2px 5px rgba(0,0,0,.5);
+				}
+				/* icon */
+					.fcn9Hf {
+						background-color: white;
+					}
+					.Aax87c {
+						background-color: white;
+					}
+					.ae3xF {
+						border-color: white;
+					}
+			/* google logo */
+				.google-logo {
+					filter: colorize(white);
+				}
+			/* close button */
+				.close-button {
+					color: header-text;
+				}
+		/* site overlay */
+			.spch.s2tb {
+				background-color: alpha(main-bg, 0.9) !important;
 			}
 	/* camera icon */
 		.gsst_e {
