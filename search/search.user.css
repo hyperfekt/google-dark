@@ -1760,6 +1760,20 @@ a:link, .w, #prs a:visited, #prs a:active, .q:active, .q:visited, .kl:active, .t
 			.EUjJDc {
 				color: main-text-off;
 			}
+			/* popup */
+				/* header */
+					.ZfDFMe .Ab5sB {
+						background-color: main-bg;
+						border-color: main-border;
+					}
+					/* close button */
+						.ZfDFMe .SUEuld {
+							filter: colorize(main-text);
+						}
+				/* list */
+					.ZfDFMe .ZfSAad {
+						background-color: main-bg;	
+					}
 	/* feedback popup */
 		/* give dialog*/
 			/* select response */
