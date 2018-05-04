@@ -141,62 +141,62 @@ global-definitions() {
 }
 
 popout($important = null) {
-background-color: main-bg $important;
-border-color: popout-border $important;
-box-shadow: 0 2px 10px alpha(black, 0.3 * contrast) $important;
-color: main-text $important;
+	background-color: main-bg $important;
+	border-color: popout-border $important;
+	box-shadow: 0 2px 10px alpha(black, 0.3 * contrast) $important;
+	color: main-text $important;
 }
 dropdown-hover($important = null) {
-background-color: main-bg-off $important;
+	background-color: main-bg-off $important;
 }
 button($important = null) {
-background-image: linear-gradient(to bottom, alpha(black, 0.05 * contrast), alpha(black, 0.1 * contrast)) $important;
-border-color: main-separator $important;
-color: main-text-off $important;
+	background-image: linear-gradient(to bottom, alpha(black, 0.05 * contrast), alpha(black, 0.1 * contrast)) $important;
+	border-color: main-separator $important;
+	color: main-text-off $important;
 }
 button-hover($shadow = 1, $important = null) {
-background-image: linear-gradient(to bottom, alpha(white, 0.02 * $shadow * contrast), alpha(white, 0.01 * $shadow * contrast)) $important;
-border-color: main-separator $important;
-color: main-text $important;
-box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * contrast) $important;
+	background-image: linear-gradient(to bottom, alpha(white, 0.02 * $shadow * contrast), alpha(white, 0.01 * $shadow * contrast)) $important;
+	border-color: main-separator $important;
+	color: main-text $important;
+	box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * contrast) $important;
 }
 invert-with-bg($color, $important = null) {
-invert((100% - lightness($color)) * 0.998) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important; //TODO replace with SVG filter
+	invert((100% - lightness($color)) * 0.998) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important; //TODO replace with SVG filter
 }
 adapt-to-bg($color, $important = null) {
-brightness(lightness($color)) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important;
+	brightness(lightness($color)) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important;
 }
 
 container($important = null) {
-box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast), 0 0 0 1px alpha(black, 0.25 * contrast) $important;
-background-color: main-bg-container $important;
+	box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast), 0 0 0 1px alpha(black, 0.25 * contrast) $important;
+	background-color: main-bg-container $important;
 }
 
 select($important = null) {
--moz-appearance: button $important;
-background-color: main-bg $important;
-background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALAgMAAADO/n87AAAACVBMVEVZWVn///+mpqZLDgy1AAAAAnRSTlMAAHaTzTgAAAAlSURBVAjXYwgTYYhqYchawLBqBUNoCAiJhoDYWUsYoqYwhIUAAJX0CVjuYJdhAAAAAElFTkSuQmCC") $important;
-border-color: main-separator $important;
-color: main-text $important;
+	-moz-appearance: button $important;
+	background-color: main-bg $important;
+	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALAgMAAADO/n87AAAACVBMVEVZWVn///+mpqZLDgy1AAAAAnRSTlMAAHaTzTgAAAAlSURBVAjXYwgTYYhqYchawLBqBUNoCAiJhoDYWUsYoqYwhIUAAJX0CVjuYJdhAAAAAElFTkSuQmCC") $important;
+	border-color: main-separator $important;
+	color: main-text $important;
 }
 select-hover($important = null) {
-background-color: main-bg-em $important;
-border-color: main-separator $important;
-box-shadow: 0 1px 1px alpha(black, 0.3 * contrast) $important;
+	background-color: main-bg-em $important;
+	border-color: main-separator $important;
+	box-shadow: 0 1px 1px alpha(black, 0.3 * contrast) $important;
 }
 
 /* functions */
-colorize($color, $alpha-override = 1) {
-$redpart = red($color) / 255;
-$greenpart = green($color) / 255;
-$bluepart = blue($color) / 255;
-$alphapart = alpha($color) * $alpha-override;
-url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='colorizer'> <feColorMatrix type='matrix' values='0 0 0 0 " + $redpart + " 0 0 0 0 " + $greenpart + " 0 0 0 0 " + $bluepart + " 0 0 0 " + $alphapart + " 0'/> </filter></svg>#colorizer");
-}
+	colorize($color, $alpha-override = 1) {
+		$redpart = red($color) / 255;
+		$greenpart = green($color) / 255;
+		$bluepart = blue($color) / 255;
+		$alphapart = alpha($color) * $alpha-override;
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='colorizer'> <feColorMatrix type='matrix' values='0 0 0 0 " + $redpart + " 0 0 0 0 " + $greenpart + " 0 0 0 0 " + $bluepart + " 0 0 0 " + $alphapart + " 0'/> </filter></svg>#colorizer");
+	}
 
-calculator-slider-image($color) {
-url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg viewBox='0 0 26 14' xmlns='http://www.w3.org/2000/svg'%3E %3Cg id='grid' fill='" + $color + "'%3E %3Cuse href='%23row'/%3E %3Cuse href='%23row' transform='translate(0,4)'/%3E %3Cuse href='%23row' transform='translate(0,8)'/%3E %3Cuse href='%23row' transform='translate(0,12)'/%3E %3C/g%3E %3Cdefs%3E %3Crect id='dot' width='2' height='2'/%3E %3Cg id='row'%3E %3Cuse href='%23dot'/%3E %3Cuse href='%23dot' x='4'/%3E %3Cuse href='%23dot' x='8'/%3E %3Cuse href='%23dot' x='12'/%3E %3Cuse href='%23dot' x='16'/%3E %3Cuse href='%23dot' x='20'/%3E %3Cuse href='%23dot' x='24'/%3E %3C/g%3E %3C/defs%3E %3C/svg%3E"); //using https://codepen.io/jakob-e/pen/doMoML
-}
+	calculator-slider-image($color) {
+		url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg viewBox='0 0 26 14' xmlns='http://www.w3.org/2000/svg'%3E %3Cg id='grid' fill='" + $color + "'%3E %3Cuse href='%23row'/%3E %3Cuse href='%23row' transform='translate(0,4)'/%3E %3Cuse href='%23row' transform='translate(0,8)'/%3E %3Cuse href='%23row' transform='translate(0,12)'/%3E %3C/g%3E %3Cdefs%3E %3Crect id='dot' width='2' height='2'/%3E %3Cg id='row'%3E %3Cuse href='%23dot'/%3E %3Cuse href='%23dot' x='4'/%3E %3Cuse href='%23dot' x='8'/%3E %3Cuse href='%23dot' x='12'/%3E %3Cuse href='%23dot' x='16'/%3E %3Cuse href='%23dot' x='20'/%3E %3Cuse href='%23dot' x='24'/%3E %3C/g%3E %3C/defs%3E %3C/svg%3E"); //using https://codepen.io/jakob-e/pen/doMoML
+	}
 
 /*
 * Google/Gmail's 3D Loader in Pure CSS
@@ -204,3910 +204,3909 @@ url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg viewBo
 * Regis Gaughan, III <http://regisgaughan.com>
 * MIT License
 */
-gloader() {
-display:inline-block; width:1em; height:1em;
-position:relative; overflow:hidden; border-radius:0.5em;
-animation:gloader-base 3s steps(1) 0s infinite; 
-}
+	gloader() {
+	display:inline-block; width:1em; height:1em;
+	position:relative; overflow:hidden; border-radius:0.5em;
+	animation:gloader-base 3s steps(1) 0s infinite; 
+	}
 
-gloader-before-after() {
-content:' '; display:block; width:50%; height:100%; overflow:hidden;
-position:absolute; top:0%; left:50%; z-index:1;
-border-radius:0em 0.5em 0.5em 0em;
-transform-origin:0px 50%;
-}
+	gloader-before-after() {
+	content:' '; display:block; width:50%; height:100%; overflow:hidden;
+	position:absolute; top:0%; left:50%; z-index:1;
+	border-radius:0em 0.5em 0.5em 0em;
+	transform-origin:0px 50%;
+	}
 
-gloader-before() {
-gloader-before-after();
-z-index:2;
-transform-style:preserve-3d;
-animation:gloader-flip 3s linear 0s infinite;
-}
+	gloader-before() {
+	gloader-before-after();
+	z-index:2;
+	transform-style:preserve-3d;
+	animation:gloader-flip 3s linear 0s infinite;
+	}
 
-gloader-after() {
-gloader-before-after();
-animation:gloader-reveal 3s steps(1) 0s infinite;
-}
+	gloader-after() {
+	gloader-before-after();
+	animation:gloader-reveal 3s steps(1) 0s infinite;
+	}
 
 /* Main Body */
 @-moz-document regexp("https?://(ipv4|www|encrypted)\\.google\\.(com|([a-z]{2}))(\\.[a-z]{2})?(/+((webhp|search|gfe_rd|auth|gws_rd|#q|imghp|#gfe_rd|#safe|#pws|#tbs|#gws|#tbm|\\?)(?!.*(tbm=(lcl)|;mt;|;st;|;dt;|;nw;)).*)?)?") {
-:root {
-global-definitions();
-}
-
-body {
-background-color: main-bg;
-color: main-text;
-}
-
-/* links */
-a:link, .w, #prs a:visited, #prs a:active, .q:active, .q:visited, .kl:active, .tbotu {
-	color: main-link;
-}
-
-
-/* main */
-/* buttons */
-	.ab_button {
-		background-color: main-bg-em;
-		button();
+	:root {
+		global-definitions();
 	}
-	.ab_button:hover {
-		background-color: main-bg-em;
-		button-hover(1);
-	}
-	a.ab_button, a.ab_button:visited {
-		color: main-text-off;
-	}
-	a.ab_button:hover {
+
+	body {
+		background-color: main-bg;
 		color: main-text;
 	}
-	.wr-button {
-		color: main-text-off !important;
-	}
-	.wr-button:hover {
-		color: main-text !important;
-	}
 
-/* tools dropdowns */
-	/* arrows */
-		.mn-dwn-arw {
-			border-color: main-text-off transparent;
-		}
-		.hdtb-mn-hd:hover .mn-dwn-arw, #hdtb-more:hover .mn-dwn-arw {
-			border-color: main-text transparent;
+	/* links */
+		a:link, .w, #prs a:visited, #prs a:active, .q:active, .q:visited, .kl:active, .tbotu {
+			color: main-link;
 		}
 
-	/* text */
-		.hdtb-mn-hd {
-			color: main-text-off;
-		}
 
-	/* menu */
-		/* main */
-			.hdtb-mn-o, .hdtb-mn-c {
-				popout();
+	/* main */
+		/* buttons */
+			.ab_button {
+				background-color: main-bg-em;
+				button();
 			}
-		/* items */
-			.hdtbItm {
-			background-color: unset;
+			.ab_button:hover {
+				background-color: main-bg-em;
+				button-hover(1);
 			}
-			/* checkmark */
-				.hdtbSel, .hdtbSel #cdrlnk {
-					background-image: dropdown-checkmark;
-				}
-			/* hover */
-				#hdtb-more-mn a:hover, .hdtbItm.hdtbSel:hover, .hdtbItm a:hover, #cdrlnk:hover {
-					dropdown-hover();
-				}
-		/* popup item */
-			.cdr_sep {
-				border-color: alpha(black, 0.2 * contrast);
-			}
-			#cdr_opt {
-				background-color: main-bg;
-			}
-		/* item text */
-			.hdtbItm.hdtbSel, #hdtb .hdtbItm a, #hdtb-more-mn a, #cdrlnk {
+			a.ab_button, a.ab_button:visited {
 				color: main-text-off;
 			}
-	/* custom date range select popup */
-		/* overlay */
-			.cdr_bg {
-				background-color: #000;
+			a.ab_button:hover {
+				color: main-text;
 			}
-		/* window */
-			.cdr_dlg {
-				background-color: main-bg;
-				border-color: main-border;
+			.wr-button {
+				color: main-text-off !important;
 			}
-			/* close button */
-				.cdr_cls {
-					background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAElBMVEX///////////////////////+65XQCAAAABnRSTlMACBA9QkyfWU0wAAAAL0lEQVQI12NQFmBgNGIwdWQQCWYQCRF0dWRgdHUJEWBgEAl1ZICSEBGILEQlWBcA5c4Htfel370AAAAASUVORK5CYII=");
-					filter: brightness(800%);
+			.wr-button:hover {
+				color: main-text !important;
+			}
+
+	/* tools dropdowns */
+		/* arrows */
+			.mn-dwn-arw {
+				border-color: main-text-off transparent;
+			}
+			.hdtb-mn-hd:hover .mn-dwn-arw, #hdtb-more:hover .mn-dwn-arw {
+				border-color: main-text transparent;
+			}
+
+		/* text */
+			.hdtb-mn-hd {
+				color: main-text-off;
+			}
+
+		/* menu */
+			/* main */
+				.hdtb-mn-o, .hdtb-mn-c {
+					popout();
 				}
-			/* heading */
-				.cdr_ttl {
-					color: main-text !important;
+			/* items */
+				.hdtbItm {
+				background-color: unset;
 				}
-			/* form */
-				/* labels */
-					.cdr_mml {
-						color: main-text;
+				/* checkmark */
+					.hdtbSel, .hdtbSel #cdrlnk {
+						background-image: dropdown-checkmark;
 					}
-				/* fields */
-					#cdr_frm, #cdr_min, #cdr_max {
-						color: main-text;
-						background-color: main-bg-off;
-						border-color: main-separator;
+				/* hover */
+					#hdtb-more-mn a:hover, .hdtbItm.hdtbSel:hover, .hdtbItm a:hover, #cdrlnk:hover {
+						dropdown-hover();
 					}
-				/* submit */
-					.ksb {
-						button();
-						background-color: main-bg-em;
+			/* popup item */
+				.cdr_sep {
+					border-color: alpha(black, 0.2 * contrast);
+				}
+				#cdr_opt {
+					background-color: main-bg;
+				}
+			/* item text */
+				.hdtbItm.hdtbSel, #hdtb .hdtbItm a, #hdtb-more-mn a, #cdrlnk {
+					color: main-text-off;
+				}
+		/* custom date range select popup */
+			/* overlay */
+				.cdr_bg {
+					background-color: #000;
+				}
+			/* window */
+				.cdr_dlg {
+					background-color: main-bg;
+					border-color: main-border;
+				}
+				/* close button */
+					.cdr_cls {
+						background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKBAMAAAB/HNKOAAAAElBMVEX///////////////////////+65XQCAAAABnRSTlMACBA9QkyfWU0wAAAAL0lEQVQI12NQFmBgNGIwdWQQCWYQCRF0dWRgdHUJEWBgEAl1ZICSEBGILEQlWBcA5c4Htfel370AAAAASUVORK5CYII=");
+						filter: brightness(800%);
 					}
-					.ksb:hover {
-						button-hover(1);
-						background-color: main-bg-em;
-					}
-					.cdr_go {
+				/* heading */
+					.cdr_ttl {
 						color: main-text !important;
 					}
-			/* calendar */
-				/* highlighting */
-					.cdr_highl {
-						background-color: main-bg-em;
-					}
-					.cdr_dlg .goog-date-picker {
-						background-color: main-bg-em;
-					}
-				/* paging */
-					.goog-date-picker-btn {
-						color: main-text;
-					}
-					/* disabled */
-						.goog-date-picker-btn.cdr_dd {
-							color: main-text-disabled;
-						}
-				/* separator */
-					.cdr_dlg .goog-date-picker table thead td {
-						border-color: main-separator;
-					}
-				/* days */
-					/* previous month */
-						#cdr_cal tr:nth-child(2) .goog-date-picker-other-month {
-							color: main-text-off !important;
-						}
-					/* next month */
-						.cdr_dlg .goog-date-picker-other-month {
-							color: main-text-minor;
-						}
-					/* hover */
-						.cdr_dlg td.goog-date-picker-date:hover {
-							background-color: main-bg-off;
-						}
-/* result count */
-	#appbar {
-		background-color: main-bg;
-	}
-	#resultStats {
-		color: main-text-off;
-	}
-/* results */
-	/* single entry */
-		.s {
-			color: main-text;
-		}
-		/* emphasized */
-			.s .st em, .st.s.std em {
-				color: main-text-em;
-			}
-		/* offcolor links (date & source dropdown */
-		.f, .f a:link {
-			color: main-text-off;
-		}
-		/* visited links */
-			.mblink:visited, a:visited, .sbpqs_a, a.fl:visited, .st .f .fl:visited {
-				color: main-link-visited;
-			}
-		/* anchors & Translate */
-			a.fl:link, .fl a, .flt, a.flt, .gl a:link, a.mblink, .mblink b {
-				color: main-link;
-			}
-		/* source */
-			.a, cite, cite a:link, cite a:visited, .cite, .cite:link, #nygTcd > i, .bc a:link {
-				color: main-source;
-			}
-			/* dropdown */
-			.GHDvEf, .GHDvEf:hover, .GHDvEf.selected, .GHDvEf.selected:hover {
-					background-color: main-bg !important;
-					background-image: none !important;
-					box-shadow: none;
-				}
-				.action-menu .mn-dwn-arw {
-					border-color: main-source transparent;
-				}
-				.action-menu:hover .mn-dwn-arw {
-					border-color: lighten(main-source, 10%) transparent;
-				}
-				/* menu */
-					/* main */
-						.ab_dropdown {
-							popout();
-						}
-					/* items */
-						.action-menu-item:hover {
-							background-color: main-bg-off;
-						}
-						.action-menu-button, .action-menu-item a.fl, .action-menu-toggled-item div {
+				/* form */
+					/* labels */
+						.cdr_mml {
 							color: main-text;
 						}
-		/* ad */
-			/* indicator */
-				.Z98Wse {
-					background-color: transparent;
-					color: main-source;
+					/* fields */
+						#cdr_frm, #cdr_min, #cdr_max {
+							color: main-text;
+							background-color: main-bg-off;
+							border-color: main-separator;
+						}
+					/* submit */
+						.ksb {
+							button();
+							background-color: main-bg-em;
+						}
+						.ksb:hover {
+							button-hover(1);
+							background-color: main-bg-em;
+						}
+						.cdr_go {
+							color: main-text !important;
+						}
+				/* calendar */
+					/* highlighting */
+						.cdr_highl {
+							background-color: main-bg-em;
+						}
+						.cdr_dlg .goog-date-picker {
+							background-color: main-bg-em;
+						}
+					/* paging */
+						.goog-date-picker-btn {
+							color: main-text;
+						}
+						/* disabled */
+							.goog-date-picker-btn.cdr_dd {
+								color: main-text-disabled;
+							}
+					/* separator */
+						.cdr_dlg .goog-date-picker table thead td {
+							border-color: main-separator;
+						}
+					/* days */
+						/* previous month */
+							#cdr_cal tr:nth-child(2) .goog-date-picker-other-month {
+								color: main-text-off !important;
+							}
+						/* next month */
+							.cdr_dlg .goog-date-picker-other-month {
+								color: main-text-minor;
+							}
+						/* hover */
+							.cdr_dlg td.goog-date-picker-date:hover {
+								background-color: main-bg-off;
+							}
+	/* result count */
+		#appbar {
+			background-color: main-bg;
+		}
+		#resultStats {
+			color: main-text-off;
+		}
+	/* results */
+		/* single entry */
+			.s {
+				color: main-text;
+			}
+			/* emphasized */
+				.s .st em, .st.s.std em {
+					color: main-text-em;
+				}
+			/* offcolor links (date & source dropdown */
+			.f, .f a:link {
+				color: main-text-off;
+			}
+			/* visited links */
+				.mblink:visited, a:visited, .sbpqs_a, a.fl:visited, .st .f .fl:visited {
+					color: main-link-visited;
+				}
+			/* anchors & Translate */
+				a.fl:link, .fl a, .flt, a.flt, .gl a:link, a.mblink, .mblink b {
+					color: main-link;
 				}
 			/* source */
-				.ads-visurl cite {
+				.a, cite, cite a:link, cite a:visited, .cite, .cite:link, #nygTcd > i, .bc a:link {
 					color: main-source;
 				}
 				/* dropdown */
-					.C4eCVc .action-menu .mn-dwn-arw {
+				.GHDvEf, .GHDvEf:hover, .GHDvEf.selected, .GHDvEf.selected:hover {
+						background-color: main-bg !important;
+						background-image: none !important;
+						box-shadow: none;
+					}
+					.action-menu .mn-dwn-arw {
 						border-color: main-source transparent;
 					}
-					.C4eCVc .action-menu:hover .mn-dwn-arw {
+					.action-menu:hover .mn-dwn-arw {
 						border-color: lighten(main-source, 10%) transparent;
 					}
 					/* menu */
-						.gws-ads-adinfo__ads-wta-dropdown {
-							popout();
-						}
-						/* hover */
-						.gws-ads-adinfo__ads-wta-dropdown:hover {
-							background-color: main-bg-off;
-						}
-						/* ad explanation popup */
-							.Q3eSMc {
-								background-color: main-bg;
+						/* main */
+							.ab_dropdown {
+								popout();
 							}
-							/* switch */
-								/* knob */
-									.rBrJud {
-										background-color: main-bg-em;
-										box-shadow: 0 1px 3px alpha(black, 0.7 * contrast);
-									}
-								/* slider */
-									.ITNV1 {
-										background-color: alpha(black, 0.8 * contrast);
-									}
-							/* buttons */
-								/* close */
-									.fE5Rge {
-										button();
-										background-color: main-bg-em;
-									}
-									.fE5Rge:hover {
-										button-hover();
-										background-color: main-bg-em;
-									}
-			/* phone number */
-				.PXnpre {
-					color: main-text-off;
-				}
-			/* text */
-				.ads-ad {
-					color: main-text;
-				}
-				/* emphasized */
-					.ads-creative b {
-						color: main-text-em;
-					}
-			/* rating */
-				/* text */
-					.ads-ad .pCA4Bd, .ads-ad .pCA4Bd a {
-						color: main-text-off;
-					}
-			/* location */
-				/* icon */
-					.U5aBtb {
-						filter: colorize(main-text-off);
-					}
-				/* opening hours */
-					.Pr5cgb {
-						color: main-text-off;
-					}
-					/* popout */
-						.Qxb7Ad {
-							color: main-text;	
-						}
-			/* plans */
-				/* price */
-					.UM96s {
-						color: main-text;
-					}
-				/* plan */
-					.fJ0dnd {
-						color: main-text-off;
-					}
-				/* more plans */
-					.Uzbfnc, .wPrLAb {
-						color: main-text-off;
-					}
-					/* arrow */
-						.mn-dwn-arw {
-							border-color: main-text-off transparent;
-						}
-					/* popup */
-						.g-bbl-container {
-							popout();
-						}
-						/* caret */
-							/* outer */
-								.g-bbl-triangle-bg {
-									border-color: popout-border transparent;
-								}
-							/* inner */
-								.g-bbl-triangle-fg {
-									border-bottom-color: main-bg;
-								}
-		/* missing terms */
-			.TXwUJf {
-				color: main-text-off;
-			}
-		/* site search */
-			/* search button */
-				.mslg .ab_button {
-					button(!important);
-				}
-				/* icon */
-					.JOmIqc {
-						filter: colorize(white);
-					}
-		/* factoids */
-			.P1usbc {
-				color: main-text-off;
-			}
-		/* people also search for */
-			/* frame */
-				/* inner */
-				.AUiS2 {
-					border-color: main-border;
-				}
-			/* outer */
-				.exp-outline {
-					border-color: main-border;
-				}
-			/* heading */
-				.eJ7tvc {
-					color: main-text-off;
-				}
-			/* close button */
-				.XCKyNd {
-					filter: colorize(main-text-off);
-				}
-		/* tweet */
-			g-inner-card {
-				background-color: main-bg;
-			}
-		/* stack overflow answers */
-			.waTp2e.waTp2e {
-				background-color: inherit;
-				box-shadow: none;
-			}
-		/* source */
-			.QHTnWc {
-				color: main-source;
-			}
-		/* more link */
-			.qWfpFe, .qWfpFe svg {
-				color: main-link;
-			}
-		/* carousel */
-			/* answer count */
-				.pIpgAc.KZCcaf {
-					color: main-text-off;
-				}
-			/* card */
-				.zDBTmf {
-					container();
-				}
-				.zDBTmf > div {
-					background-color: main-bg-container;
-				}
-				/* header */
-					/* hover */
-						.EDUkIb:hover {
-							background-color: main-bg-off;
-						}
-					/* vote count */
-						.ATPAKc {
-							color: main-text-off;
-						}
-				/* text */
-					.eUrIee {
-						color: main-text;
-					}
-			/* paging buttons */
-				.c8dxme {
-					background-color: main-bg-em;
-					
-				}
-				.dY8Pzf {
-					box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast);
-				}
-	/* privacy notice */
-		/* heading */
-			.KJXbRb {
-				color: main-text;
-			}
-	/* info box */
-		.vk_c, .vk_cxp {
-			background-color: main-bg;
-		}
-		.vk_c, .vk_cxp, #rhs .fIcnad {
-			container();
-		}
-	/* answer box */
-		/* top border */
-			.oRYXbe {
-				border-color: transparent; //divergent, not necessary because of container background
-			}
-		/* title */
-			/* object */
-				.N6Sb2c {
-					color: main-text-off;
-				}
-			/* divider */
-				.i29hTd .kR7nSc {
-					color: main-text;
-				}
-			/* property */
-				.i29hTd .qLLird {
-					color: main-text;
-				}
-		/* separator */
-			.E6Cqjb {
-				background-color: alpha(black, 0.25 * contrast);
-			}
-		/* search term as answer */
-			a.FLP8od {
-				color: main-text;
-			}
-			/* hover */
-				.FLP8od:hover {
-					color: main-link;
-				}
-		/* according to */
-			div.nnbOwe a {
-				color: main-link;
-			}
-		/* snippet */
-			.Z0LcW {
-				color: main-text;
-			}
-			/* subtitle */
-				.yxAsKe {
-					color: main-text-off;
-				}
-			/* list */
-				/* more items */
-					.gv607c:link, .gv607c:visited {
-						color: main-text-off;
-					}
-			/* table */
-				/* header row */
-					.knowledge-webanswers_table__webanswers-table th {
-						color: main-text;
-					}
-				/* borders */
-					.knowledge-webanswers_table__webanswers-table tr {
-						border-color: main-separator;
-					}
-				/* X more rows */
-					.KQFvIf {
-						color: main-text-off;
-					}
-			/* date */
-				.wrk6pd {
-					color: main-text-off;
-				}
-		/* footer */
-			/* links */
-				.kno-ftr a {
-					color: main-text-off;
-				}
-				/* 'about this result' icon */
-				.GGw8Tb {
-					color: main-text-off;
-				}
-				/* 'feedback' icon */
-				.RTZ84b {
-					color: main-text-off;
-				}
-	/* module heading */
-		.Ss2Faf {
-			color: main-text;
-		}
-	/* people also search for */
-		/* heading */
-			.Ss2Faf a {
-				color: main-text;
-			}
-		/* images */
-			.XQ6p1d {
-				background-color: white;
-			}
-		/* context */
-			.xlBGCb {
-				color: main-text-off;
-			}
-		/* factoid */ //LOST AND FOUND
-			.C9iYEe {
-				color: main-text;
-			}
-		/* view XX+ */
-			a.EbH0bb { //restore original style
-				color: main-text-off;
-			}
-/* tweets */
-	/* carousel */
-		/* paging buttons */
-			g-fab {
-				background-color: main-bg-em !important;
-				color: main-text-off !important;
-				box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast) !important;
-			}
-			.Lu0opc.Lu0opc:hover g-fab {
-				color: main-text !important;
-			}
-		/* tweet */
-			/* links */
-				a.Ndm45b {
-					color: main-text-off;
-				}
-				/* hover */
-					a.Ndm45b:hover {
-						color: main-link;
-					}
-/* video carousel */
-	/* channel & date */
-		.zECGdd, .zECGdd.Fuybue:visited {
-			color: main-text-minor;
-		}
-	/* host */
-		.cJzOGc, .cJzOGc.Fuybue:visited {
-			color: main-source;
-		}
-/* images */
-	/* header */
-		a.iu-card-header, a.iu-card-header:hover, a.iu-card-header:visited {
-			color: main-link;
-		}
-	/* more link */
-		g-more-link a span {
-			color: main-link !important;
-		}
-		g-more-link a:visited span {
-			color: main-link-visited !important;
-		}
-	/* report */
-		#irl_r_a {
-			color: main-text-off;
-		}
-		#irl_r_a:hover {
-			color: main-text;
-		}
-/* videos */
-	.th {
-		border-color: main-border;
-	}
-/* question suggestion (people also ask) */
-	/* heading */
-		.cUnQKe .garHBe {
-			color: main-text-off !important;
-		}
-	/* question */
-		.related-question-pair {
-			background-color: main-bg-container;
-		}
-		/* separators */
-			.m7VU0c {
-				border-color: container-separator;
-			}
-		/* expand button */
-			.fYWO0d {
-				filter: colorize(white);
-			}
-	/* loading icon */
-	g-loading-icon > img {
-		gloader();
-		font-size: 24px;
-	}
-	g-loading-icon > img::before {
-		gloader-before();
-	}
-	g-loading-icon > img::after {
-		gloader-after();
-	}
-/* main widgets */
-	/* calculator */
-		/* calculation */
-		.cwletbl {
-			color: main-text-off;	
-		}
-		/* display */
-			.cwtlb {
-				border-color: main-separator;
-				background-color: main-bg-em;
-			}
-			/* text */
-				.cwtltbl {
-					color: main-text;
-				}
-			/* below */
-				.cwtlwm {
-					background-color: main-bg-container;
-				}
-		/* keyboard */
-			/* buttons */
-				calculator-button() {
-					color: main-text-off;
-					border-color: main-separator;
-					background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
-				}
-				calculator-button-hover() {
-					color: main-text;
-					background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
-					border-color: main-separator;
-					box-shadow: 0 1px 1px alpha(black, 0.5 * contrast);
-				}
-				/* digits or activated */
-					.cwlgb-tpl {
-						calculator-button();
-						background-color: main-bg-em;
-					}
-					/* hover */
-						.cwbd:hover .cwlgb-tpl {
-							calculator-button-hover();
-							background-color: main-bg-em;
-						}
-				/* functions */
-					.cwdgb-tpl {
-						calculator-button();
-						background-color: main-bg-off;
-					}
-					/* hover */
-						.cwbd:hover .cwdgb-tpl {
-							calculator-button-hover();
-							background-color: main-bg-off;
-						}
-				/* switch */
-					/* left */
-						.cwrb-tpl {
-							calculator-button();
-							background-color:	 main-bg-off;
-						}
-					/* right */
-						.cwdb-tpl {
-							calculator-button();
-							background-color: main-bg-off;
-						}
-					/* slider */
-						.cwdrsb-tpl {
-							calculator-button();
-							background-color: main-bg-em;
-							background-image: calculator-slider-image(calculator-slider);
-							background-size: 26px 14px;
-						}
-					/* result */
-						.cwbb-tpl {
-							calculator-button();
-							background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
-							background-color: #0d50be;
-						}
-						/* hover */
-							.cwbd:hover .cwbb-tpl {
-								calculator-button-hover();
-								background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
-								background-color: #0d50be;
-							}
-		/* function graph */
-			/* 2D axis labels */
-				#div_for_graph svg text {
-					fill: main-text-off;
-				}
-			/* box */
-				#div_for_graph > div div[style*="box-shadow"] {
-					box-shadow: alpha(black, 0.8 * contrast) 0px 0px 5px inset !important;
-				}
-		/* geometry calculator */
-			/* 'solve for' dropdown */
-				/* button */
-					.lr-fy-sfb .lr-fy-dd {
-						border-color: main-text-off transparent;
-					}
-				/* menu */
-					.goog-menu {
-						popout();
-					}
-					/* items */
-						.goog-menuitem, .goog-tristatemenuitem, .goog-filterobsmenuitem {
-							color: main-text;
-						}
-						/* hover */
-							.goog-menuitem-highlight, .goog-menuitem-hover {
+						/* items */
+							.action-menu-item:hover {
 								background-color: main-bg-off;
 							}
-							/* text */
-								.goog-menuitem-highlight .goog-menuitem-content, .goog-menuitem-hover .goog-menuitem-content {
+							.action-menu-button, .action-menu-item a.fl, .action-menu-toggled-item div {
 								color: main-text;
 							}
-							/* border */
-								.goog-menuitem-highlight, .goog-menuitem-hover {
-									border-color: transparent;
-								}
-						/* disabled */
-							.goog-menuitem-disabled .goog-menuitem-accel, .goog-menuitem-disabled .goog-menuitem-content {
-								color: main-text-disabled !important;
-							}
-					/* separator */
-						.goog-menuseparator {
-							border-color: main-separator;
+			/* ad */
+				/* indicator */
+					.Z98Wse {
+						background-color: transparent;
+						color: main-source;
+					}
+				/* source */
+					.ads-visurl cite {
+						color: main-source;
+					}
+					/* dropdown */
+						.C4eCVc .action-menu .mn-dwn-arw {
+							border-color: main-source transparent;
 						}
-			/* equation */
-				.lr-fy-eq, .lr-fy-ovde, .lr-fy-ns {
-					color: main-text;
-				}
-				/* approximately equal */
-					.lr-fy-ovde {
-						color: main-text !important;
-					}
-				/* quotient */
-					.lr-fy-eq-add[style*="background-color:"] {
-						background-color: main-text !important;
-					}
-			/* variable entry */
-				/* label */
-					.lr-fy-in {
-						color: main-text-off;
-					}
-				/* input */
-					.lr-fy-tb {
-						background-color: main-bg-em;
-						border-color: main-separator;
-						color: main-text-off;
-					}
-					.lr-fy-tb:focus {
-						border-color: white;
-					}
-			/* visualization */
-				/* background */
-					.lr-fy-i-w {
-						fill: main-bg-container;
-					}
-				/* labels */
-					.lr-fy-i-lgf {
-						fill: main-text-minor;
-					}
-				/* highlightable lines */
-					.lr-fy-i-ll {
-						stroke: main-text-minor;
-					}
-				/* shape */
-					.lr-fy-i-dl {
-						stroke: main-text-off;
-					}
-			/* solution */
-				/* heading */
-					.lr-fy-exl div {
-						color: main-text-off;
-					}
-		/* unit converter */
-			/* unit selectors */
-				.LNn04b {
-					select();
-				}
-				.LNn04b:hover {
-					select-hover();
-				}
-			/* equality sign */
-				.jCkZnd {
-					color: main-text-off;
-				}
-			/* inputs */
-				.vXQmIe {
-					background-color: main-bg;
-					color: main-text;
-					border-color: main-separator;
-				}
-		/* nutrition */
-			/* selectors */
-				.k6J3K {
-					border-color: main-separator;
-				}
-				.Cc3NMb, .ZIxWWd {
-					background-color: main-bg-em;
-				}
-				/* labels */
-					.shDvCe {
+						.C4eCVc .action-menu:hover .mn-dwn-arw {
+							border-color: lighten(main-source, 10%) transparent;
+						}
+						/* menu */
+							.gws-ads-adinfo__ads-wta-dropdown {
+								popout();
+							}
+							/* hover */
+							.gws-ads-adinfo__ads-wta-dropdown:hover {
+								background-color: main-bg-off;
+							}
+							/* ad explanation popup */
+								.Q3eSMc {
+									background-color: main-bg;
+								}
+								/* switch */
+									/* knob */
+										.rBrJud {
+											background-color: main-bg-em;
+											box-shadow: 0 1px 3px alpha(black, 0.7 * contrast);
+										}
+									/* slider */
+										.ITNV1 {
+											background-color: alpha(black, 0.8 * contrast);
+										}
+								/* buttons */
+									/* close */
+										.fE5Rge {
+											button();
+											background-color: main-bg-em;
+										}
+										.fE5Rge:hover {
+											button-hover();
+											background-color: main-bg-em;
+										}
+				/* phone number */
+					.PXnpre {
 						color: main-text-off;
 					}
 				/* text */
-					.Cc3NMb {
+					.ads-ad {
 						color: main-text;
 					}
-				/* arrows */
-					.WZ1JJe {
-						filter: colorize(darken(main-text, 30%));
+					/* emphasized */
+						.ads-creative b {
+							color: main-text-em;
+						}
+				/* rating */
+					/* text */
+						.ads-ad .pCA4Bd, .ads-ad .pCA4Bd a {
+							color: main-text-off;
+						}
+				/* location */
+					/* icon */
+						.U5aBtb {
+							filter: colorize(main-text-off);
+						}
+					/* opening hours */
+						.Pr5cgb {
+							color: main-text-off;
+						}
+						/* popout */
+							.Qxb7Ad {
+								color: main-text;	
+							}
+				/* plans */
+					/* price */
+						.UM96s {
+							color: main-text;
+						}
+					/* plan */
+						.fJ0dnd {
+							color: main-text-off;
+						}
+					/* more plans */
+						.Uzbfnc, .wPrLAb {
+							color: main-text-off;
+						}
+						/* arrow */
+							.mn-dwn-arw {
+								border-color: main-text-off transparent;
+							}
+						/* popup */
+							.g-bbl-container {
+								popout();
+							}
+							/* caret */
+								/* outer */
+									.g-bbl-triangle-bg {
+										border-color: popout-border transparent;
+									}
+								/* inner */
+									.g-bbl-triangle-fg {
+										border-bottom-color: main-bg;
+									}
+			/* missing terms */
+				.TXwUJf {
+					color: main-text-off;
+				}
+			/* site search */
+				/* search button */
+					.mslg .ab_button {
+						button(!important);
 					}
-		/* currency converter */
-			/* amounts */
-				.IxBI8c {
-					background-color: main-bg-em;
+					/* icon */
+						.JOmIqc {
+							filter: colorize(white);
+						}
+			/* factoids */
+				.P1usbc {
+					color: main-text-off;
+				}
+			/* people also search for */
+				/* frame */
+					/* inner */
+					.AUiS2 {
+						border-color: main-border;
+					}
+				/* outer */
+					.exp-outline {
+						border-color: main-border;
+					}
+				/* heading */
+					.eJ7tvc {
+						color: main-text-off;
+					}
+				/* close button */
+					.XCKyNd {
+						filter: colorize(main-text-off);
+					}
+			/* tweet */
+				g-inner-card {
+					background-color: main-bg;
+				}
+			/* stack overflow answers */
+				.waTp2e.waTp2e {
+					background-color: inherit;
+					box-shadow: none;
+				}
+			/* source */
+				.QHTnWc {
+					color: main-source;
+				}
+			/* more link */
+				.qWfpFe, .qWfpFe svg {
+					color: main-link;
+				}
+			/* carousel */
+				/* answer count */
+					.pIpgAc.KZCcaf {
+						color: main-text-off;
+					}
+				/* card */
+					.zDBTmf {
+						container();
+					}
+					.zDBTmf > div {
+						background-color: main-bg-container;
+					}
+					/* header */
+						/* hover */
+							.EDUkIb:hover {
+								background-color: main-bg-off;
+							}
+						/* vote count */
+							.ATPAKc {
+								color: main-text-off;
+							}
+					/* text */
+						.eUrIee {
+							color: main-text;
+						}
+				/* paging buttons */
+					.c8dxme {
+						background-color: main-bg-em;
+						
+					}
+					.dY8Pzf {
+						box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast);
+					}
+		/* privacy notice */
+			/* heading */
+				.KJXbRb {
+					color: main-text;
+				}
+		/* info box */
+			.vk_c, .vk_cxp {
+				background-color: main-bg;
+			}
+			.vk_c, .vk_cxp, #rhs .fIcnad {
+				container();
+			}
+		/* answer box */
+			/* top border */
+				.oRYXbe {
+					border-color: transparent; //divergent, not necessary because of container background
+				}
+			/* title */
+				/* object */
+					.N6Sb2c {
+						color: main-text-off;
+					}
+				/* divider */
+					.i29hTd .kR7nSc {
+						color: main-text;
+					}
+				/* property */
+					.i29hTd .qLLird {
+						color: main-text;
+					}
+			/* separator */
+				.E6Cqjb {
+					background-color: alpha(black, 0.25 * contrast);
+				}
+			/* search term as answer */
+				a.FLP8od {
+					color: main-text;
+				}
+				/* hover */
+					.FLP8od:hover {
+						color: main-link;
+					}
+			/* according to */
+				div.nnbOwe a {
+					color: main-link;
+				}
+			/* snippet */
+				.Z0LcW {
+					color: main-text;
+				}
+				/* subtitle */
+					.yxAsKe {
+						color: main-text-off;
+					}
+				/* list */
+					/* more items */
+						.gv607c:link, .gv607c:visited {
+							color: main-text-off;
+						}
+				/* table */
+					/* header row */
+						.knowledge-webanswers_table__webanswers-table th {
+							color: main-text;
+						}
+					/* borders */
+						.knowledge-webanswers_table__webanswers-table tr {
+							border-color: main-separator;
+						}
+					/* X more rows */
+						.KQFvIf {
+							color: main-text-off;
+						}
+				/* date */
+					.wrk6pd {
+						color: main-text-off;
+					}
+			/* footer */
+				/* links */
+					.kno-ftr a {
+						color: main-text-off;
+					}
+					/* 'about this result' icon */
+					.GGw8Tb {
+						color: main-text-off;
+					}
+					/* 'feedback' icon */
+					.RTZ84b {
+						color: main-text-off;
+					}
+		/* module heading */
+			.Ss2Faf {
+				color: main-text;
+			}
+		/* people also search for */
+			/* heading */
+				.Ss2Faf a {
+					color: main-text;
+				}
+			/* images */
+				.XQ6p1d {
+					background-color: white;
+				}
+			/* context */
+				.xlBGCb {
+					color: main-text-off;
+				}
+			/* factoid */ //LOST AND FOUND
+				.C9iYEe {
+					color: main-text;
+				}
+			/* view XX+ */
+				a.EbH0bb { //restore original style
+					color: main-text-off;
+				}
+	/* tweets */
+		/* carousel */
+			/* paging buttons */
+				g-fab {
+					background-color: main-bg-em !important;
+					color: main-text-off !important;
+					box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast) !important;
+				}
+				.Lu0opc.Lu0opc:hover g-fab {
+					color: main-text !important;
+				}
+			/* tweet */
+				/* links */
+					a.Ndm45b {
+						color: main-text-off;
+					}
+					/* hover */
+						a.Ndm45b:hover {
+							color: main-link;
+						}
+	/* video carousel */
+		/* channel & date */
+			.zECGdd, .zECGdd.Fuybue:visited {
+				color: main-text-minor;
+			}
+		/* host */
+			.cJzOGc, .cJzOGc.Fuybue:visited {
+				color: main-source;
+			}
+	/* images */
+		/* header */
+			a.iu-card-header, a.iu-card-header:hover, a.iu-card-header:visited {
+				color: main-link;
+			}
+		/* more link */
+			g-more-link a span {
+				color: main-link !important;
+			}
+			g-more-link a:visited span {
+				color: main-link-visited !important;
+			}
+		/* report */
+			#irl_r_a {
+				color: main-text-off;
+			}
+			#irl_r_a:hover {
+				color: main-text;
+			}
+	/* videos */
+		.th {
+			border-color: main-border;
+		}
+	/* question suggestion (people also ask) */
+		/* heading */
+			.cUnQKe .garHBe {
+				color: main-text-off !important;
+			}
+		/* question */
+			.related-question-pair {
+				background-color: main-bg-container;
+			}
+			/* separators */
+				.m7VU0c {
+					border-color: container-separator;
+				}
+			/* expand button */
+				.fYWO0d {
+					filter: colorize(white);
+				}
+		/* loading icon */
+		g-loading-icon > img {
+			gloader();
+			font-size: 24px;
+		}
+		g-loading-icon > img::before {
+			gloader-before();
+		}
+		g-loading-icon > img::after {
+			gloader-after();
+		}
+	/* main widgets */
+		/* calculator */
+			/* calculation */
+			.cwletbl {
+				color: main-text-off;	
+			}
+			/* display */
+				.cwtlb {
 					border-color: main-separator;
-				}
-			/* currencies */
-				.R9zNe, .uWmgv {
 					background-color: main-bg-em;
 				}
-				/* overlayed */
-					.J8cLR {
+				/* text */
+					.cwtltbl {
+						color: main-text;
+					}
+				/* below */
+					.cwtlwm {
+						background-color: main-bg-container;
+					}
+			/* keyboard */
+				/* buttons */
+					calculator-button() {
+						color: main-text-off;
+						border-color: main-separator;
+						background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
+					}
+					calculator-button-hover() {
+						color: main-text;
+						background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
+						border-color: main-separator;
+						box-shadow: 0 1px 1px alpha(black, 0.5 * contrast);
+					}
+					/* digits or activated */
+						.cwlgb-tpl {
+							calculator-button();
+							background-color: main-bg-em;
+						}
+						/* hover */
+							.cwbd:hover .cwlgb-tpl {
+								calculator-button-hover();
+								background-color: main-bg-em;
+							}
+					/* functions */
+						.cwdgb-tpl {
+							calculator-button();
+							background-color: main-bg-off;
+						}
+						/* hover */
+							.cwbd:hover .cwdgb-tpl {
+								calculator-button-hover();
+								background-color: main-bg-off;
+							}
+					/* switch */
+						/* left */
+							.cwrb-tpl {
+								calculator-button();
+								background-color:	 main-bg-off;
+							}
+						/* right */
+							.cwdb-tpl {
+								calculator-button();
+								background-color: main-bg-off;
+							}
+						/* slider */
+							.cwdrsb-tpl {
+								calculator-button();
+								background-color: main-bg-em;
+								background-image: calculator-slider-image(calculator-slider);
+								background-size: 26px 14px;
+							}
+						/* result */
+							.cwbb-tpl {
+								calculator-button();
+								background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
+								background-color: #0d50be;
+							}
+							/* hover */
+								.cwbd:hover .cwbb-tpl {
+									calculator-button-hover();
+									background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
+									background-color: #0d50be;
+								}
+			/* function graph */
+				/* 2D axis labels */
+					#div_for_graph svg text {
+						fill: main-text-off;
+					}
+				/* box */
+					#div_for_graph > div div[style*="box-shadow"] {
+						box-shadow: alpha(black, 0.8 * contrast) 0px 0px 5px inset !important;
+					}
+			/* geometry calculator */
+				/* 'solve for' dropdown */
+					/* button */
+						.lr-fy-sfb .lr-fy-dd {
+							border-color: main-text-off transparent;
+						}
+					/* menu */
+						.goog-menu {
+							popout();
+						}
+						/* items */
+							.goog-menuitem, .goog-tristatemenuitem, .goog-filterobsmenuitem {
+								color: main-text;
+							}
+							/* hover */
+								.goog-menuitem-highlight, .goog-menuitem-hover {
+									background-color: main-bg-off;
+								}
+								/* text */
+									.goog-menuitem-highlight .goog-menuitem-content, .goog-menuitem-hover .goog-menuitem-content {
+									color: main-text;
+								}
+								/* border */
+									.goog-menuitem-highlight, .goog-menuitem-hover {
+										border-color: transparent;
+									}
+							/* disabled */
+								.goog-menuitem-disabled .goog-menuitem-accel, .goog-menuitem-disabled .goog-menuitem-content {
+									color: main-text-disabled !important;
+								}
+						/* separator */
+							.goog-menuseparator {
+								border-color: main-separator;
+							}
+				/* equation */
+					.lr-fy-eq, .lr-fy-ovde, .lr-fy-ns {
+						color: main-text;
+					}
+					/* approximately equal */
+						.lr-fy-ovde {
+							color: main-text !important;
+						}
+					/* quotient */
+						.lr-fy-eq-add[style*="background-color:"] {
+							background-color: main-text !important;
+						}
+				/* variable entry */
+					/* label */
+						.lr-fy-in {
+							color: main-text-off;
+						}
+					/* input */
+						.lr-fy-tb {
+							background-color: main-bg-em;
+							border-color: main-separator;
+							color: main-text-off;
+						}
+						.lr-fy-tb:focus {
+							border-color: white;
+						}
+				/* visualization */
+					/* background */
+						.lr-fy-i-w {
+							fill: main-bg-container;
+						}
+					/* labels */
+						.lr-fy-i-lgf {
+							fill: main-text-minor;
+						}
+					/* highlightable lines */
+						.lr-fy-i-ll {
+							stroke: main-text-minor;
+						}
+					/* shape */
+						.lr-fy-i-dl {
+							stroke: main-text-off;
+						}
+				/* solution */
+					/* heading */
+						.lr-fy-exl div {
+							color: main-text-off;
+						}
+			/* unit converter */
+				/* unit selectors */
+					.LNn04b {
+						select();
+					}
+					.LNn04b:hover {
+						select-hover();
+					}
+				/* equality sign */
+					.jCkZnd {
+						color: main-text-off;
+					}
+				/* inputs */
+					.vXQmIe {
+						background-color: main-bg;
+						color: main-text;
 						border-color: main-separator;
 					}
-			/* graph */
-				#knowledge-currency__chart {
-					filter: invert-with-bg(main-bg-container);
-				}
-		/* shop carousel */
-			/* sponsored hint */
-				/* text */
-					.ptJHdc .richlist-wta, .ptJHdc .v7hl4d {
+			/* nutrition */
+				/* selectors */
+					.k6J3K {
+						border-color: main-separator;
+					}
+					.Cc3NMb, .ZIxWWd {
+						background-color: main-bg-em;
+					}
+					/* labels */
+						.shDvCe {
 							color: main-text-off;
 						}
-				/* icon */
-					.FjdPod {
-						filter: colorize(main-text-off, 3);
-					}
-				/* popout */
 					/* text */
-						.v4YOu {
-							color: main-text-off;
+						.Cc3NMb {
+							color: main-text;
 						}
-			/* item */
-				.cu-container .mnr-c {
-					container();
-				}
-				/* thumbnail */
-					.pla-unit-img-container {
-						background-color: white;
+					/* arrows */
+						.WZ1JJe {
+							filter: colorize(darken(main-text, 30%));
+						}
+			/* currency converter */
+				/* amounts */
+					.IxBI8c {
+						background-color: main-bg-em;
+						border-color: main-separator;
 					}
-				/* hover */
-					.pla-hovercard-container {
+				/* currencies */
+					.R9zNe, .uWmgv {
+						background-color: main-bg-em;
+					}
+					/* overlayed */
+						.J8cLR {
+							border-color: main-separator;
+						}
+				/* graph */
+					#knowledge-currency__chart {
+						filter: invert-with-bg(main-bg-container);
+					}
+			/* shop carousel */
+				/* sponsored hint */
+					/* text */
+						.ptJHdc .richlist-wta, .ptJHdc .v7hl4d {
+								color: main-text-off;
+							}
+					/* icon */
+						.FjdPod {
+							filter: colorize(main-text-off, 3);
+						}
+					/* popout */
+						/* text */
+							.v4YOu {
+								color: main-text-off;
+							}
+				/* item */
+					.cu-container .mnr-c {
 						container();
 					}
 					/* thumbnail */
-						.Gor6zc {
+						.pla-unit-img-container {
 							background-color: white;
 						}
-					/* price */
-					.i3YBTb {
-						color: main-text;
-					}
-					/* shipping cost */
-					.Mxmg3 {
-						color: main-text-off;
-					}
-				/* shipping cost */
-					.mxB4Q {
-						color: main-text-off;
-					}
-				/* ratings */
-					/* rating count */
-						.QhqGkb {
-							color: main-text-off;
+					/* hover */
+						.pla-hovercard-container {
+							container();
 						}
-				/* 'By Google' */
-					.FfKHB .KbpByd {
-						color: main-link;
-					}
-		/* color picker */
-			/* show more */
-				/* text */
-					.u2sJ0e .lA0GG {
-						color: main-text;
-					}
-				/* arrow */
-					.xrIqbe {
-						color: main-text-off;
-					}
-				/* top border */
-					.u2sJ0e {
-						border-color: container-separator;
-					}
-				/* row borders */
-					.uUgsp {
-						border-color: container-separator;
-					}
-		/* lyrics */
-			/* attribution */
-				.R5GB6b div {
-					color: main-text-off;
-				}
-		/* flight data */
-			/* day tabs */
-				g-paginated-tabs div {
-					color: main-text !important;
-				}
-				/* activated */
-				g-paginated-tabs div[aria-selected="true"] div {
-					color: #3367d6 !important;
-				}
-				/* separators */
-					/* horizontal */
-						.ndq6eb {
-							background-color: main-separator;
-						}
-					/* vertical */
-						.t70XDb {
-							border-left-color: main-separator;
-						}
-				/* info */
-					/* flight name */
-						.ZCLkpe {
+						/* thumbnail */
+							.Gor6zc {
+								background-color: white;
+							}
+						/* price */
+						.i3YBTb {
 							color: main-text;
 						}
-					/* flight time */
-						.UbmFK {
+						/* shipping cost */
+						.Mxmg3 {
+							color: main-text-off;
+						}
+					/* shipping cost */
+						.mxB4Q {
+							color: main-text-off;
+						}
+					/* ratings */
+						/* rating count */
+							.QhqGkb {
+								color: main-text-off;
+							}
+					/* 'By Google' */
+						.FfKHB .KbpByd {
+							color: main-link;
+						}
+			/* color picker */
+				/* show more */
+					/* text */
+						.u2sJ0e .lA0GG {
+							color: main-text;
+						}
+					/* arrow */
+						.xrIqbe {
+							color: main-text-off;
+						}
+					/* top border */
+						.u2sJ0e {
+							border-color: container-separator;
+						}
+					/* row borders */
+						.uUgsp {
+							border-color: container-separator;
+						}
+			/* lyrics */
+				/* attribution */
+					.R5GB6b div {
+						color: main-text-off;
+					}
+			/* flight data */
+				/* day tabs */
+					g-paginated-tabs div {
+						color: main-text !important;
+					}
+					/* activated */
+					g-paginated-tabs div[aria-selected="true"] div {
+						color: #3367d6 !important;
+					}
+					/* separators */
+						/* horizontal */
+							.ndq6eb {
+								background-color: main-separator;
+							}
+						/* vertical */
+							.t70XDb {
+								border-left-color: main-separator;
+							}
+					/* info */
+						/* flight name */
+							.ZCLkpe {
+								color: main-text;
+							}
+						/* flight time */
+							.UbmFK {
+								color: main-text;
+							}
+							/* arrow */
+								.C2xaHb {
+									color: main-text;
+								}
+						/* expand arrow */
+							.vp45yf {
+								color: main-text-off;
+							}
+						/* bottom border */
+							.lBTQKc {
+								border-color: main-border;
+							}
+						/* expandable */
+							.kFX8M {
+								background-color: main-bg-off;
+							}
+							/* bottom border */
+								.uL1L0 {
+									background-color: main-border;
+								}
+							/* card */
+								.WyBc1 {
+									background-color: main-bg;
+									box-shadow: 0 4px 16px alpha(black, 0.7 * contrast);
+								}
+								/* update time */
+									.vk_txt {
+										color: main-text-off !important;
+									}
+								/* progress indicator */
+									/* plane */
+										.sE6sWb {
+											background-color: main-bg;
+										}
+
+				/* footer */
+					.di8g3, .di8g3 a {
+						color: main-text-off !important;
+					}
+			/* user agent */
+				/* heading */
+					.n77Cfb {
+						color: main-text-off;
+					}
+			/* your public ip address */
+				.ZINbbc { // also is stackoverflow integration)
+					container();
+				}
+				/* separators */
+					hr {
+						border-color: container-separator;
+					}
+				/* address */
+					.XO51F {
+						color: main-text;
+					}
+				/* "your public IP address" */
+					.JTuIPc .KKgUze {
+						color: main-text-off !important;
+					}
+				/* arrow */
+					.aRH6Qe {
+						color: main-text-off;
+					}
+			/* weather */
+				/* precipitation */
+					/* bars */
+						.XOKJuc {
+							background-color: #1878f0;
+						}
+				/* days */
+					/* selected */
+						.wob_ds {
+							background-color: main-bg-em;
+							border-color: main-border;
+						}
+					/* hover */
+						.wob_df:hover {
+							border-color: main-border;
+						}
+		/* top stories */
+			.VoEfsd {
+				container();
+			}
+			.KQvDId {
+				color: main-text-off;
+			}
+		/* map */
+			/* select opening hours */
+				.rllh__header-container > div {
+					background-color: main-bg-container;
+				}
+				/* dropdown */
+					.F7IIOc {
+						color: main-text-off;
+					}
+					/* hover */
+						.F7IIOc.rlf__open:not(.rlf__applied), .F7IIOc:not(.rlf__applied):hover {
+							color: main-text;
+						}
+					/* arrow */
+						.FZaw6b {
+							border-color: main-text-off transparent;
+						}
+						/* hover */
+							.F7IIOc.rlf__open:not(.rlf__applied) .FZaw6b, .F7IIOc:not(.rlf__applied):hover .FZaw6b {
+								border-color: main-text transparent;
+							}
+					/* expanded */
+						.czHJJ {
+							popout();
+						}
+						/* item */
+							/* hover */
+								.w3RMhb:hover {
+									background-color: main-bg-off;
+								}
+							/* selected */
+								.w3RMhb.rlf__ami {
+									background-image: dropdown-checkmark;
+								}
+						/* separator */
+							.tGgE5d {
+								border-color: main-border;
+							}
+			/* select rating */
+				/* dropdown */
+					/* "and up" */
+						.w3RMhb .zFsEvf {
+							color: main-text;
+						}
+					/* stars */
+						/* unfilled */
+							.EBe2gf {
+								background-image: unfilled-star;
+							}
+			/* separator */
+				.ccBEnf {
+					border-color: container-separator;
+				}
+			/* place */
+				.uMdZh {
+					color: main-text-off;
+				}
+				/* hover */
+					.uMdZh:hover {
+						background-color: main-bg-em;
+					}
+				/* title */
+					.dbg0pd {
+						color: main-text;
+					}
+				/* border */
+					.wYWDAd {
+						border-color: container-separator;
+					}
+				/* active */
+					.rllt__link:active {
+						background-color: main-bg-em;
+					}
+					.uMdZh:active, .rllt__local-item-selected {
+						background-color: main-bg-em;
+					}
+			/* more places */
+				/* border */
+					.zkIadb {
+						border-color: container-separator;
+					}
+		/* stock */
+			.f196ee {
+				container();
+			}
+			/* name, symbol and exchange */
+				.OiIFo {
+					color: main-text-off;
+				}
+		/* sports results */
+			/* tabs */
+				.ie7Asb {
+					box-shadow: 0px 4px 2px -1px main-border; //negative spread radius prevents side shadow
+				}
+			/* upcoming match */
+				.imso_mh__mh-bd {
+					color: main-text-off;
+				}
+				/* team names */
+					.imso_mh__tm-nm {
+						color: main-text;
+					}
+				/* vs */
+					.imso_mh__vs-at-sep {
+						color: main-text-off;
+					}
+				/* separator */
+					.abhAW {
+						border-color: main-border;
+					}
+			/* matches */
+				/* hover */
+					.imso-hov:hover {
+						background-color: main-bg-em;
+					}
+				/* separator */
+					.imspo_mt__vs-c {
+						background: linear-gradient(to bottom, transparent 0%, transparent 12.5%, main-separator 12.5%, main-separator 87.5%, transparent 87.5%, transparent 100%);
+					}
+				/* context */
+					.imspo_mt__lg-st-c-np {
+						color: main-text-off;
+					}
+				/* teams */
+					/* winner */
+						.imspo_mt__dt-t {
 							color: main-text;
 						}
 						/* arrow */
-							.C2xaHb {
-								color: main-text;
+							.imspo_mt__triangle > polygon {
+								fill: main-text !important;
 							}
-					/* expand arrow */
-						.vp45yf {
+					/* loser */
+						.imspo_mt__lt-t {
 							color: main-text-off;
 						}
-					/* bottom border */
-						.lBTQKc {
-							border-color: main-border;
+				/* meta */
+					/* past */
+						.imspo_mt__match-sc {
+							color: main-text;
 						}
-					/* expandable */
-						.kFX8M {
-							background-color: main-bg-off;
+						/* date */
+							.imspo_mt__cmd {
+								color: main-text-off;
+							}
+					/* future */
+						.imspo_mt__pm-inf {
+							color: main-text;
 						}
-						/* bottom border */
-							.uL1L0 {
-								background-color: main-border;
-							}
-						/* card */
-							.WyBc1 {
-								background-color: main-bg;
-								box-shadow: 0 4px 16px alpha(black, 0.7 * contrast);
-							}
-							/* update time */
-								.vk_txt {
-									color: main-text-off !important;
-								}
-							/* progress indicator */
-								/* plane */
-									.sE6sWb {
-										background-color: main-bg;
-									}
-
+				/* border */
+					.MoyuKc {
+						border-color: main-border;
+					}
+					.eGNEZ {
+						border-color: main-border;
+					}
+				/* timezone hint */
+					.SXBRcc {
+						color: main-text-off;
+					}
 			/* footer */
-				.di8g3, .di8g3 a {
-					color: main-text-off !important;
+				.jTw2d {
+					background-color: main-bg-off;
 				}
-		/* user agent */
-			/* heading */
-				.n77Cfb {
-					color: main-text-off;
-				}
-		/* your public ip address */
-			.ZINbbc { // also is stackoverflow integration)
-				container();
-			}
-			/* separators */
-				hr {
-					border-color: container-separator;
-				}
-			/* address */
-				.XO51F {
-					color: main-text;
-				}
-			/* "your public IP address" */
-				.JTuIPc .KKgUze {
-					color: main-text-off !important;
-				}
-			/* arrow */
-				.aRH6Qe {
-					color: main-text-off;
-				}
-		/* weather */
-			/* precipitation */
-				/* bars */
-					.XOKJuc {
-						background-color: #1878f0;
-					}
-			/* days */
-				/* selected */
-					.wob_ds {
-						background-color: main-bg-em;
-						border-color: main-border;
-					}
-				/* hover */
-					.wob_df:hover {
-						border-color: main-border;
-					}
-	/* top stories */
-		.VoEfsd {
-			container();
-		}
-		.KQvDId {
-			color: main-text-off;
-		}
-	/* map */
-		/* select opening hours */
-			.rllh__header-container > div {
-				background-color: main-bg-container;
-			}
-			/* dropdown */
-				.F7IIOc {
-					color: main-text-off;
-				}
-				/* hover */
-					.F7IIOc.rlf__open:not(.rlf__applied), .F7IIOc:not(.rlf__applied):hover {
+				/* text */
+					.YIikAd {
 						color: main-text;
 					}
+		/* dictionary */
+			/* heading */
+				.vkc_np > div:first-child {
+					color: main-text !important;
+				}
+			/* search field */
+				/* overlayed */
+				.dw-sb-cont > div {
+					background-color: main-bg;
+				}
+				/* input */
+					/* overlayed */
+						#dw-siw {
+							background-color: main-bg;
+						}
+					/* actual */
+						.dw-sb-cont .dw-sbi {
+							background-color: main-bg;
+							border-color: main-separator;
+							color: main-text;
+						}
+				/* button */
+					.dw-sb-cont .dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn {
+						background-color: main-bg-em;
+						border-color: main-separator !important;
+						color: main-text-off;
+					}
+				/* fanout */ 
+					#dictionary-modules div[class^="gstl_5"] .sbdd_b {
+						box-shadow: 0 2px 4px alpha(black, 0.4 * contrast);
+						border-color: container-separator;
+						border-top-color: transparent;
+						background-color: main-bg;
+					}
+					#dictionary-modules div[class^="gstl_5"] .sbsb_a {
+						background-color: main-bg;
+					}
+					/* items */
+						/* text */
+							.dw-sb-cont .dw-sbs {
+								color: main-text;
+							}
+						/* hover */
+							#dictionary-modules div[class^="gstl_5"] .sbsb_d {
+								background-color: main-bg-off;
+							}
+			/* definition */
+				.vk_gy {
+					color: main-text-off !important;
+				}
+				/* synonyms */
+					/* dialect */
+						.lr_dct_lbl_box {
+							color: main-text-em;
+							background-color: main-bg-em;
+						}
+					/* links */
+						.lr_dct_ent span[role='link'] {
+							color: main-link;
+						}
+						/* more */
+							.lr_dct_more_btn {
+								color: main-link;
+							}
+			/* pronounciation */
+				/* speaker */
+					.lr_dct_spkr {
+						filter: colorize(white);
+					}
+			/* origin */
+			img[id^="lr_dct_img_origin_"] {
+				filter: invert-with-bg(main-bg-container);
+			}
+			/* separator */
+				.pVFdhc {
+					background-color: container-separator;
+				}
+			/* translate */
+				/* select */
+					.lr_dct_trns_sel {
+						select();
+					}
+					.lr_dct_trns_sel:hover {
+						select-hover();
+					}
+					.vk_bk {
+						color: main-text !important;
+					}
+			/* similar-sounding words */
+				/* tip */
+				.vNr24d {
+					background-color: alpha(white, 0.4 * contrast);
+					color: alpha(black, 1 * contrast);
+				}
+				/* link */
+					.jMtmC {
+						color: main-link;
+					}
+			/* use over time */
+			#lr_dct_img_use {
+				filter: invert-with-bg(main-bg-container);
+			}
+			/* expand footer */
 				/* arrow */
-					.FZaw6b {
+					.vk_ard:after {
+						border-top-color: main-bg-container;
+					}
+					.vk_aru:after {
+							border-bottom-color: main-bg-container;
+					}
+					.vk_ard:before {
+							border-top-color: darken(main-text-off, 40%);
+					}
+					.vk_aru:before {
+							border-bottom-color: darken(main-text-off, 40%);
+					}
+					.vk_ard, .vk_aru {
+							background-color: darken(main-text-off, 40%);
+					}
+				/* show more / show less */
+					.iXqz2e .exp-txt-c {
+						color: main-text-off !important; //important needed ?
+					}
+		/* SOS alert */
+			.BTZxle.YLAlMc, .Ri4g6c.VKzVKc.YLAlMc {
+				container();
+			}
+			/* inner */
+				.BTZxle .aRjnqc, .Ri4g6c.VKzVKc .aRjnqc .sh-dr__short button {
+					background-color: inherit;
+				}
+				/* title */
+					.BTZxle .aRjnqc, .Ri4g6c.VKzVKc .aRjnqc {
+						color: main-text;
+					}
+				/* details */
+					.BTZxle .DV8vJc, .Ri4g6c.VKzVKc .DV8vJc {
+						color: main-text-minor;
+					}
+			/* share button */
+				.BTZxle kno-share-button svg, .Ri4g6c.VKzVKc kno-share-button svg {
+					fill: main-text-minor;
+				}
+		/* alert map (affected area) */
+			/* header */
+				.XvZKZb {
+					background-color: main-bg-off;
+				}
+				/* heading */
+					.N60dNb, .N60dNb a {
+						color: main-text-off;
+					}
+			/* view on map */
+				.iA7C4 {
+					color: main-text-off;
+				}
+			/* footer */
+				.UNIhbb {
+					background-color: main-bg-off;
+				}
+				/* feedback */
+					.sz486c a.duf3 {
+						color: main-text-off;
+					}
+		/* find my phone */
+			#act-card {
+				background-color: main-bg-container;	
+			}
+			/* sign-in prompt */
+				.act-fmp-overlay-dialog {
+					background-color: main-bg;
+					box-shadow: 0px 1px 4px 0px alpha(black, 0.4 * contrast), 0px 2px 1px 0px alpha(black, 0.2 * contrast);
+				}
+			/* separator */
+				.act-row {
+					border-color: container-separator;
+				}
+			/* device name */
+				.goog-menu-button {
+					color: main-text;
+				}
+			/* last synced */
+				.dOMhHf {
+					color: main-text-off;
+				}
+			/* dropdown */
+				/* button */
+					.tfbcfd {
 						border-color: main-text-off transparent;
 					}
-					/* hover */
-						.F7IIOc.rlf__open:not(.rlf__applied) .FZaw6b, .F7IIOc:not(.rlf__applied):hover .FZaw6b {
-							border-color: main-text transparent;
-						}
-				/* expanded */
-					.czHJJ {
+				/* menu */
+					.hqo5mf .goog-menu {
 						popout();
 					}
 					/* item */
 						/* hover */
-							.w3RMhb:hover {
-								background-color: main-bg-off;
+							.hqo5mf .goog-menuitem.goog-menuitem-highlight {
+								dropdown-hover();
 							}
-						/* selected */
-							.w3RMhb.rlf__ami {
-								background-image: dropdown-checkmark;
+						/* text */
+							.goog-menuitem-content {
+								color: main-text;
 							}
-					/* separator */
-						.tGgE5d {
-							border-color: main-border;
+						/* separator */
+							.hqo5mf .goog-menuitem {
+								border-color: main-border;
+							}
+			/* actions */
+				/* disabled */
+					/* text */
+						#act-card .act-lnk.act-conf-disabled {
+							color: main-text-disabled;
 						}
-		/* select rating */
-			/* dropdown */
-				/* "and up" */
-					.w3RMhb .zFsEvf {
-						color: main-text;
-					}
-				/* stars */
-					/* unfilled */
-						.EBe2gf {
-							background-image: unfilled-star;
+					/* icon */
+						.act-img-disabled {
+							filter: colorize(darken(main-text-disabled, 80%));
+							opacity: 1;
 						}
-		/* separator */
-			.ccBEnf {
-				border-color: container-separator;
-			}
-		/* place */
-			.uMdZh {
-				color: main-text-off;
-			}
-			/* hover */
-				.uMdZh:hover {
-					background-color: main-bg-em;
+			/* 'trying to help a friend' */
+				.act-fmp-help-a-friend-wrapper a, .act-fmp-help-a-friend-wrapper a:visited, .act-fmp-help-a-friend-wrapper a:hover { //restore original style
+					color: #3c80f6;
 				}
-			/* title */
-				.dbg0pd {
-					color: main-text;
-				}
-			/* border */
-				.wYWDAd {
-					border-color: container-separator;
-				}
-			/* active */
-				.rllt__link:active {
-					background-color: main-bg-em;
-				}
-				.uMdZh:active, .rllt__local-item-selected {
-					background-color: main-bg-em;
-				}
-		/* more places */
-			/* border */
-				.zkIadb {
-					border-color: container-separator;
-				}
-	/* stock */
-		.f196ee {
-			container();
-		}
-		/* name, symbol and exchange */
-			.OiIFo {
-				color: main-text-off;
-			}
-	/* sports results */
-		/* tabs */
-			.ie7Asb {
-				box-shadow: 0px 4px 2px -1px main-border; //negative spread radius prevents side shadow
-			}
-		/* upcoming match */
-			.imso_mh__mh-bd {
-				color: main-text-off;
-			}
-			/* team names */
-				.imso_mh__tm-nm {
-					color: main-text;
-				}
-			/* vs */
-				.imso_mh__vs-at-sep {
-					color: main-text-off;
-				}
-			/* separator */
-				.abhAW {
-					border-color: main-border;
-				}
-		/* matches */
-			/* hover */
-				.imso-hov:hover {
-					background-color: main-bg-em;
-				}
-			/* separator */
-				.imspo_mt__vs-c {
-					background: linear-gradient(to bottom, transparent 0%, transparent 12.5%, main-separator 12.5%, main-separator 87.5%, transparent 87.5%, transparent 100%);
-				}
-			/* context */
-				.imspo_mt__lg-st-c-np {
-					color: main-text-off;
-				}
-			/* teams */
-				/* winner */
-					.imspo_mt__dt-t {
-						color: main-text;
-					}
-					/* arrow */
-						.imspo_mt__triangle > polygon {
-							fill: main-text !important;
-						}
-				/* loser */
-					.imspo_mt__lt-t {
+			/* footer */
+				/* feedback */
+					a.act-fbk-lnk {
 						color: main-text-off;
 					}
-			/* meta */
-				/* past */
-					.imspo_mt__match-sc {
-						color: main-text;
-					}
-					/* date */
-						.imspo_mt__cmd {
-							color: main-text-off;
-						}
-				/* future */
-					.imspo_mt__pm-inf {
-						color: main-text;
-					}
-			/* border */
-				.MoyuKc {
+					/* popup */
+						/* overlay */
+							#feedback-annotator canvas {
+								filter: colorize(black);
+							}
+						/*  description input */
+							div[key="feedback-panel-container"] textarea {
+								background: main-bg;
+							}
+							/* placeholder text */
+							div[key="feedback-panel-container"] div[style*="color: rgb(189"] { //commas here break stylus
+								color: red;
+							}
+							// TODO
+		/* things to do */
+			/* separators */
+				.jktSrf td {
 					border-color: main-border;
 				}
-				.eGNEZ {
-					border-color: main-border;
-				}
-			/* timezone hint */
-				.SXBRcc {
-					color: main-text-off;
-				}
-		/* footer */
-			.jTw2d {
-				background-color: main-bg-off;
-			}
 			/* text */
-				.YIikAd {
+				.tuHUkb {
 					color: main-text;
 				}
-	/* dictionary */
-		/* heading */
-			.vkc_np > div:first-child {
-				color: main-text !important;
+			/* compass */
+				.KJ3c0b.M5mFPb {
+					filter: colorize(main-link); //TODO: find out why colors don't match
+				}
+		/* vote survey */
+			.wdQ5Cf {
+				background-color: main-bg-off;
 			}
-		/* search field */
-			/* overlayed */
-			.dw-sb-cont > div {
-				background-color: main-bg;
-			}
-			/* input */
-				/* overlayed */
-					#dw-siw {
-						background-color: main-bg;
+			/* header */
+				.NcAwsd {
+					background-color: main-bg-container;	
+				}
+				/* question */
+					.geWDq {
+						color: main-text-off;
 					}
-				/* actual */
-					.dw-sb-cont .dw-sbi {
-						background-color: main-bg;
-						border-color: main-separator;
-						color: main-text;
-					}
-			/* button */
-				.dw-sb-cont .dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn {
-					background-color: main-bg-em;
-					border-color: main-separator !important;
-					color: main-text-off;
-				}
-			/* fanout */ 
-				#dictionary-modules div[class^="gstl_5"] .sbdd_b {
-					box-shadow: 0 2px 4px alpha(black, 0.4 * contrast);
-					border-color: container-separator;
-					border-top-color: transparent;
-					background-color: main-bg;
-				}
-				#dictionary-modules div[class^="gstl_5"] .sbsb_a {
-					background-color: main-bg;
-				}
-				/* items */
-					/* text */
-						.dw-sb-cont .dw-sbs {
-							color: main-text;
+			/* options */
+				/* card */
+					/* radio button */
+						.LE373 {
+							border-color: main-text-off;
 						}
-					/* hover */
-						#dictionary-modules div[class^="gstl_5"] .sbsb_d {
-							background-color: main-bg-off;
+			/* footer */
+				/* vote button */
+					/* disabled */
+						.Gfzyee:disabled, .Gfzyee[disabled]:not([disabled="false"]) {
+							background-color: main-bg;
+							color: main-text-disabled !important;	
 						}
-		/* definition */
-			.vk_gy {
-				color: main-text-off !important;
-			}
-			/* synonyms */
-				/* dialect */
-					.lr_dct_lbl_box {
-						color: main-text-em;
+				/* share button */
+					.JxsAf, .bC24W {
 						background-color: main-bg-em;
 					}
-				/* links */
-					.lr_dct_ent span[role='link'] {
-						color: main-link;
-					}
-					/* more */
-						.lr_dct_more_btn {
-							color: main-link;
-						}
-		/* pronounciation */
-			/* speaker */
-				.lr_dct_spkr {
-					filter: colorize(white);
+		/* cinema showtimes */
+			/* date select */
+				.tb_l {
+					border-left-color: main-separator;
 				}
-		/* origin */
-		img[id^="lr_dct_img_origin_"] {
-			filter: invert-with-bg(main-bg-container);
-		}
-		/* separator */
-			.pVFdhc {
-				background-color: container-separator;
-			}
-		/* translate */
-			/* select */
-				.lr_dct_trns_sel {
-					select();
+			/* time select */
+				.lr_c_tf {
+					background-color: main-bg-off;
 				}
-				.lr_dct_trns_sel:hover {
-					select-hover();
-				}
-				.vk_bk {
-					color: main-text !important;
-				}
-		/* similar-sounding words */
-			/* tip */
-			.vNr24d {
-				background-color: alpha(white, 0.4 * contrast);
-				color: alpha(black, 1 * contrast);
-			}
-			/* link */
-				.jMtmC {
-					color: main-link;
-				}
-		/* use over time */
-		#lr_dct_img_use {
-			filter: invert-with-bg(main-bg-container);
-		}
-		/* expand footer */
-			/* arrow */
-				.vk_ard:after {
-					border-top-color: main-bg-container;
-				}
-				.vk_aru:after {
-						border-bottom-color: main-bg-container;
-				}
-				.vk_ard:before {
-						border-top-color: darken(main-text-off, 40%);
-				}
-				.vk_aru:before {
-						border-bottom-color: darken(main-text-off, 40%);
-				}
-				.vk_ard, .vk_aru {
-						background-color: darken(main-text-off, 40%);
-				}
-			/* show more / show less */
-				.iXqz2e .exp-txt-c {
-					color: main-text-off !important; //important needed ?
-				}
-	/* SOS alert */
-		.BTZxle.YLAlMc, .Ri4g6c.VKzVKc.YLAlMc {
-			container();
-		}
-		/* inner */
-			.BTZxle .aRjnqc, .Ri4g6c.VKzVKc .aRjnqc .sh-dr__short button {
-				background-color: inherit;
-			}
-			/* title */
-				.BTZxle .aRjnqc, .Ri4g6c.VKzVKc .aRjnqc {
-					color: main-text;
-				}
-			/* details */
-				.BTZxle .DV8vJc, .Ri4g6c.VKzVKc .DV8vJc {
-					color: main-text-minor;
-				}
-		/* share button */
-			.BTZxle kno-share-button svg, .Ri4g6c.VKzVKc kno-share-button svg {
-				fill: main-text-minor;
-			}
-	/* alert map (affected area) */
-		/* header */
-			.XvZKZb {
-				background-color: main-bg-off;
-			}
-			/* heading */
-				.N60dNb, .N60dNb a {
-					color: main-text-off;
-				}
-		/* view on map */
-			.iA7C4 {
-				color: main-text-off;
-			}
-		/* footer */
-			.UNIhbb {
-				background-color: main-bg-off;
-			}
-			/* feedback */
-				.sz486c a.duf3 {
-					color: main-text-off;
-				}
-	/* find my phone */
-		#act-card {
-			background-color: main-bg-container;	
-		}
-		/* sign-in prompt */
-			.act-fmp-overlay-dialog {
-				background-color: main-bg;
-				box-shadow: 0px 1px 4px 0px alpha(black, 0.4 * contrast), 0px 2px 1px 0px alpha(black, 0.2 * contrast);
-			}
-		/* separator */
-			.act-row {
-				border-color: container-separator;
-			}
-		/* device name */
-			.goog-menu-button {
-				color: main-text;
-			}
-		/* last synced */
-			.dOMhHf {
-				color: main-text-off;
-			}
-		/* dropdown */
-			/* button */
-				.tfbcfd {
-					border-color: main-text-off transparent;
-				}
-			/* menu */
-				.hqo5mf .goog-menu {
-					popout();
-				}
-				/* item */
-					/* hover */
-						.hqo5mf .goog-menuitem.goog-menuitem-highlight {
-							dropdown-hover();
-						}
-					/* text */
-						.goog-menuitem-content {
-							color: main-text;
-						}
-					/* separator */
-						.hqo5mf .goog-menuitem {
-							border-color: main-border;
-						}
-		/* actions */
-			/* disabled */
-				/* text */
-					#act-card .act-lnk.act-conf-disabled {
+				/* disabled */
+					.lr_c_fi.disabled {
 						color: main-text-disabled;
 					}
-				/* icon */
-					.act-img-disabled {
-						filter: colorize(darken(main-text-disabled, 80%));
-						opacity: 1;
+			/* cinema */
+				/* times */
+					.wcluHf {
+						color: main-link;
 					}
-		/* 'trying to help a friend' */
-			.act-fmp-help-a-friend-wrapper a, .act-fmp-help-a-friend-wrapper a:visited, .act-fmp-help-a-friend-wrapper a:hover { //restore original style
-				color: #3c80f6;
+					/* buy tickets popup */
+						/* text */
+							.MBoHTc {
+								color: main-text;
+							}
+						/* 'date' and 'time' */
+							.gkToze {
+								color: main-text-off;
+							}
+						/* film icon */
+							.GVLnMb {
+								filter: invert-with-bg(main-bg);
+							}
+						/* domain */
+							.std-li-a {
+								color: main-text;
+							}
+		/* translate */
+			/* language select */
+				/* border */
+					.tw-lang-selector-wrapper {
+						border-color: transparent;
+					}
+				/* text */
+					.tw-lang-selector {
+						color: main-text-off;
+					}
+					.tw-lang-selector:hover {
+						color: main-text;
+					}
+				/* dropdown arrow */
+					.tw-lang-selector-wrapper::after {
+						border-color: darken(main-text-off, 10%) transparent;
+					}
+					.tw-lang-selector-wrapper:hover::after {
+						border-color: darken(main-text, 10%) transparent;
+					}
+			/* top buttons (pronunciation, language swap & copy) */
+				/* icon */
+					.tw-menu-btn {
+						color: darken(main-text-off, 20%);
+					}
+					/* hover */
+						.tw-menu-btn:not(.tw-menu-btn-disabled):hover {
+							color: darken(main-text, 20%);
+						}
+					/* disabled */
+						.tw-menu-btn.tw-menu-btn-disabled {
+							color: main-text-disabled;
+						}
+				/* button */
+					.tw-menu-btn:not(.tw-menu-btn-disabled):hover .tw-menu-btn-image:first-child {
+						button-hover();
+						background-color: main-bg-container;
+					}
+				/* copy button tooltip */
+					.Xy35sb {
+						popout();
+					}
+					/* caret */
+						/* inner */
+							.PiP5T {
+								border-bottom-color: main-bg;
+							}
+						/* outer */
+							.yieLWc {
+								border-bottom-color: popout-border;
+							}
+			/* correct input language ('translate from') */
+				/* language link */
+					#tw-lsst {
+						color: main-link;
+					}
+			/* input text */
+				#tw-source-text-ta {
+					color: main-text;
+				}
+			/* output text */
+				.tw-data-text {
+					color: main-text !important;
+				}
+			/* vertical separator */
+				.DHcWmd {
+					background-color: main-separator;
+				}
+		/* animal sounds */
+			.het5x {
+				background-color: main-bg-container;
 			}
-		/* footer */
-			/* feedback */
-				a.act-fbk-lnk {
+			/* header */
+				.GExYAc {
+					background-color: main-bg-container;
+					border-color: main-border;
+				}
+			/* card */
+				.het5x .m6cn6, .ZfSAad .m6cn6 {
+					background-color: main-bg-em;
+					box-shadow: 0 1px 6px alpha(black, 0.4);
+				}
+				/* name */
+					.het5x .m6cn6 .b3CYFf, .ZfSAad .m6cn6 .b3CYFf {
+						color: main-text-off;
+					}
+				/* pronunciation */
+					.het5x .m6cn6 .nm8ICe, .ZfSAad .m6cn6 .nm8ICe {
+						filter: invert-with-bg(main-bg-em);
+					}
+			/* 'more sounds' */
+				.EUjJDc {
 					color: main-text-off;
 				}
 				/* popup */
-					/* overlay */
-						#feedback-annotator canvas {
-							filter: colorize(black);
+					/* header */
+						.ZfDFMe .Ab5sB {
+							background-color: main-bg;
+							border-color: main-border;
 						}
-					/*  description input */
-						div[key="feedback-panel-container"] textarea {
-							background: main-bg;
+						/* close button */
+							.ZfDFMe .SUEuld {
+								filter: colorize(main-text);
+							}
+					/* list */
+						.ZfDFMe .ZfSAad {
+							background-color: main-bg;	
 						}
-						/* placeholder text */
-						div[key="feedback-panel-container"] div[style*="color: rgb(189"] { //commas here break stylus
-							color: red;
+		/* feedback popup */
+			/* give dialog*/
+				/* select response */
+					/* radio buttons */
+						.dsLpHe {
+							border-color: main-text-minor;
 						}
-						// TODO
-	/* things to do */
-		/* separators */
-			.jktSrf td {
-				border-color: main-border;
-			}
-		/* text */
-			.tuHUkb {
-				color: main-text;
-			}
-		/* compass */
-			.KJ3c0b.M5mFPb {
-				filter: colorize(main-link); //TODO: find out why colors don't match
-			}
-	/* vote survey */
-		.wdQ5Cf {
-			background-color: main-bg-off;
-		}
-		/* header */
-			.NcAwsd {
-				background-color: main-bg-container;	
-			}
-			/* question */
-				.geWDq {
-					color: main-text-off;
-				}
-		/* options */
-			/* card */
-				/* radio button */
-					.LE373 {
-						border-color: main-text-off;
+				/* input */
+					.c0dB4b, .fb1yre {
+						background-color: inherit;
+						color: main-text;
+						border-color: main-separator;
 					}
-		/* footer */
-			/* vote button */
-				/* disabled */
-					.Gfzyee:disabled, .Gfzyee[disabled]:not([disabled="false"]) {
-						background-color: main-bg;
-						color: main-text-disabled !important;	
-					}
-			/* share button */
-				.JxsAf, .bC24W {
-					background-color: main-bg-em;
-				}
-	/* cinema showtimes */
-		/* date select */
-			.tb_l {
-				border-left-color: main-separator;
-			}
-		/* time select */
-			.lr_c_tf {
-				background-color: main-bg-off;
-			}
-			/* disabled */
-				.lr_c_fi.disabled {
-					color: main-text-disabled;
-				}
-		/* cinema */
-			/* times */
-				.wcluHf {
-					color: main-link;
-				}
-				/* buy tickets popup */
-					/* text */
-						.MBoHTc {
-							color: main-text;
+				/* footer */
+					/* separator */
+						.duf3cw-ctrl {
+							border-color: container-separator;
 						}
-					/* 'date' and 'time' */
-						.gkToze {
-							color: main-text-off;
-						}
-					/* film icon */
-						.GVLnMb {
-							filter: invert-with-bg(main-bg);
-						}
-					/* domain */
-						.std-li-a {
-							color: main-text;
-						}
-	/* translate */
-		/* language select */
-			/* border */
-				.tw-lang-selector-wrapper {
-					border-color: transparent;
-				}
-			/* text */
-				.tw-lang-selector {
-					color: main-text-off;
-				}
-				.tw-lang-selector:hover {
-					color: main-text;
-				}
-			/* dropdown arrow */
-				.tw-lang-selector-wrapper::after {
-					border-color: darken(main-text-off, 10%) transparent;
-				}
-				.tw-lang-selector-wrapper:hover::after {
-					border-color: darken(main-text, 10%) transparent;
-				}
-		/* top buttons (pronunciation, language swap & copy) */
-			/* icon */
-				.tw-menu-btn {
-					color: darken(main-text-off, 20%);
-				}
-				/* hover */
-					.tw-menu-btn:not(.tw-menu-btn-disabled):hover {
-						color: darken(main-text, 20%);
-					}
-				/* disabled */
-					.tw-menu-btn.tw-menu-btn-disabled {
-						color: main-text-disabled;
-					}
-			/* button */
-				.tw-menu-btn:not(.tw-menu-btn-disabled):hover .tw-menu-btn-image:first-child {
-					button-hover();
-					background-color: main-bg-container;
-				}
-			/* copy button tooltip */
-				.Xy35sb {
-					popout();
-				}
-				/* caret */
-					/* inner */
-						.PiP5T {
-							border-bottom-color: main-bg;
-						}
-					/* outer */
-						.yieLWc {
-							border-bottom-color: popout-border;
-						}
-		/* correct input language ('translate from') */
-			/* language link */
-				#tw-lsst {
-					color: main-link;
-				}
-		/* input text */
-			#tw-source-text-ta {
-				color: main-text;
-			}
-		/* output text */
-			.tw-data-text {
-				color: main-text !important;
-			}
-		/* vertical separator */
-			.DHcWmd {
-				background-color: main-separator;
-			}
-	/* animal sounds */
-		.het5x {
-			background-color: main-bg-container;
-		}
-		/* header */
-			.GExYAc {
-				background-color: main-bg-container;
-				border-color: main-border;
-			}
-		/* card */
-			.het5x .m6cn6, .ZfSAad .m6cn6 {
-				background-color: main-bg-em;
-				box-shadow: 0 1px 6px alpha(black, 0.4);
-			}
-			/* name */
-				.het5x .m6cn6 .b3CYFf, .ZfSAad .m6cn6 .b3CYFf {
-					color: main-text-off;
-				}
-			/* pronunciation */
-				.het5x .m6cn6 .nm8ICe, .ZfSAad .m6cn6 .nm8ICe {
-					filter: invert-with-bg(main-bg-em);
-				}
-		/* 'more sounds' */
-			.EUjJDc {
-				color: main-text-off;
-			}
-			/* popup */
-				/* header */
-					.ZfDFMe .Ab5sB {
-						background-color: main-bg;
-						border-color: main-border;
-					}
-					/* close button */
-						.ZfDFMe .SUEuld {
-							filter: colorize(main-text);
-						}
-				/* list */
-					.ZfDFMe .ZfSAad {
-						background-color: main-bg;	
-					}
-	/* feedback popup */
-		/* give dialog*/
-			/* select response */
-				/* radio buttons */
-					.dsLpHe {
-						border-color: main-text-minor;
-					}
-			/* input */
-				.c0dB4b, .fb1yre {
-					background-color: inherit;
-					color: main-text;
-					border-color: main-separator;
-				}
-			/* footer */
-				/* separator */
-					.duf3cw-ctrl {
-						border-color: container-separator;
-					}
-				/* send button */
-					/* disabled */
-						.U8shWc.Vy8nid:disabled, .U8shWc.Vy8nid[disabled]:not([disabled="false"]) {
-							color: main-text-disabled !important;
-						}
-		/* confirmation dialog */
-			div.duf3d {
-				background-color: main-bg;
-			}
-			/* links */
-				div.duf3d a {
-					color: main-link;
-				}
-/* related terms (searches related) */
-	/* heading */
-		#brs .med {
-			color: main-text;
-		}
-/* paging */
-	/* selected */
-		#foot #navcnt .cur {
-			color: main-text;
-		}
-/* knowledge panels */
-	/* main */
-		.kp-blk {
-			container();
-		}
-	/* title */
-		.kno-ecr-pt {
-			color: main-text;
-		}
-		/* favorite star */
-			.stt-uf {
-				filter: invert(1) brightness(contrast); //TODO convert to colorize
-			}
-	/* action buttons */
-		/* save */
-			/* dropdown */
-				.wHPtib {
-					popout();
-				}
-			/* items */
-				.common-jslayout-geo-personalplacelist__sheet-item {
+					/* send button */
+						/* disabled */
+							.U8shWc.Vy8nid:disabled, .U8shWc.Vy8nid[disabled]:not([disabled="false"]) {
+								color: main-text-disabled !important;
+							}
+			/* confirmation dialog */
+				div.duf3d {
 					background-color: main-bg;
 				}
-				/* hover */
-					.common-jslayout-geo-personalplacelist__sheet-item:hover, .common-jslayout-geo-personalplacelist__sheet-item:focus {
-						background-color: main-bg-off;
+				/* links */
+					div.duf3d a {
+						color: main-link;
 					}
-				/* new list */
-					/* popup */
-						/* input label */
-							.yiGxXe label, .dh6FSe {
+	/* related terms (searches related) */
+		/* heading */
+			#brs .med {
+				color: main-text;
+			}
+	/* paging */
+		/* selected */
+			#foot #navcnt .cur {
+				color: main-text;
+			}
+	/* knowledge panels */
+		/* main */
+			.kp-blk {
+				container();
+			}
+		/* title */
+			.kno-ecr-pt {
+				color: main-text;
+			}
+			/* favorite star */
+				.stt-uf {
+					filter: invert(1) brightness(contrast); //TODO convert to colorize
+				}
+		/* action buttons */
+			/* save */
+				/* dropdown */
+					.wHPtib {
+						popout();
+					}
+				/* items */
+					.common-jslayout-geo-personalplacelist__sheet-item {
+						background-color: main-bg;
+					}
+					/* hover */
+						.common-jslayout-geo-personalplacelist__sheet-item:hover, .common-jslayout-geo-personalplacelist__sheet-item:focus {
+							background-color: main-bg-off;
+						}
+					/* new list */
+						/* popup */
+							/* input label */
+								.yiGxXe label, .dh6FSe {
+									color: main-text-off;
+								}
+							/* input */
+								.a1T04e {
+									background-color: main-bg-em;
+									border-color: main-separator;
+									color: main-text;
+								}
+					/* icons */
+						/* saved indicator */
+							.QrqOyf {
+								border-color: main-bg;
+							}
+							.common-jslayout-geo-personalplacelist__sheet-item:hover .QrqOyf, .common-jslayout-geo-personalplacelist__sheet-item:focus .QrqOyf {
+								border-color: main-bg-off;
+							}
+		/* subtitle */
+			.sthby {
+				color: main-text-off;
+			}
+		/* main separator */
+			.kp-blk .xpdclose .farUxc, .kp-blk .xpdopen .mJ2Mod {
+				border-color: container-separator;
+			}
+			/* url separator */
+			.xpdclose .a84NUc:not(:empty), .xpdopen .CQKTwc:not(:empty) {
+				border-color: container-separator;
+			}
+		/* factoid listing */
+			/* titles */
+			.w8qArf .fl {
+				color: main-text !important;
+			}
+			/* MORE links */
+				.kno-fv .fl span {
+					color: main-link !important;
+				}
+			/* context (source, trending, ... */
+				.XJa8af a:link, .XJa8af a:visited {
+					color: main-text-off;
+				}
+				.kno-fv span[style*="color:#777"], .kno-fv a[style*="color:#777"] {
+					color: main-text-minor !important;
+				}
+			/* source link */
+				.VQBFP a:link, .VQBFP a:visited {
+					color: main-link;
+				}
+			/* stock price */
+				/* exchange */
+					.r3IKmc {
+						color: main-text-minor;
+					}
+		/* share button */
+			.RrxxYe {
+				color: main-text;
+			}
+			/* share popup */
+				.EF2Bkc {
+					box-shadow: 0px 5px 26px 0px alpha(black, 0.4 * contrast), 0px 20px 28px 0px alpha(black, 0.6 * contrast);
+					background-color: main-bg;	
+				}
+				/* title */
+					.muUXmb {
+						color: main-text;	
+					}
+				/* close button */
+					.ULejkd {
+						color: main-text-off;
+					}
+				/* platform name */
+					.DssFqf {
+						color: main-text;
+					}
+				/* email */
+					.UN0Fyc {
+						color: main-text;
+					}
+					/* icon */
+						.OIQuDd .o5aEMd {
+							filter: colorize(darken(main-text, 50%));
+						}
+				/* 'Share link' label */
+					.jCOogd {
+						color: main-text-off;
+					}
+				/* URl input */
+					.ZXb90b {
+						background-color: inherit;
+						border-color: main-separator;
+					}
+					input.NBMVc {
+						color: main-text;
+					}
+		/* item-specific info */
+			/* soccer teams */
+				/* roster */
+					/* member */
+						/* number */
+							.jbzYp, .q0OVVc, .lVpIye, .NmQOSc, .Vcnuqf, .HoEOQb {
 								color: main-text-off;
 							}
-						/* input */
-							.a1T04e {
+			/* movies */
+				/* play trailer on youtube */
+					/* icon */
+						.KRm7mb {
+							color: darken(main-text-off, 65%);
+						}
+				/* ratings */
+					/* sites */
+						.IZACzd {
+							color: main-text;
+						}
+					/* google */
+						.Ndq8Rb {
+							color: main-text;
+						}
+						/* google users */
+							.piVJ4d {
+								color: main-text-minor;
+							}
+						/* buttons */
+							.WKrsIc {
+								color: main-text-minor;
+							}
+							.WKrsIc:hover {
+								color: main-text-off;
+							}
+					/* separators */
+						/* vertical */
+							.ksSzJd .TZahnb, .ksSzJd .NY3LVe {
+								border-color: container-separator;
+							}
+						/* horizontal */
+							#rhs .cVqrTe {
+								border-color: container-separator;
+							}
+				/* summary */
+					/* more */
+						.xXEKkb {
+							color: main-link !important;
+						}
+				/* critic reviews */
+					/* text */
+						.NIUoNb {
+							color: main-text;
+						}
+					/* logos */
+						/* shadow for legibility of black logos */
+							.NFQFxe .rISBZc {
+								filter: drop-shadow(0px 0px 0.5px white);
+							}
+			/* bands */
+				/* available on */
+					/* separators */
+						.scrt tr:first-child td {
+							border-top-color: container-separator;
+						}
+						.scrt td {
+							border-color: container-separator;
+						}
+						.scrt tr:last-child td {
+							border-bottom-color: container-separator;
+						}
+					/* names */
+						.kno-fb-ctx .ellip .hl {
+							color: main-text;
+						}
+				/* events */
+					/* date */
+						.CAaTrb, .aXUuyd {
+							color: main-text;	
+						}
+				/* songs */
+					.rl_item_base {
+						background-color: main-bg-container;
+						border-color: container-separator;
+					}
+					/* title */
+					.rl_item_base .title {
+						color: main-text;
+					}
+					/* interpret */
+					.rl_item_base .title + div {
+						color: main-text-off !important;
+					}
+					/* view XX+ more */
+						.P7Vl4c .RCBpod {
+							color: main-text-off;
+						}
+						.ErlEM {
+							border-color: container-separator;
+						}
+			/* quotes */
+				.Qynugf {
+					color: main-text-off;
+				}
+			/* nutrition facts */
+				/* amount dropdown */
+					.HIf9ae {
+						background-color: inherit;
+					}
+					/* arrow */
+						.ITcCnf {
+							filter: colorize(darken(main-text, 30%));
+						}
+				/* table */
+					.AYBNrd {
+						border-color: main-separator;
+						background-color: alpha(black, 0.15 * contrast);
+					}
+					.AYBNrd td {
+						border-color: main-separator;
+					}
+					/* GDA disclaimer */
+						.JuE4Vc {
+							background-color: main-bg-container;
+						}
+			/* places */
+				/* edit mode */
+					/* report */
+						/* text */
+							.ayvroc {
+								color: main-text;
+							}
+						/* button */
+							.Gfzyee {
+								button(!important);
+								background-color: main-bg-em;
+							}
+							.Gfzyee:hover {
+								button-hover();
+							}
+						/* separator */
+							.rYL5lb {
+								border-color: container-separator;	
+							}
+				/* opening hours */
+					/* expand arrow */
+						.BTP3Ac {
+							border-color: main-link transparent;
+						}
+						/* days */
+							/* current day */
+								.BTP3Ac {
+									color: main-text;
+								}
+								.K7Ltle {
+									color: main-text;
+								}
+							/* suggest an edit */
+								.nRfCwb, .ubF8Rd {
+									color: main-link;	
+								}
+				/* reviews from the web */
+					/* rating */
+						.LWyAN {
+							color: main-text;
+						}
+					/* review count */
+						.uw3YZe {
+							color: main-text-minor;
+						}
+						/* hover underline */
+							.hqe1lb:hover .uw3YZe {
+								text-decoration: underline; //divergent cause it looks real weird
+							}
+					/* vertical separators */
+						.tzhtse .hqe1lb {
+							border-color: container-separator;
+						}
+				/* popular times */
+					/* help button */
+						.A9x0mb {
+								background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAFVBMVEX/////////////+/////////8AAADXL9RBAAAABnRSTlMCFik/TlVLOEFRAAAAUklEQVR42l2PSQ4AIQzDujj///KQ5jaRoBhZKJQzCzuVNLrQRxLzDCQzaKq7RlDe1S0v369wgvsw5IMIxgpGvbF+KolUyHPipobl1EhJSMnfFz7njAJC/unGIAAAAABJRU5ErkJggg==");
+						}
+					/* day select */
+						.OxYkzd {
+							popout();
+						}
+						/* selected */
+							.OxYkzd .lubh-sel {
+								background-color: main-bg-off;
+							}
+						/* hover */
+							.OxYkzd li:hover {
+								background-color: main-bg-off;
+							}
+					/* tooltip */
+						.P4cfIb {
+							background-color: main-bg-em;
+							color: main-text;
+							border-color: main-separator;
+						}
+						/* highlight line */
+							.upZjbd {
+								border-color: alpha(main-separator, alpha(main-separator) * 2.2);
+							}
+					/* histogram */
+						.yPHXsc {
+							background-image: linear-gradient(main-separator 1px, rgba(255,255,255,0) 0);
+							border-top-color: transparent;
+						}
+						/* Y axis */
+							/* ticks */
+								/* short ticks */
+									/* left part */
+										.ChZgtd > div::before {
+											background-color: main-separator;
+										}
+									/* right part */
+										.ChZgtd > div::after {
+											background-color: main-separator;
+										}
+								/* long ticks */
+									.orgdxf::before {
+										background-color: main-separator;
+									}
+								/* time labels */
+									.orgdxf {
+										background-color: main-bg-container;
+									}
+									/* text */
+										.orgdxf > div {
+											color: main-text-off;
+										}
+							/* no bars */
+								.yPHXsc > div {
+									border-color: main-separator;
+								}
+						/* text */
+							.ePSZhc {
+								color: main-text-off;
+							}
+					/* paging buttons */
+						/* left */
+							.Lrszfb {
+								filter: colorize(main-text-off);
+							}
+						/* right */
+							.QeuQGc {
+								filter: colorize(main-text-off);
+							}
+				/* know this place */
+					.Y28wmf {
+						color: main-text;
+					}
+					/* separators */
+						.wlqJjf.gws-local-riddler__banner-shown {
+							border-color: container-separator;
+						}
+					/* answer quick questions */
+						.GtMhHe {
+							color: main-link;
+						}
+				/* questions and answers */
+					/* answer count */
+						.IFGUre {
+							color: main-text-minor;
+						}
+					/* all questions popup */
+						.yZZ28b {
+							background-color: main-bg;
+							box-shadow: 0 2px 4px main-border;
+							border-color: main-border;
+							color: main-text;
+						}
+						/* close button */
+							.oLLmo .Xvesr {
+								filter: colorize(grey);
+							}
+						/* title */
+							.y4DTBc {
+								color: main-text;
+							}
+						/* subtitle */
+							.Xv46H {
+								color: main-text;
+							}
+						/* ask a question button */
+							a.EXgpke, a.EXgpke:visited, a.EXgpke:hover, a.EXgpke:active { //restore original style
+								color: #fff;
+							}
+						/* separator */
+							.fm2dRd {
+								border-color: main-separator;
+							}
+						/* listing */
+							/* separators */
+								.rbheYb {
+									border-color: main-separator;
+								}
+							/* item */
+								.LR1OTe {
+									background-color: main-bg-container;
+								}
+								/* question text */
+									.dFINPc {
+										color: main-text;
+									}
+								/* actions */
+									.yEKpFf {
+										background-color: main-bg-container;
+										color: main-text-minor;
+									}
+									/* answer */
+										.rOd72e {
+											color: main-text-minor;
+										}
+								/* dropdown button */
+									.EZ61Wb {
+										color: main-text-minor;
+									}
+									/* dropdown menu */
+										.ZvwI0c {
+											popout();
+										}
+										/* report popup */
+											/* reason selection */
+												.abuseReportingCard {
+													background-color: main-bg;
+												}
+												/* heading */
+													.abuseReportingDialogComponent .abuseReportingCardHeader {
+														background-color: main-bg;
+													}
+													/* text */
+														.abuseReportingDialogComponent .abuseReportingCardHeaderText {
+															color: main-text;
+														}
+												/* buttons */
+													.abuseReportingCardOptions .abuseReportingCardButton {
+														background-color: main-bg-em;
+														color: main-text;
+													}
+													.abuseReportingDialogComponent .abuseReportingCardOptions .abuseReportingCardButton {
+														box-shadow: 1px 1px 5px 0px alpha(black, 0.7 * contrast);
+													}
+													/* hover */
+														.abuseReportingDialogComponent .abuseReportingCardOptions .abuseReportingCardButton:hover {
+															button-hover();
+															background-color: main-bg-em;
+														}
+											/* close button */
+												.g2ioZd {
+													color: main-text-minor;
+												}
+								/* answer */
+									/* answerer */
+										/* contribution counts */
+											.FYwGhe {
+												color: main-text-minor;
+											}
+									/* date */
+										.eIlJMe {
+											color: main-text-minor;
+										}
+									/* more answers */
+										a.M20PPb { // restore original style
+											color: #4285f4;
+										}
+										/* question */
+											.EDNFOd {
+												color: main-text;
+											}
+										/* answer input */
+											.id0ZHZw1o9j__pqa-pta {
+												background-color: main-bg-em;
+												color: main-text;
+												border-color: main-separator;
+											}
+										/* post button */
+											a.kZIQde, a.kZIQde:hover, a.kZIQde:visited { //restore original style
+												color: #fff;
+											}
+							/* loading indicator */
+								.NJHV3e {
+									background-color: main-bg;
+								}
+					/* ask a question popup */
+						/* 'posting publicly' */
+							.RMevRc {
+								color: main-text-off;
+							}
+						/* input field */
+							.uCWscpVYoPI__pqa-pta {
 								background-color: main-bg-em;
 								border-color: main-separator;
 								color: main-text;
 							}
-				/* icons */
-					/* saved indicator */
-						.QrqOyf {
-							border-color: main-bg;
-						}
-						.common-jslayout-geo-personalplacelist__sheet-item:hover .QrqOyf, .common-jslayout-geo-personalplacelist__sheet-item:focus .QrqOyf {
-							border-color: main-bg-off;
-						}
-	/* subtitle */
-		.sthby {
-			color: main-text-off;
-		}
-	/* main separator */
-		.kp-blk .xpdclose .farUxc, .kp-blk .xpdopen .mJ2Mod {
-			border-color: container-separator;
-		}
-		/* url separator */
-		.xpdclose .a84NUc:not(:empty), .xpdopen .CQKTwc:not(:empty) {
-			border-color: container-separator;
-		}
-	/* factoid listing */
-		/* titles */
-		.w8qArf .fl {
-			color: main-text !important;
-		}
-		/* MORE links */
-			.kno-fv .fl span {
-				color: main-link !important;
-			}
-		/* context (source, trending, ... */
-			.XJa8af a:link, .XJa8af a:visited {
-				color: main-text-off;
-			}
-			.kno-fv span[style*="color:#777"], .kno-fv a[style*="color:#777"] {
-				color: main-text-minor !important;
-			}
-		/* source link */
-			.VQBFP a:link, .VQBFP a:visited {
-				color: main-link;
-			}
-		/* stock price */
-			/* exchange */
-				.r3IKmc {
-					color: main-text-minor;
-				}
-	/* share button */
-		.RrxxYe {
-			color: main-text;
-		}
-		/* share popup */
-			.EF2Bkc {
-				box-shadow: 0px 5px 26px 0px alpha(black, 0.4 * contrast), 0px 20px 28px 0px alpha(black, 0.6 * contrast);
-				background-color: main-bg;	
-			}
-			/* title */
-				.muUXmb {
-					color: main-text;	
-				}
-			/* close button */
-				.ULejkd {
-					color: main-text-off;
-				}
-			/* platform name */
-				.DssFqf {
-					color: main-text;
-				}
-			/* email */
-				.UN0Fyc {
-					color: main-text;
-				}
-				/* icon */
-					.OIQuDd .o5aEMd {
-						filter: colorize(darken(main-text, 50%));
-					}
-			/* 'Share link' label */
-				.jCOogd {
-					color: main-text-off;
-				}
-			/* URl input */
-				.ZXb90b {
-					background-color: inherit;
-					border-color: main-separator;
-				}
-				input.NBMVc {
-					color: main-text;
-				}
-	/* item-specific info */
-		/* soccer teams */
-			/* roster */
-				/* member */
-					/* number */
-						.jbzYp, .q0OVVc, .lVpIye, .NmQOSc, .Vcnuqf, .HoEOQb {
-							color: main-text-off;
-						}
-		/* movies */
-			/* play trailer on youtube */
-				/* icon */
-					.KRm7mb {
-						filter: colorize(darken(main-text-off, 65%));
-					}
-			/* ratings */
-				/* sites */
-					.IZACzd {
-						color: main-text;
-					}
-				/* google */
-					.Ndq8Rb {
-						color: main-text;
-					}
-					/* google users */
-						.piVJ4d {
-							color: main-text-minor;
-						}
-					/* buttons */
-						.WKrsIc {
-							color: main-text-minor;
-						}
-						.WKrsIc:hover {
-							color: main-text-off;
-						}
-				/* separators */
-					/* vertical */
-						.ksSzJd .TZahnb, .ksSzJd .NY3LVe {
+						/* cancel button */
+							a.UOpzSb, a.UOpzSb:hover, a.UOpzSb:visited {
+								background-color: main-bg-em;
+								color: #4285f4; //restore original style
+							}
+				/* send to your phone */
+					/* separators */
+						.XQvBOc {
 							border-color: container-separator;
 						}
-					/* horizontal */
-						#rhs .cVqrTe {
-							border-color: container-separator;
+					/* icon */
+						.i8Msie {
+							filter: colorize(main-text);
 						}
-			/* summary */
-				/* more */
-					.xXEKkb {
-						color: main-link !important;
-					}
-			/* critic reviews */
-				/* text */
-					.NIUoNb {
-						color: main-text;
-					}
-				/* logos */
-					/* shadow for legibility of black logos */
-						.NFQFxe .rISBZc {
-							filter: drop-shadow(0px 0px 0.5px white);
-						}
-		/* bands */
-			/* available on */
-				/* separators */
-					.scrt tr:first-child td {
-						border-top-color: container-separator;
-					}
-					.scrt td {
-						border-color: container-separator;
-					}
-					.scrt tr:last-child td {
-						border-bottom-color: container-separator;
-					}
-				/* names */
-					.kno-fb-ctx .ellip .hl {
-						color: main-text;
-					}
-			/* events */
-				/* date */
-					.CAaTrb, .aXUuyd {
-						color: main-text;	
-					}
-			/* songs */
-				.rl_item_base {
-					background-color: main-bg-container;
-					border-color: container-separator;
-				}
-				/* title */
-				.rl_item_base .title {
-					color: main-text;
-				}
-				/* interpret */
-				.rl_item_base .title + div {
-					color: main-text-off !important;
-				}
-				/* view XX+ more */
-					.P7Vl4c .RCBpod {
-						color: main-text-off;
-					}
-					.ErlEM {
-						border-color: container-separator;
-					}
-		/* quotes */
-			.Qynugf {
-				color: main-text-off;
-			}
-		/* nutrition facts */
-			/* amount dropdown */
-				.HIf9ae {
-					background-color: inherit;
-				}
-				/* arrow */
-					.ITcCnf {
-						filter: colorize(darken(main-text, 30%));
-					}
-			/* table */
-				.AYBNrd {
-					border-color: main-separator;
-					background-color: alpha(black, 0.15 * contrast);
-				}
-				.AYBNrd td {
-					border-color: main-separator;
-				}
-				/* GDA disclaimer */
-					.JuE4Vc {
-						background-color: main-bg-container;
-					}
-		/* places */
-			/* edit mode */
-				/* report */
-					/* text */
-						.ayvroc {
-							color: main-text;
-						}
-					/* button */
-						.Gfzyee {
-							button(!important);
-							background-color: main-bg-em;
-						}
-						.Gfzyee:hover {
-							button-hover();
-						}
-					/* separator */
-						.rYL5lb {
-							border-color: container-separator;	
-						}
-			/* opening hours */
-				/* expand arrow */
-					.BTP3Ac {
-						border-color: main-link transparent;
-					}
-					/* days */
-						/* current day */
-							.BTP3Ac {
-								color: main-text;
-							}
-							.K7Ltle {
-								color: main-text;
-							}
-						/* suggest an edit */
-							.nRfCwb, .ubF8Rd {
-								color: main-link;	
-							}
-			/* reviews from the web */
-				/* rating */
-					.LWyAN {
-						color: main-text;
-					}
-				/* review count */
-					.uw3YZe {
-						color: main-text-minor;
-					}
-					/* hover underline */
-						.hqe1lb:hover .uw3YZe {
-							text-decoration: underline; //divergent cause it looks real weird
-						}
-				/* vertical separators */
-					.tzhtse .hqe1lb {
-						border-color: container-separator;
-					}
-			/* popular times */
-				/* help button */
-					.A9x0mb {
-							background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAFVBMVEX/////////////+/////////8AAADXL9RBAAAABnRSTlMCFik/TlVLOEFRAAAAUklEQVR42l2PSQ4AIQzDujj///KQ5jaRoBhZKJQzCzuVNLrQRxLzDCQzaKq7RlDe1S0v369wgvsw5IMIxgpGvbF+KolUyHPipobl1EhJSMnfFz7njAJC/unGIAAAAABJRU5ErkJggg==");
-					}
-				/* day select */
-					.OxYkzd {
-						popout();
-					}
-					/* selected */
-						.OxYkzd .lubh-sel {
-							background-color: main-bg-off;
-						}
-					/* hover */
-						.OxYkzd li:hover {
-							background-color: main-bg-off;
-						}
-				/* tooltip */
-					.P4cfIb {
-						background-color: main-bg-em;
-						color: main-text;
-						border-color: main-separator;
-					}
-					/* highlight line */
-						.upZjbd {
-							border-color: alpha(main-separator, alpha(main-separator) * 2.2);
-						}
-				/* histogram */
-					.yPHXsc {
-						background-image: linear-gradient(main-separator 1px, rgba(255,255,255,0) 0);
-						border-top-color: transparent;
-					}
-					/* Y axis */
-						/* ticks */
-							/* short ticks */
-								/* left part */
-									.ChZgtd > div::before {
-										background-color: main-separator;
-									}
-								/* right part */
-									.ChZgtd > div::after {
-										background-color: main-separator;
-									}
-							/* long ticks */
-								.orgdxf::before {
-									background-color: main-separator;
-								}
-							/* time labels */
-								.orgdxf {
-									background-color: main-bg-container;
-								}
-								/* text */
-									.orgdxf > div {
-										color: main-text-off;
-									}
-						/* no bars */
-							.yPHXsc > div {
-								border-color: main-separator;
-							}
-					/* text */
-						.ePSZhc {
-							color: main-text-off;
-						}
-				/* paging buttons */
-					/* left */
-						.Lrszfb {
-							filter: colorize(main-text-off);
-						}
-					/* right */
-						.QeuQGc {
-							filter: colorize(main-text-off);
-						}
-			/* know this place */
-				.Y28wmf {
-					color: main-text;
-				}
-				/* separators */
-					.wlqJjf.gws-local-riddler__banner-shown {
-						border-color: container-separator;
-					}
-				/* answer quick questions */
-					.GtMhHe {
-						color: main-link;
-					}
-			/* questions and answers */
-				/* answer count */
-					.IFGUre {
-						color: main-text-minor;
-					}
-				/* all questions popup */
-					.yZZ28b {
-						background-color: main-bg;
-						box-shadow: 0 2px 4px main-border;
-						border-color: main-border;
-						color: main-text;
-					}
-					/* close button */
-						.oLLmo .Xvesr {
-							filter: colorize(grey);
-						}
-					/* title */
-						.y4DTBc {
-							color: main-text;
-						}
-					/* subtitle */
-						.Xv46H {
-							color: main-text;
-						}
-					/* ask a question button */
-						a.EXgpke, a.EXgpke:visited, a.EXgpke:hover, a.EXgpke:active { //restore original style
-							color: #fff;
-						}
-					/* separator */
-						.fm2dRd {
-							border-color: main-separator;
-						}
-					/* listing */
-						/* separators */
-							.rbheYb {
-								border-color: main-separator;
-							}
-						/* item */
-							.LR1OTe {
-								background-color: main-bg-container;
-							}
-							/* question text */
-								.dFINPc {
-									color: main-text;
-								}
-							/* actions */
-								.yEKpFf {
-									background-color: main-bg-container;
-									color: main-text-minor;
-								}
-								/* answer */
-									.rOd72e {
-										color: main-text-minor;
-									}
-							/* dropdown button */
-								.EZ61Wb {
-									color: main-text-minor;
-								}
-								/* dropdown menu */
-									.ZvwI0c {
-										popout();
-									}
-									/* report popup */
-										/* reason selection */
-											.abuseReportingCard {
-												background-color: main-bg;
-											}
-											/* heading */
-												.abuseReportingDialogComponent .abuseReportingCardHeader {
-													background-color: main-bg;
-												}
-												/* text */
-													.abuseReportingDialogComponent .abuseReportingCardHeaderText {
-														color: main-text;
-													}
-											/* buttons */
-												.abuseReportingCardOptions .abuseReportingCardButton {
-													background-color: main-bg-em;
-													color: main-text;
-												}
-												.abuseReportingDialogComponent .abuseReportingCardOptions .abuseReportingCardButton {
-													box-shadow: 1px 1px 5px 0px alpha(black, 0.7 * contrast);
-												}
-												/* hover */
-													.abuseReportingDialogComponent .abuseReportingCardOptions .abuseReportingCardButton:hover {
-														button-hover();
-														background-color: main-bg-em;
-													}
-										/* close button */
-											.g2ioZd {
-												color: main-text-minor;
-											}
-							/* answer */
-								/* answerer */
-									/* contribution counts */
-										.FYwGhe {
-											color: main-text-minor;
-										}
-								/* date */
-									.eIlJMe {
-										color: main-text-minor;
-									}
-								/* more answers */
-									a.M20PPb { // restore original style
-										color: #4285f4;
-									}
-									/* question */
-										.EDNFOd {
-											color: main-text;
-										}
-									/* answer input */
-										.id0ZHZw1o9j__pqa-pta {
-											background-color: main-bg-em;
-											color: main-text;
-											border-color: main-separator;
-										}
-									/* post button */
-										a.kZIQde, a.kZIQde:hover, a.kZIQde:visited { //restore original style
-											color: #fff;
-										}
-						/* loading indicator */
-							.NJHV3e {
-								background-color: main-bg;
-							}
-				/* ask a question popup */
-					/* 'posting publicly' */
-						.RMevRc {
-							color: main-text-off;
-						}
-					/* input field */
-						.uCWscpVYoPI__pqa-pta {
-							background-color: main-bg-em;
-							border-color: main-separator;
-							color: main-text;
-						}
-					/* cancel button */
-						a.UOpzSb, a.UOpzSb:hover, a.UOpzSb:visited {
-							background-color: main-bg-em;
-							color: #4285f4; //restore original style
-						}
-			/* send to your phone */
-				/* separators */
-					.XQvBOc {
-						border-color: container-separator;
-					}
-				/* icon */
-					.i8Msie {
-						filter: colorize(main-text);
-					}
-				/* popup */
-					.bq6vPc {
-						popout();
-					}
-					/* items */
-						.rG7IXe li:hover {
-							background-color: main-bg-off;
-						}
-					/* separator */
-						.cphsSd {
-							border-color: main-separator;
-						}
-			/* reviews */
-				/* write a review popup */
-					// TODO
-		/* people listing */
-			/* images */
-				/* placeholder */
-					.rISBZc[src*="iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAIAAADajyQQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZ"] {
-						filter: invert-with-bg(main-bg);
-					}
-	/* posts */
-		.yOo6xe {
-			background-color: main-bg-off;
-		}
-		/* name */
-			.NWO1Pd, .u2tuje .xjT6He {
-				color: main-text;
-			}
-		/* 'on google' */
-			.Z3DVab, .u2tuje .iGBaJe {
-				color: main-text-off;
-			}
-		/* card */
-			/* date */
-				.LmREXd {
-					color: main-text-off;	
-				}
-			/* share button */
-				.KpG9if {
-					background-color: main-bg-em;
-					button();
-				}
-				.KpG9if:hover {
-					button-hover();	
-				}
-				/* share popup */
-					.fAwjXaCTMo5__content {
-						box-shadow: 0px 5px 26px 0px alpha(black, 0.4 * contrast), 0px 20px 28px 0px alpha(black, 0.6 * contrast);
-						background-color: main-bg;	
-					}
-					/* overlay */
-						.lxG8Hd.fAwjXaCTMo5__visible {
-							opacity: 0.4;	
-						}
-					/* title */
-						.n57WQd {
-							color: main-text;	
-						}
-					/* close button */
-						.gSgKyf {
-							color: main-text-off;
-						}
-					/* platform name */
-						.ftKMt {
-							color: main-text;
-						}
-					/* email */
-						.jaKVod {
-							colorize(main-text);
-							color: main-text !important;
-						}
-					/* 'Copy URL' label */
-						.u5FVec {
-							color: main-text-off;
-						}
-					/* URl input */
-						.ZXb90b {
-							background-color: inherit;
-							border-color: main-separator;
-						}
-						.rBpXA {
-							color: main-text;
-						}
-					/* popup */ //LOST AND FOUND
-						.LXRtOe {
-							background-color: main-bg;
-							box-shadow: 3px 0px 5px -3px alpha(black, 0.4 * contrast), -3px 0px 5px -3px alpha(black, 0.4 * contrast),0px -1px 2px -2px alpha(black, 0.2 * contrast);
-						}
-						/* overlay */
-							.oLLmo {
-								background-color: alpha(main-bg-off, 0.85);
-							}
-						/* header */
-							/* 'on Google' */
-								.DbNIbd, .gzxbbe .iGBaJe {
-									color: main-text-off;	
-								}
-							/* share button */
-								.Uz88id {
-									color: main-text-off;	
-								}
-							/* menu button */
-								.JfiX0c {
-									filter: colorize(main-text-off);
-								}
-							/* separator */
-								.kDenrb {
-									background-color: main-separator;
-								}
-							/* close button */
-								.K60tkf {
-									color: main-text-off;
-								}
-						/* entry */
-							.zoDZIc {
-								box-shadow: 0 2px 6px alpha(black, 0.4 * contrast);
-								background-color: main-bg;
-							}
-							/* date */
-								.N4pSac, .qROp {
-									color: main-text-off;
-								}
-							/* text */
-								.Rfjmec {
-									color: main-text;
-								}
-	/* 'see results about' container (knowledge suggestions) */
-		/* heading */
-			.garHBe {
-				color: main-text;
-			}
-		/* entry */
-			.y8Jpof:hover {
-				background: main-bg-off;
-			}
-			/* title */
-				.mod .rhsvw div .ellip {
-					color: main-link !important;
-				}
-			/* text */
-				.mod .rhsvw div div {
-					color: main-text;
-				}
-			/* linked */
-				.zloOqf.ellip.zloOqf.ellip {
-					color: main-text !important;
-				}
-				.y8Jpof span {
-					color: main-text !important;
-				}
-	/* 'more' expand footer */
-		/* separator */
-			.vk_arc {
-				border-color: container-separator;
-			}
-	/* footer */
-		.kno-ftr {
-			color: main-text-off;	
-		}
-		/* feedback */
-			a.duf3 {
-				color: main-text-off;
-			}
-			/* edit mode */
-				/* values */
-					.kno-fb-d3 .kno-fb-ctx .fl, .kno-fb-d3 .kno-fb-ctx .gl {
-						color: main-text;
-					}
-/* product panel */
-	/* product name */
-		.ixFi3 {
-			color: main-text;
-		}
-	/* 'shop now' */
-		.vA2fGc {
-			color: main-text;
-		}
-		/* separator */
-			.hZQzR {
-				border-color: main-separator;
-			}
-	/* options select */
-		.z9pYxf {
-			color: main-text;
-		}
-		/* dropdown */
-			/* items */
-				/* text */
-					.VapCmc {
-						color: main-text;
-					}
-				/* separator */
-					.RZvace {
-						border-color: main-border;
-					}
-				/* selected */
-					.RZvace.B8QPCf {
-						background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAYElEQVQ4y2NgGAW4wH8t0pSH/P/9vwHCZiJGOcNyBhbSTP8PM38wK//P+n/V/0ASTP8f8f///1//g0hwzP+G/////4ZoIdLtUC3BJHgVqoWkkGn4/58E5VAtDaOZDQ0AAHppa1mGsf3/AAAAAElFTkSuQmCC");
-					}
-				/* hover */
-					.RZvace:hover {
-						background-color: main-bg-off;
-					}
-		/* separator */
-			.gZDese {
-				border-color: main-separator;
-			}
-	/* offers */
-		.gkMlQe {
-			border-color: main-border;
-		}
-		/* hover */
-			.gkMlQe:hover {
-				background-color: main-bg-off;
-			}
-		/* price */
-			.rgc6j {
-				color: main-text;
-			}
-		/* hover merchant underline */
-			.jackpot-merchant {
-				color: main-link;
-			}
-		/* additional info */
-			.zlWddc {
-				color: main-text-off;
-			}
-	/* product details */
-		/* heading */
-			.XWDade {
-				color: main-text;
-			}
-		/* title */
-			.mfmMfd {
-				color: main-text;
-			}
-/* other categories */
-/* News */
-	/* result */
-		/* text */
-			.ts > div {
-				color: main-text;
-			}
-		/* source */
-			.e8fRJf {
-				color: main-source;
-			}
-		/* highly cited */
-			.HgetDe {
-				color: main-text-off;
-			}
-		/* other sources image subtext */
-			.QJGxHc {
-				color: main-text-off;
-			}
-/* Search by Image */
-	/* searched image */
-			/* border */
-				#Z6bGOb .GMzDwb {
-					border-color: main-separator;
-				}
-	/* pages that include matching images */
-		/* heading */
-			.normal-header div.rg-header {
-				color: main-text-off;
-			}
-/* Images */
-	/* related image search terms (improvement over original) */
-		a.chip span.sq {
-			font-weight: bold !important;
-			text-shadow: 0 0 0.3em black !important;
-		}
-		a.chip.xchip span.sq {
-				text-shadow: none !important;
-		}
-	/* selected */
-		/* main */
-			.irc_c {
-				background-color: main-bg-em;
-			}
-		/* right */
-			#irc_cc {
-				background-color: main-bg-em;
-			}
-		/* most right */
-			#irc_bgl {
-				background-color: main-bg-em;
-			}
-		/* caret */
-			#irc_pc {
-				border-bottom-color: main-bg-em;
-			}
-		/* close button */
-			#irc_cb {
-				filter: colorize(white);
-				opacity: 0.3 * contrast;
-			}
-			#irc_cb:hover {
-				opacity: 0.7 * contrast;
-			}
-		/* paging buttons */
-			.ex2D6e {
-				border-color: main-border;
-				background-color: main-bg;
-			}
-			.ex2D6e:active, .ex2D6e:hover {
-				background-color: main-bg-off;
-				box-shadow: none;
-			}
-		/* site info */
-			/* site title */
-				a.irc_pt {
-					color: main-text;
-				}
-			/* domain title */
-				.irc_hd a {
-					color: main-text-minor;
-				}
-			/* image title */
-				.irc_asc {
-					color: main-text-off;
-				}
-			/* buttons */
-				.irc_but_r a {
-					button();
-					background-color: main-bg;
-					box-shadow: none;
-				}
-				.irc_but_r a:active, .irc_but_r a:hover {
-					button-hover();
-					background-color: main-bg;
-				}
-		/* related images */
-			/* heading */
-				.yJbeqd {
-					color: main-text-off;
-				}
-		/* image preview */
-			/* shadow */
-				.irc_mi {
-					box-shadow: 0 5px 35px alpha(black, .4 * contrast);
-				}
-			/* image dimensions */
-				.irc_idim {
-					color: main-text-off;
-				}
-			/* copyright notice */
-				.irc_bimg .Af3fH {
-					color: main-text-minor;
-				}
-		/* bottom links */
-			.irc_ft a {
-				color: main-text-minor;
-			}
-		/* vertical separator */
-			.irc_land .irc_sep {
-				background-color: main-border;
-				box-shadow: none;
-			}
-		/* horizontal separator */
-			.irc_land .irc_infosep {
-				background-color: main-border;
-				box-shadow: none;
-			}
-	/* footer */
-		/* loading */
-			#isr_cld {
-				font-size: 80px;
-				background: none;
-				gloader();
-			}
-			#isr_cld::before {
-				gloader-before();
-			}
-			#isr_cld::after {
-				gloader-after();
-			}
-			/* parent element */
-				#rg {
-					text-align: center;
-				}
-		/* show more results (date select 'go') */
-		.ksb {
-			background-color: main-bg-em;
-			button()
-		}
-		.ksb:hover {
-			background-color: main-bg-em;
-			button-hover();
-		}
-/* Shopping */
-	/* location */
-		.CV7Lzb {
-			color: main-text-off;
-		}
-	/* filter */
-		/* headings */
-			.sh-dr__g > div {
-				color: main-text;
-			}
-		/* items */
-			.sh-dr__short * {
-				color: main-text-off;
-				border-color: main-text-off;
-			}
-		/* inputs */
-			.sh-dr__short input {
-				background-color: main-bg;
-				color: main-text-em;
-			}
-		/* go */
-			.LfUe1b {
-				background-color: main-bg;
-				color: main-link;
-			}
-		/* more */
-			.sh-dr__g div[role="button"] {
-				color: main-link;
-			}
-			/* expanded sellers */
-				/* names */
-					.vjtvke, .vjtvke:link, .vjtvke:visited {
-						color: main-text-off;
-					}
-				/* checkboxes */
-					.nZbkuc {
-						border-color: main-text-off;
-					}
-	/* results */
-		/* header */
-			/* breadcrumbs */
-				.QCKch a:link, .QCKch a:visited {
-					color: main-text-off;
-				}
-			/* view buttons */
-				.qa708e:not(.IYWnmd), .Ytbez:not(.IYWnmd) {
-					filter: colorize(main-text-minor);
-				}
-			/* vertical separator */
-				.sh-dtt__sort-by {
-					border-color: main-separator;
-				}
-			/* text */
-				.sh-dtt__top-tools {
-					color: main-text-off;
-				}
-			/* sorting */
-				/* dropdown button*/
-					.Yf5aUd {
-						filter: colorize(darken(main-text-off, 50%));
-					}
-					/* menu */
-						.o2ji6GoAIDp__menu {
+					/* popup */
+						.bq6vPc {
 							popout();
 						}
 						/* items */
-							.kH0Dhc {
-								color: main-text-off;	
+							.rG7IXe li:hover {
+								background-color: main-bg-off;
 							}
-							/* hover */
-								.oLMvxj8HcwN__highlighted, .ErsxPb:active {
-									dropdown-hover();
-								}
-							/* selected */
-								.oLMvxj8HcwN__selected {
-									background-image: dropdown-checkmark;
-								}
-			/* shortlist */
-				/* slideout button */
-					#gko-btn-arrow-down {
-						filter: colorize(darken(main-text-off, 40%));
-					}
-					/* slideout */
-						#gko-sp.gko-open {
-							border-color: alpha(black, 0.4 * contrast);
-						}
-						/* shortlist icon */
-							.xqknTb {
-								background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAZBAMAAAAh5QiZAAAAElBMVEUAAABo4PtSxfg9q/RBnPJHkPBhnHLTAAAABnRSTlMAM12GzfZ+cougAAAAOklEQVQY02NgQABG01AwMGRgYIawQoMZGFihzNChwwxRVIEyQxQYGFTAzBABkBdFgEwmAYh3hRmwAwDAHDS53fDN1AAAAABJRU5ErkJggg==");
+						/* separator */
+							.cphsSd {
+								border-color: main-separator;
 							}
-						/* shortlist selector */
-							.sh-gb__rs-bt {
-								color: main-text-off;
-							}
-							/* dropdown */
-								.sh-gb__rs-ba {
-									border-color: main-text-off transparent;
-								}
-								/* menu */
-									._-J {
-										popout();
-									}
-									/* items */
-										._-I {
-											color: main-text-off;
-										}
-										/* hover */
-											.sh-gs__rs-sl:hover, ._-I:hover {
-												dropdown-hover();
-											}
-									/* create new */ //TODO
-						/* item carousel */
-							/* paging buttons */
-								.gko-pg-l {
-									background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAMAAAASJ24jAAAAD1BMVEUAAADr6+vr6+vr6+vr6+vXfbPCAAAABXRSTlMAAVJz/KX2DwgAAAAkSURBVHgBY0AFTExofBZUAWYWJsZhwUcIoPmYcbiKMGGKMAEAHAYBHrtvarEAAAAASUVORK5CYII=");
-								}
-								.gko-pg-r {
-									background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAMAAAASJ24jAAAAD1BMVEUAAADr6+vr6+vr6+vr6+vXfbPCAAAABXRSTlMAAVJz/KX2DwgAAAAlSURBVBjTY2BiYkAFTCxoIoxMLMwjQwRdAMhnHNp8JkZUD6HxARwzAR4h72xkAAAAAElFTkSuQmCC");
-								}
-							/* empty frames */
-								.gko-itms-e .gko-i {
-									border-color: main-text-minor;
-								}
-						/* options */
-							.gko-ctrl, .gko-ctrl:link, .gko-ctrl:visited {
-								color: main-text-off;
-							}
-			/* horizontal separator */
-				.sh-sp__line {
-					border-color: main-separator;
-				}
-				/* sponsored hint */
-					#topstuff .sh-sp__pswtr {
-						background-color: main-bg;
-					}
-					/* text */
-						.sh-sp__pswtr {
-							color: main-text-off;
+				/* reviews */
+					/* write a review popup */
+						// TODO
+			/* people listing */
+				/* images */
+					/* placeholder */
+						.rISBZc[src*="iVBORw0KGgoAAAANSUhEUgAAAEgAAABICAIAAADajyQQAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZ"] {
+							filter: invert-with-bg(main-bg);
 						}
-					/* info icon */
-						.cMW8pb {
-							filter: colorize(darken(main-text-off, 40%));
-						}
-					/* popout */
-						.sh-sp__tt {
-							popout();
-						}
-						/* caret */
-							.sh-sp__tt span.sh-sp__tt-arrow-l, .sh-sp__tt span.sh-sp__tt-arrow-r {
-								filter: adapt-to-bg(main-bg);
-							}
-		/* results */
-			/* grid */
-				/* card */
-					.sh-dgr__grid-result {
-						container();
-					}
-					/* thumbnail */
-						.sh-dgr__grid-result .sh-dgr__thumbnail {
-							background-color: white;
-						}
-						/* discount */
-							.NA0ooc {
-								background-color: main-bg-em;
-							}
-							/* text */
-								.w3MEU {
-									color: main-text-off;
-								}
-					/* price */
-						.O8U6h {
-							color: main-text;
-						}
-					/* info */
-						.sh-dgr__grid-result, .sh-dgr__grid-result a {
-							color: main-text-off;
-						}
-					/* description */
-						.EI11Pd, .EI11Pd:link, .EI11Pd:visited {
-							color: main-text;
-						}
-			/* list */
-				/* card */
-					.sh-dlr__list-result {
-						container();
-					}
-					/* thumbnail */
-						.JRlvE {
-							background-color: white;
-						}
-					/* info */
-						.na4ICd, .UTJALc {
-							color: main-text-off;
-						}
-					/* review count */
-						.TxCHDf a {
-							color: main-text-off;
-						}
-					/* produce breadcrumbs */
-						.shop__secondary, .shop__secondary:link, .shop__secondary:visited {
-							color: main-text-off;
-						}
-					/* option prices */
-						.dGWXMb {
-							color: main-text-off;
-						}
-			/* filter */
-				/* categories */
-					/* images */
-						.sh-img__image {
-							background-color: white;
-						}
-			/* related searches */
-				.sh-sr__shop-result-header {
-					color: main-text;
-				}
-			/* bottom separator */
-				.sh-sr__shop-result-group:last-of-type {
-					border-color: main-separator;
-				}
-				.sh-sr__shop-result-group {
-					border-color: main-separator;
-				}
-/* Finance */
-	/* Home */
-		/* tabs */
-			/* titles */
-				.SVWlSe > div {
-					color: main-text !important;
-				}
-			/* separator & shadow */
-				.FNvPOb {
-					box-shadow: 0 1px 0 main-border;
-					border-color: transparent;
-				}
-				.u8H8Fd {
-					box-shadow: 0 1px 0 main-border;
-				}
-			/* selected */
-				.KYeOtb[aria-selected="true"] {
-					border-color: main-text !important;
-				}
-		/* modules */
-			/* titles */
-				.umBFsc .HnYYW {
-					color: main-text;
-				}
-			/* containers */
-				.vnLNtd.mnr-c {
-					container();
-				}
-		/* your stocks */
-			/* not currently following */
-				.knowledge-finance-wholepage__your-stocks-promo {
-					container();
-					color: main-text;
-				}
-			/* refresh */
-				.knowledge-finance-wholepage__your-stocks-refresh {
-					container();
-					color: main-text;
-				}
-		/* local markets */
-			/* graph */
-				/* legend */
-					/* stock exchange name */
-						.yrWwmd .knowledge-finance-wholepage-chart__legend-symbol {
-							color: main-link;
-						}
-	/* View Stock */
-		/* market summary */
-			.K20DDe {
-				background-color: main-bg;
+		/* posts */
+			.yOo6xe {
+				background-color: main-bg-off;
 			}
-			/* breadcrumb */
-				.HkooRb:link, .HkooRb:visited, .HkooRb:hover {
+			/* name */
+				.NWO1Pd, .u2tuje .xjT6He {
+					color: main-text;
+				}
+			/* 'on google' */
+				.Z3DVab, .u2tuje .iGBaJe {
 					color: main-text-off;
 				}
-				/* stock name */
-					.PyJv1b {
-						color: main-text;
+			/* card */
+				/* date */
+					.LmREXd {
+						color: main-text-off;	
 					}
-			/* exchange and symbol */
-				.wx62f {
-					color: main-text-off;
-				}
-			/* tabs */
-				.qLJQNc {
-					background-color: main-bg;
-				}
-			/* separator */
-			.QOsNac {
-				border-color: main-border;
-			}
-		/* Overview */
-			/* stock graph */
-				.JpB59e .mnr-c:not(:empty) {
-					container();
-				}
-				/* current price */
-					.NprOob {
-						color: main-text;
+				/* share button */
+					.KpG9if {
+						background-color: main-bg-em;
+						button();
 					}
-					/* during update */
-						.fw-price-nc.IsqQVc {
-							color: main-text-off;
+					.KpG9if:hover {
+						button-hover();	
+					}
+					/* share popup */
+						.fAwjXaCTMo5__content {
+							box-shadow: 0px 5px 26px 0px alpha(black, 0.4 * contrast), 0px 20px 28px 0px alpha(black, 0.6 * contrast);
+							background-color: main-bg;	
 						}
-					/* currency */
-						.knFDje {
-							color: main-text;
-						}
-				/* closing time */
-					.TgMHGc {
-						color: main-text-off;
-					}
-				/* disclaimer link */
-					.CVIh4c {
-						color: main-text-off;
-					}
-				/* after hours */
-					.qFiidc {
-						color: main-text-off;
-					}
-				/* day tabs */
-					.QcYZxe {
-						border-color: main-separator;
-					}
-					/* selected */
-						.fw-ch-sel {
-							color: main-text;
-							box-shadow: 0px 18px 0px -16px alpha(white, 0.8 * contrast);
-						}
-					/* titles */
-						.NDTw3e {
-							color: main-text-off;
-						}
-				/* graph */
-					/* axis labels */
-						.fw-ch-svg {
-							color: main-text-off;
-							fill: main-text-off;
-						}
-						/* y axis label shadows */
-							.msyb7 {
-								fill: main-bg-container;
-								stroke: main-bg-container;
+						/* overlay */
+							.lxG8Hd.fAwjXaCTMo5__visible {
+								opacity: 0.4;	
 							}
-					/* highlight line */
-						.knowledge-finance-wholepage-chart__highlight-line {
-							background-image: linear-gradient(alpha(white, 0.38 * contrast) 50%,alpha(white, 0 * contrast) 0%);
-						}
-					/* horizontal lines */
-						.U8Athf line {
-							stroke: main-separator;
-						}
-					/* x axis */
-						.U8Athf line.s2QnJb {
-							stroke: main-separator;
-						}
-						/* ticks */
-							.knowledge-finance-wholepage-chart__xtg line {
-								stroke: main-separator;
+						/* title */
+							.n57WQd {
+								color: main-text;	
 							}
-					/* previous close line */
-						.csb9vb {
-							stroke: main-text-off;
-						}
-					/* previous close rectangle */
-						.CedBdc {
-							background-color: main-bg-container;
-						}
-					/* lunch break rectangle */
-						.JpyPld rect {
-							fill: main-bg-container;
-						}
-					/* tooltip */
-						.knowledge-finance-wholepage-chart__hover-card {
-							background-color: main-bg;
-							box-shadow: 0 1px 3px 0 alpha(black, 0.4 * contrast), 0 1px 1px 0 alpha(black, 0.3 * contrast);
-						}
-						/* value */
-							.knowledge-finance-wholepage-chart__hover-card-value {
+						/* close button */
+							.gSgKyf {
+								color: main-text-off;
+							}
+						/* platform name */
+							.ftKMt {
 								color: main-text;
 							}
-						/* time */
-							.knowledge-finance-wholepage-chart__hover-card-time {
+						/* email */
+							.jaKVod {
+								colorize(main-text);
+								color: main-text !important;
+							}
+						/* 'Copy URL' label */
+							.u5FVec {
 								color: main-text-off;
 							}
-				/* info table */
-					/* label */
-						.JgXcPd {
-							color: main-text;
-						}
-					/* value */
-						.iyjjgb {
-							color: main-text-off;
-						}
-			/* related company carousel */
-				/* exchange & symbol */
-					.wfbQZb {
-						color: main-text-off;
-					}
-				/* price */
-					.ojzJac {
-						color: main-text;
-					}
-				/* separator */
-					.tiM5gc {
-						border-color: container-separator;
-					}
-				/* compare button */
-					.JwgTNb {
-						color: main-link;
-					}
-					/* icon */
-						.VDl3z {
-							color: main-link;
-						}
-			/* News */
-				/* heading */
-					.CCb0ac, .CCb0ac a {
-						color: main-text;
-					}
-				/* item */
-					/* publisher */
-						.wqg8ad {
-							color: main-text-off;
-						}
-					/* dash */
-						.jpqGxc {
-							color: main-text-off;
-						}
-					/* date */
-						.FGlSad {
-							color: main-text-off;
-						}
-					/* image background (overlayed) */
-						.KNcnob {
-							background-color: main-bg-off !important;
-						}
-			/* Quarterly Financials */
-				/* column heading */
-					.azqZUd {
-						color: main-text;
-					}
-				/* cells */
-				.iF8z4d td {
+						/* URl input */
+							.ZXb90b {
+								background-color: inherit;
+								border-color: main-separator;
+							}
+							.rBpXA {
+								color: main-text;
+							}
+						/* popup */ //LOST AND FOUND
+							.LXRtOe {
+								background-color: main-bg;
+								box-shadow: 3px 0px 5px -3px alpha(black, 0.4 * contrast), -3px 0px 5px -3px alpha(black, 0.4 * contrast),0px -1px 2px -2px alpha(black, 0.2 * contrast);
+							}
+							/* overlay */
+								.oLLmo {
+									background-color: alpha(main-bg-off, 0.85);
+								}
+							/* header */
+								/* 'on Google' */
+									.DbNIbd, .gzxbbe .iGBaJe {
+										color: main-text-off;	
+									}
+								/* share button */
+									.Uz88id {
+										color: main-text-off;	
+									}
+								/* menu button */
+									.JfiX0c {
+										filter: colorize(main-text-off);
+									}
+								/* separator */
+									.kDenrb {
+										background-color: main-separator;
+									}
+								/* close button */
+									.K60tkf {
+										color: main-text-off;
+									}
+							/* entry */
+								.zoDZIc {
+									box-shadow: 0 2px 6px alpha(black, 0.4 * contrast);
+									background-color: main-bg;
+								}
+								/* date */
+									.N4pSac, .qROp {
+										color: main-text-off;
+									}
+								/* text */
+									.Rfjmec {
+										color: main-text;
+									}
+		/* 'see results about' container (knowledge suggestions) */
+			/* heading */
+				.garHBe {
 					color: main-text;
+				}
+			/* entry */
+				.y8Jpof:hover {
+					background: main-bg-off;
+				}
+				/* title */
+					.mod .rhsvw div .ellip {
+						color: main-link !important;
+					}
+				/* text */
+					.mod .rhsvw div div {
+						color: main-text;
+					}
+				/* linked */
+					.zloOqf.ellip.zloOqf.ellip {
+						color: main-text !important;
+					}
+					.y8Jpof span {
+						color: main-text !important;
+					}
+		/* 'more' expand footer */
+			/* separator */
+				.vk_arc {
 					border-color: container-separator;
 				}
-				/* footer */
-					.ZEDj1b {
-						color: main-text;
-					}
-					/* more financials */
-						.LlMFmd {
+		/* footer */
+			.kno-ftr {
+				color: main-text-off;	
+			}
+			/* feedback */
+				a.duf3 {
+					color: main-text-off;
+				}
+				/* edit mode */
+					/* values */
+						.kno-fb-d3 .kno-fb-ctx .fl, .kno-fb-d3 .kno-fb-ctx .gl {
 							color: main-text;
 						}
-					/* disclaimer */
-						.kVLSDc {
+	/* product panel */
+		/* product name */
+			.ixFi3 {
+				color: main-text;
+			}
+		/* 'shop now' */
+			.vA2fGc {
+				color: main-text;
+			}
+			/* separator */
+				.hZQzR {
+					border-color: main-separator;
+				}
+		/* options select */
+			.z9pYxf {
+				color: main-text;
+			}
+			/* dropdown */
+				/* items */
+					/* text */
+						.VapCmc {
+							color: main-text;
+						}
+					/* separator */
+						.RZvace {
+							border-color: main-border;
+						}
+					/* selected */
+						.RZvace.B8QPCf {
+							background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAQAAABKfvVzAAAAYElEQVQ4y2NgGAW4wH8t0pSH/P/9vwHCZiJGOcNyBhbSTP8PM38wK//P+n/V/0ASTP8f8f///1//g0hwzP+G/////4ZoIdLtUC3BJHgVqoWkkGn4/58E5VAtDaOZDQ0AAHppa1mGsf3/AAAAAElFTkSuQmCC");
+						}
+					/* hover */
+						.RZvace:hover {
+							background-color: main-bg-off;
+						}
+			/* separator */
+				.gZDese {
+					border-color: main-separator;
+				}
+		/* offers */
+			.gkMlQe {
+				border-color: main-border;
+			}
+			/* hover */
+				.gkMlQe:hover {
+					background-color: main-bg-off;
+				}
+			/* price */
+				.rgc6j {
+					color: main-text;
+				}
+			/* hover merchant underline */
+				.jackpot-merchant {
+					color: main-link;
+				}
+			/* additional info */
+				.zlWddc {
+					color: main-text-off;
+				}
+		/* product details */
+			/* heading */
+				.XWDade {
+					color: main-text;
+				}
+			/* title */
+				.mfmMfd {
+					color: main-text;
+				}
+	/* other categories */
+	/* News */
+		/* result */
+			/* text */
+				.ts > div {
+					color: main-text;
+				}
+			/* source */
+				.e8fRJf {
+					color: main-source;
+				}
+			/* highly cited */
+				.HgetDe {
+					color: main-text-off;
+				}
+			/* other sources image subtext */
+				.QJGxHc {
+					color: main-text-off;
+				}
+	/* Search by Image */
+		/* searched image */
+				/* border */
+					#Z6bGOb .GMzDwb {
+						border-color: main-separator;
+					}
+		/* pages that include matching images */
+			/* heading */
+				.normal-header div.rg-header {
+					color: main-text-off;
+				}
+	/* Images */
+		/* related image search terms (improvement over original) */
+			a.chip span.sq {
+				font-weight: bold !important;
+				text-shadow: 0 0 0.3em black !important;
+			}
+			a.chip.xchip span.sq {
+					text-shadow: none !important;
+			}
+		/* selected */
+			/* main */
+				.irc_c {
+					background-color: main-bg-em;
+				}
+			/* right */
+				#irc_cc {
+					background-color: main-bg-em;
+				}
+			/* most right */
+				#irc_bgl {
+					background-color: main-bg-em;
+				}
+			/* caret */
+				#irc_pc {
+					border-bottom-color: main-bg-em;
+				}
+			/* close button */
+				#irc_cb {
+					filter: colorize(white);
+					opacity: 0.3 * contrast;
+				}
+				#irc_cb:hover {
+					opacity: 0.7 * contrast;
+				}
+			/* paging buttons */
+				.ex2D6e {
+					border-color: main-border;
+					background-color: main-bg;
+				}
+				.ex2D6e:active, .ex2D6e:hover {
+					background-color: main-bg-off;
+					box-shadow: none;
+				}
+			/* site info */
+				/* site title */
+					a.irc_pt {
+						color: main-text;
+					}
+				/* domain title */
+					.irc_hd a {
+						color: main-text-minor;
+					}
+				/* image title */
+					.irc_asc {
+						color: main-text-off;
+					}
+				/* buttons */
+					.irc_but_r a {
+						button();
+						background-color: main-bg;
+						box-shadow: none;
+					}
+					.irc_but_r a:active, .irc_but_r a:hover {
+						button-hover();
+						background-color: main-bg;
+					}
+			/* related images */
+				/* heading */
+					.yJbeqd {
+						color: main-text-off;
+					}
+			/* image preview */
+				/* shadow */
+					.irc_mi {
+						box-shadow: 0 5px 35px alpha(black, .4 * contrast);
+					}
+				/* image dimensions */
+					.irc_idim {
+						color: main-text-off;
+					}
+				/* copyright notice */
+					.irc_bimg .Af3fH {
+						color: main-text-minor;
+					}
+			/* bottom links */
+				.irc_ft a {
+					color: main-text-minor;
+				}
+			/* vertical separator */
+				.irc_land .irc_sep {
+					background-color: main-border;
+					box-shadow: none;
+				}
+			/* horizontal separator */
+				.irc_land .irc_infosep {
+					background-color: main-border;
+					box-shadow: none;
+				}
+		/* footer */
+			/* loading */
+				#isr_cld {
+					font-size: 80px;
+					background: none;
+					gloader();
+				}
+				#isr_cld::before {
+					gloader-before();
+				}
+				#isr_cld::after {
+					gloader-after();
+				}
+				/* parent element */
+					#rg {
+						text-align: center;
+					}
+			/* show more results (date select 'go') */
+			.ksb {
+				background-color: main-bg-em;
+				button()
+			}
+			.ksb:hover {
+				background-color: main-bg-em;
+				button-hover();
+			}
+	/* Shopping */
+		/* location */
+			.CV7Lzb {
+				color: main-text-off;
+			}
+		/* filter */
+			/* headings */
+				.sh-dr__g > div {
+					color: main-text;
+				}
+			/* items */
+				.sh-dr__short * {
+					color: main-text-off;
+					border-color: main-text-off;
+				}
+			/* inputs */
+				.sh-dr__short input {
+					background-color: main-bg;
+					color: main-text-em;
+				}
+			/* go */
+				.LfUe1b {
+					background-color: main-bg;
+					color: main-link;
+				}
+			/* more */
+				.sh-dr__g div[role="button"] {
+					color: main-link;
+				}
+				/* expanded sellers */
+					/* names */
+						.vjtvke, .vjtvke:link, .vjtvke:visited {
 							color: main-text-off;
 						}
-			/* Related Markets */
-				/* item */
-					.QEsAKd {
-						background-color: main-bg-container;
+					/* checkboxes */
+						.nZbkuc {
+							border-color: main-text-off;
+						}
+		/* results */
+			/* header */
+				/* breadcrumbs */
+					.QCKch a:link, .QCKch a:visited {
+						color: main-text-off;
 					}
-					/* name */
-						.LTTD0 {
+				/* view buttons */
+					.qa708e:not(.IYWnmd), .Ytbez:not(.IYWnmd) {
+						filter: colorize(main-text-minor);
+					}
+				/* vertical separator */
+					.sh-dtt__sort-by {
+						border-color: main-separator;
+					}
+				/* text */
+					.sh-dtt__top-tools {
+						color: main-text-off;
+					}
+				/* sorting */
+					/* dropdown button*/
+						.Yf5aUd {
+							filter: colorize(darken(main-text-off, 50%));
+						}
+						/* menu */
+							.o2ji6GoAIDp__menu {
+								popout();
+							}
+							/* items */
+								.kH0Dhc {
+									color: main-text-off;	
+								}
+								/* hover */
+									.oLMvxj8HcwN__highlighted, .ErsxPb:active {
+										dropdown-hover();
+									}
+								/* selected */
+									.oLMvxj8HcwN__selected {
+										background-image: dropdown-checkmark;
+									}
+				/* shortlist */
+					/* slideout button */
+						#gko-btn-arrow-down {
+							filter: colorize(darken(main-text-off, 40%));
+						}
+						/* slideout */
+							#gko-sp.gko-open {
+								border-color: alpha(black, 0.4 * contrast);
+							}
+							/* shortlist icon */
+								.xqknTb {
+									background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAZBAMAAAAh5QiZAAAAElBMVEUAAABo4PtSxfg9q/RBnPJHkPBhnHLTAAAABnRSTlMAM12GzfZ+cougAAAAOklEQVQY02NgQABG01AwMGRgYIawQoMZGFihzNChwwxRVIEyQxQYGFTAzBABkBdFgEwmAYh3hRmwAwDAHDS53fDN1AAAAABJRU5ErkJggg==");
+								}
+							/* shortlist selector */
+								.sh-gb__rs-bt {
+									color: main-text-off;
+								}
+								/* dropdown */
+									.sh-gb__rs-ba {
+										border-color: main-text-off transparent;
+									}
+									/* menu */
+										._-J {
+											popout();
+										}
+										/* items */
+											._-I {
+												color: main-text-off;
+											}
+											/* hover */
+												.sh-gs__rs-sl:hover, ._-I:hover {
+													dropdown-hover();
+												}
+										/* create new */ //TODO
+							/* item carousel */
+								/* paging buttons */
+									.gko-pg-l {
+										background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAMAAAASJ24jAAAAD1BMVEUAAADr6+vr6+vr6+vr6+vXfbPCAAAABXRSTlMAAVJz/KX2DwgAAAAkSURBVHgBY0AFTExofBZUAWYWJsZhwUcIoPmYcbiKMGGKMAEAHAYBHrtvarEAAAAASUVORK5CYII=");
+									}
+									.gko-pg-r {
+										background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAMAAAASJ24jAAAAD1BMVEUAAADr6+vr6+vr6+vr6+vXfbPCAAAABXRSTlMAAVJz/KX2DwgAAAAlSURBVBjTY2BiYkAFTCxoIoxMLMwjQwRdAMhnHNp8JkZUD6HxARwzAR4h72xkAAAAAElFTkSuQmCC");
+									}
+								/* empty frames */
+									.gko-itms-e .gko-i {
+										border-color: main-text-minor;
+									}
+							/* options */
+								.gko-ctrl, .gko-ctrl:link, .gko-ctrl:visited {
+									color: main-text-off;
+								}
+				/* horizontal separator */
+					.sh-sp__line {
+						border-color: main-separator;
+					}
+					/* sponsored hint */
+						#topstuff .sh-sp__pswtr {
+							background-color: main-bg;
+						}
+						/* text */
+							.sh-sp__pswtr {
+								color: main-text-off;
+							}
+						/* info icon */
+							.cMW8pb {
+								filter: colorize(darken(main-text-off, 40%));
+							}
+						/* popout */
+							.sh-sp__tt {
+								popout();
+							}
+							/* caret */
+								.sh-sp__tt span.sh-sp__tt-arrow-l, .sh-sp__tt span.sh-sp__tt-arrow-r {
+									filter: adapt-to-bg(main-bg);
+								}
+			/* results */
+				/* grid */
+					/* card */
+						.sh-dgr__grid-result {
+							container();
+						}
+						/* thumbnail */
+							.sh-dgr__grid-result .sh-dgr__thumbnail {
+								background-color: white;
+							}
+							/* discount */
+								.NA0ooc {
+									background-color: main-bg-em;
+								}
+								/* text */
+									.w3MEU {
+										color: main-text-off;
+									}
+						/* price */
+							.O8U6h {
+								color: main-text;
+							}
+						/* info */
+							.sh-dgr__grid-result, .sh-dgr__grid-result a {
+								color: main-text-off;
+							}
+						/* description */
+							.EI11Pd, .EI11Pd:link, .EI11Pd:visited {
+								color: main-text;
+							}
+				/* list */
+					/* card */
+						.sh-dlr__list-result {
+							container();
+						}
+						/* thumbnail */
+							.JRlvE {
+								background-color: white;
+							}
+						/* info */
+							.na4ICd, .UTJALc {
+								color: main-text-off;
+							}
+						/* review count */
+							.TxCHDf a {
+								color: main-text-off;
+							}
+						/* produce breadcrumbs */
+							.shop__secondary, .shop__secondary:link, .shop__secondary:visited {
+								color: main-text-off;
+							}
+						/* option prices */
+							.dGWXMb {
+								color: main-text-off;
+							}
+				/* filter */
+					/* categories */
+						/* images */
+							.sh-img__image {
+								background-color: white;
+							}
+				/* related searches */
+					.sh-sr__shop-result-header {
+						color: main-text;
+					}
+				/* bottom separator */
+					.sh-sr__shop-result-group:last-of-type {
+						border-color: main-separator;
+					}
+					.sh-sr__shop-result-group {
+						border-color: main-separator;
+					}
+	/* Finance */
+		/* Home */
+			/* tabs */
+				/* titles */
+					.SVWlSe > div {
+						color: main-text !important;
+					}
+				/* separator & shadow */
+					.FNvPOb {
+						box-shadow: 0 1px 0 main-border;
+						border-color: transparent;
+					}
+					.u8H8Fd {
+						box-shadow: 0 1px 0 main-border;
+					}
+				/* selected */
+					.KYeOtb[aria-selected="true"] {
+						border-color: main-text !important;
+					}
+			/* modules */
+				/* titles */
+					.umBFsc .HnYYW {
+						color: main-text;
+					}
+				/* containers */
+					.vnLNtd.mnr-c {
+						container();
+					}
+			/* your stocks */
+				/* not currently following */
+					.knowledge-finance-wholepage__your-stocks-promo {
+						container();
+						color: main-text;
+					}
+				/* refresh */
+					.knowledge-finance-wholepage__your-stocks-refresh {
+						container();
+						color: main-text;
+					}
+			/* local markets */
+				/* graph */
+					/* legend */
+						/* stock exchange name */
+							.yrWwmd .knowledge-finance-wholepage-chart__legend-symbol {
+								color: main-link;
+							}
+		/* View Stock */
+			/* market summary */
+				.K20DDe {
+					background-color: main-bg;
+				}
+				/* breadcrumb */
+					.HkooRb:link, .HkooRb:visited, .HkooRb:hover {
+						color: main-text-off;
+					}
+					/* stock name */
+						.PyJv1b {
+							color: main-text;
+						}
+				/* exchange and symbol */
+					.wx62f {
+						color: main-text-off;
+					}
+				/* tabs */
+					.qLJQNc {
+						background-color: main-bg;
+					}
+				/* separator */
+				.QOsNac {
+					border-color: main-border;
+				}
+			/* Overview */
+				/* stock graph */
+					.JpB59e .mnr-c:not(:empty) {
+						container();
+					}
+					/* current price */
+						.NprOob {
+							color: main-text;
+						}
+						/* during update */
+							.fw-price-nc.IsqQVc {
+								color: main-text-off;
+							}
+						/* currency */
+							.knFDje {
+								color: main-text;
+							}
+					/* closing time */
+						.TgMHGc {
+							color: main-text-off;
+						}
+					/* disclaimer link */
+						.CVIh4c {
+							color: main-text-off;
+						}
+					/* after hours */
+						.qFiidc {
+							color: main-text-off;
+						}
+					/* day tabs */
+						.QcYZxe {
+							border-color: main-separator;
+						}
+						/* selected */
+							.fw-ch-sel {
+								color: main-text;
+								box-shadow: 0px 18px 0px -16px alpha(white, 0.8 * contrast);
+							}
+						/* titles */
+							.NDTw3e {
+								color: main-text-off;
+							}
+					/* graph */
+						/* axis labels */
+							.fw-ch-svg {
+								color: main-text-off;
+								fill: main-text-off;
+							}
+							/* y axis label shadows */
+								.msyb7 {
+									fill: main-bg-container;
+									stroke: main-bg-container;
+								}
+						/* highlight line */
+							.knowledge-finance-wholepage-chart__highlight-line {
+								background-image: linear-gradient(alpha(white, 0.38 * contrast) 50%,alpha(white, 0 * contrast) 0%);
+							}
+						/* horizontal lines */
+							.U8Athf line {
+								stroke: main-separator;
+							}
+						/* x axis */
+							.U8Athf line.s2QnJb {
+								stroke: main-separator;
+							}
+							/* ticks */
+								.knowledge-finance-wholepage-chart__xtg line {
+									stroke: main-separator;
+								}
+						/* previous close line */
+							.csb9vb {
+								stroke: main-text-off;
+							}
+						/* previous close rectangle */
+							.CedBdc {
+								background-color: main-bg-container;
+							}
+						/* lunch break rectangle */
+							.JpyPld rect {
+								fill: main-bg-container;
+							}
+						/* tooltip */
+							.knowledge-finance-wholepage-chart__hover-card {
+								background-color: main-bg;
+								box-shadow: 0 1px 3px 0 alpha(black, 0.4 * contrast), 0 1px 1px 0 alpha(black, 0.3 * contrast);
+							}
+							/* value */
+								.knowledge-finance-wholepage-chart__hover-card-value {
+									color: main-text;
+								}
+							/* time */
+								.knowledge-finance-wholepage-chart__hover-card-time {
+									color: main-text-off;
+								}
+					/* info table */
+						/* label */
+							.JgXcPd {
+								color: main-text;
+							}
+						/* value */
+							.iyjjgb {
+								color: main-text-off;
+							}
+				/* related company carousel */
+					/* exchange & symbol */
+						.wfbQZb {
+							color: main-text-off;
+						}
+					/* price */
+						.ojzJac {
+							color: main-text;
+						}
+					/* separator */
+						.tiM5gc {
+							border-color: container-separator;
+						}
+					/* compare button */
+						.JwgTNb {
 							color: main-link;
 						}
-					/* points */
-						.E4K4Td {
+						/* icon */
+							.VDl3z {
+								color: main-link;
+							}
+				/* News */
+					/* heading */
+						.CCb0ac, .CCb0ac a {
+							color: main-text;
+						}
+					/* item */
+						/* publisher */
+							.wqg8ad {
+								color: main-text-off;
+							}
+						/* dash */
+							.jpqGxc {
+								color: main-text-off;
+							}
+						/* date */
+							.FGlSad {
+								color: main-text-off;
+							}
+						/* image background (overlayed) */
+							.KNcnob {
+								background-color: main-bg-off !important;
+							}
+				/* Quarterly Financials */
+					/* column heading */
+						.azqZUd {
+							color: main-text;
+						}
+					/* cells */
+					.iF8z4d td {
+						color: main-text;
+						border-color: container-separator;
+					}
+					/* footer */
+						.ZEDj1b {
+							color: main-text;
+						}
+						/* more financials */
+							.LlMFmd {
+								color: main-text;
+							}
+						/* disclaimer */
+							.kVLSDc {
+								color: main-text-off;
+							}
+				/* Related Markets */
+					/* item */
+						.QEsAKd {
+							background-color: main-bg-container;
+						}
+						/* name */
+							.LTTD0 {
+								color: main-link;
+							}
+						/* points */
+							.E4K4Td {
+								color: main-text;
+							}
+						/* additional info */
+							.knowledge-finance-wholepage__additional-info {
+								color: main-text-off;
+							}
+						/* time */
+							.TNcMZc {
+								color: main-text-minor;
+							}
+					/* separators */
+						.e17INc {
+							background-color: main-border;
+						}
+			/* Compare */
+				/* search */
+					.EEmK6c {
+						container();
+					}
+					/* search icon */
+						.aZa4J {
+							color: main-text-off;
+						}
+					/* input */
+						.KIdUu {
+							color: main-text;
+							background-color: transparent;
+						}
+					/* clear button */
+						.doAFBe {
+							color: main-text-off;
+						}
+					/* fanout */
+						.gstl_50.sbdd_a {
+							background-color: main-bg-off;
+							border-color: main-border;
+						}
+						.gstl_50 .sbdd_b {
+							container();
+							border-color: main-border;
+						}
+						.gstl_50 .sbsb_a {
+							background-color: inherit;
+						}
+						/* item separator */
+							.gstl_50 .sbsb_b li .fisb_c {
+								border-color: container-separator;
+							}
+				/* stock graph */
+					/* separator */
+						.BwZUW {
+							border-color: container-separator;
+						}
+					/* legend */
+						/* text */
+							.qfx13b {
+								color: main-text;
+							}
+				/* table */
+					.eskLAf {
+						color: main-text;
+					}
+					/* row separators */
+						.yW8WD {
+							border-color: main-separator;
+						}
+					/* column headers */
+						/* symbol & exchange */
+							.WuDkNe {
+								color: main-text-off;
+							}
+				/* Related stocks */
+					/* heading */
+						.ChlgHf .HnYYW {
+							color: main-text;
+						}
+						.ChlgHf {
+							border-color: main-border;
+						}
+					/* stock name */
+						.knowledge-finance-wholepage__compare-item {
 							color: main-text;
 						}
 					/* additional info */
-						.knowledge-finance-wholepage__additional-info {
+						.knowledge-finance-wholepage__compare-item .knowledge-finance-wholepage__additional-info {
 							color: main-text-off;
 						}
-					/* time */
-						.TNcMZc {
-							color: main-text-minor;
+					/* separators */
+						.BBHxge {
+							border-color: main-border;
 						}
-				/* separators */
-					.e17INc {
-						background-color: main-border;
-					}
-		/* Compare */
-			/* search */
-				.EEmK6c {
-					container();
-				}
-				/* search icon */
-					.aZa4J {
-						color: main-text-off;
-					}
-				/* input */
-					.KIdUu {
-						color: main-text;
-						background-color: transparent;
-					}
-				/* clear button */
-					.doAFBe {
-						color: main-text-off;
-					}
-				/* fanout */
-					.gstl_50.sbdd_a {
-						background-color: main-bg-off;
-						border-color: main-border;
-					}
-					.gstl_50 .sbdd_b {
-						container();
-						border-color: main-border;
-					}
-					.gstl_50 .sbsb_a {
-						background-color: inherit;
-					}
-					/* item separator */
-						.gstl_50 .sbsb_b li .fisb_c {
-							border-color: container-separator;
+			/* Financials */
+				/* Quarterly Financials */
+					/* quarter tabs */
+						.vCQYxb {
+								background-color: main-bg-off;
 						}
-			/* stock graph */
-				/* separator */
-					.BwZUW {
-						border-color: container-separator;
-					}
-				/* legend */
-					/* text */
-						.qfx13b {
-							color: main-text;
-						}
-			/* table */
-				.eskLAf {
-					color: main-text;
-				}
-				/* row separators */
-					.yW8WD {
-						border-color: main-separator;
-					}
-				/* column headers */
-					/* symbol & exchange */
-						.WuDkNe {
-							color: main-text-off;
-						}
-			/* Related stocks */
-				/* heading */
-					.ChlgHf .HnYYW {
-						color: main-text;
-					}
-					.ChlgHf {
-						border-color: main-border;
-					}
-				/* stock name */
-					.knowledge-finance-wholepage__compare-item {
-						color: main-text;
-					}
-				/* additional info */
-					.knowledge-finance-wholepage__compare-item .knowledge-finance-wholepage__additional-info {
-						color: main-text-off;
-					}
-				/* separators */
-					.BBHxge {
-						border-color: main-border;
-					}
-		/* Financials */
-			/* Quarterly Financials */
-				/* quarter tabs */
-					.vCQYxb {
-							background-color: main-bg-off;
-					}
-/* language switch popup */
-#Rzn5id {
-	box-shadow: 0 2px 4px alpha(black, 1 * contrast) !important;
-}
-/* normalize popup font color */
-.goog-modalpopup {
-	color: #222;
-}			
+	/* language switch popup */
+		#Rzn5id {
+			box-shadow: 0 2px 4px alpha(black, 1 * contrast) !important;
+		}
+	/* normalize popup font color */
+		.goog-modalpopup {
+			color: #222;
+		}
 }
 
 /* Header And Footer */
 @-moz-document regexp("https?://(ipv4|www|encrypted)\\.google\\.(com|([a-z]{2}))(\\.[a-z]{2})?(/+((webhp|search|gfe_rd|auth|gws_rd|#q|imghp|#gfe_rd|#safe|#pws|#tbs|#gws|#tbm|preferences|\\?)(?!.*(tbm=(lcl)|;mt;|;st;|;dt;|;nw;)).*)?)?") {
-:root {
-global-definitions();
-}
-
-/* header */
-site-separator() {
-	border-color: alpha(black, 0.5 * contrast);
-}
-
-.sfbg, .sfbgx {
-	background: inherit !important;
-}
-.sfbgg {
-	background-color: header-bg !important;
-	background-image: none;
-}
-/* loading border */	
-.sfbgx {
-	border-bottom-color: transparent;
-}
-/* search bar */
-/* entry */
-	/* icon */
-		.sbibod {
-			background-color: main-bg;
-		}
-	/* input */
-		.sbib_a {
-			background-color: main-bg;
-		}
-		#lst-ib {
-			color: main-text;
-			background: unset;
-		}
-		/* spell check */
-			.gsc_b {
-				/* transparent background */
-				background-image: url("data:image/gif;base64,R0lGODlhCgAEAIABAP9CGv///yH5BAEKAAEALAAAAAAKAAQAAAIKjI8GcKvPgmuoAAA7");
-				/* move upwards */
-				background-position-y: 85%;
-			}
-	/* voice search */
-		/* overlay */
-			.s2tb .spchc, .s2tb-h .spchc {
-				background-color: header-bg;
-			}
-			/* voice search status */
-				.spcht {
-					color: header-text-off !important;
-				}
-				/* try again */
-					.spchta {
-						color: main-link;
-					}
-			/* mic button */
-				.button {
-					background-color: header-bg;
-					border-color: main-separator;
-					box-shadow: 0 2px 5px rgba(0,0,0,.5);
-				}
-				/* icon */
-					.fcn9Hf {
-						background-color: white;
-					}
-					.Aax87c {
-						background-color: white;
-					}
-					.ae3xF {
-						border-color: white;
-					}
-			/* google logo */
-				.google-logo {
-					filter: colorize(white);
-				}
-			/* close button */
-				.close-button {
-					color: header-text;
-				}
-		/* site overlay */
-			.spch.s2tb {
-				background-color: alpha(main-bg, 0.9) !important;
-			}
-	/* camera icon */
-		.gsst_e {
-			filter: colorize(white);
-		}
-		/* search by image popup */
-			#qbp {
-				background: main-bg;
-			}
-			/* file type */
-				.gscp_c {
-					color: main-text;
-				}
-				.gscp_c:hover, .gscp_a .gscp_d:hover {
-					color: main-text-em;
-				}
-			/* close button */
-				#qbx {
-					filter: colorize(main-text-off);
-				}
-			/* tab */
-				.qbtbha.sl {
-					background-color: main-bg-off;
-					border-color: main-border;
-				}
-				.qbtbp {
-					background-color: main-bg-off;
-					border-color: main-border;
-				}
-				/* active */
-					/*title */
-						.qbtbha .qbtbtxt.qbclr {
-							color: main-text;
-						}
-					/* question mark */
-						.qbh {
-							filter: colorize(white);
-						}
-						/* tooltip */
-							#qbut .qbctnt, #qbft .qbctnt {
-								background-color: main-bg;
-							}
-							/* caret */
-								#qbut .qbptr, #qbft .qbptr {
-									border-bottom-color: main-bg;
-								}
-				/* inactive title */
-					.qbtbtxt.qbclr {
-						color: main-text-off;
-					}
-					.qbtbtxt.qbclr:hover {
-						color: main-text;
-					}
-				/* paste */
-					/* input (also is site search) */
-						.ktf {
-							background-color: main-bg-em;
-							border-color: main-separator;
-							color: main-text;
-						}
-						.ktf:hover:not(:focus) {
-							border-color: main-separator;
-						}
-					/* button (copy to avoid overwrite) */
-						.kpbb {
-							color: #fff !important;
-							background-color: #4d90fe !important;
-							background-image: linear-gradient(to bottom ,#4d90fe,#4787ed) !important;
-							border: 1px solid #3079ed !important;
-						}
-						.kpbb:hover {
-							background-color: #357ae8 !important;
-							background-image: linear-gradient(to bottom,#4d90fe,#357ae8) !important;
-							border: 1px solid #2f5bb7 !important;
-						}
-				/* upload */
-					/* selected file */
-						.qbtbp {
-							color: main-text;
-						}
-			/* drop image */
-			#qbdp, #qbup {
-				background-color: main-bg-off;
-				color: main-text-off;
-				border-color: main-border;
-			}
-				/* spinner */
-				.spin {
-					filter: invert(1);
-				}
-	/* image box */
-		.gscp_a {
-			background-color: main-bg-em;
-			border-color: alpha(white, 0.2 * contrast);
-			box-shadow: 1px 1px 4px alpha(black, 0.6 * contrast);
-		}
-		.gscp_a:hover {
-			border-color: alpha(white, 0.6 * contrast);
-		}
-		/* dismiss button */
-			.gscp_d {
-				color: main-text-off;
-			}
-			.gscp_a:hover .gscp_d {
-				color: main-text-em;
-			}
-/* fanout */
-	.sbsb_a {
-		background-color: main-bg;
+	:root {
+		global-definitions();
 	}
-	.sbdd_b {
-		box-shadow: 0 3px 8px 0 alpha(black, 0.4 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
-	}
-	/* suggestion hover */
-		.sbsb_d {
-			background-color: main-bg-off;
-		}
-	/* suggestion expanded text */
-		.sben_a {
-			color: main-text-off;
+
+	/* header */
+		site-separator() {
+			border-color: alpha(black, 0.5 * contrast);
 		}
 
-/* report */
-	a.aciXEb {
-		background-color: alpha(main-bg, 0.9 * contrast) !important;
-	}
-/* menus */
-.gb_hc {
-	filter: invert(1) brightness(contrast);
-}
-/* appmenu */
-	/* outer */
-		.gb_fa {
-			popout();
+		.sfbg, .sfbgx {
+			background: inherit !important;
 		}
-	/* caret */
-		.gb_vb {
-			border-bottom-color: main-bg;
+		.sfbgg {
+			background-color: header-bg !important;
+			background-image: none;
 		}
-	/* inner */
-		.gb_ia {
-			background-color: main-bg;
-		}
-		/* titles */
-			#gb#gb a.gb_O, #gb#gb span.gb_P {
-				color: main-text;
-			}
-			/* emphasis */
-			.gb_Z:hover .gb_3 {
-				background: unset;
-			}
-		/* emphasis */
-			/* fix shift on hover */
-			.gb_Z a {
-				border: 1px solid transparent;
-				margin: 7px 1px;
-			}
-			.gb_Z:hover a {
-				border-color: main-border;
-			}
-		/* add a shortcut */
-			.gb_va {
-				box-shadow: 0 1px 2px alpha(black, 0.2 * contrast), 0 0 1px alpha(black, 0.2 * contrast);
-			}
-			/* title */
-				.gb_wa {
-					color: main-text;
-				}
-		/* separator */
-			.gb_ka {
-				border-color: alpha(black, 0.4 * contrast);
-			}
-		/* more */
-			.gb_ja {
-				background-color: main-bg-off;
-			}
-		/* even more */
-			#gb a.gb_ja, #gb a.gb_ja:visited, #gb a.gb_ja:active, #gb a.gb_ka, #gb a.gb_ka:visited {
-				color: main-text;
-			}
-/* notification menu */
-	#gbsfw {
-		popout(!important);
-	}
-	/* caret */
-		.gb_wb  {
-			border-bottom-color: popout-border !important;
-		}
-		.gb_vb {
-			border-bottom-color: main-bg !important;
-		}
-/* account menu */
-	/* active account */
-		/* email */
-			.gb_Ib {
-				color: main-text-off;
-			}
-		/* links */
-			.gb_yb, #gb a.gb_yb.gb_yb, .gb_zb a, #gb .gb_zb.gb_zb a {
-				color: main-link;
-			}
-	/* secondary accounts */
-		.gb_Qb {
-			background-color: main-bg-off;
-			border-color: main-separator;
-		}
-		.gb_Sb:hover {
-			background-color: main-bg-em;
-		}
-		/* name */
-			.gb_3b {
-				color: main-text;
-			}
-		/* email */
-			.gb_4b {
-				color: main-text-off;
-			}
-		/* status */
-			.gb_5b {
-				color: main-text-off;
-			}
-	/* loading bar */
-		.gb_pb {
-			background-color: alpha(black, 0.5 * contrast);
-		}
-	/* footer */
-		.gb_Kb {
-			background-color: main-bg-off;
-			border-color: main-separator;
-		}
-		/* buttons */
-			.gb_Ea {
-				background-color: main-bg;
-				border-color: main-separator;
-			}
-			.gb_Kb .gb_Jb:hover {
-				background-color: main-bg;
-				button-hover(2);
-			}
-			.gb_Ea, #gb a.gb_Ea.gb_Ea, .gb_Fa {
-				color: main-text-off;
-			}
-
-/* tabs */
-#hdtb {
-	background-color: header-bg;
-	site-separator();
-}
-#hdtbSum {
-	background-color: header-bg;
-}
-/* categories */
-	#hdtb .hdtb-mitem a {
-		color: header-text-off;
-	}
-	/* categories hover */
-		.hdtbItm label:hover, .hdtbItm a:hover, #hdtb-more-mn a:hover, #hdtb .hdtb-mitem a:hover, .hdtb-mn-hd:hover, #hdtb-more:hover, #hdtb-tls:hover {
-			color: header-text;
-		}
-/* settings dropdown */
-/* main */
-	#lb > div {
-		popout();
-	}
-/* items */
-	#lb > div > a {
-		color: main-text;
-	}
-	/* item hover */
-	#lb > div > a:hover {
-		dropdown-hover();
-	}
-/* tools */
-#hdtb-msb #hdtb-more, #hdtb-msb #hdtb-tls {
-	color: header-text-off;
-}
-/* tools button */
-	#hdtb #hdtb-tls:active {
-		color: header-text;
-	}
-	#hdtb-tls:hover,
-	#hdtb-tls:active {
-		background: linear-gradient(to bottom, alpha(black, 0.02 * contrast), alpha(black, 0.04 * contrast));
-	}
-	#hdtb-tls:hover {
-		border-color: alpha(black, 0.4 * contrast);
-		box-shadow: 0 1px 1px alpha(black, 0.5 * contrast);
-		color: header-text !important;
-	}
-	#hdtb-tls:active {
-		box-shadow: inset 0 1px 2px alpha(black, 0.7 * contrast);
-		color: header-text;
-	}
-	/* tools button active */
-		#hdtb-msb .hdtb-tl-sel, #hdtb-msb .hdtb-tl-sel:hover {
-			background: linear-gradient(to bottom, alpha(black, 0.05 * contrast), alpha(black, 0.1 * contrast));
-			border-color: alpha(black, 0.4 * contrast);
-			box-shadow: inset 0 1px 2px 0 alpha(black, 0.5 * contrast);
-		}
-/* view saved & safesearch (Images) */
-#top_nav a.ab_button {
-	color: header-text-off !important;
-}
-#top_nav a.ab_button:hover {
-	color: header-text !important;
-}
-/* safesearch */
-	#top_nav .ab_button > span.ab_icon {
-		filter: colorize(darken(header-text-off, 40%));
-		opacity: 1;
-	}
-	#top_nav .ab_button:hover > span.ab_icon {
-		filter: colorize(darken(header-text, 40%));
-		opacity: 1;
-	}
-	#appbar a.ab_button:active, a.ab_button.selected, a.ab_button.selected:hover {
-		color: header-text !important;
-	}
-	/* dropdown */
-		a.ab_dropdownlnk, a.ab_dropdownlnk:visited, a.ab_dropdownlnk:hover, #appbar a.ab_dropdownlnk:active {
-			color: main-text;
-		}
-		/* hover */
-			.ab_dropdownitem.selected {
-				background-color: main-bg-off;
-			}
-			a.ab_dropdownlnkinfo, a.ab_dropdownlnkinfo:visited, a.ab_dropdownlnkinfo:hover, #appbar a.ab_dropdownlnkinfo:active {
-				color: main-link;
-			}
-		/* separator */
-			.ab_dropdownrule {
-				border-color: main-separator;
-			}
-/* feature */
-div.rl_feature {
-	background-color: header-bg;
-}
-/* tools dropdowns */
-	#hdtb.hdtba #hdtbMenus {
-		background-color: header-bg;
-		border-color: alpha(black, 1 * contrast);
-	}
-	#hdtb.hdtba .hdtb-mn-hd:not(:hover) {
-		color: header-text-off;
-	}
-	/* arrows */
-		#hdtb.hdtba .mn-dwn-arw {
-			border-color: header-text-off transparent;
-		}
-		#hdtb.hdtba .hdtb-mn-hd:hover .mn-dwn-arw, #hdtb.hdtba #hdtb-more:hover .mn-dwn-arw {
-			border-color: header-text transparent;
-		}
-/* carousel */
-	.rlc__slider {
-		background-color: header-bg;
-	}
-	/* navigation */
-	.rl_feature .kxbcl {
-		color: header-text-off;
-	}
-		/* hover */
-			.kxbcl .kxbc:hover {
-				color: header-text;
-			}
-		/* connector */
-			.s8AAke {
-				filter: colorize(darken(header-text-off, 30%));
-			}
-		/* selected */
-			.H1ccWd {
-				color: header-text;
-			}
-		/* not selected (overwrites rule above) */
-			.kxbcl {
-				color: header-text-off;
-			}
-	/* item container */
-		.rlc__slider-page {
-			background-color: header-bg;
-		}
-	/* sort */
-		.lx_ctl .ksb.ab_button { //restore original style
-			background-color: none;
-			box-shadow: none;
-			color: header-text;
-		}
-		/* arrow */
-			.lx_ctl .kxctl-dd-arrow {
-				border-top-color: darken(header-text, 15%);
-			}
-/* border */
-	.rl_center {
-		site-separator();
-	}
-/* appbar */
-.kappbar {
-	background-color: header-bg;
-}
-/* border */
-	.klbar {
-		site-separator();
-	}
-/* item */
-	.mlo-c {
-		background-color: main-bg;
-		box-shadow: 0 2px 2px 0 alpha(black, 0.3 * contrast), 0 0 0 1px alpha(black, 0.15 * contrast);
-	}
-	/* hover */
-		.klitem:hover {
-			background-color: main-bg;
-		}
-		.MiPcId:hover {
-			box-shadow: 0 3px 8px 0 alpha(black, 0.4 * contrast), 0 0 0 1px alpha(black, 0.15 * contrast);
-		}
-	/* selected */
-		.klitem.selected {
-			background-color: main-bg;
-		}
-	/* title and factoid */
-		.kltat, .klfact {
-			color: main-text;
-		}
-	/* context */
-		.klmeta {
-			color: main-text-minor;
-		}
-/* footer */
-#fbar {
-background-color: footer-bg;
-site-separator();
-}
-/* internal borders */
-.fbar {
-	border-color: footer-separator;
-}
-/* separator */
-	#swml {
-		border-color: footer-separator;
-	}
-/* location */
-/* country */
-	.b0KoTc {
-		color: footer-text-off;
-	}
-/* city */
-	#swml {
-		color: footer-text-minor;
-	}
-#swml a {
-	color: footer-text-off;
-}
-#swml a:hover {
-	color: footer-text;
-}
-/* links */
-.fbar p, .fbar a, #fsettl, #fsett a {
-	color: footer-text-off;
-}
-.fbar a:hover, #fsett a:hover {
-	color: footer-text;
-}
-/* home page */
-/* body */
-	/* subsites */
-		#gb#gb a.gb_P {
-			color: main-text;
-		}
-		/* hover */
-		#gb#gb a.gb_P:hover {
-			opacity: 1;
+	/* loading border */	
+		.sfbgx {
+			border-bottom-color: transparent;
 		}
 	/* search bar */
-		/* input */
-			/* normal */
+		/* entry */
+			/* icon */
 				.sbibod {
-					box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
+					background-color: main-bg;
 				}
-			/* hover */
-				.sbhcn {
-					box-shadow: 0 3px 8px 0 alpha(black, 0.6 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
+			/* input */
+				.sbib_a {
+					background-color: main-bg;
 				}
-			/* focus */
-				.sbfcn {
-					box-shadow: 0 3px 8px 0 alpha(black, 0.6 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
+				#lst-ib {
+					color: main-text;
+					background: unset;
 				}
-		/* buttons */
-			.jhp input[type="submit"], .sbdd_a input, .gbqfba {
-				background-color: alpha(black, 0.25 * contrast);
-				background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
-				border-color: transparent;
-				color: main-text-minor;
+				/* spell check */
+					.gsc_b {
+						/* transparent background */
+						background-image: url("data:image/gif;base64,R0lGODlhCgAEAIABAP9CGv///yH5BAEKAAEALAAAAAAKAAQAAAIKjI8GcKvPgmuoAAA7");
+						/* move upwards */
+						background-position-y: 85%;
+					}
+			/* voice search */
+				/* overlay */
+					.s2tb .spchc, .s2tb-h .spchc {
+						background-color: header-bg;
+					}
+					/* voice search status */
+						.spcht {
+							color: header-text-off !important;
+						}
+						/* try again */
+							.spchta {
+								color: main-link;
+							}
+					/* mic button */
+						.button {
+							background-color: header-bg;
+							border-color: main-separator;
+							box-shadow: 0 2px 5px rgba(0,0,0,.5);
+						}
+						/* icon */
+							.fcn9Hf {
+								background-color: white;
+							}
+							.Aax87c {
+								background-color: white;
+							}
+							.ae3xF {
+								border-color: white;
+							}
+					/* google logo */
+						.google-logo {
+							filter: colorize(white);
+						}
+					/* close button */
+						.close-button {
+							color: header-text;
+						}
+				/* site overlay */
+					.spch.s2tb {
+						background-color: alpha(main-bg, 0.9) !important;
+					}
+			/* camera icon */
+				.gsst_e {
+					filter: colorize(white);
+				}
+				/* search by image popup */
+					#qbp {
+						background: main-bg;
+					}
+					/* file type */
+						.gscp_c {
+							color: main-text;
+						}
+						.gscp_c:hover, .gscp_a .gscp_d:hover {
+							color: main-text-em;
+						}
+					/* close button */
+						#qbx {
+							filter: colorize(main-text-off);
+						}
+					/* tab */
+						.qbtbha.sl {
+							background-color: main-bg-off;
+							border-color: main-border;
+						}
+						.qbtbp {
+							background-color: main-bg-off;
+							border-color: main-border;
+						}
+						/* active */
+							/*title */
+								.qbtbha .qbtbtxt.qbclr {
+									color: main-text;
+								}
+							/* question mark */
+								.qbh {
+									filter: colorize(white);
+								}
+								/* tooltip */
+									#qbut .qbctnt, #qbft .qbctnt {
+										background-color: main-bg;
+									}
+									/* caret */
+										#qbut .qbptr, #qbft .qbptr {
+											border-bottom-color: main-bg;
+										}
+						/* inactive title */
+							.qbtbtxt.qbclr {
+								color: main-text-off;
+							}
+							.qbtbtxt.qbclr:hover {
+								color: main-text;
+							}
+						/* paste */
+							/* input (also is site search) */
+								.ktf {
+									background-color: main-bg-em;
+									border-color: main-separator;
+									color: main-text;
+								}
+								.ktf:hover:not(:focus) {
+									border-color: main-separator;
+								}
+							/* button (copy to avoid overwrite) */
+								.kpbb {
+									color: #fff !important;
+									background-color: #4d90fe !important;
+									background-image: linear-gradient(to bottom ,#4d90fe,#4787ed) !important;
+									border: 1px solid #3079ed !important;
+								}
+								.kpbb:hover {
+									background-color: #357ae8 !important;
+									background-image: linear-gradient(to bottom,#4d90fe,#357ae8) !important;
+									border: 1px solid #2f5bb7 !important;
+								}
+						/* upload */
+							/* selected file */
+								.qbtbp {
+									color: main-text;
+								}
+					/* drop image */
+					#qbdp, #qbup {
+						background-color: main-bg-off;
+						color: main-text-off;
+						border-color: main-border;
+					}
+						/* spinner */
+						.spin {
+							filter: invert(1);
+						}
+			/* image box */
+				.gscp_a {
+					background-color: main-bg-em;
+					border-color: alpha(white, 0.2 * contrast);
+					box-shadow: 1px 1px 4px alpha(black, 0.6 * contrast);
+				}
+				.gscp_a:hover {
+					border-color: alpha(white, 0.6 * contrast);
+				}
+				/* dismiss button */
+					.gscp_d {
+						color: main-text-off;
+					}
+					.gscp_a:hover .gscp_d {
+						color: main-text-em;
+					}
+		/* fanout */
+			.sbsb_a {
+				background-color: main-bg;
 			}
-			/* hover */
-				.jhp input[type="submit"]:hover, .sbdd_a input:hover, .gbqfba:hover {
-					background-color: alpha(black, 0.25 * contrast);
+			.sbdd_b {
+				box-shadow: 0 3px 8px 0 alpha(black, 0.4 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
+			}
+			/* suggestion hover */
+				.sbsb_d {
+					background-color: main-bg-off;
+				}
+			/* suggestion expanded text */
+				.sben_a {
+					color: main-text-off;
+				}
+
+		/* report */
+			a.aciXEb {
+				background-color: alpha(main-bg, 0.9 * contrast) !important;
+			}
+	/* menus */
+		.gb_hc {
+			filter: invert(1) brightness(contrast);
+		}
+		/* appmenu */
+			/* outer */
+				.gb_fa {
+					popout();
+				}
+			/* caret */
+				.gb_vb {
+					border-bottom-color: main-bg;
+				}
+			/* inner */
+				.gb_ia {
+					background-color: main-bg;
+				}
+				/* titles */
+					#gb#gb a.gb_O, #gb#gb span.gb_P {
+						color: main-text;
+					}
+					/* emphasis */
+					.gb_Z:hover .gb_3 {
+						background: unset;
+					}
+				/* emphasis */
+					/* fix shift on hover */
+					.gb_Z a {
+						border: 1px solid transparent;
+						margin: 7px 1px;
+					}
+					.gb_Z:hover a {
+						border-color: main-border;
+					}
+				/* add a shortcut */
+					.gb_va {
+						box-shadow: 0 1px 2px alpha(black, 0.2 * contrast), 0 0 1px alpha(black, 0.2 * contrast);
+					}
+					/* title */
+						.gb_wa {
+							color: main-text;
+						}
+				/* separator */
+					.gb_ka {
+						border-color: alpha(black, 0.4 * contrast);
+					}
+				/* more */
+					.gb_ja {
+						background-color: main-bg-off;
+					}
+				/* even more */
+					#gb a.gb_ja, #gb a.gb_ja:visited, #gb a.gb_ja:active, #gb a.gb_ka, #gb a.gb_ka:visited {
+						color: main-text;
+					}
+		/* notification menu */
+			#gbsfw {
+				popout(!important);
+			}
+			/* caret */
+				.gb_wb  {
+					border-bottom-color: popout-border !important;
+				}
+				.gb_vb {
+					border-bottom-color: main-bg !important;
+				}
+		/* account menu */
+			/* active account */
+				/* email */
+					.gb_Ib {
+						color: main-text-off;
+					}
+				/* links */
+					.gb_yb, #gb a.gb_yb.gb_yb, .gb_zb a, #gb .gb_zb.gb_zb a {
+						color: main-link;
+					}
+			/* secondary accounts */
+				.gb_Qb {
+					background-color: main-bg-off;
 					border-color: main-separator;
-					background-image: linear-gradient(to bottom, alpha(white, 0.03 * contrast), alpha(white, 0.015 * contrast));
-					box-shadow: 0 1px 1px alpha(black, 0.2 * contrast);
+				}
+				.gb_Sb:hover {
+					background-color: main-bg-em;
+				}
+				/* name */
+					.gb_3b {
+						color: main-text;
+					}
+				/* email */
+					.gb_4b {
+						color: main-text-off;
+					}
+				/* status */
+					.gb_5b {
+						color: main-text-off;
+					}
+			/* loading bar */
+				.gb_pb {
+					background-color: alpha(black, 0.5 * contrast);
+				}
+			/* footer */
+				.gb_Kb {
+					background-color: main-bg-off;
+					border-color: main-separator;
+				}
+				/* buttons */
+					.gb_Ea {
+						background-color: main-bg;
+						border-color: main-separator;
+					}
+					.gb_Kb .gb_Jb:hover {
+						background-color: main-bg;
+						button-hover(2);
+					}
+					.gb_Ea, #gb a.gb_Ea.gb_Ea, .gb_Fa {
+						color: main-text-off;
+					}
+
+	/* tabs */
+		#hdtb {
+			background-color: header-bg;
+			site-separator();
+		}
+		#hdtbSum {
+			background-color: header-bg;
+		}
+	/* categories */
+		#hdtb .hdtb-mitem a {
+			color: header-text-off;
+		}
+		/* categories hover */
+			.hdtbItm label:hover, .hdtbItm a:hover, #hdtb-more-mn a:hover, #hdtb .hdtb-mitem a:hover, .hdtb-mn-hd:hover, #hdtb-more:hover, #hdtb-tls:hover {
+				color: header-text;
+			}
+	/* settings dropdown */
+		/* main */
+			#lb > div {
+				popout();
+			}
+		/* items */
+			#lb > div > a {
+				color: main-text;
+			}
+			/* item hover */
+			#lb > div > a:hover {
+				dropdown-hover();
+			}
+	/* tools */
+		#hdtb-msb #hdtb-more, #hdtb-msb #hdtb-tls {
+			color: header-text-off;
+		}
+		/* tools button */
+			#hdtb #hdtb-tls:active {
+				color: header-text;
+			}
+			#hdtb-tls:hover,
+			#hdtb-tls:active {
+				background: linear-gradient(to bottom, alpha(black, 0.02 * contrast), alpha(black, 0.04 * contrast));
+			}
+			#hdtb-tls:hover {
+				border-color: alpha(black, 0.4 * contrast);
+				box-shadow: 0 1px 1px alpha(black, 0.5 * contrast);
+				color: header-text !important;
+			}
+			#hdtb-tls:active {
+				box-shadow: inset 0 1px 2px alpha(black, 0.7 * contrast);
+				color: header-text;
+			}
+			/* tools button active */
+				#hdtb-msb .hdtb-tl-sel, #hdtb-msb .hdtb-tl-sel:hover {
+					background: linear-gradient(to bottom, alpha(black, 0.05 * contrast), alpha(black, 0.1 * contrast));
+					border-color: alpha(black, 0.4 * contrast);
+					box-shadow: inset 0 1px 2px 0 alpha(black, 0.5 * contrast);
+				}
+	/* view saved & safesearch (Images) */
+		#top_nav a.ab_button {
+			color: header-text-off !important;
+		}
+		#top_nav a.ab_button:hover {
+			color: header-text !important;
+		}
+		/* safesearch */
+			#top_nav .ab_button > span.ab_icon {
+				filter: colorize(darken(header-text-off, 40%));
+				opacity: 1;
+			}
+			#top_nav .ab_button:hover > span.ab_icon {
+				filter: colorize(darken(header-text, 40%));
+				opacity: 1;
+			}
+			#appbar a.ab_button:active, a.ab_button.selected, a.ab_button.selected:hover {
+				color: header-text !important;
+			}
+			/* dropdown */
+				a.ab_dropdownlnk, a.ab_dropdownlnk:visited, a.ab_dropdownlnk:hover, #appbar a.ab_dropdownlnk:active {
 					color: main-text;
 				}
-/* footer */
-	/* privacy notice */
-		.Teq10 {
-			background-color: main-bg;
-			border-color: footer-separator;
+				/* hover */
+					.ab_dropdownitem.selected {
+						background-color: main-bg-off;
+					}
+					a.ab_dropdownlnkinfo, a.ab_dropdownlnkinfo:visited, a.ab_dropdownlnkinfo:hover, #appbar a.ab_dropdownlnkinfo:active {
+						color: main-link;
+					}
+				/* separator */
+					.ab_dropdownrule {
+						border-color: main-separator;
+					}
+	/* feature */
+		div.rl_feature {
+			background-color: header-bg;
 		}
-		/* heading */
-		.OFfaL {
-			color: main-text;
+		/* tools dropdowns */
+			#hdtb.hdtba #hdtbMenus {
+				background-color: header-bg;
+				border-color: alpha(black, 1 * contrast);
+			}
+			#hdtb.hdtba .hdtb-mn-hd:not(:hover) {
+				color: header-text-off;
+			}
+			/* arrows */
+				#hdtb.hdtba .mn-dwn-arw {
+					border-color: header-text-off transparent;
+				}
+				#hdtb.hdtba .hdtb-mn-hd:hover .mn-dwn-arw, #hdtb.hdtba #hdtb-more:hover .mn-dwn-arw {
+					border-color: header-text transparent;
+				}
+		/* carousel */
+			.rlc__slider {
+				background-color: header-bg;
+			}
+			/* navigation */
+			.rl_feature .kxbcl {
+				color: header-text-off;
+			}
+				/* hover */
+					.kxbcl .kxbc:hover {
+						color: header-text;
+					}
+				/* connector */
+					.s8AAke {
+						filter: colorize(darken(header-text-off, 30%));
+					}
+				/* selected */
+					.H1ccWd {
+						color: header-text;
+					}
+				/* not selected (overwrites rule above) */
+					.kxbcl {
+						color: header-text-off;
+					}
+			/* item container */
+				.rlc__slider-page {
+					background-color: header-bg;
+				}
+			/* sort */
+				.lx_ctl .ksb.ab_button { //restore original style
+					background-color: none;
+					box-shadow: none;
+					color: header-text;
+				}
+				/* arrow */
+					.lx_ctl .kxctl-dd-arrow {
+						border-top-color: darken(header-text, 15%);
+					}
+		/* border */
+			.rl_center {
+				site-separator();
+			}
+		/* appbar */
+			.kappbar {
+				background-color: header-bg;
+			}
+		/* border */
+			.klbar {
+				site-separator();
+			}
+		/* item */
+			.mlo-c {
+				background-color: main-bg;
+				box-shadow: 0 2px 2px 0 alpha(black, 0.3 * contrast), 0 0 0 1px alpha(black, 0.15 * contrast);
+			}
+			/* hover */
+				.klitem:hover {
+					background-color: main-bg;
+				}
+				.MiPcId:hover {
+					box-shadow: 0 3px 8px 0 alpha(black, 0.4 * contrast), 0 0 0 1px alpha(black, 0.15 * contrast);
+				}
+			/* selected */
+				.klitem.selected {
+					background-color: main-bg;
+				}
+			/* title and factoid */
+				.kltat, .klfact {
+					color: main-text;
+				}
+			/* context */
+				.klmeta {
+					color: main-text-minor;
+				}
+	/* footer */
+		#fbar {
+		background-color: footer-bg;
+		site-separator();
 		}
-	/* separator */
-		.fbar > div {
-			border-color: footer-separator;
-		}
-	/* links */
-		.ftl, #footer a {
-			color: footer-text-off;
-		}
-		/* hover */
-			.ftl:hover, #footer a:hover {
+		/* internal borders */
+			.fbar {
+				border-color: footer-separator;
+			}
+		/* separator */
+			#swml {
+				border-color: footer-separator;
+			}
+		/* location */
+			/* country */
+				.b0KoTc {
+					color: footer-text-off;
+				}
+			/* city */
+				#swml {
+					color: footer-text-minor;
+				}
+				#swml a {
+					color: footer-text-off;
+				}
+				#swml a:hover {
+					color: footer-text;
+				}
+		/* links */
+			.fbar p, .fbar a, #fsettl, #fsett a {
+				color: footer-text-off;
+			}
+			.fbar a:hover, #fsett a:hover {
 				color: footer-text;
 			}
-
+	/* home page */
+		/* body */
+			/* subsites */
+				#gb#gb a.gb_P {
+					color: main-text;
+				}
+				/* hover */
+				#gb#gb a.gb_P:hover {
+					opacity: 1;
+				}
+			/* search bar */
+				/* input */
+					/* normal */
+						.sbibod {
+							box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
+						}
+					/* hover */
+						.sbhcn {
+							box-shadow: 0 3px 8px 0 alpha(black, 0.6 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
+						}
+					/* focus */
+						.sbfcn {
+							box-shadow: 0 3px 8px 0 alpha(black, 0.6 * contrast),0 0 0 1px alpha(black, 0.15 * contrast);
+						}
+				/* buttons */
+					.jhp input[type="submit"], .sbdd_a input, .gbqfba {
+						background-color: alpha(black, 0.25 * contrast);
+						background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
+						border-color: transparent;
+						color: main-text-minor;
+					}
+					/* hover */
+						.jhp input[type="submit"]:hover, .sbdd_a input:hover, .gbqfba:hover {
+							background-color: alpha(black, 0.25 * contrast);
+							border-color: main-separator;
+							background-image: linear-gradient(to bottom, alpha(white, 0.03 * contrast), alpha(white, 0.015 * contrast));
+							box-shadow: 0 1px 1px alpha(black, 0.2 * contrast);
+							color: main-text;
+						}
+		/* footer */
+			/* privacy notice */
+				.Teq10 {
+					background-color: main-bg-off;
+					border-color: footer-separator;
+				}
+				/* heading */
+				.OFfaL {
+					color: main-text;
+				}
+			/* separator */
+				.fbar > div {
+					border-color: footer-separator;
+				}
+			/* links */
+				.ftl, #footer a {
+					color: footer-text-off;
+				}
+				/* hover */
+					.ftl:hover, #footer a:hover {
+						color: footer-text;
+					}
 }
 
 /* notification menu iframe */
 @-moz-document regexp("https?://notifications\.google\.(com|([a-z]{2}))(\.[a-z]{2})?/.*") {
-:root {
-global-definitions();
-}
+	:root {
+		global-definitions();
+	}
 
-body > c-wiz {
-background-color: main-bg !important;
-}
-/* header */
-/* settings & dismiss*/
-	.iWO9fc .mUbCce svg {
-		fill: main-text-off;
+	body > c-wiz {
+		background-color: main-bg !important;
 	}
-	.iWO9fc .mUbCce:hover svg {
-		fill: main-text;
-	}
-/* logo */
-	.XSVuue {
-		fill: main-text-off;
-	}
-/* title */
-.v7k2xf {
-	color: main-text;
-}
-/* cards */
-.CxSKqd {
-	background-color: main-bg-off;
-}
-.CxSKqd.PNdSh, .CxSKqd.Wj1LYb {
-	background-color: main-bg-container;
-}
-.CxSKqd:nth-child(-n+2), .O9OsK.sMVRZe .CxSKqd {
-	box-shadow: 0 1px 2px alpha(black, 0.7 * contrast);
-}
-/* subtitle */
-	.OlDqke, .Vz68Kb {
-		color: main-text-off;
-	}
-/* close button */
-	.Z5nyse {
-		fill: main-text-off;
-	}
-	.yxaWLe:hover .Z5nyse {
-		fill: main-text;
-	}
-/* footer */
-.fEjTrb {
-	background-color: main-bg-off;
-}
-/* drawer icon */
-	.ajgU6 {
-		fill: main-text-off;
-	}
-/* expanded */
-	.jvWPmb.qs41qe .fEjTrb {
-		background-color: main-bg-off;
-	}
-/* settings page */
-/* title */
-	.gMG7Fd {
-		color: main-text;
-	}
-/* notification source name */
-	.wh73ab {
-		color: main-text;
-	}
-/* switch */
-	/* knob */
-		.E7QdY {
-			border-color: main-bg-em;
-			box-shadow: 0 1px 3px alpha(black, 0.7 * contrast);
+	/* header */
+		/* settings & dismiss*/
+			.iWO9fc .mUbCce svg {
+				fill: main-text-off;
+			}
+			.iWO9fc .mUbCce:hover svg {
+				fill: main-text;
+			}
+		/* logo */
+			.XSVuue {
+				fill: main-text-off;
+			}
+		/* title */
+		.v7k2xf {
+			color: main-text;
 		}
-	/* slider */
-		.hh4xKf {
-			border-color: alpha(black, 0.8 * contrast);
+		/* cards */
+		.CxSKqd {
+			background-color: main-bg-off;
 		}
+		.CxSKqd.PNdSh, .CxSKqd.Wj1LYb {
+			background-color: main-bg-container;
+		}
+		.CxSKqd:nth-child(-n+2), .O9OsK.sMVRZe .CxSKqd {
+			box-shadow: 0 1px 2px alpha(black, 0.7 * contrast);
+		}
+		/* subtitle */
+			.OlDqke, .Vz68Kb {
+				color: main-text-off;
+			}
+		/* close button */
+			.Z5nyse {
+				fill: main-text-off;
+			}
+			.yxaWLe:hover .Z5nyse {
+				fill: main-text;
+			}
+	/* footer */
+		.fEjTrb {
+			background-color: main-bg-off;
+		}
+		/* drawer icon */
+			.ajgU6 {
+				fill: main-text-off;
+			}
+		/* expanded */
+			.jvWPmb.qs41qe .fEjTrb {
+				background-color: main-bg-off;
+			}
+	/* settings page */
+		/* title */
+			.gMG7Fd {
+				color: main-text;
+			}
+		/* notification source name */
+			.wh73ab {
+				color: main-text;
+			}
+		/* switch */
+			/* knob */
+				.E7QdY {
+					border-color: main-bg-em;
+					box-shadow: 0 1px 3px alpha(black, 0.7 * contrast);
+				}
+			/* slider */
+				.hh4xKf {
+					border-color: alpha(black, 0.8 * contrast);
+				}
 }
 
 @-moz-document regexp("https?://www\.google\.(com|([a-z]{2}))(\.[a-z]{2})?/local/place/rap/editattribute.*") {
-:root {
-global-definitions();
-}
+	:root {
+		global-definitions();
+	}
 
-body {
-color: main-text;
-}
+	body {
+		color: main-text;
+	}
 
-/* removal reason select */
-.vgPDcc.jgvuAb {
-	border-color: main-separator;
-}
-/* arrow */
-	.e2CuFe {
-		border-color: darken(main-text-off, 25%) transparent;
+	/* removal reason select */
+	.vgPDcc.jgvuAb {
+		border-color: main-separator;
 	}
-/* text */
-	.MocG8c.DEh1R {
-		color: main-text-off;
-	}
-/* dropdown */
-	.ncFHed {
-		popout();
-	}
-	/* item */
-		/* text */
-			.MocG8c {
-				color: main-text;
-			}
-		/* hover */
-			.ncFHed .MocG8c.KKjvXb {
-				background-color: main-bg-off;
-			}
+	/* arrow */
+		.e2CuFe {
+			border-color: darken(main-text-off, 25%) transparent;
+		}
+	/* text */
+		.MocG8c.DEh1R {
+			color: main-text-off;
+		}
+	/* dropdown */
+		.ncFHed {
+			popout();
+		}
+		/* item */
+			/* text */
+				.MocG8c {
+					color: main-text;
+				}
+			/* hover */
+				.ncFHed .MocG8c.KKjvXb {
+					background-color: main-bg-off;
+				}
 }
