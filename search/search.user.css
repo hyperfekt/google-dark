@@ -99,91 +99,91 @@
 */
 
 /* mixins */
-global-definitions() {
-	/*
-* Google/Gmail's 3D Loader in Pure CSS
-* https://github.com/rgthree/google-loader-css
-* Regis Gaughan, III <http://regisgaughan.com>
-* MIT License
-*/
-	@keyframes gloader-base {
-		0%   {transform:rotate(0deg);   background-color:#21aa29;}
-		25%  {transform:rotate(90deg);  background-color:#2159d6;}
-		50%  {transform:rotate(180deg); background-color:#d62408;}
-		75%  {transform:rotate(270deg); background-color:#ffcf00;}
-		100% {transform:rotate(360deg); background-color:#21aa29;}
+	global-definitions() {
+		/*
+	* Google/Gmail's 3D Loader in Pure CSS
+	* https://github.com/rgthree/google-loader-css
+	* Regis Gaughan, III <http://regisgaughan.com>
+	* MIT License
+	*/
+		@keyframes gloader-base {
+			0%   {transform:rotate(0deg);   background-color:#21aa29;}
+			25%  {transform:rotate(90deg);  background-color:#2159d6;}
+			50%  {transform:rotate(180deg); background-color:#d62408;}
+			75%  {transform:rotate(270deg); background-color:#ffcf00;}
+			100% {transform:rotate(360deg); background-color:#21aa29;}
+		}
+		
+		@keyframes gloader-reveal {
+			0%   {background-color:#2159d6; transform:rotate(0deg);}
+			25%  {background-color:#d62408; transform:rotate(180deg);}
+			50%  {background-color:#ffcf00; transform:rotate(0deg);}
+			75%  {background-color:#21aa29; transform:rotate(180deg);}
+			100% {background-color:#2159d6; transform:rotate(0deg);}
+		}
+		
+		/* Green >> DarkGreen | DarkBlue >> Blue >> DarkBlue | DarkRed >> Red >> DarkRed | DarkYellow >> Yellow >> DarkYellow | DarkGreen >> Green */
+		@keyframes gloader-flip {
+			0.01%        {background-color:#21aa29; transform:rotateY(0deg);}
+			12.5%,
+			87.56%    {background-color:#105514;}
+			12.51%,
+			37.5%     {background-color:#102c6b;}
+			24.99%       {background-color:#2159d6;}
+			37.51%,
+			62.5%     {background-color:#6b1204;}
+			49.99%       {background-color:#d62408;}
+			62.51%,
+			87.5%     {background-color:#7f6700;}
+			74.99%, 78%  {background-color:#ffcf00;}
+			99.99%      {background-color:#21aa29; transform:rotateY(-720deg);}
+		}
 	}
-	
-	@keyframes gloader-reveal {
-		0%   {background-color:#2159d6; transform:rotate(0deg);}
-		25%  {background-color:#d62408; transform:rotate(180deg);}
-		50%  {background-color:#ffcf00; transform:rotate(0deg);}
-		75%  {background-color:#21aa29; transform:rotate(180deg);}
-		100% {background-color:#2159d6; transform:rotate(0deg);}
+
+	popout($important = null) {
+		background-color: main-bg $important;
+		border-color: popout-border $important;
+		box-shadow: 0 2px 10px alpha(black, 0.3 * contrast) $important;
+		color: main-text $important;
 	}
-	
-	/* Green >> DarkGreen | DarkBlue >> Blue >> DarkBlue | DarkRed >> Red >> DarkRed | DarkYellow >> Yellow >> DarkYellow | DarkGreen >> Green */
-	@keyframes gloader-flip {
-		0.01%        {background-color:#21aa29; transform:rotateY(0deg);}
-		12.5%,
-		87.56%    {background-color:#105514;}
-		12.51%,
-		37.5%     {background-color:#102c6b;}
-		24.99%       {background-color:#2159d6;}
-		37.51%,
-		62.5%     {background-color:#6b1204;}
-		49.99%       {background-color:#d62408;}
-		62.51%,
-		87.5%     {background-color:#7f6700;}
-		74.99%, 78%  {background-color:#ffcf00;}
-		99.99%      {background-color:#21aa29; transform:rotateY(-720deg);}
+	dropdown-hover($important = null) {
+		background-color: main-bg-off $important;
 	}
-}
+	button($important = null) {
+		background-image: linear-gradient(to bottom, alpha(black, 0.05 * contrast), alpha(black, 0.1 * contrast)) $important;
+		border-color: main-separator $important;
+		color: main-text-off $important;
+	}
+	button-hover($shadow = 1, $important = null) {
+		background-image: linear-gradient(to bottom, alpha(white, 0.02 * $shadow * contrast), alpha(white, 0.01 * $shadow * contrast)) $important;
+		border-color: main-separator $important;
+		color: main-text $important;
+		box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * contrast) $important;
+	}
+	invert-with-bg($color, $important = null) {
+		invert((100% - lightness($color)) * 0.998) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important; //TODO replace with SVG filter
+	}
+	adapt-to-bg($color, $important = null) {
+		brightness(lightness($color)) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important;
+	}
 
-popout($important = null) {
-	background-color: main-bg $important;
-	border-color: popout-border $important;
-	box-shadow: 0 2px 10px alpha(black, 0.3 * contrast) $important;
-	color: main-text $important;
-}
-dropdown-hover($important = null) {
-	background-color: main-bg-off $important;
-}
-button($important = null) {
-	background-image: linear-gradient(to bottom, alpha(black, 0.05 * contrast), alpha(black, 0.1 * contrast)) $important;
-	border-color: main-separator $important;
-	color: main-text-off $important;
-}
-button-hover($shadow = 1, $important = null) {
-	background-image: linear-gradient(to bottom, alpha(white, 0.02 * $shadow * contrast), alpha(white, 0.01 * $shadow * contrast)) $important;
-	border-color: main-separator $important;
-	color: main-text $important;
-	box-shadow: 0 1px 1px alpha(black, 0.5 * $shadow * contrast) $important;
-}
-invert-with-bg($color, $important = null) {
-	invert((100% - lightness($color)) * 0.998) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important; //TODO replace with SVG filter
-}
-adapt-to-bg($color, $important = null) {
-	brightness(lightness($color)) grayscale(1) sepia(saturation($color)) hue-rotate(hue($color) - 47deg) $important;
-}
+	container($important = null) {
+		box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast), 0 0 0 1px alpha(black, 0.25 * contrast) $important;
+		background-color: main-bg-container $important;
+	}
 
-container($important = null) {
-	box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast), 0 0 0 1px alpha(black, 0.25 * contrast) $important;
-	background-color: main-bg-container $important;
-}
-
-select($important = null) {
-	-moz-appearance: button $important;
-	background-color: main-bg $important;
-	background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALAgMAAADO/n87AAAACVBMVEVZWVn///+mpqZLDgy1AAAAAnRSTlMAAHaTzTgAAAAlSURBVAjXYwgTYYhqYchawLBqBUNoCAiJhoDYWUsYoqYwhIUAAJX0CVjuYJdhAAAAAElFTkSuQmCC") $important;
-	border-color: main-separator $important;
-	color: main-text $important;
-}
-select-hover($important = null) {
-	background-color: main-bg-em $important;
-	border-color: main-separator $important;
-	box-shadow: 0 1px 1px alpha(black, 0.3 * contrast) $important;
-}
+	select($important = null) {
+		-moz-appearance: button $important;
+		background-color: main-bg $important;
+		background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAALAgMAAADO/n87AAAACVBMVEVZWVn///+mpqZLDgy1AAAAAnRSTlMAAHaTzTgAAAAlSURBVAjXYwgTYYhqYchawLBqBUNoCAiJhoDYWUsYoqYwhIUAAJX0CVjuYJdhAAAAAElFTkSuQmCC") $important;
+		border-color: main-separator $important;
+		color: main-text $important;
+	}
+	select-hover($important = null) {
+		background-color: main-bg-em $important;
+		border-color: main-separator $important;
+		box-shadow: 0 1px 1px alpha(black, 0.3 * contrast) $important;
+	}
 
 /* functions */
 	colorize($color, $alpha-override = 1) {
