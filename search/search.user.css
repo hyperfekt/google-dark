@@ -397,13 +397,13 @@
 							}
 	/* result count */
 		#appbar {
-			background-color: main-bg;
+			background-color: transparent;
 		}
 		#resultStats {
 			color: main-text-off;
 		}
 	/* results */
-		/* single entry */
+		/* single entry */	
 			.s {
 				color: main-text;
 			}
@@ -3975,14 +3975,14 @@
 						}
 				/* buttons */
 					.jhp input[type="submit"], .sbdd_a input, .gbqfba {
-						background-color: alpha(black, 0.25 * contrast);
+						background-color: main-bg-off;
 						background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
 						border-color: transparent;
 						color: main-text-minor;
 					}
 					/* hover */
 						.jhp input[type="submit"]:hover, .sbdd_a input:hover, .gbqfba:hover {
-							background-color: alpha(black, 0.25 * contrast);
+							background-color: main-bg-off;
 							border-color: main-separator;
 							background-image: linear-gradient(to bottom, alpha(white, 0.03 * contrast), alpha(white, 0.015 * contrast));
 							box-shadow: 0 1px 1px alpha(black, 0.2 * contrast);
