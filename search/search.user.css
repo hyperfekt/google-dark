@@ -1478,6 +1478,10 @@
 							#dictionary-modules div[class^="gstl_5"] .sbsb_d {
 								background-color: main-bg-off;
 							}
+			/* No search text */
+				.A941ff {
+					color: main-text;
+				}
 			/* definition */
 				.vk_gy {
 					color: main-text-off !important;
