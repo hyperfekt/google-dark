@@ -36,9 +36,11 @@
 @var text footer-text-minor "Footer Text (Darkest)" #96
 @var text dropdown-checkmark "Dropdown Checkmark Image" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAQAAAAZIo2TAAAArElEQVQ4y+2SoQoCURBFz1tWRLYLBuF9gwhGEYtNLCJGwWr2FxTTssW+wa/wI7RaDAYNImw0XPPb3Sds1ttm7hzmDgz8lNRSvRrQU6xhFaCvVHO3F34FJow4cXC7xjteY0GHs0nyjmeLIlZYLuyLXuAMJhorBDVZY7mRmHcRcYJpwIwrR6ZEPNiarCxB7hYt6QLwYmOe5aGDXJ1yBzJiH1B2eFs72aoP0uAvvz5jAi5lzdsukgAAAABJRU5ErkJggg==")
 @var text unfilled-star "Rating Star Background" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAgUlEQVQY042QQQqDQAxFX2xx42ARCoII3sD7X0csXXUluhmQdOE4zowuDHxCeIT8fLhb2sdzFqBy0yXk5XQJCydfohUNj9P5lVEmAc1pMRGa+YgFcWbeNB595RffXIK9JTUUGqlSaDYTWMD/+nS9ZGaQVSc6jOZij2yM1kFS9Z7TH6uMHsq9WjadAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAR0lEQVQY02Nk4GDACZiQOf+jcUr+j0aXZmJgINJYdMD4Pxmn1FImxqW4pBgYGCFeQXUITAP5DiJeEmYXzAUsMA5EgnEpsuMAsEwPjDLKA7oAAAAASUVORK5CYII=")
+@var text unfilled-stars "Rating Stars Background" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAAANCAMAAADBs/NgAAAANlBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmbzm4XLAAAAEXRSTlMAECAwQFBgb3CQn6+wwM/g70u8YpgAAABUSURBVChTrcfLAYMgAAXBBeLfiNt/s15MA4/MbeBPvqOZnMbC5jYWuj3PfPtzz0mgXW+ulgXKrupe0kBVteZhVXXNw+lRD888xQVYLGn4NABazfIAiJcR1r5z2EMAAAAASUVORK5CYII=")
 @var text calculator-slider "Calculator Slider Image" grey
 @var text container-separator "Container Separator" alpha(black, 0.3 * contrast)
 @var text popout-border "Popout Border" alpha(black, 0.3 * contrast)
+
 ==/UserStyle== */
 
 /* Uncomment for manual compilation
@@ -92,6 +94,8 @@
 	dropdown-checkmark = url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAVCAQAAAAZIo2TAAAArElEQVQ4y+2SoQoCURBFz1tWRLYLBuF9gwhGEYtNLCJGwWr2FxTTssW+wa/wI7RaDAYNImw0XPPb3Sds1ttm7hzmDgz8lNRSvRrQU6xhFaCvVHO3F34FJow4cXC7xjteY0GHs0nyjmeLIlZYLuyLXuAMJhorBDVZY7mRmHcRcYJpwIwrR6ZEPNiarCxB7hYt6QLwYmOe5aGDXJ1yBzJiH1B2eFs72aoP0uAvvz5jAi5lzdsukgAAAABJRU5ErkJggg==");
 	// Rating Star Background
 	unfilled-star = url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAgUlEQVQY042QQQqDQAxFX2xx42ARCoII3sD7X0csXXUluhmQdOE4zowuDHxCeIT8fLhb2sdzFqBy0yXk5XQJCydfohUNj9P5lVEmAc1pMRGa+YgFcWbeNB595RffXIK9JTUUGqlSaDYTWMD/+nS9ZGaQVSc6jOZij2yM1kFS9Z7TH6uMHsq9WjadAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAR0lEQVQY02Nk4GDACZiQOf+jcUr+j0aXZmJgINJYdMD4Pxmn1FImxqW4pBgYGCFeQXUITAP5DiJeEmYXzAUsMA5EgnEpsuMAsEwPjDLKA7oAAAAASUVORK5CYII=");
+	// Rating Background
+	unfilled-stars = url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAAANCAMAAADBs/NgAAAANlBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmbzm4XLAAAAEXRSTlMAECAwQFBgb3CQn6+wwM/g70u8YpgAAABUSURBVChTrcfLAYMgAAXBBeLfiNt/s15MA4/MbeBPvqOZnMbC5jYWuj3PfPtzz0mgXW+ulgXKrupe0kBVteZhVXXNw+lRD888xQVYLGn4NABazfIAiJcR1r5z2EMAAAAASUVORK5CYII=");
 	// Calculator Slider Image
 	calculator-slider = grey;
 	// Container Separator
@@ -442,6 +446,11 @@
 							.action-menu-button, .action-menu-item a.fl, .action-menu-toggled-item div {
 								color: main-text;
 							}
+			/* rating */
+				/* unfilled */
+					.tPhRLe {
+						background: unfilled-stars;
+					}
 			/* ad */
 				/* indicator */
 					.Z98Wse {
