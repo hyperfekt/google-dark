@@ -918,13 +918,15 @@
 							.cwbb-tpl {
 								calculator-button();
 								background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
-								background-color: #0d50be;
+								background-color: #1d60ce;
+								color: #e0e0e0;
 							}
 							/* hover */
 								.cwbd:hover .cwbb-tpl {
 									calculator-button-hover();
 									background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
-									background-color: #0d50be;
+									background-color: #1d60ce;
+									color: #e0e0e0;
 								}
 			/* function graph */
 				/* 2D axis labels */
