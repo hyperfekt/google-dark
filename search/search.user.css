@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.24
+@version 0.3.25
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -490,7 +490,7 @@ result-containers = !!result-containers;
 					result-container(true);
 				}
 				.bkWMgd .g[data-hveid]:not(#imagebox_bigimages):not(.g-blk) {
-					result-container();	
+					result-container();
 				}
 				.bkWMgd .g#imagebox_bigimages g-section-with-header {
 					result-container(true);
@@ -1016,9 +1016,9 @@ result-containers = !!result-containers;
 	/* main widgets */
 		/* calculator */
 			/* calculation */
-			.cwletbl {
-				color: main-text-off;	
-			}
+				.cwletbl {
+					color: main-text-off;	
+				}
 			/* display */
 				.cwtlb {
 					border-color: main-separator;
@@ -1457,7 +1457,7 @@ result-containers = !!result-containers;
 		/* top stories */
 			/* heading */
 				if result-containers {
-					div:not(#brs) > g-section-with-header .e2BEnf {
+					div:not(#brs):not(#imagebox_bigimages) > g-section-with-header .e2BEnf {
 						result-container();
 						margin-bottom: 12px;
 					}
@@ -1931,7 +1931,7 @@ result-containers = !!result-containers;
 				}
 			/* compass */
 				.KJ3c0b.M5mFPb {
-					filter: colorize(main-link); //TODO: find out why colors don't match
+					filter: colorize(darken(main-link, 18%));
 				}
 		/* vote survey */
 			.wdQ5Cf {
@@ -2105,6 +2105,50 @@ result-containers = !!result-containers;
 						.ZfDFMe .ZfSAad {
 							background-color: main-bg;	
 						}
+		/* flights */
+			.flt-actionblock {
+				background-color: inherit;
+				border-color: main-border;
+				if result-containers {
+					border-color: transparent;
+					padding-top: 6px;
+					padding-bottom: 6px;
+				}
+			}
+			/* title */
+				.FzXTfd a {
+					background-color: inherit;
+				}
+			/* sponsored hint */
+				.Sjzt1b, a.Sjzt1b {
+					color: main-text-off;
+					background-color: inherit;
+				}
+				/* icon */
+					.SnSTtc {
+						filter: colorize(darken(main-text-off, 40%), 4);	
+					}
+			/* list */
+				.ekehXe {
+					border-color: main-separator;
+				}
+				/* flight */
+					.ehx1fe {
+						border-color: main-separator;
+					}
+					/* price */
+						.XDelGb {
+							color: main-text;
+						}
+					/* info */
+						.I9Fhrf {
+							color: main-text;
+						}
+			/* 'more destinations' */
+				/* icon */
+					.wFzbJe img {
+						filter: colorize(darken(main-link, 18%));
+					}
 		/* feedback popup */
 			/* give dialog*/
 				/* select response */
