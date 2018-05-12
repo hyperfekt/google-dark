@@ -1629,10 +1629,18 @@ result-containers = !!result-containers;
 				.ie7Asb {
 					box-shadow: 0px 4px 2px -1px main-border; //negative spread radius prevents side shadow
 				}
-			/* upcoming match */
+			/* upcoming/current/past match */
 				.imso_mh__mh-bd {
 					color: main-text-off;
 				}
+				/* state */
+					.imso_mh__ft-mtch {
+						color: main-text;
+					}
+				/* score */
+					.imso_mh__l-tm-sc, .imso_mh__r-tm-sc {
+						color: main-text;
+					}
 				/* team names */
 					.imso_mh__tm-nm {
 						color: main-text;
@@ -1644,6 +1652,10 @@ result-containers = !!result-containers;
 				/* separator */
 					.abhAW {
 						border-color: main-border;
+					}
+				/* goals */
+					.imso_gs__gs-cont {
+						color: main-text-off;
 					}
 			/* matches */
 				/* hover */
