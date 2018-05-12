@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.15
+@version 0.3.16
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -11,10 +11,12 @@
 @license Network Extended License (https://github.com/hyperfekt/google-dark/blob/master/LICENSE.md)
 @preprocessor stylus
 
-@var text main-bg "Main Background" #20
+
+@var text main-bg "Main Background Color" #20
 @var text main-bg-em "Main Background (Lighter)" #32
 @var text main-bg-off "Main Background (Darker)" #16
 @var text main-bg-container "Main Background (Container)" #1C
+@var text main-background "Background" main-bg
 @var text main-text "Main Text" #DD
 @var text main-text-em "Main Text (Lighter)" #E6
 @var text main-text-off "Main Text (Darker)" #AB
@@ -198,14 +200,15 @@ result-containers = !!result-containers;
 	result-container($margin = false, $important = null) {
 		container($important);
 		border-radius: 2px $important;
-		padding: 5px $important;
+		padding-top: 6px $important;
+		padding-bottom: 6px $important;
 		padding-left: 16px $important;
-		padding-right: 16	px $important;
+		padding-right: 16px $important;
 		margin-left: -16px $important;
 		margin-right: -16px $important;
-		if $margin {
-			margin-top: -7px $important;
-			margin-bottom: -7px $important;
+		if $margin {	
+			margin-top: -6px $important;
+			margin-bottom: -6px $important;
 		}
 	}
 
@@ -264,7 +267,7 @@ result-containers = !!result-containers;
 	}
 
 	body {
-		background-color: main-bg;
+		background: main-background;
 		color: main-text;
 	}
 
@@ -298,6 +301,36 @@ result-containers = !!result-containers;
 			}
 
 	/* tools dropdowns */
+		if result-containers {
+			.hdtbna .hdtb-mn-hd {
+				background-color: main-bg-container;
+			}
+			.hdtbna .hdtb-mn-hd::before {
+				content: "";
+				position: absolute;
+				width: 101%;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				z-index: -1;
+				container();
+				border-radius: 2px;
+			}
+		}
+		/* hide in case of transparent header where default flyunder would not*/
+			.hdtb-td-c {
+				display: none;
+			}
+		/* remove inconsiincosnistent fade effect */
+			#hdtbMenus, #resultStats {
+				transition: none;
+			}
+		/* prevents flickering when switching quickly */
+			#hdtbMenus {
+				top: 68px;
+				padding-top: 3px;
+			}
 		/* arrows */
 			.mn-dwn-arw {
 				border-color: main-text-off transparent;
@@ -420,12 +453,47 @@ result-containers = !!result-containers;
 		}
 		#resultStats {
 			color: main-text-off;
+			if result-containers {
+				border-radius: 2px;
+				container();
+				padding-right: 12px;
+			}
+		}
+		if result-containers {
+			body.vasq #resultStats {
+				line-height: 22px;
+				top: 12px;
+			}
+		}
+	/* autocorrect ('showing results for') */
+		if result-containers {
+			#fprs {
+				result-container();
+			}
+		}
+	/* no results */
+		if result-containers {
+			.med.card-section {
+				result-container();
+			}
 		}
 	/* results */
 		/* single entry */	
 			if result-containers {
-				.bkWMgd .g > div[data-hveid] {
+				.bkWMgd .srg .g > div[data-hveid] {
 					result-container(true);
+				}
+				.bkWMgd .g[data-hveid]:not(#imagebox_bigimages):not(.g-blk) {
+					result-container();	
+				}
+				.bkWMgd .g#imagebox_bigimages g-section-with-header {
+					result-container(true);
+				}
+				.bkWMgd > .g:not(.mod) > div[data-hveid] {
+					result-container(true);
+				}
+				.bkWMgd:first-child > .srg > .g:first-child > div[data-hveid] {
+					margin-top: 0;
 				}
 			}
 			/* text */
@@ -449,6 +517,21 @@ result-containers = !!result-containers;
 					color: main-link;
 				}
 			/* source */
+				if result-containers {
+					.f.hJND5c.TbwUpd {
+						display: flex;
+					}
+					/* URL */
+						.f.hJND5c.TbwUpd .iUh30 {
+							flex: initial;
+							overflow: hidden;
+							text-overflow: ellipsis;
+						}
+					/* dropdown */
+						.f.hJND5c.TbwUpd .ab_ctl {
+							flex: none;
+						}
+				}
 				.a, cite, cite a:link, cite a:visited, .cite, .cite:link, #nygTcd > i, .bc a:link {
 					color: main-source;
 				}
@@ -482,6 +565,13 @@ result-containers = !!result-containers;
 						background: unfilled-stars;
 					}
 			/* ad */
+				if result-containers {
+					.ads-ad {
+						padding-top: 6px;
+						padding-bottom: 6px;
+						container();
+					}
+				}
 				/* indicator */
 					.Z98Wse {
 						background-color: transparent;
@@ -633,6 +723,9 @@ result-containers = !!result-containers;
 				.waTp2e.waTp2e {
 					background-color: inherit;
 					box-shadow: none;
+					if result-containers {
+						result-container();
+					}
 				}
 			/* source */
 				.QHTnWc {
@@ -653,6 +746,9 @@ result-containers = !!result-containers;
 					}
 					.zDBTmf > div {
 						background-color: main-bg-container;
+						if result-containers {
+							background-color: main-bg;
+						}
 					}
 					/* header */
 						/* hover */
@@ -685,6 +781,7 @@ result-containers = !!result-containers;
 				background-color: main-bg;
 			}
 			.vk_c, .vk_cxp, #rhs .fIcnad {
+				border-radius: 2px;
 				container();
 			}
 		/* answer box */
@@ -752,22 +849,40 @@ result-containers = !!result-containers;
 						color: main-text-off;
 					}
 			/* footer */
+				if result-containers {
+							.HKxe9e, .ooYDfe {
+								background-color: alpha(main-bg, 0.9);
+								padding: 4px;
+								padding-bottom: 0.5px;
+								border-radius: 2px;
+							}
+						}
 				/* links */
 					.kno-ftr a {
 						color: main-text-off;
 					}
 					/* 'about this result' icon */
-					.GGw8Tb {
-						color: main-text-off;
-					}
+						.GGw8Tb {
+							color: main-text-off;
+						}
 					/* 'feedback' icon */
-					.RTZ84b {
-						color: main-text-off;
+						.RTZ84b {
+							color: main-text-off;
+						}
+					if result-containers {
+						/* 'sources include' */
+							.rhsvw > span {
+								display: inline-block;
+								background-color: alpha(main-bg, 0.9);
+								padding: 2px 3px;
+								border-radius: 2px;
+							}
 					}
 		/* modules */
 			if result-containers {
-				g-section-with-header {
+				#brs > g-section-with-header {
 					result-container();
+					padding-top: 8px;
 				}
 			}
 		/* module heading */
@@ -1107,20 +1222,40 @@ result-containers = !!result-containers;
 						filter: invert-with-bg(main-bg-container);
 					}
 			/* shop carousel */
-				/* sponsored hint */
-					/* text */
-						.ptJHdc .richlist-wta, .ptJHdc .v7hl4d {
-								color: main-text-off;
+				/* header */
+					/* heading */
+						if result-containers {
+							.jOmXmb {
+								padding: 4px;
 							}
-					/* icon */
-						.FjdPod {
-							filter: colorize(main-text-off, 3);
 						}
-					/* popout */
-						/* text */
-							.v4YOu {
-								color: main-text-off;
+					/* sponsored hint */
+						if result-containers {
+							.ptJHdc .v7hl4d {
+								container(!important);
+								padding: 4px !important;
 							}
+							.rhstc3 .commercial-unit-desktop-rhs .v7hl4d {
+								width: 236px;
+							}
+							.rhstc4 .commercial-unit-desktop-rhs .v7hl4d {
+								width: 242px;	
+							}
+														
+						}
+						/* text */
+							.ptJHdc .richlist-wta, .ptJHdc .v7hl4d {
+									color: main-text-off;
+								}
+						/* icon */
+							.FjdPod {
+								filter: colorize(main-text-off, 3);
+							}
+						/* popout */
+							/* text */
+								.v4YOu {
+									color: main-text-off;
+								}
 				/* item */
 					.cu-container .mnr-c {
 						container();
@@ -1246,6 +1381,11 @@ result-containers = !!result-containers;
 				/* footer */
 					.di8g3, .di8g3 a {
 						color: main-text-off !important;
+					}
+					if result-containers {
+						.di8g3 {
+						background-color: alpha(main-bg, 0.9);
+						}
 					}
 			/* user agent */
 				/* heading */
@@ -1704,9 +1844,21 @@ result-containers = !!result-containers;
 				}
 			/* footer */
 				/* feedback */
-					a.act-fbk-lnk {
-						color: main-text-off;
+					if result-containers {
+						#act-fbk-row {
+							padding-top: 12px;
+						}
+						.act-fbk-lnk {
+							background-color: alpha(main-bg, 0.9);
+							border-radius: 2px;
+							margin-top: 5px;
+							padding: 2px 2.8px;
+						}
 					}
+					/* link */
+						a.act-fbk-lnk {
+							color: main-text-off;
+						}
 					/* popup */
 						/* overlay */
 							#feedback-annotator canvas {
@@ -1729,13 +1881,15 @@ result-containers = !!result-containers;
 					padding-right: 16px;
 					margin-right: -16px;
 				}
-				.jktSrf td.qbghke {
-					border-left-width: 1px;
-				}
 			}
 			/* separators */
 				.jktSrf td {
 					border-color: main-border;
+				}
+				if result-containers {
+					.jktSrf td.qbghke {
+						border-left: main-border 1px solid;
+					}
 				}
 			/* text */
 				.tuHUkb {
@@ -1957,11 +2111,12 @@ result-containers = !!result-containers;
 		if result-containers {
 			#foot #navcnt {
 				container();
+				border-radius: 2px;
 				margin: auto !important;
 			}
 			#foot #navcnt td {
-				padding-top: 5px;
-				padding-bottom: 5px;
+				padding-top: 8px;
+				padding-bottom: 8px;
 			}
 		}
 		/* selected */
@@ -1972,6 +2127,11 @@ result-containers = !!result-containers;
 		/* main */
 			.kp-blk {
 				container();
+			}
+			if result-containers {
+				#rhs .kp-blk {
+					//margin-top: -1px;
+				}
 			}
 		/* title */
 			.kno-ecr-pt {
@@ -2663,6 +2823,13 @@ result-containers = !!result-containers;
 			.kno-ftr {
 				color: main-text-off;	
 			}
+			if result-containers {
+				.rhsvw > .HKxe9e {
+					background-color: alpha(main-bg, 0.9);
+					padding: 2px 3px;
+					border-radius: 2px;
+				}
+			}
 			/* feedback */
 				a.duf3 {
 					color: main-text-off;
@@ -2742,7 +2909,24 @@ result-containers = !!result-containers;
 				}
 	/* other categories */
 	/* News */
+		/* search result */
+			/* footer */
+				if result-containers {
+					.normal-footer {
+						margin-top: 12px;
+					}
+					.normal-footer > a {
+						background-color: alpha(main-bg, 0.9);
+						padding: 2px 4px;
+						border-radius: 2px;
+					}
+				}
 		/* result */
+			if result-containers {
+				.ts.Pg8zWb.C1Iii.tsUanb {
+					result-container();
+				}
+			}
 			/* text */
 				.ts > div {
 					color: main-text;
@@ -2759,6 +2943,22 @@ result-containers = !!result-containers;
 				.QJGxHc {
 					color: main-text-off;
 				}
+		/* create alert */
+			if result-containers {
+				.N6pxec {
+					result-container();
+					padding-top: 7px;
+					padding-bottom: 13px;
+				}
+			}
+		/* disclaimer */
+			if result-containers {
+				.nwd {
+					container();
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}
+			}
 	/* Search by Image */
 		/* searched image */
 				/* border */
@@ -2900,6 +3100,12 @@ result-containers = !!result-containers;
 				color: main-text-off;
 			}
 		/* filter */
+			if results-containers {
+				.sh-dr__restricts {
+					container();
+					border-radius: 2px;
+				}
+			}
 			/* headings */
 				.sh-dr__g > div {
 					color: main-text;
@@ -2934,6 +3140,13 @@ result-containers = !!result-containers;
 						}
 		/* results */
 			/* header */
+				if result-containers {
+					.sh-dtt__top-tools {
+						container();
+						padding: 10px;
+						margin-top: 5px;
+					}
+				}
 				/* breadcrumbs */
 					.QCKch a:link, .QCKch a:visited {
 						color: main-text-off;
@@ -2977,6 +3190,11 @@ result-containers = !!result-containers;
 							filter: colorize(darken(main-text-off, 40%));
 						}
 						/* slideout */
+							if result-containers {
+								.gko-s {
+									background-color: main-bg;
+								}
+							}
 							#gko-sp.gko-open {
 								border-color: alpha(black, 0.4 * contrast);
 							}
@@ -3024,10 +3242,17 @@ result-containers = !!result-containers;
 				/* horizontal separator */
 					.sh-sp__line {
 						border-color: main-separator;
+						if result-containers {
+							border-color: transparent;
+						}
 					}
 					/* sponsored hint */
 						#topstuff .sh-sp__pswtr {
 							background-color: main-bg;
+							if result-containers {
+								container();
+								padding: 5px;
+							}
 						}
 						/* text */
 							.sh-sp__pswtr {
@@ -3113,12 +3338,27 @@ result-containers = !!result-containers;
 				/* bottom separator */
 					.sh-sr__shop-result-group:last-of-type {
 						border-color: main-separator;
+						if result-containers {
+							border-color: transparent;
+						}
 					}
 					.sh-sr__shop-result-group {
 						border-color: main-separator;
+						if result-containers {
+							border-color: transparent;
+						}
+						
 					}
+		/* disclaimer */
+			if result-containers {
+				.shpd {
+					container();
+					padding-top: 10px;
+					padding-bottom: 10px;
+				}
+			}
 	/* Finance */
-		/* Home */
+		/* Home (Market Summary) */
 			/* tabs */
 				/* titles */
 					.SVWlSe > div {
@@ -3128,34 +3368,105 @@ result-containers = !!result-containers;
 					.FNvPOb {
 						box-shadow: 0 1px 0 main-border;
 						border-color: transparent;
+						if result-containers {
+							box-shadow: none;
+						}
 					}
 					.u8H8Fd {
 						box-shadow: 0 1px 0 main-border;
+						if result-containers {
+							container();
+							border-radius: 2px;
+							background-color: main-bg-container;
+							width: 632px; //TODO: fit to right column
+						}
 					}
 				/* selected */
 					.KYeOtb[aria-selected="true"] {
 						border-color: main-text !important;
 					}
 			/* modules */
+				if result-containers {
+					div g-section-with-header {
+						margin-bottom: 40px !important;
+					}
+				}
 				/* titles */
 					.umBFsc .HnYYW {
 						color: main-text;
+						if result-containers {
+							container();
+							border-radius: 2px;
+							padding-top: 10px !important;
+							padding-bottom: 10px !important;
+							margin-bottom: 8px;
+						}
 					}
 				/* containers */
 					.vnLNtd.mnr-c {
 						container();
+						if result-containers {
+							margin-bottom: 40px !important;
+						}
 					}
+				/* cards */
+					if result-containers {
+						.LuVEUc.B03h3d.ptcLIOszQJu__wholepage-card.wp-ms {
+							margin-bottom: 40px;
+						}
+					}
+				/* footer */
+					if result-containers {
+						.AZir3d {
+							margin-top: -40px;
+							margin-bottom: 50px !important;
+						}
+					}
+					/* more about */
+						if result-containers {
+							.sxR6Tb {
+								background-color: alpha(main-bg, 0.9);
+								padding: 9px 4px;
+								border-radius: 2px;
+								margin-top: 11px;
+							}
+						}
+						/* text */
+							.fdHGEc {
+								color: main-text;
+							}
+						/* arrow */
+							.wOdj7e {
+								color: main-text;
+							}
+					/* disclaimer */
+						if result-containers {
+							.aMNoGd {
+								margin-top: 0px;
+							}
+							.zRK1Kd {
+								background-color: alpha(main-bg, 0.9);
+								padding: 2px 3px;
+								border-radius: 2px;
+							}
+						}
 			/* your stocks */
-				/* not currently following */
-					.knowledge-finance-wholepage__your-stocks-promo {
-						container();
-						color: main-text;
+				/* text fields */
+					if result-containers {
+						div[data-hveid="CAEQBQ"] {
+							margin-bottom: 40px;
+						}
 					}
-				/* refresh */
-					.knowledge-finance-wholepage__your-stocks-refresh {
-						container();
-						color: main-text;
-					}
+					/* not currently following */
+						.knowledge-finance-wholepage__your-stocks-promo {
+							container();
+							color: main-text;
+						}
+					/* refresh */
+						.knowledge-finance-wholepage__your-stocks-refresh {
+							container();
+							color: main-text;
+						}
 			/* local markets */
 				/* graph */
 					/* legend */
@@ -3317,6 +3628,11 @@ result-containers = !!result-containers;
 						.CCb0ac, .CCb0ac a {
 							color: main-text;
 						}
+						if result-containers {
+							.CCb0ac {
+								result-container();
+							}
+						}
 					/* item */
 						/* publisher */
 							.wqg8ad {
@@ -3352,9 +3668,23 @@ result-containers = !!result-containers;
 							.LlMFmd {
 								color: main-text;
 							}
+							if result-containers {
+								.k7Ovbf {
+									background: alpha(main-bg, 0.9);
+									border-radius: 2px;
+									padding: 2px 3px;
+								}
+							}
 						/* disclaimer */
 							.kVLSDc {
 								color: main-text-off;
+							}
+							if result-container {
+								.zArEMe.zS20ee {
+									background: alpha(main-bg, 0.9);
+									border-radius: 2px;
+									padding: 2px 3px;
+								}
 							}
 				/* Related Markets */
 					/* item */
@@ -3806,7 +4136,7 @@ result-containers = !!result-containers;
 			site-separator();
 		}
 		#hdtbSum {
-			background-color: header-bg;
+			background-color: transparent;
 		}
 	/* categories */
 		#hdtb .hdtb-mitem a {
@@ -3897,7 +4227,8 @@ result-containers = !!result-containers;
 		/* tools dropdowns */
 			#hdtb.hdtba #hdtbMenus {
 				background-color: header-bg;
-				border-color: alpha(black, 1 * contrast);
+				border-color: main-border;
+				padding-bottom: 9px;
 			}
 			#hdtb.hdtba .hdtb-mn-hd:not(:hover) {
 				color: header-text-off;
@@ -3908,6 +4239,14 @@ result-containers = !!result-containers;
 				}
 				#hdtb.hdtba .hdtb-mn-hd:hover .mn-dwn-arw, #hdtb.hdtba #hdtb-more:hover .mn-dwn-arw {
 					border-color: header-text transparent;
+				}
+			/* slide in */
+				#botabar {
+					transition: none;
+				}
+			/* prevent flicker */
+				body.vasq #hdtb.hdtba #hdtbMenus {
+					top: 58px;
 				}
 		/* carousel */
 			.rlc__slider {
@@ -4019,6 +4358,28 @@ result-containers = !!result-containers;
 				color: footer-text;
 			}
 	/* home page */
+		/* header */
+			if result-containers {
+				.gb_Pg {
+					min-width: unset !important;
+				}
+				.gb_S + .gb_Q.gb_R {
+					padding-left: 0;
+				}
+				.gb_Pg::before {
+					position: absolute;
+					width: calc(100% - 40px);
+					height: calc(100% + 12px);
+					left: 20px;
+					top: -6px;
+					bottom: 0;
+					right: 0;
+					content: "";
+					z-index: -1;
+					container();
+					border-radius: 2px;
+				}
+			}
 		/* body */
 			/* subsites */
 				#gb#gb a.gb_P {
@@ -4027,6 +4388,10 @@ result-containers = !!result-containers;
 				/* hover */
 				#gb#gb a.gb_P:hover {
 					opacity: 1;
+				}
+			/* logo */
+				#hplogo {
+					filter: drop-shadow(0px 2px 5px black);
 				}
 			/* search bar */
 				/* input */
@@ -4057,6 +4422,15 @@ result-containers = !!result-containers;
 							box-shadow: 0 1px 1px alpha(black, 0.2 * contrast);
 							color: main-text;
 						}
+			/* language offer */
+				if result-containers {
+					#SIvCob {
+						background-color: alpha(main-bg, 0.6);
+						border-radius: 2px;
+						padding-left: 8px;
+						padding-right: 6px;
+					}
+				}
 		/* footer */
 			/* privacy notice */
 				.Teq10 {
