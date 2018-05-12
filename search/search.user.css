@@ -3152,6 +3152,10 @@ result-containers = !!result-containers;
 						margin-top: 5px;
 					}
 				}
+				/* left vertical separator */
+					.sBMW0b {
+						border-color: main-separator;
+					}
 				/* breadcrumbs */
 					.QCKch a:link, .QCKch a:visited {
 						color: main-text-off;
@@ -3160,7 +3164,7 @@ result-containers = !!result-containers;
 					.qa708e:not(.IYWnmd), .Ytbez:not(.IYWnmd) {
 						filter: colorize(main-text-minor);
 					}
-				/* vertical separator */
+				/* right vertical separator */
 					.sh-dtt__sort-by {
 						border-color: main-separator;
 					}
