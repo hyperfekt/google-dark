@@ -800,6 +800,14 @@ result-containers = !!result-containers;
 				.KJXbRb {
 					color: main-text;
 				}
+			/* text */
+				.IZo6Ec {
+					color: main-text-off;
+				}
+				/* emphasis */
+					.IZo6Ec strong {
+						color: main-text;
+					}
 		/* info box */
 			.vk_c, .vk_cxp {
 				background-color: main-bg;
