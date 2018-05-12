@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.17
+@version 0.3.18
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4421,7 +4421,7 @@ result-containers = !!result-containers;
 						background-color: main-bg-off;
 						background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
 						border-color: transparent;
-						color: main-text-minor;
+						color: main-text-off;
 					}
 					/* hover */
 						.jhp input[type="submit"]:hover, .sbdd_a input:hover, .gbqfba:hover {
