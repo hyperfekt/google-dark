@@ -4407,6 +4407,13 @@ result-containers = !!result-containers;
 				body.vasq #hdtb.hdtba #hdtbMenus {
 					top: 58px;
 				}
+		/* heading */
+			.ravrDc.V83UB {
+				color: main-text;
+			}
+			.ravrDc {
+				color: main-text-off;
+			}
 		/* carousel */
 			.rlc__slider {
 				background-color: header-bg;
