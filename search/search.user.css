@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.20
+@version 0.3.21
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -468,6 +468,12 @@ result-containers = !!result-containers;
 	/* autocorrect ('showing results for') */
 		if result-containers {
 			#fprs {
+				result-container();
+			}
+		}
+	/* 'did you mean' */
+		if result-containers {
+			.ssp {
 				result-container();
 			}
 		}
@@ -1243,6 +1249,9 @@ result-containers = !!result-containers;
 							.ptJHdc .v7hl4d {
 								container(!important);
 								padding: 4px !important;
+							}
+							.commercial-unit-desktop-rhs .v7hl4d {
+								width: 370px;
 							}
 							.rhstc3 .commercial-unit-desktop-rhs .v7hl4d {
 								width: 236px;
