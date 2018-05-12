@@ -2050,26 +2050,30 @@ result-containers = !!result-containers;
 					}
 			/* cinema */
 				/* times */
-					.wcluHf {
-						color: main-link;
+					.lr_c_stnl {
+						color: main-text;
 					}
-					/* buy tickets popup */
-						/* text */
-							.MBoHTc {
-								color: main-text;
-							}
-						/* 'date' and 'time' */
-							.gkToze {
-								color: main-text-off;
-							}
-						/* film icon */
-							.GVLnMb {
-								filter: invert-with-bg(main-bg);
-							}
-						/* domain */
-							.std-li-a {
-								color: main-text;
-							}
+					/* linked */
+						.wcluHf {
+							color: main-link;
+						}
+						/* buy tickets popup */
+							/* text */
+								.MBoHTc {
+									color: main-text;
+								}
+							/* 'date' and 'time' */
+								.gkToze {
+									color: main-text-off;
+								}
+							/* film icon */
+								.GVLnMb {
+									filter: invert-with-bg(main-bg);
+								}
+							/* domain */
+								.std-li-a {
+									color: main-text;
+								}
 		/* translate */
 			/* language select */
 				/* border */
