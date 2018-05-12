@@ -465,6 +465,12 @@ result-containers = !!result-containers;
 				top: 12px;
 			}
 		}
+	/* 'search for x only' language constrain tip */
+		if result-containers {
+			.stp {
+				result-container();
+			}
+		}
 	/* autocorrect ('showing results for') */
 		if result-containers {
 			#fprs {
@@ -489,7 +495,7 @@ result-containers = !!result-containers;
 				.bkWMgd .srg .g > div[data-hveid] {
 					result-container(true);
 				}
-				.bkWMgd .g[data-hveid]:not(#imagebox_bigimages):not(.g-blk) {
+				.bkWMgd .g[data-hveid]:not(#imagebox_bigimages):not(.g-blk):not(.obcontainer) {
 					result-container();
 				}
 				.bkWMgd .g#imagebox_bigimages g-section-with-header {
@@ -871,7 +877,7 @@ result-containers = !!result-containers;
 							.HKxe9e, .ooYDfe {
 								background-color: alpha(main-bg, 0.9);
 								padding: 4px;
-								padding-bottom: 0.5px;
+								padding-bottom: 2.6px;
 								border-radius: 2px;
 							}
 						}
@@ -1097,14 +1103,42 @@ result-containers = !!result-containers;
 									background-color: #1d60ce;
 									color: #e0e0e0;
 								}
+				/* 'more info' */ //TODO find a way to create distance to the first result
+					if result-containers {
+						#center_col .di8g3 {
+							background-color: transparent;
+						}
+						#center_col .di8g3.axXiY {
+							margin-top: -2px;
+						}
+						#center_col .di8g3 a {
+							background-color: alpha(main-bg, 0.9);
+							border-radius: 2px;
+							padding: 2px 3px;
+							padding-top: 3px;
+						}
+					}
 			/* function graph */
+				/* heading */
+					if result-containers {
+						#graph_heading {
+							width: 600px;
+							result-container(false, !important);
+							margin-bottom: 10px;	
+						}
+					}
+				/* box */
+					if result-containers {
+						#div_for_graph > div:nth-child(2) {
+							background-color: main-bg;
+						}
+					}
+					#div_for_graph > div div[style*="box-shadow"] {
+						box-shadow: alpha(black, 0.8 * contrast) 0px 0px 5px inset !important;
+					}
 				/* 2D axis labels */
 					#div_for_graph svg text {
 						fill: main-text-off;
-					}
-				/* box */
-					#div_for_graph > div div[style*="box-shadow"] {
-						box-shadow: alpha(black, 0.8 * contrast) 0px 0px 5px inset !important;
 					}
 			/* geometry calculator */
 				/* 'solve for' dropdown */
@@ -1231,18 +1265,28 @@ result-containers = !!result-containers;
 					.IxBI8c {
 						background-color: main-bg-em;
 						border-color: main-separator;
+						-moz-appearance: textfield;
+					}
+					.IxBI8c:not(output):-moz-ui-invalid {
+						box-shadow: none;
 					}
 				/* currencies */
 					.R9zNe, .uWmgv {
+						background-image: none;
 						background-color: main-bg-em;
 					}
 					/* overlayed */
 						.J8cLR {
+							border-radius: 2px;
 							border-color: main-separator;
 						}
 				/* graph */
 					#knowledge-currency__chart {
 						filter: invert-with-bg(main-bg-container);
+					}
+				/* disclaimer */
+					.a5jSWc {
+						padding-top: 0px;
 					}
 			/* shop carousel */
 				/* header */
@@ -1777,6 +1821,14 @@ result-containers = !!result-containers;
 					.iXqz2e .exp-txt-c {
 						color: main-text-off !important; //important needed ?
 					}
+			/* feedback */
+				if result-containers {
+					.jFHKNd .duf3 {
+						background-color: alpha(main-bg, 0.9);
+						border-radius: 2px;
+						padding: 2px 3px;
+					}
+				}
 		/* SOS alert */
 			.BTZxle.YLAlMc, .Ri4g6c.VKzVKc.YLAlMc {
 				container();
