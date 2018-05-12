@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.3.23
+@version 0.3.24
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -928,26 +928,31 @@ result-containers = !!result-containers;
 				a.EbH0bb { //restore original style
 					color: main-text-off;
 				}
-	/* tweets */
-		/* carousel */
-			/* paging buttons */
-				g-fab {
-					background-color: main-bg-em !important;
-					color: main-text-off !important;
-					box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast) !important;
+	/* tweet carousel */
+		/* heading */
+			if result-containers {
+				.Dwsemf {
+					padding-bottom: 6px;
 				}
-				.Lu0opc.Lu0opc:hover g-fab {
-					color: main-text !important;
+			}
+		/* paging buttons */
+			g-fab {
+				background-color: main-bg-em !important;
+				color: main-text-off !important;
+				box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast) !important;
+			}
+			.Lu0opc.Lu0opc:hover g-fab {
+				color: main-text !important;
+			}
+		/* tweet */
+			/* links */
+				a.Ndm45b {
+					color: main-text-off;
 				}
-			/* tweet */
-				/* links */
-					a.Ndm45b {
-						color: main-text-off;
+				/* hover */
+					a.Ndm45b:hover {
+						color: main-link;
 					}
-					/* hover */
-						a.Ndm45b:hover {
-							color: main-link;
-						}
 	/* video carousel */
 		/* channel & date */
 			.zECGdd, .zECGdd.Fuybue:visited {
@@ -1452,7 +1457,7 @@ result-containers = !!result-containers;
 		/* top stories */
 			/* heading */
 				if result-containers {
-					.e2BEnf {
+					div:not(#brs) > g-section-with-header .e2BEnf {
 						result-container();
 						margin-bottom: 12px;
 					}
@@ -1472,6 +1477,7 @@ result-containers = !!result-containers;
 					}
 					g-more-link a {
 						background-color: alpha(main-bg, 0.9);
+						border-radius: 2px;
 						padding: 2px 3px;
 						padding-right: 4px;
 					}
