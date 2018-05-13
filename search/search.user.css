@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.1
+@version 0.4.2
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1304,30 +1304,48 @@ result-containers = !!result-containers;
 						padding-top: 0px;
 					}
 			/* shop carousel */
+				if result-containers {
+					.commercial-unit-desktop-top {
+						padding: 4px !important;
+					}
+				}
 				/* header */
+					if result-containers {
+						.commercial-unit-desktop-rhs .v7hl4d {
+							container(!important);
+							padding: 6px !important;
+						}
+						.commercial-unit-desktop-top .v7hl4d {
+							container();
+							width: 620px;
+							border-radius: 2px;
+							padding: 6px;
+						}
+						.commercial-unit-desktop-top .v7hl4d, .yY236b .v7hl4d {
+							margin-left: 0px;
+						}
+						.commercial-unit-desktop-rhs .v7hl4d {
+							width: 366px;
+						}
+						.rhstc3 .commercial-unit-desktop-rhs .v7hl4d {
+							width: 232px;
+						}
+						.rhstc4 .commercial-unit-desktop-rhs .v7hl4d {
+							width: 238px;	
+						}
+					}
 					/* heading */
 						if result-containers {
 							.jOmXmb {
-								padding: 4px;
+								padding-left: 12px;
+								padding-top: 6px;
+							}
+							.dxR8gf {
+								padding-top: 6px;
+								margin-bottom: 12px;
 							}
 						}
 					/* sponsored hint */
-						if result-containers {
-							.ptJHdc .v7hl4d {
-								container(!important);
-								padding: 4px !important;
-							}
-							.commercial-unit-desktop-rhs .v7hl4d {
-								width: 370px;
-							}
-							.rhstc3 .commercial-unit-desktop-rhs .v7hl4d {
-								width: 236px;
-							}
-							.rhstc4 .commercial-unit-desktop-rhs .v7hl4d {
-								width: 242px;	
-							}
-														
-						}
 						/* text */
 							.ptJHdc .richlist-wta, .ptJHdc .v7hl4d {
 									color: main-text-off;
@@ -1341,6 +1359,13 @@ result-containers = !!result-containers;
 								.v4YOu {
 									color: main-text-off;
 								}
+				/* carousel */
+					if result-containers {
+						.mR2gOd, .commercial-unit-desktop-top > div > .bC8sde {
+							margin-left: -4px;
+							margin-right: 4px;
+						}
+					}
 				/* item */
 					.cu-container .mnr-c {
 						container();
