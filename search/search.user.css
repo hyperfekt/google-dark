@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.3
+@version 0.4.4
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -888,13 +888,13 @@ result-containers = !!result-containers;
 					}
 			/* footer */
 				if result-containers {
-							.HKxe9e, .ooYDfe {
-								background-color: alpha(main-bg, 0.9);
-								padding: 4px;
-								padding-bottom: 2.6px;
-								border-radius: 2px;
-							}
-						}
+					.HKxe9e, .ooYDfe {
+						background-color: alpha(main-bg, 0.9);
+						padding: 4px;
+						padding-bottom: 2.6px;
+						border-radius: 2px;
+					}
+				}
 				/* links */
 					.kno-ftr a {
 						color: main-text-off;
@@ -1361,7 +1361,7 @@ result-containers = !!result-containers;
 								}
 				/* carousel */
 					if result-containers {
-						.mR2gOd, .commercial-unit-desktop-top > div > .bC8sde {
+						.commercial-unit-desktop-top .mR2gOd, .commercial-unit-desktop-top > div > .bC8sde {
 							margin-left: -4px;
 							margin-right: 4px;
 						}
@@ -1502,7 +1502,7 @@ result-containers = !!result-containers;
 					}
 					if result-containers {
 						.di8g3 {
-						background-color: alpha(main-bg, 0.9);
+							background-color: alpha(main-bg, 0.9);
 						}
 					}
 			/* user agent */
@@ -1554,11 +1554,11 @@ result-containers = !!result-containers;
 						margin-bottom: 12px;
 					}
 				}
-			if result-containers {
-				.VoEfsd {
-					container();
+				if result-containers {
+					.VoEfsd {
+						container();
+					}
 				}
-			}
 			.KQvDId {
 				color: main-text-off;
 			}
