@@ -513,7 +513,7 @@ result-containers = !!result-containers;
 				.bkWMgd .g#imagebox_bigimages g-section-with-header {
 					result-container(true);
 				}
-				.bkWMgd > .g:not(.mod) > div[data-hveid] {
+				.bkWMgd > .g:not(.mod):not([data-hveid]) > div[data-hveid] {
 					result-container(true);
 				}
 				/* tweet */
