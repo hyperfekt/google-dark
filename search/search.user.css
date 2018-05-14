@@ -2276,6 +2276,25 @@ result-containers = !!result-containers;
 					.wFzbJe img {
 						filter: colorize(darken(main-link, 18%));
 					}
+		/* speedtest */
+			/* header */
+				/* heading */
+					.p83fR {
+						color: main-text;
+						border-color: container-separator;
+					}
+				/* icon */
+					.Km0Gdb {
+						fill: main-text-off;
+					}
+			/* text */
+				.B7A8m {
+					color: main-text;
+				}
+			/* about link */
+				.hMkxpb, .hMkxpb:visited {
+					color: main-text;
+				}
 		/* feedback popup */
 			/* give dialog*/
 				/* select response */
@@ -2590,11 +2609,11 @@ result-containers = !!result-containers;
 								color: main-text;
 							}
 						/* button */
-							.Gfzyee {
-								button(!important);
+							.Gfzyee:not(.DKlyaf) {
+								button();
 								background-color: main-bg-em;
 							}
-							.Gfzyee:hover {
+							.Gfzyee:hover:not(.DKlyaf) {
 								button-hover();
 							}
 						/* separator */
