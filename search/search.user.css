@@ -2536,7 +2536,7 @@ result-containers = !!result-containers;
 								filter: drop-shadow(0px 0px 0.5px white);
 							}
 			/* bands */
-				/* available on */
+				/* available on (music services) */
 					/* separators */
 						.scrt tr:first-child td {
 							border-top-color: container-separator;
@@ -2551,6 +2551,15 @@ result-containers = !!result-containers;
 						.kno-fb-ctx .ellip .hl {
 							color: main-text;
 						}
+					/* more */
+						/* icon */
+							.kcwZU {
+								filter: colorize(main-text);
+							}
+						/* text */
+							.dUFb4e {
+								color: main-text;
+							}
 				/* events */
 					/* date */
 						.CAaTrb, .aXUuyd {
