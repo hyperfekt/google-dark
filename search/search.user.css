@@ -528,6 +528,13 @@ result-containers = !!result-containers;
 				/* container */
 					#res h3.r {
 						color: main-link;
+						overflow: unset;
+					}
+				/* link */
+					#res h3.r a {
+						overflow: hidden;
+						text-overflow: ellipsis;
+						display: block;
 					}
 			/* text */
 				.s {
