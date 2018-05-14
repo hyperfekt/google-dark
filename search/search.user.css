@@ -4689,6 +4689,23 @@ result-containers = !!result-containers;
 							box-shadow: 0 1px 1px alpha(black, 0.2 * contrast);
 							color: main-text;
 						}
+			/* promo */
+				if result-containers {
+					.szppmdbYutt__middle-slot-promo > a {
+						background-color: alpha(main-bg, 0.8);
+						border-top-left-radius: 2px;
+						border-bottom-left-radius: 2px;
+						padding: 6px;
+						padding-right: 0px;
+					}
+					.szppmdbYutt__middle-slot-promo > span {
+						background-color: alpha(main-bg, 0.8);
+						border-top-right-radius: 2px;
+						border-bottom-right-radius: 2px;
+						padding: 6px;
+						padding-left: 0px;
+					}
+				}
 			/* language offer */
 				if result-containers {
 					#SIvCob {
