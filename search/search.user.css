@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.6
+@version 0.4.7
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2295,6 +2295,97 @@ result-containers = !!result-containers;
 				.hMkxpb, .hMkxpb:visited {
 					color: main-text;
 				}
+			/* popup */
+				.oGE0Pb {
+					background-color: main-bg;
+				}
+				/* header */
+					.bYhoud {
+						background-color: main-bg-off;
+						color: main-text;
+					}
+					/* close button */
+						.hHVcJ {
+							fill: main-text;
+						}
+				/* loading icon */
+					.knowledge-verticals-internetspeedtest__loading-icon {
+						background-color: main-text-disabled;
+					}
+				/* current speed */
+					.Fd0qyb	{
+						color: main-text;
+					}
+					/* unit */
+						.VdlJdf {
+							color: main-text-off;
+						}
+				/* error icon */
+					.YcogCe {
+						fill: main-text;
+					}
+				/* error text */
+					.DNkykb {
+						color: main-text-off;
+					}
+				/* speedometer */
+					.BXybWd {
+						filter: brightness(50%);
+					}
+					/* ticks */
+						.Ma2x6b {
+							color: main-text-off;
+							opacity: 1 !important;
+						}
+				/* status icon */
+					.O5YnVc rect[fill="#757575"], .O5YnVc path[fill="#757575"], .oQu2Pd rect[fill="#757575"], .oQu2Pd path[fill="#757575"] {
+						fill: main-text-off;
+					}
+				/* status text */
+					.ARSzzc {
+						color: main-text-off;
+					}
+				/* results */
+					.spiqle {
+						color: main-text;
+					}
+					/* label */
+						.jct7Wc {
+							color: main-text-off;
+						}
+					/* separators +/
+						/* upper horizontal */
+							.knowledge-verticals-internetspeedtest__status-indicator {
+								border-color: main-separator;
+							}
+						/* middle vertical */
+							.oyUhj, .iD3Ij {
+								border-color: main-separator;
+							}
+						/* lower horizontal */
+							.xbKDQe {
+								border-color: main-separator;
+							}
+					/* criterion */
+						.BbqFQc {
+							color: main-text-off;
+						}
+					/* value */
+						/* location */
+							.lAqhed {
+								color: main-text;
+							}
+						.MGCMLc, .pTGxbb {
+							color: main-text;
+						}
+					/* retry link */
+						.mxB9bd {
+							color: main-text !important;
+						}
+					/* bottom separator */
+						.apRX7 {
+							border-color: main-separator;
+						}
 		/* feedback popup */
 			/* give dialog*/
 				/* select response */
