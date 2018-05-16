@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.17
+@version 0.4.18
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2469,6 +2469,12 @@ result-containers = !!result-containers;
 					div.duf3d a {
 						color: main-link;
 					}
+	/* censorship notice */
+		if result-containers {
+			.mfr {
+				result-container();
+			}
+		} 
 	/* related terms (searches related) */
 		/* heading */
 			#brs .med {
