@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.20
+@version 0.4.21
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -758,7 +758,7 @@ result-containers = !!result-containers;
 						}
 			/* factoids */
 				.P1usbc {
-					color: main-text-off;
+					color: main-text-em;
 				}
 			/* people also search for */
 				/* frame */
