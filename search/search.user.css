@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.21
+@version 0.4.22
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -939,7 +939,7 @@ result-containers = !!result-containers;
 			/* footer */
 				if result-containers {
 					.HKxe9e, .ooYDfe {
-						background-color: alpha(main-bg, 0.9);
+						background-color: main-bg-container;
 						padding: 4px;
 						padding-bottom: 2.6px;
 						border-radius: 2px;
@@ -961,7 +961,7 @@ result-containers = !!result-containers;
 						/* 'sources include' */
 							.rhsvw > span {
 								display: inline-block;
-								background-color: alpha(main-bg, 0.9);
+								background-color: main-bg-container;
 								padding: 2px 3px;
 								border-radius: 2px;
 							}
@@ -1191,7 +1191,7 @@ result-containers = !!result-containers;
 							margin-top: -2px;
 						}
 						#center_col .di8g3 a {
-							background-color: alpha(main-bg, 0.9);
+							background-color: main-bg-container;
 							border-radius: 2px;
 							padding: 2px 3px;
 							padding-top: 3px;
@@ -1565,7 +1565,7 @@ result-containers = !!result-containers;
 					}
 					if result-containers {
 						.di8g3 {
-							background-color: alpha(main-bg, 0.9);
+							background-color: main-bg-container;
 						}
 					}
 			/* user agent */
@@ -1631,7 +1631,7 @@ result-containers = !!result-containers;
 						display: flex;
 					}
 					g-more-link a {
-						background-color: alpha(main-bg, 0.9);
+						background-color: main-bg-container;
 						border-radius: 2px;
 						padding: 2px 3px;
 						padding-right: 4px;
@@ -1947,7 +1947,7 @@ result-containers = !!result-containers;
 			/* feedback */
 				if result-containers {
 					.jFHKNd .duf3 {
-						background-color: alpha(main-bg, 0.9);
+						background-color: main-bg-container;
 						border-radius: 2px;
 						padding: 2px 3px;
 					}
@@ -2058,7 +2058,7 @@ result-containers = !!result-containers;
 							padding-top: 12px;
 						}
 						.act-fbk-lnk {
-							background-color: alpha(main-bg, 0.9);
+							background-color: main-bg-container;
 							border-radius: 2px;
 							margin-top: 5px;
 							padding: 2px 2.8px;
@@ -3208,7 +3208,7 @@ result-containers = !!result-containers;
 			}
 			if result-containers {
 				.rhsvw > .HKxe9e {
-					background-color: alpha(main-bg, 0.9);
+					background-color: main-bg-container;
 					padding: 2px 3px;
 					border-radius: 2px;
 				}
@@ -3299,7 +3299,7 @@ result-containers = !!result-containers;
 						margin-top: 12px;
 					}
 					.normal-footer > a {
-						background-color: alpha(main-bg, 0.9);
+						background-color: main-bg-container;
 						padding: 2px 4px;
 						border-radius: 2px;
 					}
@@ -3826,7 +3826,7 @@ result-containers = !!result-containers;
 					/* more about */
 						if result-containers {
 							.sxR6Tb {
-								background-color: alpha(main-bg, 0.9);
+								background-color: main-bg-container;
 								padding: 9px 4px;
 								border-radius: 2px;
 								margin-top: 11px;
@@ -3846,7 +3846,7 @@ result-containers = !!result-containers;
 								margin-top: 0px;
 							}
 							.zRK1Kd {
-								background-color: alpha(main-bg, 0.9);
+								background-color: main-bg-container;
 								padding: 2px 3px;
 								border-radius: 2px;
 							}
@@ -4071,7 +4071,7 @@ result-containers = !!result-containers;
 							}
 							if result-containers {
 								.k7Ovbf {
-									background: alpha(main-bg, 0.9);
+									background: main-bg-container;
 									border-radius: 2px;
 									padding: 2px 3px;
 								}
@@ -4082,7 +4082,7 @@ result-containers = !!result-containers;
 							}
 							if result-containers {
 								.zArEMe.zS20ee {
-									background: alpha(main-bg, 0.9);
+									background: main-bg-container;
 									border-radius: 2px;
 									padding: 2px 3px;
 								}
