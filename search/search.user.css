@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.7
+@version 0.4.8
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1028,7 +1028,7 @@ result-containers = !!result-containers;
 				background-color: main-bg-container;
 			}
 			/* separators */
-				.m7VU0c {
+				.u80vZ {
 					border-color: container-separator;
 				}
 			/* expand button */
