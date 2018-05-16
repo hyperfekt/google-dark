@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.10
+@version 0.4.11
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -19,7 +19,7 @@
 @var text main-background "Background" main-bg
 @var text main-text "Main Text" #DD
 @var text main-text-em "Main Text (Lighter)" #E6
-@var text main-text-off "Main Text (Darker)" #AB
+@var text main-text-off "Main Text (Darker)" #A9
 @var text main-text-minor "Main Text (Darkest)" #74
 @var text main-text-disabled "Main Text (Disabled)" #5F
 @var text main-link "Main Link" #5A6EFF
@@ -60,7 +60,7 @@
 	// Main Text (Lighter)
 	main-text-em = #E6;
 	// Main Text (Darker)
-	main-text-off = #AB;
+	main-text-off = #A9;
 	// Main Text (Darkest)
 	main-text-minor = #74;
 	// Main Text (Disabled)
@@ -896,7 +896,7 @@ result-containers = !!result-containers;
 							color: main-text-off;
 						}
 				/* date */
-					.wrk6pd {
+					.kX21rb {
 						color: main-text-off;
 					}
 			/* footer */
