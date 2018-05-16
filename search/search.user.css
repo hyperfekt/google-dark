@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.16
+@version 0.4.17
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -55,6 +55,8 @@
 	main-bg-off = #16;
 	// Main Background (Container)
 	main-bg-container = #1C;
+	// Background
+	main-background = main-bg;
 	// Main Text
 	main-text = #DD;
 	// Main Text (Lighter)
@@ -568,6 +570,7 @@ result-containers = !!result-containers;
 				}
 			/* source */
 				if result-containers {
+					$dash-spacing = 0.4em;
 					.f.hJND5c.TbwUpd {
 						display: flex;
 					}
@@ -576,10 +579,20 @@ result-containers = !!result-containers;
 							flex: initial;
 							overflow: hidden;
 							text-overflow: ellipsis;
+							margin-right: $dash-spacing;
 						}
 					/* dropdown */
 						.f.hJND5c.TbwUpd .ab_ctl {
 							flex: none;
+							margin-left: "calc(-%s + 3px)" % $dash-spacing;
+						}
+						.f.hJND5c.TbwUpd .ab_ctl:not(:last-child) {
+							margin-right: "calc(-%s + 3px)" % $dash-spacing;
+						}
+					/* translate link */
+						.f.hJND5c.TbwUpd a.fl {
+							flex: none;
+							margin-left: $dash-spacing;
 						}
 				}
 				.a, cite, cite a:link, cite a:visited, .cite, .cite:link, #nygTcd > i, .bc a:link {
