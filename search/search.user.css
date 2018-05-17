@@ -699,12 +699,14 @@ $container-transparency = $t != 1;
 						padding-top: 6px;
 						padding-bottom: 6px;
 						container();
+						border-radius: 2px;
 					}
 				}
 				/* indicator */
 					.Z98Wse {
 						background-color: transparent;
 						color: main-source;
+						border-color: main-source;
 					}
 				/* source */
 					.ads-visurl cite {
