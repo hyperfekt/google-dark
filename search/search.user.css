@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.32
+@version 0.4.33
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -312,25 +312,25 @@ $container-transparency = $t != 1;
 
 	/* tools dropdowns */
 		if result-containers {
-			.hdtbna .hdtb-mn-hd {
+			div:not(.rshdr) > #top_nav .hdtbna .hdtb-mn-hd {
 				background-color: main-bg-container;
 				if $container-transparency {
 					background-clip: padding-box;
 					border-top: 1px solid alpha(black, 0.3 * contrast);
 				}
-			}	
+			}
 			if $container-transparency {
-				.hdtbna .hdtb-mn-hd:nth-child(2) {
+				div:not(.rshdr) > #top_nav .hdtbna .hdtb-mn-hd:nth-child(2) {
 					border-top-left-radius: 2px;
 					border-bottom-left-radius: 2px;
 					border-left: 1px solid alpha(black, 0.3 * contrast);
 				}
-				.hdtbna div.hdtb-mn-hd:last-of-type {
+				div:not(.rshdr) > #top_nav .hdtbna div.hdtb-mn-hd:last-of-type {
 					border-top-right-radius: 2px;
 					border-bottom-right-radius: 2px;
 					border-right: 1px solid alpha(black, 0.3 * contrast);
 				}
-				.hdtbna .hdtb-mn-hd::before {
+				div:not(.rshdr) > #top_nav .hdtbna .hdtb-mn-hd::before {
 					box-shadow: 0 4px 2px -2px alpha(black, 0.5 * contrast) inset, 0 2px 0 -1px alpha(black, 0.25 * contrast) inset;
 					content: "";
 					position: absolute;
@@ -343,14 +343,14 @@ $container-transparency = $t != 1;
 					z-index: -1;
 					border-radius: 0px;
 				}
-				.hdtbna .hdtb-mn-hd:nth-child(2)::before {
+				div:not(.rshdr) > #top_nav .hdtbna .hdtb-mn-hd:nth-child(2)::before {
 					width: calc(100% - 1px);
 					left: 1px;
 				}
-				.hdtbna .hdtb-mn-hd:last-of-type::before {
+				div:not(.rshdr) > #top_nav .hdtbna .hdtb-mn-hd:last-of-type::before {
 					width: calc(100% - 1px);
 				}
-				.hdtbna .hdtb-mn-hd:nth-child(2)::after {
+				div:not(.rshdr) > #top_nav .hdtbna .hdtb-mn-hd:nth-child(2)::after {
 					content: "";
 					position: absolute;
 					height: 4px;
@@ -363,7 +363,7 @@ $container-transparency = $t != 1;
 					border-bottom-left-radius: 2px;	
 					border-left: 1.5px solid alpha(black, 0.3 * contrast);
 				}
-				.hdtbna div.hdtb-mn-hd:last-of-type::after {
+				div:not(.rshdr) > #top_nav .hdtbna div.hdtb-mn-hd:last-of-type::after {
 					content: "";
 					position: absolute;
 					height: 4px;
@@ -378,7 +378,7 @@ $container-transparency = $t != 1;
 				}
 			}
 			if !$container-transparency {
-				.hdtbna .hdtb-mn-hd::before {
+				div:not(.rshdr) > #top_nav .hdtbna .hdtb-mn-hd::before {
 					content: "";
 					position: absolute;
 					width: 101%;
@@ -412,12 +412,27 @@ $container-transparency = $t != 1;
 			.hdtb-mn-hd:hover .mn-dwn-arw, #hdtb-more:hover .mn-dwn-arw {
 				border-color: main-text transparent;
 			}
-
+			/* Images */
+				.rshdr .mn-dwn-arw {
+					border-color: header-text-off transparent;
+				}
+				.rshdr .hdtb-mn-hd:hover .mn-dwn-arw, .rshdr #hdtb-more:hover .mn-dwn-arw {
+					border-color: header-text transparent;
+				}
 		/* text */
 			.hdtb-mn-hd {
 				color: main-text-off;
 			}
-
+			.hdtb-mn-hd:hover {
+				color: main-text;
+			}
+			/* Images */
+				.rshdr .hdtb-mn-hd {
+					color: header-text-off;
+				}
+				.rshdr .hdtb-mn-hd:hover {
+					color: header-text;
+				}
 		/* menu */
 			/* main */
 				.hdtb-mn-o, .hdtb-mn-c {
@@ -4636,7 +4651,7 @@ $container-transparency = $t != 1;
 						button-hover(2);
 					}
 					.gb_Ea, #gb a.gb_Ea.gb_Ea, .gb_Fa {
-						color: main-text-off;
+						color: main-text-off;	
 					}
 
 	/* tabs */
@@ -4652,7 +4667,7 @@ $container-transparency = $t != 1;
 			color: header-text-off;
 		}
 		/* categories hover */
-			.hdtbItm label:hover, .hdtbItm a:hover, #hdtb-more-mn a:hover, #hdtb .hdtb-mitem a:hover, .hdtb-mn-hd:hover, #hdtb-more:hover, #hdtb-tls:hover {
+			.hdtbItm label:hover, .hdtbItm a:hover, #hdtb-more-mn a:hover, #hdtb .hdtb-mitem a:hover, #hdtb-more:hover, #hdtb-tls:hover {
 				color: header-text;
 			}
 	/* settings dropdown */
