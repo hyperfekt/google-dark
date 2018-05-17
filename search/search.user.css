@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.33
+@version 0.4.34
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -536,6 +536,10 @@ $container-transparency = $t != 1;
 							.cdr_dlg td.goog-date-picker-date:hover {
 								background-color: main-bg-off;
 							}
+		/* color select */
+			.sc {
+				background-color: transparent;
+			}
 	/* result count */
 		#appbar {
 			background-color: transparent;
