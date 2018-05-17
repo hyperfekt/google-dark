@@ -4020,6 +4020,10 @@ $container-transparency = $t != 1;
 								.msyb7 {
 									fill: main-bg-container;
 									stroke: main-bg-container;
+									if $container-transparency {
+										fill: transparent;
+										stroke: transparent;
+									}
 								}
 						/* highlight line */
 							.knowledge-finance-wholepage-chart__highlight-line {
@@ -4044,6 +4048,9 @@ $container-transparency = $t != 1;
 						/* previous close rectangle */
 							.CedBdc {
 								background-color: main-bg-container;
+								if $container-transparency {
+									background-color: transparent;
+								}
 							}
 						/* lunch break rectangle */
 							.JpyPld rect {
