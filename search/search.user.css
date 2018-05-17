@@ -216,6 +216,12 @@ $container-transparency = $t != 1;
 		}
 	}
 
+	footer-container($important = null) {
+		background-color: main-bg-container $important;
+		border-radius: 2px $important;
+		padding: 2px 3px $important;
+	}
+
 /* functions */
 	quote($string) {
 		"" + $string + "" //WTF Stylus?
@@ -1038,9 +1044,7 @@ $container-transparency = $t != 1;
 						/* 'sources include' */
 							.rhsvw > span {
 								display: inline-block;
-								background-color: main-bg-container;
-								padding: 2px 3px;
-								border-radius: 2px;
+								footer-container()
 							}
 					}
 		/* scholarly articles */
@@ -1268,9 +1272,7 @@ $container-transparency = $t != 1;
 							margin-top: -2px;
 						}
 						#center_col .di8g3 a {
-							background-color: main-bg-container;
-							border-radius: 2px;
-							padding: 2px 3px;
+							footer-container();
 							padding-top: 3px;
 						}
 					}
@@ -1708,9 +1710,7 @@ $container-transparency = $t != 1;
 						display: flex;
 					}
 					g-more-link:not(.iOcSOd) a {
-						background-color: main-bg-container;
-						border-radius: 2px;
-						padding: 2px 3px;
+						footer-container();
 						padding-right: 4px;
 					}
 				}
@@ -2024,9 +2024,7 @@ $container-transparency = $t != 1;
 			/* feedback */
 				if result-containers {
 					.jFHKNd .duf3 {
-						background-color: main-bg-container;
-						border-radius: 2px;
-						padding: 2px 3px;
+						footer-container();
 					}
 				}
 		/* SOS alert */
@@ -2132,13 +2130,10 @@ $container-transparency = $t != 1;
 				/* feedback */
 					if result-containers {
 						#act-fbk-row {
-							padding-top: 12px;
+							padding-top: 13px;
 						}
 						.act-fbk-lnk {
-							background-color: main-bg-container;
-							border-radius: 2px;
-							margin-top: 5px;
-							padding: 2px 2.8px;
+							footer-container();
 						}
 					}
 					/* link */
@@ -3285,9 +3280,7 @@ $container-transparency = $t != 1;
 			}
 			if result-containers {
 				.rhsvw > .HKxe9e {
-					background-color: main-bg-container;
-					padding: 2px 3px;
-					border-radius: 2px;
+					footer-container();
 				}
 			}
 			/* feedback */
@@ -3376,9 +3369,7 @@ $container-transparency = $t != 1;
 						margin-top: 12px;
 					}
 					.normal-footer > a {
-						background-color: main-bg-container;
-						padding: 2px 4px;
-						border-radius: 2px;
+						footer-container();
 					}
 				}
 		/* result */
@@ -3929,9 +3920,7 @@ $container-transparency = $t != 1;
 								margin-top: 0px;
 							}
 							.zRK1Kd {
-								background-color: main-bg-container;
-								padding: 2px 3px;
-								border-radius: 2px;
+								footer-container();
 							}
 						}
 			/* your stocks */
@@ -4170,9 +4159,7 @@ $container-transparency = $t != 1;
 							}
 							if result-containers {
 								.k7Ovbf {
-									background: main-bg-container;
-									border-radius: 2px;
-									padding: 2px 3px;
+									footer-container();
 								}
 							}
 						/* disclaimer */
@@ -4181,9 +4168,7 @@ $container-transparency = $t != 1;
 							}
 							if result-containers {
 								.zArEMe {
-									background: main-bg-container;
-									border-radius: 2px;
-									padding: 2px 3px;
+									footer-container();
 								}
 							}
 				/* Related Markets */
