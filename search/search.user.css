@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.28
+@version 0.4.29
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1689,7 +1689,7 @@ $container-transparency = $t != 1;
 		/* top stories */
 			/* heading */
 				if result-containers {
-					div:not(#brs):not(#imagebox_bigimages) > g-section-with-header .e2BEnf {
+					.bkWMgd > div:not(#brs):not(#imagebox_bigimages) > g-section-with-header .e2BEnf {
 						result-container();
 						margin-bottom: 12px;
 					}
@@ -2793,17 +2793,17 @@ $container-transparency = $t != 1;
 						}
 				/* songs */
 					.rl_item_base {
-						background-color: main-bg-container;
+						background-color: transparent;
 						border-color: container-separator;
 					}
 					/* title */
-					.rl_item_base .title {
-						color: main-text;
-					}
+						.rl_item_base .title {
+							color: main-text;
+						}
 					/* interpret */
-					.rl_item_base .title + div {
-						color: main-text-off !important;
-					}
+						.rl_item_base .title + div {
+							color: main-text-off !important;
+						}
 					/* view XX+ more */
 						.P7Vl4c .RCBpod {
 							color: main-text-off;
@@ -3852,11 +3852,17 @@ $container-transparency = $t != 1;
 					}
 					.u8H8Fd {
 						box-shadow: 0 1px 0 main-border;
-						if result-containers {
+					}
+					if result-containers {
+						.qLJQNc .u8H8Fd {
 							container();
-							border-radius: 2px;
+							border-bottom-right-radius: 2px;
+							border-bottom-left-radius: 2px;
 							background-color: main-bg-container;
 							width: 632px; //TODO: fit to right column
+						}
+						.u8H8Fd.iQMQiXJo9Zsw-cUeieUB74ro {
+							border-radius: 2px;
 						}
 					}
 				/* selected */
@@ -3956,6 +3962,12 @@ $container-transparency = $t != 1;
 			/* market summary */
 				.K20DDe {
 					background-color: main-bg;
+					if result-containers {
+						background-color: main-bg-container;
+						width: 593px;
+						border-top-left-radius: 2px;
+						border-top-right-radius: 2px;
+					}
 				}
 				/* breadcrumb */
 					.HkooRb:link, .HkooRb:visited, .HkooRb:hover {
@@ -3972,6 +3984,9 @@ $container-transparency = $t != 1;
 				/* tabs */
 					.qLJQNc {
 						background-color: main-bg;
+						if result-containers {
+							background-color: transparent;
+						}
 					}
 				/* separator */
 				.QOsNac {
@@ -4165,7 +4180,7 @@ $container-transparency = $t != 1;
 								color: main-text-off;
 							}
 							if result-containers {
-								.zArEMe.zS20ee {
+								.zArEMe {
 									background: main-bg-container;
 									border-radius: 2px;
 									padding: 2px 3px;
@@ -4174,7 +4189,7 @@ $container-transparency = $t != 1;
 				/* Related Markets */
 					/* item */
 						.QEsAKd {
-							background-color: main-bg-container;
+							background-color: transparent;
 						}
 						/* name */
 							.LTTD0 {
@@ -4195,6 +4210,12 @@ $container-transparency = $t != 1;
 					/* separators */
 						.e17INc {
 							background-color: main-border;
+						}
+					/* disclaimer */
+						if result-containers {
+							.zArEMe:not(.zS20ee) {
+								margin-top: -28px;
+							}
 						}
 			/* Compare */
 				/* search */
@@ -4277,7 +4298,10 @@ $container-transparency = $t != 1;
 				/* Quarterly Financials */
 					/* quarter tabs */
 						.vCQYxb {
-								background-color: main-bg-off;
+							background-color: main-bg-off;
+							if result-containers {
+								background-color: transparent;
+							}
 						}
 	/* language switch popup */
 		#Rzn5id {
