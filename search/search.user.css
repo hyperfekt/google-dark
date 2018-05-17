@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.30
+@version 0.4.31
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -3706,6 +3706,7 @@ $container-transparency = $t != 1;
 							background-color: main-bg;
 							if result-containers {
 								container();
+								border-radius: 2px;
 								padding: 5px;
 							}
 						}
@@ -3726,10 +3727,20 @@ $container-transparency = $t != 1;
 									filter: adapt-to-bg(main-bg);
 								}
 			/* results */
+				/* 'did you mean' correction */
+					if result-containers {
+						#topstuff .sp_cnt, #topstuff .ssp { // TODO: find a way to prevent overlap with sponsored hint
+							margin-left: unset;
+							margin-right: unset;
+							padding-top: 6px;
+							margin-bottom: 0px;
+						}
+					}
 				/* 'showing results for similar searches' */
 					if result-containers {
 						.eq5rcc {
 							container();
+							border-radius: 2px;
 							padding: 12px;
 						}
 					}
