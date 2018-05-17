@@ -1993,20 +1993,20 @@ $container-transparency = $t != 1;
 			}
 			/* expand footer */
 				/* arrow */
-					.vk_ard:after {
+					.vk_ard::after {
 						border-top-color: main-bg-container;
 					}
-					.vk_aru:after {
-							border-bottom-color: main-bg-container;
+					.vk_aru::after {
+						border-bottom-color: main-bg-container;
 					}
-					.vk_ard:before {
-							border-top-color: darken(main-text-off, 40%);
+					.vk_ard::before {
+						border-top-color: darken(main-text-off, 40%);
 					}
-					.vk_aru:before {
-							border-bottom-color: darken(main-text-off, 40%);
+					.vk_aru::before {
+						border-bottom-color: darken(main-text-off, 40%);
 					}
 					.vk_ard, .vk_aru {
-							background-color: darken(main-text-off, 40%);
+						background-color: darken(main-text-off, 40%);
 					}
 				/* show more / show less */
 					.iXqz2e .exp-txt-c {
