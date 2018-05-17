@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.24
+@version 0.4.25
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -992,12 +992,21 @@ $container-transparency = $t != 1;
 						.knowledge-webanswers_table__webanswers-table th {
 							color: main-text;
 						}
+						.webanswers-webanswers_table__webanswers-table th {
+							color: main-text;
+						}
 					/* borders */
 						.knowledge-webanswers_table__webanswers-table tr {
 							border-color: main-separator;
 						}
+						.webanswers-webanswers_table__webanswers-table tr {
+							border-color: main-separator;
+						}
 					/* X more rows */
 						.KQFvIf {
+							color: main-text-off;
+						}
+						.w13wLe {
 							color: main-text-off;
 						}
 				/* date */
