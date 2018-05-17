@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.22
+@version 0.4.23
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -111,6 +111,8 @@
 
 /* conversions */
 result-containers = !!result-containers;
+$t = alpha(main-bg-container);
+$container-transparency = $t != 1;
 
 /* mixins */
 	global-definitions() {
@@ -306,18 +308,82 @@ result-containers = !!result-containers;
 		if result-containers {
 			.hdtbna .hdtb-mn-hd {
 				background-color: main-bg-container;
+				if $container-transparency {
+					background-clip: padding-box;
+					border-top: 1px solid alpha(black, 0.3 * contrast);
+				}
+			}	
+			if $container-transparency {
+				.hdtbna .hdtb-mn-hd:nth-child(2) {
+					border-top-left-radius: 2px;
+					border-bottom-left-radius: 2px;
+					border-left: 1px solid alpha(black, 0.3 * contrast);
+				}
+				.hdtbna div.hdtb-mn-hd:last-of-type {
+					border-top-right-radius: 2px;
+					border-bottom-right-radius: 2px;
+					border-right: 1px solid alpha(black, 0.3 * contrast);
+				}
+				.hdtbna .hdtb-mn-hd::before {
+					box-shadow: 0 4px 2px -2px alpha(black, 0.5 * contrast) inset, 0 2px 0 -1px alpha(black, 0.25 * contrast) inset;
+					content: "";
+					position: absolute;
+					height: 4px;
+					width: 100%;
+					top: 100%;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					z-index: -1;
+					border-radius: 0px;
+				}
+				.hdtbna .hdtb-mn-hd:nth-child(2)::before {
+					width: calc(100% - 1px);
+					left: 1px;
+				}
+				.hdtbna .hdtb-mn-hd:last-of-type::before {
+					width: calc(100% - 1px);
+				}
+				.hdtbna .hdtb-mn-hd:nth-child(2)::after {
+					content: "";
+					position: absolute;
+					height: 4px;
+					width: 2px;
+					top: calc(100% - 1.5px);
+					bottom: 0;
+					left: -0.3px;
+					right: 0;
+					z-index: -2;
+					border-bottom-left-radius: 2px;	
+					border-left: 1.5px solid alpha(black, 0.3 * contrast);
+				}
+				.hdtbna div.hdtb-mn-hd:last-of-type::after {
+					content: "";
+					position: absolute;
+					height: 4px;
+					width: 2px;
+					top: calc(100% - 1.5px);
+					bottom: 0;
+					left: calc(100% - 2.9px);
+					right: 0;
+					z-index: -2;
+					border-bottom-right-radius: 2px;	
+					border-right: 1.5px solid alpha(black, 0.3 * contrast);
+				}
 			}
-			.hdtbna .hdtb-mn-hd::before {
-				content: "";
-				position: absolute;
-				width: 101%;
-				top: 0;
-				bottom: 0;
-				left: 0;
-				right: 0;
-				z-index: -1;
-				container();
-				border-radius: 2px;
+			if !$container-transparency {
+				.hdtbna .hdtb-mn-hd::before {
+					content: "";
+					position: absolute;
+					width: 101%;
+					top: 0;
+					bottom: 0;
+					left: 0;
+					right: 0;
+					z-index: -1;
+					container();
+					border-radius: 2px;
+				}
 			}
 		}
 		/* hide in case of transparent header where default flyunder would not*/
