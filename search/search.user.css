@@ -1698,7 +1698,7 @@ $container-transparency = $t != 1;
 					g-more-link.mIKy0c {
 						display: flex;
 					}
-					g-more-link a {
+					g-more-link:not(.iOcSOd) a {
 						background-color: main-bg-container;
 						border-radius: 2px;
 						padding: 2px 3px;
