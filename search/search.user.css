@@ -2203,6 +2203,10 @@ $container-transparency = $t != 1;
 				.tuHUkb {
 					color: main-text;
 				}
+			/* icons */
+				.O0Trmf {
+					fill: darken(main-text, 10%);
+				}
 			/* compass */
 				.KJ3c0b.M5mFPb {
 					filter: colorize(darken(main-link, 18%));
