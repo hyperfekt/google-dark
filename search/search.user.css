@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.40
+@version 0.4.41
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1535,6 +1535,11 @@ $container-transparency = $t != 1;
 				/* item */
 					.cu-container .mnr-c {
 						container();
+					}
+					.cu-container .mnr-c[style*="height:251px"] {
+						height: 255px !important;
+					}
+					.cu-container .mnr-c[style*="height:226px"] {
 						height: 230px !important;
 					}
 					/* thumbnail */
@@ -1549,20 +1554,22 @@ $container-transparency = $t != 1;
 						/* thumbnail */
 							.pla-unit-hovercard-img-container {
 								background-color: white;
-								padding-bottom: 3px !important;
-								border-bottom: 5px solid main-bg-container;
 							}
 							.Gor6zc {
 								background-color: white;
 							}
+						/* info */
+							.ropLT {
+								padding-top: 4px;
+							}
 						/* price */
-						.i3YBTb {
-							color: main-text;
-						}
+							.i3YBTb {
+								color: main-text;
+							}
 						/* shipping cost */
-						.Mxmg3 {
-							color: main-text-off;
-						}
+							.Mxmg3 {
+								color: main-text-off;
+							}
 					/* info */
 						.rwVHAc {
 							padding-top: 4px;
@@ -1580,6 +1587,11 @@ $container-transparency = $t != 1;
 						.FfKHB .KbpByd {
 							color: main-link;
 						}
+					/* 'view more from' card */
+						/* heading */
+							.le3V2d {
+								color: main-text-off;
+							}
 			/* color picker */
 				/* show more */
 					/* text */
@@ -2586,7 +2598,8 @@ $container-transparency = $t != 1;
 	/* paging */
 		if result-containers {
 			#foot #navcnt {
-				container(); //TODO do not create box shadow when empty
+				container();
+				box-shadow: 0 2px 2px 0 alpha(black, 0.5 * contrast);
 				border-radius: 2px;
 				margin: auto !important;
 			}
