@@ -2726,6 +2726,12 @@ $container-transparency = $t != 1;
 						color: main-text;
 					}
 		/* item-specific info */
+			/* travel destination */
+				/* plan a trip */
+					/* icons */
+						.EJ4P6e .Im3qld {
+							color: darken(main-text, 12%);
+						}
 			/* soccer teams */
 				/* roster */
 					/* member */
