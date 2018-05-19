@@ -1718,7 +1718,7 @@ $container-transparency = $t != 1;
 		/* top stories */
 			/* heading */
 				if result-containers {
-					.bkWMgd > div:not(#brs):not(#imagebox_bigimages) > g-section-with-header .e2BEnf {
+					.bkWMgd div:not(#brs):not(#imagebox_bigimages) > g-section-with-header .e2BEnf { //also covers tweet carousel
 						result-container();
 						margin-bottom: 12px;
 					}
