@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.42
+@version 0.4.43
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -317,6 +317,7 @@ $container-transparency = $t != 1;
 				if $container-transparency {
 					background-clip: padding-box;
 					border-top: 1px solid alpha(black, 0.3 * contrast);
+					margin-top: -1px;
 				}
 			}
 			if $container-transparency {
@@ -324,11 +325,13 @@ $container-transparency = $t != 1;
 					border-top-left-radius: 2px;
 					border-bottom-left-radius: 2px;
 					border-left: 1px solid alpha(black, 0.3 * contrast);
+					margin-left: -1px;
 				}
 				div:not(.rshdr) > #top_nav .hdtbna div.hdtb-mn-hd:last-of-type {
 					border-top-right-radius: 2px;
 					border-bottom-right-radius: 2px;
 					border-right: 1px solid alpha(black, 0.3 * contrast);
+					margin-right: -1px;
 				}
 				div:not(.rshdr) > #top_nav .hdtbna .hdtb-mn-hd::before {
 					box-shadow: 0 4px 2px -2px alpha(black, 0.5 * contrast) inset, 0 2px 0 -1px alpha(black, 0.25 * contrast) inset;
