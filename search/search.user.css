@@ -3231,6 +3231,10 @@
 							.Gfzyee:hover:not(.DKlyaf) {
 								button-hover();
 							}
+							/* label */
+								.fSXkBc.NSq2Q {
+									color: main-text;
+								}
 						/* separator */
 							.rYL5lb {
 								border-color: container-separator;	
@@ -3747,6 +3751,10 @@
 					/* values */
 						.kno-fb-d3 .kno-fb-ctx .fl, .kno-fb-d3 .kno-fb-ctx .gl {
 							color: main-text;
+						}
+					/* links */
+						.f5ZHne {
+							color: main-link;
 						}
 	/* product panel */
 		/* product name */
