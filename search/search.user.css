@@ -3815,6 +3815,14 @@
 				.zlWddc {
 					color: main-text-off;
 				}
+			/* view all */
+				.expand-link {
+					color: main-link;
+				}
+			/* separator */
+				.xpdopen .fshYMe {
+					border-bottom-color: main-separator;
+				}
 		/* product details */
 			/* heading */
 				.XWDade {
