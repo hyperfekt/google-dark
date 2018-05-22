@@ -43,6 +43,7 @@
 @var text container-separator "Container Separator" alpha(black, 0.3 * contrast)
 @var text popout-border "Popout Border" alpha(black, 0.3 * contrast)
 @var checkbox result-containers "Result Containers" 0
+@var text accent-color "Accent Color" #4285f4
 
 ==/UserStyle== */
 
@@ -107,12 +108,15 @@
 	container-separator = alpha(black, 0.3 * contrast);
 	// Result Containers
 	result-containers = 0;
+	// Accent Color
+	accent-color = #4285f4;
 */
 
 /* conversions */
 result-containers = !!result-containers;
 $t = alpha(main-bg-container);
 $container-transparency = $t != 1;
+$light-accent = light(darken(accent-color, 20%));
 
 /* mixins */
 	global-definitions() {
@@ -233,6 +237,10 @@ $container-transparency = $t != 1;
 		$bluepart = blue($color) / 255;
 		$alphapart = alpha($color) * $alpha-override;
 		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='colorizer'> <feColorMatrix type='matrix' values='0 0 0 0 " + $redpart + " 0 0 0 0 " + $greenpart + " 0 0 0 0 " + $bluepart + " 0 0 0 " + $alphapart + " 0'/> </filter></svg>#colorizer");
+	}
+
+	hsl-shift($color, $hue, $saturation, $lightness) {
+		lighten(saturate(spin($color, $hue), $saturation), $lightness)
 	}
 
 	calculator-slider-image($color) {
@@ -964,6 +972,16 @@ $container-transparency = $t != 1;
 					.IZo6Ec strong {
 						color: main-text;
 					}
+			/* icon */
+				// TODO
+			/* 'remind me later' */
+				#cnsd {
+					color: accent-color !important;
+				}
+			/* 'review' */
+				.DKlyaf {
+					background-color: accent-color;
+				}
 		/* info box */
 			.vk_c, .vk_cxp {
 				background-color: main-bg;
@@ -1839,7 +1857,27 @@ $container-transparency = $t != 1;
 					.uMdZh:active, .rllt__local-item-selected {
 						background-color: main-bg-em;
 					}
+				/* links */
+					.VByer .UbRuwe, .L48Cpd .BSaJxc {
+						color: accent-color;
+					}
+					/* website */
+						.L48Cpd .XBBs5 {
+							color: accent-color;
+						}
+					/* route */
+						.VByer .TU05kd {
+							filter: colorize(accent-color);
+						}
 			/* more places */
+				/* icon */
+					.Mpn0ac {
+						filter: colorize(accent-color);
+					}
+				/* text */
+					.DLOTif {
+						color: accent-color;
+					}
 				/* border */
 					.zkIadb {
 						border-color: container-separator;
@@ -2618,10 +2656,70 @@ $container-transparency = $t != 1;
 				padding-bottom: 8px;
 			}
 		}
+		/* page numbers & next link*/
+			#foot #navcnt a {
+				color: accent-color;
+			}
 		/* selected */
 			#foot #navcnt .cur {
 				color: main-text;
 			}
+		/* next & previous link */
+			
+			/* next */
+				#foot #navcnt #pnnext {
+					display: flex;	
+				}
+				/* logo */
+					#foot #navcnt #pnnext .csb.ch {
+						width: 53px !important;
+					}
+				/* link */
+					#foot #navcnt #pnnext span[style*="margin-left:53px"] {
+						margin-left: 0px !important;
+						padding-top: 40px;
+						position: relative;
+					}
+					#foot #navcnt #pnnext span[style*="margin-left:53px"]::before {
+						content: "";
+						position: absolute;
+						height: 40px;
+						width: 100%;
+						top: 0;
+						left: 0;
+						background: url(/images/nav_logo242_hr.png) no-repeat;
+						background-position: -149px 0;
+						background-size: 167px;
+						filter: colorize(accent-color);
+					}
+			/* previous */
+				#foot #navcnt #pnprev {
+					display: flex;
+					flex-direction: row-reverse;	
+				}
+				/* logo */
+					#foot #navcnt #pnprev .csb.ch {
+						width: 35px !important;
+						background-position: -18px 0 !important;
+					}
+				/* link */
+					#foot #navcnt #pnprev span[style*="margin-right:35px"] {
+						margin-right: 0px !important;
+						padding-top: 40px;
+						position: relative;
+					}
+					#foot #navcnt #pnprev span[style*="margin-right:35px"]::before {
+						content: "";
+						position: absolute;
+						height: 40px;
+						width: 100%;
+						top: 0;
+						left: 0;
+						background: url(/images/nav_logo242_hr.png) no-repeat;
+						background-position: 39px 0;
+						background-size: 167px;
+						filter: colorize(accent-color);
+					}
 	/* knowledge panels */
 		/* main */
 			.kp-blk {
@@ -3132,7 +3230,7 @@ $container-transparency = $t != 1;
 										}
 									/* more answers */
 										a.M20PPb { // restore original style
-											color: #4285f4;
+											color: accent-color;
 										}
 										/* question */
 											.EDNFOd {
@@ -3166,7 +3264,7 @@ $container-transparency = $t != 1;
 						/* cancel button */
 							a.UOpzSb, a.UOpzSb:hover, a.UOpzSb:visited {
 								background-color: main-bg-em;
-								color: #4285f4; //restore original style
+								color: accent-color; //restore original style
 							}
 				/* send to your phone */
 					/* separators */
@@ -3351,7 +3449,25 @@ $container-transparency = $t != 1;
 				a.duf3 {
 					color: main-text-off;
 				}
+
 				/* edit mode */
+					/* footer */
+						.duf3toe {
+							background: accent-color;
+							if $light-accent {
+								color: black;
+							}
+						}
+						if $light-accent {
+							/* link */
+								#rhs .duf3toe a, #res .duf3toe a, .duf3toe a {
+									color: black;
+								}
+							/* close button */
+								div.duf3tx line {
+									stroke: black;
+								}
+						}
 					/* values */
 						.kno-fb-d3 .kno-fb-ctx .fl, .kno-fb-d3 .kno-fb-ctx .gl {
 							color: main-text;
@@ -3425,967 +3541,995 @@ $container-transparency = $t != 1;
 					color: main-text;
 				}
 	/* other categories */
-	/* News */
-		/* search result */
-			/* footer */
+		/* News */
+			/* search result */
+				/* footer */
+					if result-containers {
+						.normal-footer {
+							margin-top: 12px;
+						}
+						.normal-footer > a {
+							footer-container();
+						}
+					}
+			/* result */
 				if result-containers {
-					.normal-footer {
-						margin-top: 12px;
-					}
-					.normal-footer > a {
-						footer-container();
+					.ts.Pg8zWb.tsUanb {
+						result-container();
 					}
 				}
-		/* result */
-			if result-containers {
-				.ts.Pg8zWb.tsUanb {
-					result-container();
-				}
-			}
-			/* text */
-				.ts > div {
-					color: main-text;
-				}
-			/* source */
-				.e8fRJf {
-					color: main-source;
-				}
-			/* highly cited */
-				.HgetDe {
-					color: main-text-off;
-				}
-			/* other sources image subtext */
-				.QJGxHc {
-					color: main-text-off;
-				}
-		/* create alert */
-			.N6pxec {
-					display: flex;
-				}
-			if result-containers {
-				.N6pxec {
-					result-container();
-				}
-			}
-			/* text */
-				.xJVnIb {
-					margin: auto 0;
-				}
-			/* button */
-				#TEPD0b {
-					margin: auto 0;
-				}
-		/* disclaimer */
-			if result-containers {
-				.nwd {
-					container();
-					padding-top: 10px;
-					padding-bottom: 10px;
-				}
-			}
-	/* Search by Image */
-		/* searched image */
-				/* border */
-					#Z6bGOb .GMzDwb {
-						border-color: main-separator;
-					}
-		/* pages that include matching images */
-			/* heading */
-				.normal-header div.rg-header {
-					color: main-text-off;
-				}
-	/* Images */
-		/* related image search terms (improvement over original) */
-			a.chip span.sq {
-				font-weight: bold !important;
-				text-shadow: 0 0 0.3em black !important;
-			}
-			a.chip.xchip span.sq {
-					text-shadow: none !important;
-			}
-		/* selected */
-			/* main */
-				.irc_c {
-					background-color: main-bg-em;
-				}
-			/* right */
-				#irc_cc {
-					background-color: main-bg-em;
-				}
-			/* most right */
-				#irc_bgl {
-					background-color: main-bg-em;
-				}
-			/* caret */
-				#irc_pc {
-					border-bottom-color: main-bg-em;
-				}
-			/* close button */
-				#irc_cb {
-					filter: colorize(white);
-					opacity: 0.3 * contrast;
-				}
-				#irc_cb:hover {
-					opacity: 0.7 * contrast;
-				}
-			/* paging buttons */
-				.ex2D6e {
-					border-color: main-border;
-					background-color: main-bg;
-				}
-				.ex2D6e:active, .ex2D6e:hover {
-					background-color: main-bg-off;
-					box-shadow: none;
-				}
-			/* site info */
-				/* site title */
-					a.irc_pt {
+				/* text */
+					.ts > div {
 						color: main-text;
 					}
-				/* domain title */
-					.irc_hd a {
-						color: main-text-minor;
+				/* source */
+					.e8fRJf {
+						color: main-source;
 					}
-				/* image title */
-					.irc_asc {
+				/* highly cited */
+					.HgetDe {
 						color: main-text-off;
 					}
-				/* buttons */
-					.irc_but_r a {
-						button();
+				/* other sources image subtext */
+					.QJGxHc {
+						color: main-text-off;
+					}
+			/* create alert */
+				.N6pxec {
+						display: flex;
+					}
+				if result-containers {
+					.N6pxec {
+						result-container();
+					}
+				}
+				/* text */
+					.xJVnIb {
+						margin: auto 0;
+					}
+				/* button */
+					#TEPD0b {
+						margin: auto 0;
+					}
+			/* disclaimer */
+				if result-containers {
+					.nwd {
+						container();
+						padding-top: 10px;
+						padding-bottom: 10px;
+					}
+				}
+		/* Search by Image */
+			/* searched image */
+					/* border */
+						#Z6bGOb .GMzDwb {
+							border-color: main-separator;
+						}
+			/* pages that include matching images */
+				/* heading */
+					.normal-header div.rg-header {
+						color: main-text-off;
+					}
+		/* Images */
+			/* related image search terms (improvement over original) */
+				a.chip span.sq {
+					font-weight: bold !important;
+					text-shadow: 0 0 0.3em black !important;
+				}
+				a.chip.xchip span.sq {
+						text-shadow: none !important;
+				}
+			/* selected */
+				/* main */
+					.irc_c {
+						background-color: main-bg-em;
+					}
+				/* right */
+					#irc_cc {
+						background-color: main-bg-em;
+					}
+				/* most right */
+					#irc_bgl {
+						background-color: main-bg-em;
+					}
+				/* caret */
+					#irc_pc {
+						border-bottom-color: main-bg-em;
+					}
+				/* close button */
+					#irc_cb {
+						filter: colorize(white);
+						opacity: 0.3 * contrast;
+					}
+					#irc_cb:hover {
+						opacity: 0.7 * contrast;
+					}
+				/* paging buttons */
+					.ex2D6e {
+						border-color: main-border;
 						background-color: main-bg;
+					}
+					.ex2D6e:active, .ex2D6e:hover {
+						background-color: main-bg-off;
 						box-shadow: none;
 					}
-					.irc_but_r a:active, .irc_but_r a:hover {
-						button-hover();
-						background-color: main-bg;
-					}
-			/* related images */
-				/* heading */
-					.yJbeqd {
-						color: main-text-off;
-					}
-			/* image preview */
-				/* shadow */
-					.irc_mi {
-						box-shadow: 0 5px 35px alpha(black, .4 * contrast);
-					}
-				/* image dimensions */
-					.irc_idim {
-						color: main-text-off;
-					}
-				/* copyright notice */
-					.irc_bimg .Af3fH {
-						color: main-text-minor;
-					}
-			/* bottom links */
-				.irc_ft a {
-					color: main-text-minor;
-				}
-			/* vertical separator */
-				.irc_land .irc_sep {
-					background-color: main-border;
-					box-shadow: none;
-				}
-			/* horizontal separator */
-				.irc_land .irc_infosep {
-					background-color: main-border;
-					box-shadow: none;
-				}
-		/* footer */
-			/* loading */
-				#isr_cld {
-					font-size: 80px;
-					background: none;
-					gloader();
-				}
-				#isr_cld::before {
-					gloader-before();
-				}
-				#isr_cld::after {
-					gloader-after();
-				}
-				/* parent element */
-					#rg {
-						text-align: center;
-					}
-			/* show more results (date select 'go') */
-			.ksb {
-				background-color: main-bg-em;
-				button()
-			}
-			.ksb:hover {
-				background-color: main-bg-em;
-				button-hover();
-			}
-	/* Shopping */
-		/* location */
-			.CV7Lzb {
-				color: main-text-off;
-			}
-		/* filter */
-			if results-containers {
-				.sh-dr__restricts {
-					container();
-					border-radius: 2px;
-				}
-			}
-			/* headings */
-				.sh-dr__g > div {
-					color: main-text;
-				}
-			/* items */
-				.sh-dr__short * {
-					color: main-text-off;
-					border-color: main-text-off;
-				}
-			/* inputs */
-				.sh-dr__short input {
-					background-color: transparent;
-					color: main-text-em;
-				}
-			/* go */
-				.LfUe1b {
-					background-color: transparent;
-					color: main-link;
-				}
-			/* more */
-				.sh-dr__g div[role="button"] {
-					color: main-link;
-				}
-				/* expanded sellers */
-					/* names */
-						.vjtvke, .vjtvke:link, .vjtvke:visited {
-							color: main-text-off;
-						}
-					/* checkboxes */
-						.nZbkuc {
-							border-color: main-text-off;
-						}
-		/* results */
-			/* header */
-				if result-containers {
-					.sh-dtt__top-tools {
-						container();
-						padding: 10px;
-						margin-top: 5px;
-					}
-				}
-				/* left vertical separator */
-					.sBMW0b {
-						border-color: main-separator;
-					}
-				/* breadcrumbs */
-					.QCKch a:link, .QCKch a:visited {
-						color: main-text-off;
-					}
-				/* view buttons */
-					.qa708e:not(.IYWnmd), .Ytbez:not(.IYWnmd) {
-						filter: colorize(main-text-minor);
-					}
-				/* right vertical separator */
-					.sh-dtt__sort-by {
-						border-color: main-separator;
-					}
-				/* text */
-					.sh-dtt__top-tools {
-						color: main-text-off;
-					}
-				/* sorting */
-					/* dropdown button*/
-						.Yf5aUd {
-							filter: colorize(darken(main-text-off, 40%));
-						}
-						/* menu */
-							.o2ji6GoAIDp__menu {
-								popout();
-							}
-							/* items */
-								.kH0Dhc {
-									color: main-text-off;	
-								}
-								/* hover */
-									.oLMvxj8HcwN__highlighted, .ErsxPb:active {
-										dropdown-hover();
-									}
-								/* selected */
-									.oLMvxj8HcwN__selected {
-										background-image: dropdown-checkmark;
-									}
-				/* shortlist */
-					/* slideout button */
-						#gko-btn-arrow-down {
-							filter: colorize(darken(main-text-off, 35%));
-						}
-						#gko-btn-arrow-up {
-							filter: colorize(darken(main-text-off, 35%));
-						}
-						/* slideout */
-							if result-containers {
-								.gko-s {
-									background-color: main-bg-container;
-								}
-							}
-							#gko-sp.gko-open {
-								border-color: alpha(black, 0.4 * contrast);
-							}
-							/* shortlist icon */
-								.xqknTb {
-									background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAZBAMAAAAh5QiZAAAAElBMVEUAAABo4PtSxfg9q/RBnPJHkPBhnHLTAAAABnRSTlMAM12GzfZ+cougAAAAOklEQVQY02NgQABG01AwMGRgYIawQoMZGFihzNChwwxRVIEyQxQYGFTAzBABkBdFgEwmAYh3hRmwAwDAHDS53fDN1AAAAABJRU5ErkJggg==");
-								}
-							/* shortlist selector */
-								.sh-gb__rs-bt {
-									color: main-text-off;
-								}
-								/* dropdown */
-									.sh-gb__rs-ba {
-										border-color: main-text-off transparent;
-									}
-									/* menu */
-										._-J {
-											popout();
-										}
-										/* items */
-											._-I {
-												color: main-text-off;
-											}
-											/* hover */
-												.sh-gs__rs-sl:hover, ._-I:hover {
-													dropdown-hover();
-												}
-										/* create new */ //TODO
-							/* item carousel */
-								/* paging buttons */
-									.gko-pg {
-										opacity: 1;	
-									}
-									.gko-pg-l {
-										filter: colorize(darken(main-text-off, 20%));
-									}
-									.gko-pg-r {
-										filter: colorize(darken(main-text-off, 20%));
-									}
-								/* empty frames */
-									.gko-itms-e .gko-i {
-										border-color: main-text-off;
-									}
-							/* options */
-								.gko-ctrl, .gko-ctrl:link, .gko-ctrl:visited {
-									color: main-text-off;
-								}
-								/* more arrow */
-									.goog-flat-menu-button-dropdown {
-										border-color: main-text-off transparent;
-									}
-				/* horizontal separator */
-					.sh-sp__line {
-						border-color: main-separator;
-						if result-containers {
-							border-color: transparent;
-						}
-					}
-					/* sponsored hint */
-						#topstuff .sh-sp__pswtr {
-							background-color: main-bg;
-							if result-containers {
-								container();
-								border-radius: 2px;
-								padding: 5px;
-							}
-						}
-						/* text */
-							.sh-sp__pswtr {
-								color: main-text-off;
-							}
-						/* info icon */
-							.cMW8pb {
-								filter: colorize(darken(main-text-off, 40%));
-							}
-						/* popout */
-							.sh-sp__tt {
-								popout();
-							}
-							/* caret */
-								.sh-sp__tt span.sh-sp__tt-arrow-l, .sh-sp__tt span.sh-sp__tt-arrow-r {
-									filter: adapt-to-bg(main-bg);
-								}
-			/* results */
-				/* 'did you mean' correction */
-					if result-containers {
-						#topstuff .sp_cnt, #topstuff .ssp { // TODO: find a way to prevent overlap with sponsored hint
-							margin-left: unset;
-							margin-right: unset;
-							padding-top: 6px;
-							margin-bottom: 0px;
-						}
-					}
-				/* 'showing results for similar searches' */
-					if result-containers {
-						.eq5rcc {
-							container();
-							border-radius: 2px;
-							padding: 12px;
-						}
-					}
-				/* grid */
-					/* card */
-						.sh-dgr__grid-result {
-							container();
-						}
-						/* thumbnail */
-							.sh-dgr__grid-result .sh-dgr__thumbnail {
-								background-color: white;
-							}
-							/* discount */
-								.NA0ooc {
-									background-color: main-bg-em;
-								}
-								/* text */
-									.w3MEU {
-										color: main-text-off;
-									}
-						/* price */
-							.O8U6h {
-								color: main-text;
-							}
-						/* rating */
-							.o0Xcvc {
-								background: unfilled-stars !important;
-							}
-						/* info */
-							.sh-dgr__grid-result, .sh-dgr__grid-result a {
-								color: main-text-off;
-							}
-						/* description */
-							.EI11Pd, .EI11Pd:link, .EI11Pd:visited {
-								color: main-text;
-							}
-				/* list */
-					/* card */
-						.sh-dlr__list-result {
-							container();
-						}
-						/* thumbnail */
-							.JRlvE {
-								background-color: white;
-							}
-						/* info */
-							.na4ICd, .UTJALc {
-								color: main-text-off;
-							}
-						/* review count */
-							.TxCHDf a {
-								color: main-text-off;
-							}
-						/* produce breadcrumbs */
-							.shop__secondary, .shop__secondary:link, .shop__secondary:visited {
-								color: main-text-off;
-							}
-						/* option prices */
-							.dGWXMb {
-								color: main-text-off;
-							}
-				/* filter */
-					/* categories */
-						/* images */
-							.sh-img__image {
-								background-color: white;
-							}
-				/* related searches */
-					if result-container {
-						.sh-sr__shop-result-group:last-of-type:not(.BXIkFb) {
-							container();
-							padding: 12px;
-						}
-					}
-					/* heading */
-						.sh-sr__shop-result-header {
+				/* site info */
+					/* site title */
+						a.irc_pt {
 							color: main-text;
 						}
-				/* bottom separator */
-					.sh-sr__shop-result-group:last-of-type {
-						border-color: main-separator;
-						if result-containers {
-							border-color: transparent;
+					/* domain title */
+						.irc_hd a {
+							color: main-text-minor;
 						}
-					}
-					.sh-sr__shop-result-group {
-						border-color: main-separator;
-						if result-containers {
-							border-color: transparent;
+					/* image title */
+						.irc_asc {
+							color: main-text-off;
 						}
-						
-					}
-		/* disclaimer */
-			if result-containers {
-				.shpd {
-					container();
-					padding-top: 10px;
-					padding-bottom: 10px;
-				}
-			}
-	/* Finance */
-		/* Home (Market Summary) */
-			/* tabs */
-				/* titles */
-					.SVWlSe > div {
-						color: main-text !important;
-					}
-				/* separator & shadow */
-					.FNvPOb {
-						box-shadow: 0 1px 0 main-border;
-						border-color: transparent;
-						if result-containers {
+					/* buttons */
+						.irc_but_r a {
+							button();
+							background-color: main-bg;
 							box-shadow: none;
 						}
-					}
-					.u8H8Fd {
-						box-shadow: 0 1px 0 main-border;
-					}
-					if result-containers {
-						.qLJQNc .u8H8Fd {
-							container();
-							border-bottom-right-radius: 2px;
-							border-bottom-left-radius: 2px;
-							background-color: main-bg-container;
-							width: 632px; //TODO: fit to right column
+						.irc_but_r a:active, .irc_but_r a:hover {
+							button-hover();
+							background-color: main-bg;
 						}
-						.u8H8Fd.iQMQiXJo9Zsw-cUeieUB74ro {
-							border-radius: 2px;
+				/* related images */
+					/* heading */
+						.yJbeqd {
+							color: main-text-off;
 						}
+				/* image preview */
+					/* shadow */
+						.irc_mi {
+							box-shadow: 0 5px 35px alpha(black, .4 * contrast);
+						}
+					/* image dimensions */
+						.irc_idim {
+							color: main-text-off;
+						}
+					/* copyright notice */
+						.irc_bimg .Af3fH {
+							color: main-text-minor;
+						}
+				/* bottom links */
+					.irc_ft a {
+						color: main-text-minor;
 					}
-				/* selected */
-					.KYeOtb[aria-selected="true"] {
-						border-color: main-text !important;
+				/* vertical separator */
+					.irc_land .irc_sep {
+						background-color: main-border;
+						box-shadow: none;
 					}
-			/* modules */
-				if result-containers {
-					div g-section-with-header {
-						margin-bottom: 40px !important;
+				/* horizontal separator */
+					.irc_land .irc_infosep {
+						background-color: main-border;
+						box-shadow: none;
+					}
+			/* footer */
+				/* loading */
+					#isr_cld {
+						font-size: 80px;
+						background: none;
+						gloader();
+					}
+					#isr_cld::before {
+						gloader-before();
+					}
+					#isr_cld::after {
+						gloader-after();
+					}
+					/* parent element */
+						#rg {
+							text-align: center;
+						}
+				/* show more results (date select 'go') */
+				.ksb {
+					background-color: main-bg-em;
+					button()
+				}
+				.ksb:hover {
+					background-color: main-bg-em;
+					button-hover();
+				}
+		/* Shopping */
+			/* location */
+				.CV7Lzb {
+					color: main-text-off;
+				}
+			/* filter */
+				if results-containers {
+					.sh-dr__restricts {
+						container();
+						border-radius: 2px;
 					}
 				}
-				/* titles */
-					.umBFsc .HnYYW {
+				/* headings */
+					.sh-dr__g > div {
 						color: main-text;
-						if result-containers {
+					}
+				/* items */
+					.sh-dr__short * {
+						color: main-text-off;
+						border-color: main-text-off;
+					}
+				/* inputs */
+					.sh-dr__short input {
+						background-color: transparent;
+						color: main-text-em;
+					}
+				/* go */
+					.LfUe1b {
+						background-color: transparent;
+						color: main-link;
+					}
+				/* more */
+					.sh-dr__g div[role="button"] {
+						color: main-link;
+					}
+					/* expanded sellers */
+						/* names */
+							.vjtvke, .vjtvke:link, .vjtvke:visited {
+								color: main-text-off;
+							}
+						/* checkboxes */
+							.nZbkuc {
+								border-color: main-text-off;
+							}
+			/* results */
+				/* header */
+					if result-containers {
+						.sh-dtt__top-tools {
 							container();
-							border-radius: 2px;
-							padding-top: 10px !important;
-							padding-bottom: 10px !important;
-							margin-bottom: 8px;
+							padding: 10px;
+							margin-top: 5px;
 						}
 					}
-				/* containers */
-					.vnLNtd.mnr-c {
-						container();
+					/* show filters */
+						/* icon */
+							.MzDucd {
+								filter: colorize(accent-color);
+							}
+						/* text */
+							.sh-dtt__tgl-ref {
+								color: accent-color;
+							}
+					/* left vertical separator */
+						.sBMW0b {
+							border-color: main-separator;
+						}
+					/* breadcrumbs */
+						.QCKch a:link, .QCKch a:visited {
+							color: main-text-off;
+						}
+					/* view buttons */
+						.qa708e:not(.IYWnmd), .Ytbez:not(.IYWnmd) {
+							filter: colorize(main-text-minor);
+						}
+						.qa708e.IYWnmd, .Ytbez.IYWnmd {
+							filter: colorize(accent-color);
+						}
+					/* right vertical separator */
+						.sh-dtt__sort-by {
+							border-color: main-separator;
+						}
+					/* text */
+						.sh-dtt__top-tools {
+							color: main-text-off;
+						}
+					/* sorting */
+						/* dropdown button*/
+							.Yf5aUd {
+								filter: colorize(main-text-off);
+							}
+							/* menu */
+								.o2ji6GoAIDp__menu {
+									popout();
+								}
+								/* items */
+									.kH0Dhc {
+										color: main-text-off;	
+									}
+									/* hover */
+										.oLMvxj8HcwN__highlighted, .ErsxPb:active {
+											dropdown-hover();
+										}
+									/* selected */
+										.oLMvxj8HcwN__selected {
+											background-image: dropdown-checkmark;
+										}
+					/* shortlist */
+						/* icon */
+							.gko-sp-btn-i {
+								filter: colorize(hsl-shift(accent-color, -2deg, -5%, 1%));
+							}
+						/* slideout button */
+							#gko-btn-arrow-down {
+								filter: colorize(main-text-off);
+							}
+							#gko-btn-arrow-up {
+								filter: colorize(main-text-off);
+							}
+							/* slideout */
+								if result-containers {
+									.gko-s {
+										background-color: main-bg-container;
+									}
+								}
+								#gko-sp.gko-open {
+									border-color: alpha(black, 0.4 * contrast);
+								}
+								/* shortlist icon */
+									.xqknTb {
+										background-image: none;
+									}
+									.xqknTb::before {
+										content: "";
+										position: absolute;
+										height: 100%;
+										width: 100%;
+										top: 0;
+										left: 0;
+										bottom: 0;
+										right: 0;
+										background: no-repeat 27px 50% url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAZBAMAAAAh5QiZAAAAElBMVEUAAABo4PtSxfg9q/RBnPJHkPBhnHLTAAAABnRSTlMAM12GzfZ+cougAAAAOklEQVQY02NgQABG01AwMGRgYIawQoMZGFihzNChwwxRVIEyQxQYGFTAzBABkBdFgEwmAYh3hRmwAwDAHDS53fDN1AAAAABJRU5ErkJggg==");
+										filter: colorize(hsl-shift(accent-color, -3deg, -9%, -2%));
+									}
+								/* shortlist selector */
+									.sh-gb__rs-bt {
+										color: main-text-off;
+									}
+									/* dropdown */
+										.sh-gb__rs-ba {
+											border-color: main-text-off transparent;
+										}
+										/* menu */
+											._-J {
+												popout();
+											}
+											/* items */
+												._-I {
+													color: main-text-off;
+												}
+												/* hover */
+													.sh-gs__rs-sl:hover, ._-I:hover {
+														dropdown-hover();
+													}
+											/* create new */ //TODO
+								/* item carousel */
+									/* paging buttons */
+										.gko-pg {
+											opacity: 1;	
+										}
+										.gko-pg-l {
+											filter: colorize(main-text-off);
+										}
+										.gko-pg-r {
+											filter: colorize(main-text-off);
+										}
+									/* empty frames */
+										.gko-itms-e .gko-i {
+											border-color: main-text-off;
+										}
+								/* options */
+									.gko-ctrl, .gko-ctrl:link, .gko-ctrl:visited {
+										color: main-text-off;
+									}
+									/* more arrow */
+										.goog-flat-menu-button-dropdown {
+											border-color: main-text-off transparent;
+										}
+					/* horizontal separator */
+						.sh-sp__line {
+							border-color: main-separator;
+							if result-containers {
+								border-color: transparent;
+							}
+						}
+						/* sponsored hint */
+							#topstuff .sh-sp__pswtr {
+								background-color: main-bg;
+								if result-containers {
+									container();
+									border-radius: 2px;
+									padding: 5px;
+								}
+							}
+							/* text */
+								.sh-sp__pswtr {
+									color: main-text-off;
+								}
+							/* info icon */
+								.cMW8pb {
+									filter: colorize(main-text-off);
+								}
+							/* popout */
+								.sh-sp__tt {
+									popout();
+								}
+								/* caret */
+									.sh-sp__tt span.sh-sp__tt-arrow-l, .sh-sp__tt span.sh-sp__tt-arrow-r {
+										filter: adapt-to-bg(main-bg);
+									}
+				/* results */
+					/* 'did you mean' correction */
 						if result-containers {
+							#topstuff .sp_cnt, #topstuff .ssp { // TODO: find a way to prevent overlap with sponsored hint
+								margin-left: unset;
+								margin-right: unset;
+								padding-top: 6px;
+								margin-bottom: 0px;
+							}
+						}
+					/* 'showing results for similar searches' */
+						if result-containers {
+							.eq5rcc {
+								container();
+								border-radius: 2px;
+								padding: 12px;
+							}
+						}
+					/* grid */
+						/* card */
+							.sh-dgr__grid-result {
+								container();
+							}
+							/* thumbnail */
+								.sh-dgr__grid-result .sh-dgr__thumbnail {
+									background-color: white;
+								}
+								/* discount */
+									.NA0ooc {
+										background-color: main-bg-em;
+									}
+									/* text */
+										.w3MEU {
+											color: main-text-off;
+										}
+							/* price */
+								.O8U6h {
+									color: main-text;
+								}
+							/* rating */
+								.o0Xcvc {
+									background: unfilled-stars !important;
+								}
+							/* info */
+								.sh-dgr__grid-result, .sh-dgr__grid-result a {
+									color: main-text-off;
+								}
+							/* description */
+								.EI11Pd, .EI11Pd:link, .EI11Pd:visited {
+									color: main-text;
+								}
+					/* list */
+						/* card */
+							.sh-dlr__list-result {
+								container();
+							}
+							/* thumbnail */
+								.JRlvE {
+									background-color: white;
+								}
+							/* info */
+								.na4ICd, .UTJALc {
+									color: main-text-off;
+								}
+							/* review count */
+								.TxCHDf a {
+									color: main-text-off;
+								}
+							/* produce breadcrumbs */
+								.shop__secondary, .shop__secondary:link, .shop__secondary:visited {
+									color: main-text-off;
+								}
+							/* option prices */
+								.dGWXMb {
+									color: main-text-off;
+								}
+					/* filter */
+						/* categories */
+							/* images */
+								.sh-img__image {
+									background-color: white;
+								}
+					/* related searches */
+						if result-container {
+							.sh-sr__shop-result-group:last-of-type:not(.BXIkFb) {
+								container();
+								padding: 12px;
+							}
+						}
+						/* heading */
+							.sh-sr__shop-result-header {
+								color: main-text;
+							}
+					/* bottom separator */
+						.sh-sr__shop-result-group:last-of-type {
+							border-color: main-separator;
+							if result-containers {
+								border-color: transparent;
+							}
+						}
+						.sh-sr__shop-result-group {
+							border-color: main-separator;
+							if result-containers {
+								border-color: transparent;
+							}
+							
+						}
+			/* disclaimer */
+				if result-containers {
+					.shpd {
+						container();
+						padding-top: 10px;
+						padding-bottom: 10px;
+					}
+				}
+		/* Finance */
+			/* Home (Market Summary) */
+				/* tabs */
+					/* titles */
+						.SVWlSe > div {
+							color: main-text !important;
+						}
+					/* separator & shadow */
+						.FNvPOb {
+							box-shadow: 0 1px 0 main-border;
+							border-color: transparent;
+							if result-containers {
+								box-shadow: none;
+							}
+						}
+						.u8H8Fd {
+							box-shadow: 0 1px 0 main-border;
+						}
+						if result-containers {
+							.qLJQNc .u8H8Fd {
+								container();
+								border-bottom-right-radius: 2px;
+								border-bottom-left-radius: 2px;
+								background-color: main-bg-container;
+								width: 632px; //TODO: fit to right column
+							}
+							.u8H8Fd.iQMQiXJo9Zsw-cUeieUB74ro {
+								border-radius: 2px;
+							}
+						}
+					/* selected */
+						.KYeOtb[aria-selected="true"] {
+							border-color: main-text !important;
+						}
+				/* modules */
+					if result-containers {
+						div g-section-with-header {
 							margin-bottom: 40px !important;
 						}
 					}
-				/* cards */
-					if result-containers {
-						.LuVEUc.B03h3d.ptcLIOszQJu__wholepage-card.wp-ms {
-							margin-bottom: 40px;
-						}
-					}
-				/* footer */
-					if result-containers {
-						.AZir3d {
-							margin-top: -40px;
-							margin-bottom: 50px !important;
-						}
-					}
-					/* more about */
-						if result-containers {
-							.sxR6Tb {
-								background-color: main-bg-container;
-								padding: 9px 4px;
+					/* titles */
+						.umBFsc .HnYYW {
+							color: main-text;
+							if result-containers {
+								container();
 								border-radius: 2px;
-								margin-top: 11px;
+								padding-top: 10px !important;
+								padding-bottom: 10px !important;
+								margin-bottom: 8px;
 							}
 						}
-						/* text */
-							.fdHGEc {
-								color: main-text;
-							}
-						/* arrow */
-							.wOdj7e {
-								color: main-text;
-							}
-					/* disclaimer */
-						if result-containers {
-							.aMNoGd {
-								margin-top: 0px;
-							}
-							.zRK1Kd {
-								footer-container();
-							}
-						}
-			/* your stocks */
-				/* text fields */
-					if result-containers {
-						div[data-hveid="CAEQBQ"] {
-							margin-bottom: 40px;
-						}
-					}
-					/* not currently following */
-						.knowledge-finance-wholepage__your-stocks-promo {
+					/* containers */
+						.vnLNtd.mnr-c {
 							container();
-							color: main-text;
-						}
-					/* refresh */
-						.knowledge-finance-wholepage__your-stocks-refresh {
-							container();
-							color: main-text;
-						}
-			/* local markets */
-				/* graph */
-					/* legend */
-						/* stock exchange name */
-							.yrWwmd .knowledge-finance-wholepage-chart__legend-symbol {
-								color: main-link;
+							if result-containers {
+								margin-bottom: 40px !important;
 							}
-		/* View Stock */
-			/* market summary */
-				.K20DDe {
-					background-color: main-bg;
-					if result-containers {
-						background-color: main-bg-container;
-						width: 593px;
-						border-top-left-radius: 2px;
-						border-top-right-radius: 2px;
-					}
-				}
-				/* breadcrumb */
-					.HkooRb:link, .HkooRb:visited, .HkooRb:hover {
-						color: main-text-off;
-					}
-					/* stock name */
-						.PyJv1b {
-							color: main-text;
 						}
-				/* exchange and symbol */
-					.wx62f {
-						color: main-text-off;
-					}
-				/* tabs */
-					.qLJQNc {
-						background-color: main-bg;
+					/* cards */
 						if result-containers {
-							background-color: transparent;
+							.LuVEUc.B03h3d.ptcLIOszQJu__wholepage-card.wp-ms {
+								margin-bottom: 40px;
+							}
 						}
-					}
-				/* separator */
-				.QOsNac {
-					border-color: main-border;
-				}
-			/* Overview */
-				/* stock graph */
-					.JpB59e .mnr-c:not(:empty) {
-						container();
-					}
-					/* current price */
-						.NprOob {
-							color: main-text;
+					/* footer */
+						if result-containers {
+							.AZir3d {
+								margin-top: -40px;
+								margin-bottom: 50px !important;
+							}
 						}
-						/* during update */
-							.fw-price-nc.IsqQVc {
-								color: main-text-off;
-							}
-						/* currency */
-							.knFDje {
-								color: main-text;
-							}
-					/* closing time */
-						.TgMHGc {
-							color: main-text-off;
-						}
-					/* disclaimer link */
-						.CVIh4c {
-							color: main-text-off;
-						}
-					/* after hours */
-						.qFiidc {
-							color: main-text-off;
-						}
-					/* day tabs */
-						.QcYZxe {
-							border-color: main-separator;
-						}
-						/* selected */
-							.fw-ch-sel {
-								color: main-text;
-								box-shadow: 0px 18px 0px -16px alpha(white, 0.8 * contrast);
-							}
-						/* titles */
-							.NDTw3e {
-								color: main-text-off;
-							}
-					/* graph */
-						/* axis labels */
-							.fw-ch-svg {
-								color: main-text-off;
-								fill: main-text-off;
-							}
-							/* y axis label shadows */
-								.msyb7 {
-									fill: main-bg-container;
-									stroke: main-bg-container;
-									if $container-transparency {
-										fill: transparent;
-										stroke: transparent;
-									}
-								}
-						/* highlight line */
-							.knowledge-finance-wholepage-chart__highlight-line {
-								background-image: linear-gradient(alpha(white, 0.38 * contrast) 50%,alpha(white, 0 * contrast) 0%);
-							}
-						/* horizontal lines */
-							.U8Athf line {
-								stroke: main-separator;
-							}
-						/* x axis */
-							.U8Athf line.s2QnJb {
-								stroke: main-separator;
-							}
-							/* ticks */
-								.knowledge-finance-wholepage-chart__xtg line {
-									stroke: main-separator;
-								}
-						/* previous close line */
-							.csb9vb {
-								stroke: main-text-off;
-							}
-						/* previous close rectangle */
-							.CedBdc {
-								background-color: main-bg-container;
-								if $container-transparency {
-									background-color: transparent;
+						/* more about */
+							if result-containers {
+								.sxR6Tb {
+									background-color: main-bg-container;
+									padding: 9px 4px;
+									border-radius: 2px;
+									margin-top: 11px;
 								}
 							}
-						/* lunch break rectangle */
-							.JpyPld rect {
-								fill: main-bg-container;
-							}
-						/* tooltip */
-							.knowledge-finance-wholepage-chart__hover-card {
-								background-color: main-bg;
-								box-shadow: 0 1px 3px 0 alpha(black, 0.4 * contrast), 0 1px 1px 0 alpha(black, 0.3 * contrast);
-							}
-							/* value */
-								.knowledge-finance-wholepage-chart__hover-card-value {
+							/* text */
+								.fdHGEc {
 									color: main-text;
 								}
-							/* time */
-								.knowledge-finance-wholepage-chart__hover-card-time {
-									color: main-text-off;
+							/* arrow */
+								.wOdj7e {
+									color: main-text;
 								}
-					/* info table */
-						/* label */
-							.JgXcPd {
-								color: main-text;
-							}
-						/* value */
-							.iyjjgb {
-								color: main-text-off;
-							}
-				/* related company carousel */
-					/* exchange & symbol */
-						.wfbQZb {
-							color: main-text-off;
-						}
-					/* price */
-						.ojzJac {
-							color: main-text;
-						}
-					/* separator */
-						.tiM5gc {
-							border-color: container-separator;
-						}
-					/* compare button */
-						.JwgTNb {
-							color: main-link;
-						}
-						/* icon */
-							.VDl3z {
-								color: main-link;
-							}
-				/* News */
-					/* heading */
-						.CCb0ac, .CCb0ac a {
-							color: main-text;
-						}
-						if result-containers {
-							.CCb0ac {
-								result-container();
-							}
-						}
-					/* item */
-						/* publisher */
-							.wqg8ad {
-								color: main-text-off;
-							}
-						/* dash */
-							.jpqGxc {
-								color: main-text-off;
-							}
-						/* date */
-							.FGlSad {
-								color: main-text-off;
-							}
-						/* image background (overlayed) */
-							.KNcnob {
-								background-color: main-bg-off !important;
-							}
-				/* Quarterly Financials */
-					/* column heading */
-						.azqZUd {
-							color: main-text;
-						}
-					/* cells */
-					.iF8z4d td {
-						color: main-text;
-						border-color: container-separator;
-					}
-					/* footer */
-						.ZEDj1b {
-							color: main-text;
-						}
-						/* more financials */
-							.LlMFmd {
-								color: main-text;
-							}
-							if result-containers {
-								.k7Ovbf {
-									footer-container();
-								}
-							}
 						/* disclaimer */
-							.kVLSDc {
-								color: main-text-off;
-							}
 							if result-containers {
-								.zArEMe {
+								.aMNoGd {
+									margin-top: 0px;
+								}
+								.zRK1Kd {
 									footer-container();
 								}
 							}
-				/* Related Markets */
-					/* item */
-						.QEsAKd {
-							background-color: transparent;
-						}
-						/* name */
-							.LTTD0 {
-								color: main-link;
-							}
-						/* points */
-							.E4K4Td {
-								color: main-text;
-							}
-						/* additional info */
-							.knowledge-finance-wholepage__additional-info {
-								color: main-text-off;
-							}
-						/* time */
-							.TNcMZc {
-								color: main-text-minor;
-							}
-					/* separators */
-						.e17INc {
-							background-color: main-border;
-						}
-					/* disclaimer */
+				/* your stocks */
+					/* text fields */
 						if result-containers {
-							.zArEMe:not(.zS20ee) {
-								margin-top: -28px;
+							div[data-hveid="CAEQBQ"] {
+								margin-bottom: 40px;
 							}
 						}
-			/* Compare */
-				/* search */
-					.EEmK6c {
-						container();
-					}
-					/* search icon */
-						.aZa4J {
-							color: main-text-off;
-						}
-					/* input */
-						.KIdUu {
-							color: main-text;
-							background-color: transparent;
-						}
-					/* clear button */
-						.doAFBe {
-							color: main-text-off;
-						}
-					/* fanout */
-						.gstl_50.sbdd_a {
-							background-color: main-bg-off;
-							border-color: main-border;
-						}
-						.gstl_50 .sbdd_b {
-							container();
-							border-color: main-border;
-						}
-						.gstl_50 .sbsb_a {
-							background-color: inherit;
-						}
-						/* item separator */
-							.gstl_50 .sbsb_b li .fisb_c {
-								border-color: container-separator;
-							}
-				/* stock graph */
-					/* separator */
-						.BwZUW {
-							border-color: container-separator;
-						}
-					/* legend */
-						/* text */
-							.qfx13b {
+						/* not currently following */
+							.knowledge-finance-wholepage__your-stocks-promo {
+								container();
 								color: main-text;
 							}
-				/* table */
-					.eskLAf {
-						color: main-text;
-					}
-					/* row separators */
-						.yW8WD {
-							border-color: main-separator;
-						}
-					/* column headers */
-						/* symbol & exchange */
-							.WuDkNe {
-								color: main-text-off;
+						/* refresh */
+							.knowledge-finance-wholepage__your-stocks-refresh {
+								container();
+								color: main-text;
 							}
-				/* Related stocks */
-					/* heading */
-						.ChlgHf .HnYYW {
-							color: main-text;
+				/* local markets */
+					/* graph */
+						/* legend */
+							/* stock exchange name */
+								.yrWwmd .knowledge-finance-wholepage-chart__legend-symbol {
+									color: main-link;
+								}
+			/* View Stock */
+				/* market summary */
+					.K20DDe {
+						background-color: main-bg;
+						if result-containers {
+							background-color: main-bg-container;
+							width: 593px;
+							border-top-left-radius: 2px;
+							border-top-right-radius: 2px;
 						}
-						.ChlgHf {
-							border-color: main-border;
-						}
-					/* stock name */
-						.knowledge-finance-wholepage__compare-item {
-							color: main-text;
-						}
-					/* additional info */
-						.knowledge-finance-wholepage__compare-item .knowledge-finance-wholepage__additional-info {
+					}
+					/* breadcrumb */
+						.HkooRb:link, .HkooRb:visited, .HkooRb:hover {
 							color: main-text-off;
 						}
-					/* separators */
-						.BBHxge {
-							border-color: main-border;
+						/* stock name */
+							.PyJv1b {
+								color: main-text;
+							}
+					/* exchange and symbol */
+						.wx62f {
+							color: main-text-off;
 						}
-			/* Financials */
-				/* Quarterly Financials */
-					/* quarter tabs */
-						.vCQYxb {
-							background-color: main-bg-off;
+					/* tabs */
+						.qLJQNc {
+							background-color: main-bg;
 							if result-containers {
 								background-color: transparent;
 							}
 						}
+					/* separator */
+					.QOsNac {
+						border-color: main-border;
+					}
+				/* Overview */
+					/* stock graph */
+						.JpB59e .mnr-c:not(:empty) {
+							container();
+						}
+						/* current price */
+							.NprOob {
+								color: main-text;
+							}
+							/* during update */
+								.fw-price-nc.IsqQVc {
+									color: main-text-off;
+								}
+							/* currency */
+								.knFDje {
+									color: main-text;
+								}
+						/* closing time */
+							.TgMHGc {
+								color: main-text-off;
+							}
+						/* disclaimer link */
+							.CVIh4c {
+								color: main-text-off;
+							}
+						/* after hours */
+							.qFiidc {
+								color: main-text-off;
+							}
+						/* day tabs */
+							.QcYZxe {
+								border-color: main-separator;
+							}
+							/* selected */
+								.fw-ch-sel {
+									color: main-text;
+									box-shadow: 0px 18px 0px -16px alpha(white, 0.8 * contrast);
+								}
+							/* titles */
+								.NDTw3e {
+									color: main-text-off;
+								}
+						/* graph */
+							/* axis labels */
+								.fw-ch-svg {
+									color: main-text-off;
+									fill: main-text-off;
+								}
+								/* y axis label shadows */
+									.msyb7 {
+										fill: main-bg-container;
+										stroke: main-bg-container;
+										if $container-transparency {
+											fill: transparent;
+											stroke: transparent;
+										}
+									}
+							/* highlight line */
+								.knowledge-finance-wholepage-chart__highlight-line {
+									background-image: linear-gradient(alpha(white, 0.38 * contrast) 50%,alpha(white, 0 * contrast) 0%);
+								}
+							/* horizontal lines */
+								.U8Athf line {
+									stroke: main-separator;
+								}
+							/* x axis */
+								.U8Athf line.s2QnJb {
+									stroke: main-separator;
+								}
+								/* ticks */
+									.knowledge-finance-wholepage-chart__xtg line {
+										stroke: main-separator;
+									}
+							/* previous close line */
+								.csb9vb {
+									stroke: main-text-off;
+								}
+							/* previous close rectangle */
+								.CedBdc {
+									background-color: main-bg-container;
+									if $container-transparency {
+										background-color: transparent;
+									}
+								}
+							/* lunch break rectangle */
+								.JpyPld rect {
+									fill: main-bg-container;
+								}
+							/* tooltip */
+								.knowledge-finance-wholepage-chart__hover-card {
+									background-color: main-bg;
+									box-shadow: 0 1px 3px 0 alpha(black, 0.4 * contrast), 0 1px 1px 0 alpha(black, 0.3 * contrast);
+								}
+								/* value */
+									.knowledge-finance-wholepage-chart__hover-card-value {
+										color: main-text;
+									}
+								/* time */
+									.knowledge-finance-wholepage-chart__hover-card-time {
+										color: main-text-off;
+									}
+						/* info table */
+							/* label */
+								.JgXcPd {
+									color: main-text;
+								}
+							/* value */
+								.iyjjgb {
+									color: main-text-off;
+								}
+					/* related company carousel */
+						/* exchange & symbol */
+							.wfbQZb {
+								color: main-text-off;
+							}
+						/* price */
+							.ojzJac {
+								color: main-text;
+							}
+						/* separator */
+							.tiM5gc {
+								border-color: container-separator;
+							}
+						/* compare button */
+							.JwgTNb {
+								color: main-link;
+							}
+							/* icon */
+								.VDl3z {
+									color: main-link;
+								}
+					/* News */
+						/* heading */
+							.CCb0ac, .CCb0ac a {
+								color: main-text;
+							}
+							if result-containers {
+								.CCb0ac {
+									result-container();
+								}
+							}
+						/* item */
+							/* publisher */
+								.wqg8ad {
+									color: main-text-off;
+								}
+							/* dash */
+								.jpqGxc {
+									color: main-text-off;
+								}
+							/* date */
+								.FGlSad {
+									color: main-text-off;
+								}
+							/* image background (overlayed) */
+								.KNcnob {
+									background-color: main-bg-off !important;
+								}
+					/* Quarterly Financials */
+						/* column heading */
+							.azqZUd {
+								color: main-text;
+							}
+						/* cells */
+						.iF8z4d td {
+							color: main-text;
+							border-color: container-separator;
+						}
+						/* footer */
+							.ZEDj1b {
+								color: main-text;
+							}
+							/* more financials */
+								.LlMFmd {
+									color: main-text;
+								}
+								if result-containers {
+									.k7Ovbf {
+										footer-container();
+									}
+								}
+							/* disclaimer */
+								.kVLSDc {
+									color: main-text-off;
+								}
+								if result-containers {
+									.zArEMe {
+										footer-container();
+									}
+								}
+					/* Related Markets */
+						/* item */
+							.QEsAKd {
+								background-color: transparent;
+							}
+							/* name */
+								.LTTD0 {
+									color: main-link;
+								}
+							/* points */
+								.E4K4Td {
+									color: main-text;
+								}
+							/* additional info */
+								.knowledge-finance-wholepage__additional-info {
+									color: main-text-off;
+								}
+							/* time */
+								.TNcMZc {
+									color: main-text-minor;
+								}
+						/* separators */
+							.e17INc {
+								background-color: main-border;
+							}
+						/* disclaimer */
+							if result-containers {
+								.zArEMe:not(.zS20ee) {
+									margin-top: -28px;
+								}
+							}
+				/* Compare */
+					/* search */
+						.EEmK6c {
+							container();
+						}
+						/* search icon */
+							.aZa4J {
+								color: main-text-off;
+							}
+						/* input */
+							.KIdUu {
+								color: main-text;
+								background-color: transparent;
+							}
+						/* clear button */
+							.doAFBe {
+								color: main-text-off;
+							}
+						/* fanout */
+							.gstl_50.sbdd_a {
+								background-color: main-bg-off;
+								border-color: main-border;
+							}
+							.gstl_50 .sbdd_b {
+								container();
+								border-color: main-border;
+							}
+							.gstl_50 .sbsb_a {
+								background-color: inherit;
+							}
+							/* item separator */
+								.gstl_50 .sbsb_b li .fisb_c {
+									border-color: container-separator;
+								}
+					/* stock graph */
+						/* separator */
+							.BwZUW {
+								border-color: container-separator;
+							}
+						/* legend */
+							/* text */
+								.qfx13b {
+									color: main-text;
+								}
+					/* table */
+						.eskLAf {
+							color: main-text;
+						}
+						/* row separators */
+							.yW8WD {
+								border-color: main-separator;
+							}
+						/* column headers */
+							/* symbol & exchange */
+								.WuDkNe {
+									color: main-text-off;
+								}
+					/* Related stocks */
+						/* heading */
+							.ChlgHf .HnYYW {
+								color: main-text;
+							}
+							.ChlgHf {
+								border-color: main-border;
+							}
+						/* stock name */
+							.knowledge-finance-wholepage__compare-item {
+								color: main-text;
+							}
+						/* additional info */
+							.knowledge-finance-wholepage__compare-item .knowledge-finance-wholepage__additional-info {
+								color: main-text-off;
+							}
+						/* separators */
+							.BBHxge {
+								border-color: main-border;
+							}
+				/* Financials */
+					/* Quarterly Financials */
+						/* quarter tabs */
+							.vCQYxb {
+								background-color: main-bg-off;
+								if result-containers {
+									background-color: transparent;
+								}
+							}
 	/* language switch popup */
 		#Rzn5id {
 			box-shadow: 0 2px 4px alpha(black, 1 * contrast) !important;
@@ -4569,6 +4713,10 @@ $container-transparency = $t != 1;
 						.spin {
 							filter: invert(1);
 						}
+			/* search icon */
+				.sbico {
+					color: accent-color;
+				}
 			/* image box */
 				.gscp_a {
 					background-color: main-bg-em;
@@ -4680,6 +4828,15 @@ $container-transparency = $t != 1;
 					.gb_yb, #gb a.gb_yb.gb_yb, .gb_zb a, #gb .gb_zb.gb_zb a {
 						color: main-link;
 					}
+			/* 'my account' button */
+				.gb_Cb .gb_Jb {
+					background: hsl-shift(accent-color, 0deg, 4%, 10%);
+					border-color: hsl-shift(accent-color, 0deg, -5%, -5%);
+				}
+				.gb_Cb .gb_Jb:hover {
+					background: hsl-shift(accent-color, 0deg, -9%, -5%);
+					border-color: hsl-shift(accent-color, -6deg, -30%, -16%);
+				}
 			/* secondary accounts */
 				.gb_Qb {
 					background-color: main-bg-off;
@@ -4734,9 +4891,14 @@ $container-transparency = $t != 1;
 		#hdtb .hdtb-mitem a {
 			color: header-text-off;
 		}
-		/* categories hover */
+		/* hover */
 			.hdtbItm label:hover, .hdtbItm a:hover, #hdtb-more-mn a:hover, #hdtb .hdtb-mitem a:hover, #hdtb-more:hover, #hdtb-tls:hover {
 				color: header-text;
+			}
+		/* selected */
+			#hdtb-msb .hdtb-mitem.hdtb-msel, #hdtb-msb .hdtb-mitem.hdtb-msel-pre {
+				border-color: hsl-shift(accent-color, -3deg, -7%, -10%);
+				color: hsl-shift(accent-color, -3deg, -7%, -10%);
 			}
 	/* settings dropdown */
 		/* main */
@@ -4994,6 +5156,11 @@ $container-transparency = $t != 1;
 						border-radius: 2px;
 					}
 				}
+				/* sign in button */
+					.gb_Fa {
+						border-color: accent-color;
+						background: linear-gradient(to bottom, hsl-shift(accent-color, 1deg, 9%, 2%), hsl-shift(accent-color, 1deg, -9%, -1%))
+					}
 			/* left */
 				if result-containers {
 					#hptl::before {
@@ -5029,6 +5196,11 @@ $container-transparency = $t != 1;
 				#hplogo {
 					filter: drop-shadow(0px 2px 5px black);
 				}
+				/* subtitle */
+					.logo-subtext {
+						color: accent-color;
+						text-shadow: 0px 2px 5px black;
+					}
 			/* search bar */
 				/* input */
 					/* normal */
@@ -5117,6 +5289,12 @@ $container-transparency = $t != 1;
 	body > c-wiz {
 		background-color: main-bg !important;
 	}
+
+	/* loading bar */
+		.eB4Etf {
+			background: accent-color;
+		}
+
 	/* header */
 		/* settings & dismiss*/
 			.iWO9fc .mUbCce svg {
@@ -5174,6 +5352,10 @@ $container-transparency = $t != 1;
 		/* notification source name */
 			.wh73ab {
 				color: main-text;
+			}
+		/* gear */
+			.RFF2xb svg {
+				fill: accent-color;
 			}
 		/* switch */
 			/* knob */
