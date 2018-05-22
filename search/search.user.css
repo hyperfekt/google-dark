@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.1
+@version 0.5.2
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -18,7 +18,7 @@
 @var text main-bg-container "Main Background (Container)" #1C
 @var text main-background "Background" main-bg
 @var text main-text "Main Text" #DD
-@var text main-text-em "Main Text (Lighter)" #E6
+@var text main-text-em "Main Text (Lighter)" #EA
 @var text main-text-off "Main Text (Darker)" #A9
 @var text main-text-minor "Main Text (Darkest)" #74
 @var text main-text-disabled "Main Text (Disabled)" #5F
@@ -519,11 +519,11 @@
 							border-color: main-separator;
 						}
 					/* submit */
-						.ksb {
+						.ksb:not(.flt-flipper) {
 							button();
 							background-color: main-bg-em;
 						}
-						.ksb:hover {
+						.ksb:not(.flt-flipper):hover {
 							button-hover(1);
 							background-color: main-bg-em;
 						}
@@ -637,7 +637,7 @@
 				.bkWMgd .srg .g:not([data-hveid]) > div[data-hveid] {
 					result-container(true);
 				}
-				.bkWMgd .g[data-hveid]:not(#imagebox_bigimages):not(.g-blk):not(.obcontainer) {
+				.bkWMgd .g[data-hveid]:not(#imagebox_bigimages):not(.g-blk):not(.obcontainer):not(#flun) {
 					result-container();
 				}
 				.bkWMgd .g#imagebox_bigimages g-section-with-header {
@@ -1917,9 +1917,17 @@
 						color: main-text-off !important;
 					}
 					if result-containers {
+						.o6Mflc {
+							justify-content: space-between;
+						}
 						.di8g3 {
 							background-color: main-bg-container;
 						}
+						/* timezone hint */
+							.hm23md {
+								flex: initial;
+								footer-container();
+							}
 					}
 			/* user agent */
 				/* heading */
@@ -1983,7 +1991,7 @@
 					g-more-link.mIKy0c {
 						display: flex;
 					}
-					g-more-link:not(.iOcSOd) a {
+					g-more-link:not(.iOcSOd):not(.W0Rk3) a {
 						footer-container();
 						padding-right: 4px;
 					}
@@ -2669,50 +2677,7 @@
 						.ZfDFMe .ZfSAad {
 							background-color: main-bg;	
 						}
-		/* flights */
-			.flt-actionblock {
-				background-color: inherit;
-				border-color: main-border;
-				if result-containers {
-					border-color: transparent;
-					padding-top: 6px;
-					padding-bottom: 6px;
-				}
-			}
-			/* title */
-				.FzXTfd a {
-					background-color: inherit;
-				}
-			/* sponsored hint */
-				.Sjzt1b, a.Sjzt1b {
-					color: main-text-off;
-					background-color: inherit;
-				}
-				/* icon */
-					.SnSTtc {
-						filter: colorize(main-text-off, 4);	
-					}
-			/* list */
-				.ekehXe {
-					border-color: main-separator;
-				}
-				/* flight */
-					.ehx1fe {
-						border-color: main-separator;
-					}
-					/* price */
-						.XDelGb {
-							color: main-text;
-						}
-					/* info */
-						.I9Fhrf {
-							color: main-text;
-						}
-			/* 'more destinations' */
-				/* icon */
-					.wFzbJe img {
-						filter: colorize(main-link);
-					}
+		
 		/* speedtest */
 			/* header */
 				/* heading */
@@ -4020,14 +3985,14 @@
 							text-align: center;
 						}
 				/* show more results (date select 'go') */
-				.ksb {
-					background-color: main-bg-em;
-					button()
-				}
-				.ksb:hover {
-					background-color: main-bg-em;
-					button-hover();
-				}
+					.ksb:not(.flt-flipper) {
+						background-color: main-bg-em;
+						button()
+					}
+					.ksb:not(.flt-flipper):hover {
+						background-color: main-bg-em;
+						button-hover();
+					}
 		/* Shopping */
 			/* location */
 				.CV7Lzb {
@@ -4767,21 +4732,25 @@
 							.doAFBe {
 								color: main-text-off;
 							}
-						/* fanout */
-							.gstl_50.sbdd_a {
+						/* fanout */ // also is flight airport input fanout
+							.gstl_50.sbdd_a, .gstl_51.sbdd_a {
 								background-color: main-bg-off;
 								border-color: main-border;
 							}
-							.gstl_50 .sbdd_b {
+							.gstl_50 .sbdd_b, .gstl_51 .sbdd_b {
 								container();
 								border-color: main-border;
 							}
-							.gstl_50 .sbsb_a {
+							.gstl_50 .sbsb_a, .gstl_51 .sbsb_a {
 								background-color: inherit;
 							}
 							/* item separator */
-								.gstl_50 .sbsb_b li .fisb_c {
+								.gstl_50 .sbsb_b li .fisb_c, .gstl_51 .sbsb_b li .fisb_c {
 									border-color: container-separator;
+								}
+							/* item hover */
+								.gstl_50 .sbsb_d, .gstl_51 .sbsb_d {
+									background-color: main-bg-off;
 								}
 					/* stock graph */
 						/* separator */
