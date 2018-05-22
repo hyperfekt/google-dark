@@ -2047,7 +2047,7 @@ $container-transparency = $t != 1;
 				filter: invert-with-bg(main-bg-container);
 			}
 			/* expand footer */
-				/* arrow */
+				/* arrow */ // TODO find a way to add transparency
 					.vk_ard::after {
 						border-top-color: main-bg-container;
 					}
@@ -2065,7 +2065,7 @@ $container-transparency = $t != 1;
 					}
 				/* show more / show less */
 					.iXqz2e .exp-txt-c {
-						color: main-text-off !important; //important needed ?
+						color: main-text-off;
 					}
 			/* feedback */
 				if result-containers {
@@ -3629,12 +3629,12 @@ $container-transparency = $t != 1;
 				}
 			/* inputs */
 				.sh-dr__short input {
-					background-color: main-bg;
+					background-color: transparent;
 					color: main-text-em;
 				}
 			/* go */
 				.LfUe1b {
-					background-color: main-bg;
+					background-color: transparent;
 					color: main-link;
 				}
 			/* more */
@@ -3708,7 +3708,7 @@ $container-transparency = $t != 1;
 						/* slideout */
 							if result-containers {
 								.gko-s {
-									background-color: main-bg;
+									background-color: main-bg-container;
 								}
 							}
 							#gko-sp.gko-open {
@@ -3741,15 +3741,18 @@ $container-transparency = $t != 1;
 										/* create new */ //TODO
 							/* item carousel */
 								/* paging buttons */
+									.gko-pg {
+										opacity: 1;	
+									}
 									.gko-pg-l {
-										background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAMAAAASJ24jAAAAD1BMVEUAAADr6+vr6+vr6+vr6+vXfbPCAAAABXRSTlMAAVJz/KX2DwgAAAAkSURBVHgBY0AFTExofBZUAWYWJsZhwUcIoPmYcbiKMGGKMAEAHAYBHrtvarEAAAAASUVORK5CYII=");
+										filter: colorize(darken(main-text-off, 20%));
 									}
 									.gko-pg-r {
-										background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAeCAMAAAASJ24jAAAAD1BMVEUAAADr6+vr6+vr6+vr6+vXfbPCAAAABXRSTlMAAVJz/KX2DwgAAAAlSURBVBjTY2BiYkAFTCxoIoxMLMwjQwRdAMhnHNp8JkZUD6HxARwzAR4h72xkAAAAAElFTkSuQmCC");
+										filter: colorize(darken(main-text-off, 20%));
 									}
 								/* empty frames */
 									.gko-itms-e .gko-i {
-										border-color: main-text-minor;
+										border-color: main-text-off;
 									}
 							/* options */
 								.gko-ctrl, .gko-ctrl:link, .gko-ctrl:visited {
