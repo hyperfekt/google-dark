@@ -3322,7 +3322,7 @@
 									}
 								/* time labels */
 									.orgdxf {
-										background-color: main-bg-container;
+										background-color: transparent;
 									}
 									/* text */
 										.orgdxf > div {
