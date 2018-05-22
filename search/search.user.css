@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.44
+@version 0.4.45
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -3682,7 +3682,7 @@ $container-transparency = $t != 1;
 				/* sorting */
 					/* dropdown button*/
 						.Yf5aUd {
-							filter: colorize(darken(main-text-off, 50%));
+							filter: colorize(darken(main-text-off, 40%));
 						}
 						/* menu */
 							.o2ji6GoAIDp__menu {
@@ -3703,7 +3703,10 @@ $container-transparency = $t != 1;
 				/* shortlist */
 					/* slideout button */
 						#gko-btn-arrow-down {
-							filter: colorize(darken(main-text-off, 40%));
+							filter: colorize(darken(main-text-off, 35%));
+						}
+						#gko-btn-arrow-up {
+							filter: colorize(darken(main-text-off, 35%));
 						}
 						/* slideout */
 							if result-containers {
@@ -3758,6 +3761,10 @@ $container-transparency = $t != 1;
 								.gko-ctrl, .gko-ctrl:link, .gko-ctrl:visited {
 									color: main-text-off;
 								}
+								/* more arrow */
+									.goog-flat-menu-button-dropdown {
+										border-color: main-text-off transparent;
+									}
 				/* horizontal separator */
 					.sh-sp__line {
 						border-color: main-separator;
