@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.4.46
+@version 0.4.47
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1763,7 +1763,7 @@ $container-transparency = $t != 1;
 		/* map */
 			/* select opening hours */
 				.rllh__header-container > div {
-					background-color: main-bg-container;
+					background-color: transparent;
 				}
 				/* dropdown */
 					.F7IIOc {
