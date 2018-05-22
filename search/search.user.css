@@ -2374,6 +2374,23 @@
 			#act-card {
 				background-color: main-bg-container;	
 			}
+			/* location tooltip */
+				/* caret */
+					.act-fmp-triangle {
+						background: main-bg;
+					}
+				/* icon */
+					.act-fmp-dialog-icon {
+						filter: colorize(white);
+					}
+				/* location */
+					#act-fmp-unavailable, #act-fmp-location {
+						color: main-text;
+					}
+				/* accuracy */
+					.act-fmp-radius {
+						color: main-text-off;
+					}
 			/* sign-in prompt */
 				.act-fmp-overlay-dialog {
 					background-color: main-bg;
