@@ -4523,9 +4523,12 @@
 							}
 						}
 					/* separator */
-					.QOsNac {
-						border-color: main-border;
-					}
+						.QOsNac {
+							border-color: main-border;
+							if result-containers {
+								border-color: transparent;
+							}
+						}
 				/* Overview */
 					/* stock graph */
 						.JpB59e .mnr-c:not(:empty) {
