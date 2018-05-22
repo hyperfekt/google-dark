@@ -1550,7 +1550,7 @@
 				}
 				/* header */
 					if result-containers {
-						.commercial-unit-desktop-rhs .v7hl4d {
+						.commercial-unit-desktop-rhs div:not(.hZQzR) > .v7hl4d {
 							container(!important);
 							padding: 6px !important;
 						}
