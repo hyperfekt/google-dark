@@ -1500,6 +1500,10 @@
 							border-radius: 2px;
 							padding: 6px;
 						}
+						.commercial-unit-desktop-rhs > .v7hl4d {
+							container();
+							padding: 6px;
+						}
 						.commercial-unit-desktop-top .v7hl4d, .yY236b .v7hl4d {
 							margin-left: 0px;
 						}
