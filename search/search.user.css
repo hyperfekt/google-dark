@@ -1091,8 +1091,9 @@
 	/* tweet carousel */
 		/* heading */
 			if result-containers {
-				.Dwsemf {
-					padding-bottom: 6px;
+				g-section-with-header .DOqJne {
+					result-container();
+					margin-bottom: 8px;
 				}
 			}
 		/* paging buttons */
@@ -1906,7 +1907,7 @@
 		/* top stories */
 			/* heading */
 				if result-containers {
-					.bkWMgd > div:not(#brs):not(#imagebox_bigimages) > g-section-with-header .e2BEnf { //also covers tweet carousel
+					.bkWMgd > div:not(#brs):not(#imagebox_bigimages) > g-section-with-header .e2BEnf {
 						result-container();
 						margin-bottom: 12px;
 					}
