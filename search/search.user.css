@@ -731,6 +731,9 @@
 											button-hover();
 											background-color: main-bg-em;
 										}
+										.fE5Rge:focus {
+											border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+										}
 				/* phone number */
 					.PXnpre {
 						color: main-text-off;
@@ -1712,6 +1715,10 @@
 						.flt-around-date {
 							border-color: main-separator;
 						}
+						/* focused */
+							.flt-around-date.flt-date-focused, .flt-around-date.flt-date-focused:hover {
+								border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+							}
 						/* calendar icon */
 							.ofOfTc {
 								opacity: 1;
@@ -2161,6 +2168,9 @@
 							border-color: main-separator;
 							color: main-text;
 						}
+						.dw-sb-cont .dw-sbi:focus {
+							border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+						}
 				/* button */
 					.dw-sb-cont .dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn {
 						background-color: main-bg-em;
@@ -2228,6 +2238,9 @@
 					}
 					.lr_dct_trns_sel:hover {
 						select-hover();
+					}
+					.lr_dct_trns_sel:focus {
+						border-color: hsl-shift(accent-color, -4deg, -1%, -9%);
 					}
 					.vk_bk {
 						color: main-text !important;
@@ -2939,6 +2952,10 @@
 						/* saved indicator */
 							.QrqOyf {
 								border-color: main-bg;
+								background-color: accent-color;
+								if $light-accent {
+									color: black;
+								}
 							}
 							.common-jslayout-geo-personalplacelist__sheet-item:hover .QrqOyf, .common-jslayout-geo-personalplacelist__sheet-item:focus .QrqOyf {
 								border-color: main-bg-off;
@@ -4223,6 +4240,10 @@
 									.NA0ooc {
 										background-color: main-bg-em;
 									}
+									/* icon */
+										.hwtD7d {
+											filter: colorize(hsl-shift(accent-color, 1deg, 0%, 4%));
+										}
 									/* text */
 										.w3MEU {
 											color: main-text-off;
@@ -5043,7 +5064,10 @@
 				.sben_a {
 					color: main-text-off;
 				}
-
+			/* learn more */
+				#sbsb_f, #sbsb_f:hover {
+					color: hsl-shift(accent-color, 3deg, -29%, -11%);
+				}
 		/* report */
 			a.aciXEb {
 				background-color: alpha(main-bg, 0.9 * contrast) !important;
@@ -5374,9 +5398,15 @@
 					box-shadow: 0 3px 8px 0 alpha(black, 0.4 * contrast), 0 0 0 1px alpha(black, 0.15 * contrast);
 				}
 			/* selected */
+				/* vertical */
 				.klitem.selected {
 					background-color: main-bg;
+					border-color: accent-color;
 				}
+				/* horizontal */
+					.iXdcH {
+						background-color: accent-color;
+					}
 			/* title and factoid */
 				.kltat, .klfact {
 					color: main-text;
