@@ -1685,6 +1685,13 @@
 							.aGXEI {
 								color: main-text-off;
 							}
+						/* follow button */
+							.EOIGZ, .HZ6CKb {
+								color: accent-color;
+							}
+							.OTlbzc, .l4AH4b {
+								color: accent-color;
+							}
 				/* footer */
 					.W0Rk3 {
 						border-color: container-separator;
@@ -4452,6 +4459,22 @@
 							.oj4vO.S1Bjic polygon[fill="#4285F4"] {
 								fill: accent-color;
 							}
+						/* pressed */
+							.Mk9PEf .Aw4Lqb:active {
+								background-color: accent-color;
+								if $light-accent {
+									color: black;
+								}
+							}
+							if $light-accent {
+								/* symbol */
+									.TwQz6c.S1Bjic path {
+										fill: black;
+									}
+									.TwQz6c.S1Bjic polygon[fill="#FFFFFF"] {
+										fill: black;
+									}
+							}
 					/* tabs */
 						.qLJQNc {
 							background-color: main-bg;
@@ -4726,6 +4749,18 @@
 									background-color: main-bg-off;
 								}
 					/* stock graph */
+						/* selected stock */
+							.fzyVHe {
+								border-color: accent-color;
+							}
+							/* symbol */
+								.knowledge-finance-wholepage-chart__entity-button-legend-symbol {
+									color: accent-color;
+								}
+							/* remove button */
+								.tKyEs {
+									color: accent-color;
+								}
 						/* separator */
 							.BwZUW {
 								border-color: container-separator;
