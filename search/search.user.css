@@ -4157,7 +4157,7 @@
 						}
 					/* view buttons */
 						.qa708e:not(.IYWnmd), .Ytbez:not(.IYWnmd) {
-							filter: colorize(main-text-minor);
+							filter: colorize(main-text-off);
 						}
 						.qa708e.IYWnmd, .Ytbez.IYWnmd {
 							filter: colorize(accent-color);
