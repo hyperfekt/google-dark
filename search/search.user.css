@@ -1015,7 +1015,7 @@
 					.HKxe9e, .ooYDfe {
 						background-color: main-bg-container;
 						padding: 4px;
-						padding-bottom: 2.6px;
+						padding-bottom: 0.5px;
 						border-radius: 2px;
 					}
 				}
@@ -1030,6 +1030,11 @@
 					/* 'feedback' icon */
 						.RTZ84b {
 							color: darken(main-text-off, 15%);
+							if result-containers {
+								height: 16px !important;
+								width: 16px !important;
+								line-height: 16px !important;
+							}
 						}
 					if result-containers {
 						/* 'sources include' */
@@ -1037,6 +1042,9 @@
 								display: inline-block;
 								footer-container()
 							}
+						.XEKxtf {
+							padding-bottom: 0px;
+						}
 					}
 		/* scholarly articles */
 			if result-containers {
