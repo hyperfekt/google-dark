@@ -3607,8 +3607,7 @@
 								border-color: main-separator;
 							}
 				/* reviews */
-					/* write a review popup */
-						// TODO
+					// TODO
 			/* people listing */
 				/* images */
 					/* placeholder */
@@ -4027,6 +4026,8 @@
 							button-hover();
 							background-color: main-bg;
 						}
+						/* share popup */
+							// TODO
 				/* related images */
 					/* heading */
 						.yJbeqd {
@@ -5802,6 +5803,7 @@
 				}
 }
 
+/* remove place */
 @-moz-document regexp("https?://www\.google\.(com|([a-z]{2}))(\.[a-z]{2})?/local/place/rap/editattribute.*") {
 	:root {
 		global-definitions();
