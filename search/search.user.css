@@ -1732,6 +1732,70 @@
 							.flt-flipper {
 								filter: colorize(main-text);
 							}
+							/* disabled */
+								.nSKoNe {
+									background-color: transparent;
+								}
+					/* calendar popup */
+						.flt-calendar {
+							background-color: main-bg;
+						}
+						/* month */
+							.gws-travel-calendar__month {
+								background-color: main-bg;
+							}
+							/* weekday */
+								.iKcyWvl1zbr__weekday-labels {
+									color: main-text-off;
+								}
+							/* disabled day */
+								.gws-travel-calendar__day.gws-travel-calendar__disabled {
+									color: main-text-disabled;
+								}
+							/* selected day */
+								if $light-accent {
+									.gws-travel-calendar__selected-day .gws-travel-calendar__day-label {
+										color: black;
+									}
+								}
+								.gws-travel-calendar__selected-day::after {
+									background-color: hsl-shift(accent-color, 4deg, -22%, -9%);
+								}
+								/* selected range */
+									.gws-travel-calendar__selected-range {
+										background-color: lightness(accent-color, 15%);
+									}
+									/* curving */
+										.gws-travel-calendar__selected-range.gws-travel-calendar__first::before, .gws-travel-calendar__selected-range.gws-travel-calendar__last::before {
+											background-color: main-bg;
+										}
+									/* between months */
+										.gws-travel-calendar__last-day-of-month {
+											background: linear-gradient(to left, main-bg, lightness(accent-color, 15%));
+										}
+										.gws-travel-calendar__first-day-of-month {
+											background: linear-gradient(to right, main-bg, lightness(accent-color, 15%));
+										}
+						/* paging buttons */
+							.gws-travel-calendar__flipper {
+								background: main-bg-em;
+								box-shadow: 0 0 4px alpha(black, 0.25), 0 4px 4px alpha(black, 0.5);
+							}
+							/* icon */
+								.gws-travel-calendar__next::before, .gws-travel-calendar__prev::before {
+									filter: colorize(main-text);
+								}
+						/* separator */
+							.flt-around-done-button {
+								border-color: main-separator;
+							}
+						/* 'done' button */
+							.eE8hUfzg9Na__blue {
+								background-color: accent-color;
+								if $light-accent {
+									color: black;
+								}
+							}
 				/* list */
 					/* airlines and duration */
 						.ADuBqd a {
@@ -1757,6 +1821,29 @@
 							.ADuBqd a:hover, .ADuBqd a:hover .cUntLb {
 								color: main-text-em;
 							}
+				/* table */
+					.Iw9Led, .OMTvie, a.OMTvie {
+						color: main-text-off;
+					}
+					/* separator */
+						.flt-s-expanded .zjQOcb, .DWBhsf .hXwVx .zjQOcb {
+							border-color: main-separator;
+						}
+				/* date infer hint */
+					.ohmfgd {
+						color: main-text-off;
+					}
+				/* separator */
+					#flt-s-control {
+						border-color: main-separator;
+					}
+				/* expand arrow */
+					.O40DWe::before {
+						border-color: main-bg-em;
+					}
+					.O40DWe::after {
+						border-color: main-bg-container;
+					}
 			/* flights */
 				/* TODO: reinstate, clashes with ad 
 				.flt-actionblock {
