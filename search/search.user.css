@@ -3271,6 +3271,9 @@
 								color: main-text-off;
 							}
 					/* paging buttons */
+						.Lrszfb {
+							opacity: 1;
+						}
 						/* left */
 							.Lrszfb {
 								filter: colorize(main-text-off);
