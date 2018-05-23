@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.5
+@version 0.5.6
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -233,11 +233,15 @@
 		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='colorizer'> <feColorMatrix color-interpolation-filters='sRGB' type='matrix' values='0 0 0 0 " + $redpart + " 0 0 0 0 " + $greenpart + " 0 0 0 0 " + $bluepart + " 0 0 0 " + $alphapart + " 0'/> </filter></svg>#colorizer");
 	}
 
-	hsl-shift($color, $hue, $saturation, $lightness) {
-		$newhue = hue($color) + $hue;
-		$newsaturation = saturation($color) + $saturation;
-		$newlightness = lightness($color) + $lightness;
-		hsl($newhue, $newsaturation, $newlightness);
+	accent-shifted($hue, $saturation, $lightness) {
+		$default-accent = #4285f4;
+		$saturationfactor = $saturation / saturation($default-accent);
+		$lightnessfactor = $lightness / lightness($default-accent);
+		// don't even ask about the 1%. percents in Stylus aren't actually percent but merely suffixed integers
+		$saturationshifted = saturation(accent-color) * (1% + $saturationfactor);
+		$lightnessshifted = lightness(accent-color) * (1% + $lightnessfactor);
+		$hueshifted = hue(accent-color) + $hue;
+		hsl($hueshifted, $saturationshifted, $lightnessshifted);
 	}
 
 	escape-color($color) {
@@ -246,10 +250,6 @@
 
 	calculator-slider-image($color) {
 		url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg viewBox='0 0 26 14' xmlns='http://www.w3.org/2000/svg'%3E %3Cg id='grid' fill='" + escape-color($color) + "'%3E %3Cuse href='%23row'/%3E %3Cuse href='%23row' transform='translate(0,4)'/%3E %3Cuse href='%23row' transform='translate(0,8)'/%3E %3Cuse href='%23row' transform='translate(0,12)'/%3E %3C/g%3E %3Cdefs%3E %3Crect id='dot' width='2' height='2'/%3E %3Cg id='row'%3E %3Cuse href='%23dot'/%3E %3Cuse href='%23dot' x='4'/%3E %3Cuse href='%23dot' x='8'/%3E %3Cuse href='%23dot' x='12'/%3E %3Cuse href='%23dot' x='16'/%3E %3Cuse href='%23dot' x='20'/%3E %3Cuse href='%23dot' x='24'/%3E %3C/g%3E %3C/defs%3E %3C/svg%3E"); //using https://codepen.io/jakob-e/pen/doMoML
-	}
-
-	hsl-shift($color, $hue, $saturation, $lightness) {
-		lighten(saturate(spin($color, $hue), $saturation), $lightness)
 	}
 
 	luminance($color) {
@@ -732,7 +732,7 @@
 											background-color: main-bg-em;
 										}
 										.fE5Rge:focus {
-											border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+											border-color: accent-shifted(0deg, 10%, 4%);
 										}
 				/* phone number */
 					.PXnpre {
@@ -1198,7 +1198,7 @@
 				}
 				/* selected */
 					.cwtlbh.cwtlbs, .cwtlbs {
-						border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+						border-color: accent-shifted(0deg, 10%, 4%);
 					}
 				/* text */
 					.cwtltbl {
@@ -1263,7 +1263,7 @@
 							.cwbb-tpl {
 								calculator-button();
 								background-image: linear-gradient(to bottom, alpha(white, 0.02 * contrast), alpha(white, 0.01 * contrast));
-								background-color: hsl-shift(accent-color, 0deg, -14%, -15%);
+								background-color: accent-shifted(0deg, -14%, -15%);
 								color: #e0e0e0;
 								if $light-accent {
 									color: black;
@@ -1273,7 +1273,7 @@
 								.cwbd:hover .cwbb-tpl {
 									calculator-button-hover();
 									background-image: linear-gradient(to bottom, alpha(white, 0.15 * contrast), alpha(white, 0.12 * contrast));
-									background-color: hsl-shift(accent-color, 0deg, -14%, -15%);
+									background-color: accent-shifted(0deg, -14%, -15%);
 									color: #e0e0e0;
 									if $light-accent {
 										color: black;
@@ -1421,7 +1421,7 @@
 						select-hover();
 					}
 					.LNn04b:focus {
-						border-color: hsl-shift(accent-color, -4deg, -1%, -9%);
+						border-color: accent-shifted(-4deg, -1%, -9%);
 					}
 				/* equality sign */
 					.jCkZnd {
@@ -1656,7 +1656,7 @@
 					}
 					/* focused */
 						.lDtMlf .flt-input:focus {
-							border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+							border-color: accent-shifted(0deg, 10%, 4%);
 						}
 					/* icon */
 						.Kibyc {
@@ -1721,7 +1721,7 @@
 						}
 						/* focused */
 							.flt-around-date.flt-date-focused, .flt-around-date.flt-date-focused:hover {
-								border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+								border-color: accent-shifted(0deg, 10%, 4%);
 							}
 						/* calendar icon */
 							.ofOfTc {
@@ -1759,7 +1759,7 @@
 									}
 								}
 								.gws-travel-calendar__selected-day::after {
-									background-color: hsl-shift(accent-color, 4deg, -22%, -9%);
+									background-color: accent-shifted(4deg, -22%, -9%);
 								}
 								/* selected range */
 									.gws-travel-calendar__selected-range {
@@ -1896,10 +1896,10 @@
 					}
 					/* activated */
 						g-paginated-tabs div[aria-selected="true"] div {
-							color: hsl-shift(accent-color, 4deg, 22%, -9%) !important;
+							color: accent-shifted(4deg, 22%, -9%) !important;
 						}
 						g-paginated-tabs div[aria-selected="true"] {
-							border-bottom-color: hsl-shift(accent-color, 4deg, 22%, -9%) !important;
+							border-bottom-color: accent-shifted(4deg, 22%, -9%) !important;
 						}
 					/* separators */
 						/* horizontal */
@@ -2260,7 +2260,7 @@
 							color: main-text;
 						}
 						.dw-sb-cont .dw-sbi:focus {
-							border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+							border-color: accent-shifted(0deg, 10%, 4%);
 						}
 				/* button */
 					.dw-sb-cont .dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn.dw-sb-btn {
@@ -2331,7 +2331,7 @@
 						select-hover();
 					}
 					.lr_dct_trns_sel:focus {
-						border-color: hsl-shift(accent-color, -4deg, -1%, -9%);
+						border-color: accent-shifted(-4deg, -1%, -9%);
 					}
 					.vk_bk {
 						color: main-text !important;
@@ -2450,7 +2450,7 @@
 				}
 			/* device */
 				#act-dp:focus {
-					outline-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+					outline-color: accent-shifted(0deg, 10%, 4%);
 				}
 			/* device name */
 				.goog-menu-button {
@@ -2484,12 +2484,12 @@
 							}
 					/* other devices*/
 						.act-fmp-your-other-devices a, .act-fmp-your-other-devices a:visited, .act-fmp-your-other-devices a:hover, .act-fmp-your-other-devices a:link {
-							color: hsl-shift(accent-color, 1deg, 2%, -1%);
+							color: accent-shifted(1deg, 2%, -1%);
 						}
 			/* actions */
 				/* text */
 					.act-fmp-action-button, .act-fmp-action-button:visited, .act-fmp-action-button:hover, .act-fmp-action-button:link {
-						color: hsl-shift(accent-color, 1deg, 2%, -1%);
+						color: accent-shifted(1deg, 2%, -1%);
 					}
 					/* disabled */
 						#act-card .act-lnk.act-conf-disabled {
@@ -2497,7 +2497,7 @@
 						}
 				/* icon */
 					.act-img-def {
-						filter: colorize(hsl-shift(accent-color, 0deg, -1%, -1%))
+						filter: colorize(accent-shifted(0deg, -1%, -1%))
 					}
 					/* disabled */
 						.act-img-disabled {
@@ -2506,7 +2506,7 @@
 						}
 			/* 'trying to help a friend' */
 				.act-fmp-help-a-friend-wrapper a, .act-fmp-help-a-friend-wrapper a:visited, .act-fmp-help-a-friend-wrapper a:hover { //restore original style
-					color: hsl-shift(accent-color, 1deg, 2%, -1%);
+					color: accent-shifted(1deg, 2%, -1%);
 				}
 			/* footer */
 				/* feedback */
@@ -2876,7 +2876,7 @@
 						border-color: main-separator;
 					}
 					.GItzWb {
-						background-color: hsl-shift(accent-color, 11deg, 8%, 5%);
+						background-color: accent-shifted(11deg, 8%, 5%);
 					}
 				/* footer */
 					/* separator */
@@ -3691,7 +3691,7 @@
 							}
 							/* focus */
 								.xqPsfb {
-									background-color: hsl-shift(accent-color, 11deg, 9%, 5%);
+									background-color: accent-shifted(11deg, 9%, 5%);
 								}
 						/* popup */ //LOST AND FOUND
 							.LXRtOe {
@@ -4195,7 +4195,7 @@
 					/* shortlist */
 						/* icon */
 							.gko-sp-btn-i {
-								filter: colorize(hsl-shift(accent-color, -2deg, -5%, 1%));
+								filter: colorize(accent-shifted(-2deg, -5%, 1%));
 							}
 						/* slideout button */
 							#gko-btn-arrow-down {
@@ -4227,7 +4227,7 @@
 										bottom: 0;
 										right: 0;
 										background: no-repeat 27px 50% url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAAZBAMAAAAh5QiZAAAAElBMVEUAAABo4PtSxfg9q/RBnPJHkPBhnHLTAAAABnRSTlMAM12GzfZ+cougAAAAOklEQVQY02NgQABG01AwMGRgYIawQoMZGFihzNChwwxRVIEyQxQYGFTAzBABkBdFgEwmAYh3hRmwAwDAHDS53fDN1AAAAABJRU5ErkJggg==");
-										filter: colorize(hsl-shift(accent-color, -3deg, -9%, -2%));
+										filter: colorize(accent-shifted(-3deg, -9%, -2%));
 									}
 								/* shortlist selector */
 									.sh-gb__rs-bt {
@@ -4338,7 +4338,7 @@
 									}
 									/* icon */
 										.hwtD7d {
-											filter: colorize(hsl-shift(accent-color, 1deg, 0%, 4%));
+											filter: colorize(accent-shifted(1deg, 0%, 4%));
 										}
 									/* text */
 										.w3MEU {
@@ -5097,7 +5097,7 @@
 									border-color: main-separator;
 								}
 								.ktf:focus {
-									border-color: hsl-shift(accent-color, 0deg, 10%, 4%);
+									border-color: accent-shifted(0deg, 10%, 4%);
 								}
 							/* button (copy to avoid overwrite) */
 								.kpbb {
@@ -5105,14 +5105,14 @@
 									if $light-accent {
 										color: black !important;
 									}
-									background-color: hsl-shift(accent-color, 0deg, 10%, 4%) !important;
-									background-image: linear-gradient(to bottom, hsl-shift(accent-color, 0deg, 10%, 4%), hsl-shift(accent-color, 0deg, -7%, -1%)) !important;
-									border: 1px solid hsl-shift(accent-color, 0deg, -5%, -5%) !important;
+									background-color: accent-shifted(0deg, 10%, 4%) !important;
+									background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -7%, -1%)) !important;
+									border: 1px solid accent-shifted(0deg, -5%, -5%) !important;
 								}
 								.kpbb:hover {
-									background-color: hsl-shift(accent-color, 0deg, -9%, -5%) !important;
-									background-image: linear-gradient(to bottom, hsl-shift(accent-color, 0deg, 10%, 4%), hsl-shift(accent-color, 0deg, -9%, -5%)) !important;
-									border: 1px solid hsl-shift(accent-color, 4deg, -30%, -16%) !important;
+									background-color: accent-shifted(0deg, -9%, -5%) !important;
+									background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -9%, -5%)) !important;
+									border: 1px solid accent-shifted(4deg, -30%, -16%) !important;
 								}
 						/* upload */
 							/* selected file */
@@ -5166,7 +5166,7 @@
 				}
 			/* learn more */
 				#sbsb_f, #sbsb_f:hover {
-					color: hsl-shift(accent-color, 3deg, -29%, -11%);
+					color: accent-shifted(3deg, -29%, -11%);
 				}
 		/* report */
 			a.aciXEb {
@@ -5249,12 +5249,12 @@
 					}
 			/* 'my account' button */
 				.gb_Cb .gb_Jb {
-					background: hsl-shift(accent-color, 0deg, 4%, 10%);
-					border-color: hsl-shift(accent-color, 0deg, -5%, -5%);
+					background: accent-shifted(0deg, 4%, 10%);
+					border-color: accent-shifted(0deg, -5%, -5%);
 				}
 				.gb_Cb .gb_Jb:hover {
-					background: hsl-shift(accent-color, 0deg, -9%, -5%);
-					border-color: hsl-shift(accent-color, -6deg, -30%, -16%);
+					background: accent-shifted(0deg, -9%, -5%);
+					border-color: accent-shifted(-6deg, -30%, -16%);
 				}
 				if $light-accent {
 					/* label */
@@ -5323,8 +5323,8 @@
 			}
 		/* selected */
 			#hdtb-msb .hdtb-mitem.hdtb-msel, #hdtb-msb .hdtb-mitem.hdtb-msel-pre {
-				border-color: hsl-shift(accent-color, -3deg, -7%, -10%);
-				color: hsl-shift(accent-color, -3deg, -7%, -10%);
+				border-color: accent-shifted(-3deg, -7%, -10%);
+				color: accent-shifted(-3deg, -7%, -10%);
 			}
 	/* settings dropdown */
 		/* main */
@@ -5591,7 +5591,7 @@
 				/* sign in button */
 					.gb_Fa {
 						border-color: accent-color;
-						background: linear-gradient(to bottom, hsl-shift(accent-color, 1deg, 9%, 2%), hsl-shift(accent-color, 1deg, -9%, -1%))
+						background: linear-gradient(to bottom, accent-shifted(1deg, 9%, 2%), accent-shifted(1deg, -9%, -1%))
 					}
 					if $light-accent {
 						/* label */
