@@ -225,16 +225,12 @@
 		"" + $string + "" //WTF Stylus?
 	}
 
-	filter-normalize($value) {
-		534327.3 + (0.004915795 - 534327.3) / (1 + (($value / 255) / 358.683) ** 2.243212)
-	}
-
 	colorize($color, $alpha-multiply = 1) {
-		$redpart = filter-normalize(red($color))
-		$greenpart = filter-normalize(green($color));
-		$bluepart = filter-normalize(blue($color));
+		$redpart = red($color)/255;
+		$greenpart = green($color)/255;
+		$bluepart = blue($color)/255;
 		$alphapart = alpha($color) * $alpha-multiply;
-		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='colorizer'> <feColorMatrix type='matrix' values='0 0 0 0 " + $redpart + " 0 0 0 0 " + $greenpart + " 0 0 0 0 " + $bluepart + " 0 0 0 " + $alphapart + " 0'/> </filter></svg>#colorizer");
+		url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='colorizer'> <feColorMatrix color-interpolation-filters='sRGB' type='matrix' values='0 0 0 0 " + $redpart + " 0 0 0 0 " + $greenpart + " 0 0 0 0 " + $bluepart + " 0 0 0 " + $alphapart + " 0'/> </filter></svg>#colorizer");
 	}
 
 	hsl-shift($color, $hue, $saturation, $lightness) {
