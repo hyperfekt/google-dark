@@ -3846,6 +3846,10 @@
 						.RZvace:hover {
 							background-color: main-bg-off;
 						}
+					/* selected & hover */
+						.RZvace.rqTH4e:hover {
+							background-color: main-bg-off;
+						}
 			/* separator */
 				.gZDese {
 					border-color: main-separator;
