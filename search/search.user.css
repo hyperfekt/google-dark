@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.6
+@version 0.5.7
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1763,7 +1763,7 @@
 								}
 								/* selected range */
 									.gws-travel-calendar__selected-range {
-										background-color: lightness(accent-color, 15%);
+										background-color: accent-shifted(0deg, 0%, -40%);
 									}
 									/* curving */
 										.gws-travel-calendar__selected-range.gws-travel-calendar__first::before, .gws-travel-calendar__selected-range.gws-travel-calendar__last::before {
