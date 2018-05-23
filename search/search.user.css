@@ -234,7 +234,10 @@
 	}
 
 	hsl-shift($color, $hue, $saturation, $lightness) {
-		lighten(saturate(spin($color, $hue), $saturation), $lightness)
+		$newhue = hue($color) + $hue;
+		$newsaturation = saturation($color) + $saturation;
+		$newlightness = lightness($color) + $lightness;
+		hsl($newhue, $newsaturation, $newlightness);
 	}
 
 	escape-color($color) {
