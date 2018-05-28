@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.10
+@version 0.5.11
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1632,6 +1632,10 @@
 						.pla-unit-img-container {
 							background-color: white;
 						}
+						/* single column */
+							.Ew1SFd td:not(.I85Quc) {
+								background-color: white;
+							}
 					/* hover */
 						.pla-hovercard-container {
 							background-color: main-bg-container;
