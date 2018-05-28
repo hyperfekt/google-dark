@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.9
+@version 0.5.10
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1523,32 +1523,49 @@
 								margin-top: 6px;
 							}
 
-							.commercial-unit-desktop-rhs .Qq9jLd::before {
+							.commercial-unit-desktop-rhs .v7hl4d {
+								padding: $vertical-padding $horizontal-padding;
+								padding-left: $horizontal-padding + 2px;
+								padding-right: 0px;
+							}
+
+							.XuUMse::before, .Ew1SFd::before {
 								position: absolute;
 								height: 21.6px + $vertical-padding * 2;
-								left: 1px;
-								top: 0px;
+								top: 6px;
 								bottom: 0;
-								right: -17px + $horizontal-padding;
 								content: "";
 								z-index: -1;
 								container();
 								border-radius: 2px;
 							}
 
-							.commercial-unit-desktop-rhs .v7hl4d {
-								padding: $vertical-padding $horizontal-padding;
-								padding-left: $horizontal-padding + 2px;
-								padding-right: 0px;
-							}
+							/* multicolumn */
+								.XuUMse::before {
+									left: 17px;
+								}
+								/* wide */
+									.rhstc5 .XuUMse::before {
+										right: 48px + $horizontal-padding;
+									}
+								/* medium */
+									.rhstc4 .XuUMse::before {
+										right: 88px + $horizontal-padding;
+									}
+								/* narrow */
+									.rhstc3 .XuUMse::before {
+										right: 6px + $horizontal-padding;
+									}
+							/* single column */
+								.Ew1SFd::before {
+										left: 16px;
+										right: 16px;
+									}
+								// TODO: find way to make sponsored hint respect padding
 							/* heading */
 								.jOmXmb {
 									margin-top: 6px;
 									padding: $vertical-padding $horizontal-padding;
-								}
-							/* sponsored hint */
-								.commercial-unit-desktop-rhs .kxWPvc {
-									margin-right: $horizontal-padding * 2 - 20px;
 								}
 					}
 					/* sponsored hint */
@@ -1583,13 +1600,20 @@
 									}
 				/* carousel */
 					if result-containers {
-						.commercial-unit-desktop-top .mR2gOd, .commercial-unit-desktop-top > div > .bC8sde {
-							margin-left: -4px;
-							margin-right: 4px;
-						}
-						.XuUMse {
-							margin-top: 6px;
-						}
+						/* main widget */
+							.commercial-unit-desktop-top .mR2gOd, .commercial-unit-desktop-top > div > .bC8sde {
+								margin-left: -4px;
+								margin-right: 4px;
+							}
+						/* side widget */
+							/* multicolumn */
+								.XuUMse {
+									margin-top: 6px;
+								}
+							/* singlecolumn */
+								.Ew1SFd {
+									margin-top: 6px;
+								}
 					}
 				/* item */
 					.cu-container .mnr-c {
