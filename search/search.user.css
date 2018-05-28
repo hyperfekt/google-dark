@@ -1586,17 +1586,30 @@
 									color: main-text-off;
 								}
 							/* 'why these ads' popup */
-								/* heading */
-									.Xio6ef {
-										color: main-text;
+								/* logged in */
+									/* heading */
+										.Xio6ef {
+											color: main-text;
+										}
+									/* separators */
+										.lTPkGc {
+											border-color: main-separator;
+										}
+									/* sliders */
+										.UsN2ld:not(.bjIqib) .a9oE3e:checked ~ .ITNV1, .UsN2ld:not(.bjIqib) .a9oE3e:checked ~ .rBrJud {
+											background-color: accent-color;
+										}
+								/* logged out */
+									.Ak3kIe {
+										border-color: accent-shifted(0deg, -5%, -5%);
+										background-color: accent-shifted(0deg, 10%, 4%);
+										if $light-accent {
+											color: black;
+										}
 									}
-								/* separators */
-									.lTPkGc {
-										border-color: main-separator;
-									}
-								/* sliders */
-									.UsN2ld:not(.bjIqib) .a9oE3e:checked ~ .ITNV1, .UsN2ld:not(.bjIqib) .a9oE3e:checked ~ .rBrJud {
-										background-color: accent-color;
+									.Ak3kIe:hover {
+										border-color: accent-shifted(4deg, -30%, -16%);
+										background-color: accent-shifted(0deg, -9%, -5%);
 									}
 				/* carousel */
 					if result-containers {
