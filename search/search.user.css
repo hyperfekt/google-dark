@@ -3077,6 +3077,12 @@
 							.common-jslayout-geo-personalplacelist__sheet-item:hover .QrqOyf, .common-jslayout-geo-personalplacelist__sheet-item:focus .QrqOyf {
 								border-color: main-bg-off;
 							}
+				/* feedback slideout */
+					/* button */
+						/* label */
+							.U8shWc.hpZDWd.fSXIc {
+								color: accent-shifted(1deg, 1%, 20%) !important;
+							}
 		/* subtitle */
 			.sthby {
 				color: main-text-off;
