@@ -3380,6 +3380,10 @@
 							color: main-text;
 							border-color: main-separator;
 						}
+						/* icon & time */
+							.K77Ejd {
+								color: accent-color;
+							}
 						/* highlight line */
 							.upZjbd {
 								border-color: alpha(main-separator, alpha(main-separator) * 2.2);
@@ -3389,7 +3393,21 @@
 							background-image: linear-gradient(main-separator 1px, rgba(255,255,255,0) 0);
 							border-top-color: transparent;
 						}
-						/* Y axis */
+						/* bars */
+							.yPHXsc .lubh-bar {
+								background-color: accent-shifted(0deg, 0%, 12%);
+								border-color: accent-shifted(0deg, 0%, 12%);
+							}
+							/* selected */
+								.yPHXsc .lubh-sel {
+									background-color: accent-color;
+									border-color: accent-color;
+								}
+							/* hover */
+								.lubh-bar:hover {
+									background-color: accent-shifted(1deg, 0%, 6%);
+								}
+						/* X axis */
 							/* ticks */
 								/* short ticks */
 									/* left part */
