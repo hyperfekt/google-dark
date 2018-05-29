@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.12
+@version 0.5.13
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -3717,6 +3717,137 @@
 							}
 				/* reviews */
 					// TODO
+			/* hotels */
+				/* book a room button */
+					.vRH59e {
+						background-color: accent-color;
+						if $light-accent {
+							color: black;
+						}
+					}
+					/* popup */
+						// TODO
+				/* check availability */
+					/* date selects */
+						.date-picker-button {
+							border-color: main-separator;
+						}
+						/* labels */
+							.double-date-picker-container {
+								color: main-text;
+							}
+						/* icon */
+							span.double-date-picker-cal {
+								filter: colorize(main-text);
+							}
+						/* text */
+							.date-picker-button span.lxhdrtxt {
+								color: main-text;
+							}
+						/* hover */
+							.date-picker-button:hover {
+								border-color: main-text-minor;
+							}
+						/* focus */
+							.date-picker-button:focus {
+								border-color: accent-shifted(0deg, 10%, 4%);
+							}
+						/* fanout */
+							.hudp-container {
+								background-color: main-bg;
+								border-color: main-border;
+							}
+							/* month */
+								.hudp thead {
+									color: main-text;
+								}
+							/* weekdays & days */
+								.hudp-container {
+									color: main-text-off;
+								}
+								/* hover */
+									td.hudp-date:hover {
+										background-color: main-bg-em;
+									}
+								/* disabled */
+									.hudp-disabled, .hudp-disabled:hover {
+										background-color: transparent;
+										color: main-text-disabled;
+									}
+					/* loading bar */
+						.hfVKBe {
+							background-color: main-bg-em;
+						}
+						.KfOHae {
+							background-color: accent-color;
+						}
+					/* rate list */
+						/* item */
+							/* separator above */
+								.B4MzEf, .dndped {
+									border-color: container-separator;
+								}
+							/* info */
+								.M6Do1e {
+									color: main-text-off;
+								}
+							/* price */
+								.r9dLMc {
+									color: main-text;
+								}
+							/* chevron */
+								.JRuwAd {
+									filter: colorize(main-text-off);
+								}
+							/* hover new tab marker */
+								a.Ba8ysd .luhcb__click-to-open-new-tab-icon {
+									background-color: main-bg-em;
+									color: main-text-off;
+								}
+						/* separator below list */
+							.El9GEe {
+								border-color: container-separator;
+							}
+						/* view more rates */
+							.oifQgc {
+								color: main-link;
+								border-top: container-separator;
+							}
+							/* price */
+								/* from */
+									.buO3Ic {
+										color: main-text-off;
+									}
+								.diLpPb {
+									color: main-text;
+								}
+						/* bottom separator */
+							.mXUIAd {
+								border-color: container-separator;
+							}
+					/* hotel details */
+						/* bottom separator */
+							#rUnked {
+								border-color: container-separator;
+							}
+						/* amenities */
+							/* icons */
+								.z3Trqc {
+									filter: colorize(white);
+								}
+					/* help improve accuracy */
+						.awX4Bc {
+							border-color: container-separator;
+						}
+						/* provide feedback */
+							/* icon */
+								.ZLTVYb {
+									filter: colorize(main-text-off);
+								}
+							/* text */
+								.YoCEr {
+									color: main-text-off;
+								}
 			/* people listing */
 				/* images */
 					/* placeholder */
