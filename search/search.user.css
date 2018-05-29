@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.14
+@version 0.5.15
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2224,6 +2224,171 @@
 					.cMjHbjVt9AZ__button:active {
 						background-color: main-bg-em;
 					}
+			/* accommodations */
+				/* date select */
+					/* icon */
+						.P6Yjde {
+							filter: colorize(main-text-off);
+						}
+					/* selects */
+						.Qjueib {
+							background-color: main-bg-em;
+							border-color: main-separator;
+						}
+						/* placeholder */
+							.Qjueib[data-default-text="true"] {
+								color: main-text-off;
+							}
+						/* hover */
+							.oDcTJb:hover {
+								border-color: main-text-off;
+							}
+						/* focus */
+							.Qjueib:focus {
+								box-shadow: 0 0 0 2px accent-shifted(1deg, 1%, 20%);
+							}
+						/* text */
+							.oDcTJb {
+								color: main-text;
+							}
+					/* fanout */
+						.CngMb {
+							background-color: main-bg;
+						}
+						.RLCnqc {
+							border-color: main-border;
+						}
+						/* text */
+							.CngMb {
+								color: main-text;
+							}
+						/* night count */
+							.rb2uA {
+								color: main-text-off;
+							}
+				/* price slider */
+					/* heading */
+						.VIG2qd {
+							color: main-text-off;
+						}
+						/* selected price point */
+							.VIG2qd .fUxQ8axFhBJ__applied {
+								color: accent-color;
+							}
+					/* price range ends */
+						.dUdd0c {
+							color: main-text; // TODO: why is this darker?
+						}
+					/* slider */
+						.oqEZkc {
+							background-color: accent-color;
+						}
+					/* bars */
+						.e5Y2td {
+							background-color: accent-shifted(1deg, 1%, 27%);
+							border-color: main-bg-container;
+						}
+				/* filters */
+					.F7IIOc.IvNZOc {
+						color: main-text-off;
+						border-color: main-separator;
+					}
+					/* hover */
+						.F7IIOc.IvNZOc:not(.rlf__applied):not(.rlf__open):hover {
+							color: main-text;
+							border-color: main-text-off;
+						}
+					/* focus */
+						.saoNMe:focus {
+							box-shadow: 0 0 0 2px accent-shifted(1deg, 1%, 20%);
+						}
+					/* dropdown buttons */
+						.FZaw6b.J4Tfj {
+							border-color: main-text-off transparent;
+						}
+						/* hover */
+							.F7IIOc:not(.rlf__applied):not(.rlf__open):hover .FZaw6b.J4Tfj {
+								border-color: main-text transparent;
+							}
+					/* opened */
+						.F7IIOc.IvNZOc.rlf__applied, .F7IIOc.IvNZOc.rlf__open {
+							color: accent-color;
+							background-color: accent-shifted(0deg, 0%, -40%);
+							border-color: accent-shifted(0deg, 0%, -40%);
+						}
+						/* dropdown button */
+							.F7IIOc.rlf__open:not(.rlf__applied) .FZaw6b, .F7IIOc:not(.rlf__applied):hover .FZaw6b {
+								border-color: accent-color transparent;
+							}
+						/* focus */
+							.F7IIOc.IvNZOc.rlf__applied:focus, .F7IIOc.IvNZOc.rlf__open:focus {
+								border-color: accent-shifted(1deg, 1%, 20%);
+							}
+					/* guest number icon */
+						.j3R1vb {
+							filter: colorize(main-text-off);
+						}
+						/* opened */
+							.F7IIOc.rlf__applied .j3R1vb, .F7IIOc.rlf__open .j3R1vb {
+								filter: colorize(accent-color);
+							}
+					/* dropdowns */
+						/* buttons */
+							/* apply */
+								.jfk-button-action {
+									background-color: accent-shifted(0deg, 10%, 4%);
+									background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -7%, -1%));
+									border-color: accent-shifted(0deg, -5%, -5%);
+									if $light-accent {
+										color: black;
+									}
+								}
+								/* hover */
+									.jfk-button-action.jfk-button-hover {
+										background-color: accent-shifted(0deg, -9%, -5%);
+										background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -9%, -5%));
+										border-color: accent-shifted(4deg, -30%, -16%);
+									}
+								/* focus */
+									.jfk-button-action:focus {
+										box-shadow: inset 0 0 0 1px main-border;
+									}
+							/* cancel */
+								.jfk-button-standard {
+									button();
+									background-color: main-bg-em;
+								}
+								/* hover */
+									.jfk-button-standard.jfk-button-hover, .jfk-button-standard.jfk-button-clear-outline.jfk-button-hover {
+										button-hover();
+										background-color: main-bg-em;
+									}
+				/* places */
+					/* prices */
+						.b3xiAd {
+							color: main-text;
+						}
+					/* deal */
+						/* price */
+							.QngNxb, .IiSgud {
+								color: accent-color;
+							}
+						/* deal hint */
+							.fgoOee {
+								background-color: accent-color;
+								if $light-accent {
+									color: black;
+								}
+							}
+							/* text */
+								.tMdBJd {
+									color: main-text-off;
+								}
+				/* footer */
+					/* about these results */
+						.YNGkwe {
+							color: main-text-off;
+						}
 		/* stock */
 			.f196ee {
 				container();
