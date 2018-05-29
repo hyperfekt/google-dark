@@ -1055,11 +1055,12 @@
 		/* scholarly articles */
 			if result-containers {
 				#topstuff .obp table {
-					margin-bottom: 0px;
-				}
-				#topstuff .obp {
 					result-container();
-					margin-bottom: 26px;
+					// dirty hacks to compensate for the lack of a wrapping element and the inability to apply padding to table elements (parent element collides with eg 'no results')
+					border-left: 16px main-bg-container solid;
+					border-top: 6px main-bg-container solid;
+					border-bottom: 6px main-bg-container solid;
+					width: 632px;
 				}
 			}
 		/* modules */
