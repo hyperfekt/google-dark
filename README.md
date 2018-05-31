@@ -12,4 +12,4 @@ The mobile site is currently not supported.
 
 ![Screenshot](https://raw.githubusercontent.com/hyperfekt/google-dark/master/search/search.jpg)
 
-(There is currently a bug in Google Chrome that prevents some icons from being colored correctly.)
+(There is currently [a bug](https://github.com/hyperfekt/google-dark/issues/2) in Google Chrome that prevents some icons from being colored correctly.)
