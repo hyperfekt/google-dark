@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.18
+@version 0.5.19
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -5672,12 +5672,12 @@
 					}
 			/* 'my account' button */
 				.gb_Cb .gb_Jb {
-					background: accent-shifted(0deg, 4%, 10%);
+					background: accent-shifted(0deg, 10%, 4%);
 					border-color: accent-shifted(0deg, -5%, -5%);
 				}
 				.gb_Cb .gb_Jb:hover {
 					background: accent-shifted(0deg, -9%, -5%);
-					border-color: accent-shifted(-6deg, -30%, -16%);
+					border-color: accent-shifted(4deg, -30%, -16%);
 				}
 				if $light-accent {
 					/* label */
