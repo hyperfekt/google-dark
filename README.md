@@ -1,6 +1,6 @@
 # Google Dark Search
 
-This is a userstyle to turn the Google Search website dark, also often described as 'Night Mode'.  
+This is a userstyle (or theme) to turn the Google Search website dark, also often described as 'Night Mode'.  
 
 The aim is to be highly customizable and extremely comprehensive.
 
