@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.15
+@version 0.5.16
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -798,6 +798,8 @@
 					.cFitPd {
 						color: main-text;
 					}
+					.cFitPd
+				
 			/* missing terms */
 				.TXwUJf {
 					color: main-text-off;
@@ -2946,6 +2948,14 @@
 				}
 			/* output text */
 				.tw-data-text {
+					color: main-text !important;
+				}
+				/* loading placeholder */
+					.vk_dgy {
+						color: main-text-off !important;
+					}
+				/* part of speech */
+				.vk_dgy {
 					color: main-text !important;
 				}
 			/* vertical separator */
