@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.20
+@version 0.5.21
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -3900,6 +3900,11 @@
 							}
 				/* reviews */
 					// TODO
+			/* cities */
+				/* hotels category */
+					.Q0mKHf .fl {
+						color: main-text !important;
+					}
 			/* hotels */
 				/* book a room button */
 					.vRH59e {
