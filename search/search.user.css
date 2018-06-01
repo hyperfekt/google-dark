@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.19
+@version 0.5.20
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1108,9 +1108,9 @@
 	/* tweet carousel */
 		/* heading */
 			if result-containers {
-				g-section-with-header .DOqJne {
+				g-section-with-header .otisdd {
 					result-container();
-					margin-bottom: 8px;
+					margin-bottom: 0px;
 				}
 			}
 		/* paging buttons */
