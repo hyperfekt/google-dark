@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.24
+@version 0.5.25
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2327,7 +2327,7 @@
 							border-color: accent-shifted(0deg, 0%, -40%);
 						}
 						/* dropdown button */
-							.F7IIOc.rlf__open:not(.rlf__applied) .FZaw6b, .F7IIOc:not(.rlf__applied):hover .FZaw6b {
+							.F7IIOc.rlf__applied .FZaw6b.J4Tfj, .F7IIOc.rlf__open .FZaw6b.J4Tfj {
 								border-color: accent-color transparent;
 							}
 						/* focus */
