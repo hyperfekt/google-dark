@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.35
+@version 0.5.36
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2510,7 +2510,7 @@
 					.YIikAd {
 						color: main-text;
 					}
-		/* race results */
+		/* sports results */
 			/* header */
 				.T2V3ab {
 					background-color: transparent !important;
@@ -2524,7 +2524,7 @@
 					.ih2ainT7gdI__unselected, .ih2ainT7gdI__unselected:link, .ih2ainT7gdI__unselected:visited {
 						color: main-text-off !important;
 					}
-			/* race tabs */
+			/* game/race/day tabs */
 				.jtEFhd[style*="background-color:#fafafa"] {
 					background-color: transparent !important;
 				}
@@ -2532,7 +2532,7 @@
 				.tsp-trm {
 					background-color: transparent;
 				}
-			/* race info */
+			/* info */
 				.r3tGed {
 					border-color: container-separator;
 				}
@@ -2548,12 +2548,26 @@
 						.tsp-trr {
 							border-color: main-separator;
 						}
+						/* hover */
+							.tsp-hbd:hover {
+								background-color: main-bg-off;
+							}
 						/* position numbers */
 							.tsp-ftdg {
 								color: main-text;
 							}
-						/* hover */
-							.tsp-hbd:hover {
+						/* current points */
+							.tsp-g {
+								background-color: main-bg-off;
+								border-color: main-separator;
+							}
+						/* tennis popup */
+							/* header */
+								.tsp-lbb .tsp-led {
+									background-color: main-bg;
+									border-color: container-separator;
+								}
+							.tsp-lbb {
 								background-color: main-bg-off;
 							}
 			/* footer */
