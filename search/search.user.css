@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.34
+@version 0.5.35
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -5023,7 +5023,7 @@
 						}
 					}
 					/* titles */
-						.umBFsc .HnYYW {
+						.rKFBM .HnYYW	 {
 							color: main-text;
 							if result-containers {
 								container();
@@ -5037,7 +5037,7 @@
 						.vnLNtd.mnr-c {
 							container();
 							if result-containers {
-								margin-bottom: 40px !important;
+								margin-bottom: 30px !important;
 							}
 						}
 					/* cards */
@@ -5083,18 +5083,20 @@
 					/* text fields */
 						if result-containers {
 							div[data-hveid="CAEQBQ"] {
-								margin-bottom: 40px;
+								margin-bottom: 30px;
 							}
 						}
 						/* not currently following */
 							.knowledge-finance-wholepage__your-stocks-promo {
 								container();
 								color: main-text;
+								margin-bottom: 10px;
 							}
 						/* refresh */
 							.knowledge-finance-wholepage__your-stocks-refresh {
 								container();
 								color: main-text;
+								margin-bottom: 10px;
 							}
 				/* local markets */
 					/* graph */
