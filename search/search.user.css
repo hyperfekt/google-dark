@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.32
+@version 0.5.33
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2510,6 +2510,62 @@
 					.YIikAd {
 						color: main-text;
 					}
+		/* race results */
+			/* header */
+				.T2V3ab {
+					background-color: transparent !important;
+					color: main-text !important;
+				}
+			/* series tabs */
+				.NFQFxe.viOShc.EfDVh.mod g-tabs {
+					background-color: transparent !important;
+				}
+				/* not selected */
+					.ih2ainT7gdI__unselected, .ih2ainT7gdI__unselected:link, .ih2ainT7gdI__unselected:visited {
+						color: main-text-off !important;
+					}
+			/* race tabs */
+				.jtEFhd[style*="background-color:#fafafa"] {
+					background-color: transparent !important;
+				}
+			/* 'starting grid will be available soon' */
+				.tsp-trm {
+					background-color: transparent;
+				}
+			/* race info */
+				.r3tGed {
+					border-color: container-separator;
+				}
+				/* labels */
+					.tsp-ftlg {
+						color: main-text-off;
+					}
+				/* result table */
+					.tsp-tb {
+						border-color: container-separator;
+					}
+					/* row */
+						.tsp-trr {
+							border-color: main-separator;
+						}
+						/* position numbers */
+							.tsp-ftdg {
+								color: main-text;
+							}
+						/* hover */
+							.tsp-hbd:hover {
+								background-color: main-bg-off;
+							}
+			/* footer */
+				/* timezone hint */
+					.tsp-tz {
+						border-color: container-separator;
+						color: main-text-off;
+					}
+				/* more drivers */
+					.fmZxJd {
+						background-color: main-bg-off;
+					}
 		/* dictionary */
 			/* heading */
 				.vkc_np > div:first-child {
@@ -4922,9 +4978,13 @@
 			/* Home (Market Summary) */
 				/* tabs */
 					/* titles */
-						.SVWlSe > div {
-							color: main-text !important;
+						.KYeOtb:not(.ih2ainT7gdI__unselected) .SVWlSe > div {
+							color: main-text;
 						}
+						/* not selected */
+							.jtEFhd .ih2ainT7gdI__unselected, .jtEFhd .ih2ainT7gdI__unselected:link, .jtEFhd .ih2ainT7gdI__unselected:visited {
+								color: main-text-off !important;
+							}
 					/* separator & shadow */
 						.FNvPOb {
 							box-shadow: 0 1px 0 main-border;
