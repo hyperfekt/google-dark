@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.39
+@version 0.5.40
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4497,14 +4497,38 @@
 				}
 		/* Search by Image */
 			/* searched image */
-					/* border */
-						#Z6bGOb .GMzDwb {
-							border-color: main-separator;
-						}
+				if result-containers {
+					.d1ogpb {
+						result-container();
+						margin-bottom: 16px;
+					}
+				}
+				/* border */
+					#Z6bGOb .GMzDwb {
+						border-color: main-separator;
+					}
+			/* best guess */
+				if result-containers {
+					.r5a77d {
+						result-container();
+						margin-bottom: 16px;
+					}
+				}
+			/* search term tip */
+				if result-containers {
+					.card-section[style="margin:0 0 16px"] {
+						result-container(true, !important);
+						margin-bottom: 16px !important;
+					}
+				}
 			/* pages that include matching images */
 				/* heading */
 					.normal-header div.rg-header {
 						color: main-text-off;
+						if result-containers {
+							result-container();
+							margin-bottom: 14px;
+						}
 					}
 		/* Images */
 			/* related image search terms (improvement over original) */
