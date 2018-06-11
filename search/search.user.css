@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.38
+@version 0.5.39
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -5146,29 +5146,31 @@
 							color: main-text-off;
 						}
 					/* follow button */
-						.Mk9PEf .Aw4Lqb {
+						.cJS2bf.Mk9PEf .T4joj {
 							border-color: accent-color;
 						}
-						/* symbol */
-							.oj4vO.S1Bjic path {
-								fill: accent-color;
+						/* text */
+							.cJS2bf .T4joj {
+								color: accent-color;
 							}
-							.oj4vO.S1Bjic polygon[fill="#4285F4"] {
+						/* symbol */
+							.cJS2bf .gwY7Cd, .cJS2bf .U8lG7d {
 								fill: accent-color;
 							}
 						/* pressed */
-							.Mk9PEf .Aw4Lqb:active {
+							.cJS2bf.Mk9PEf .T4joj:active {
 								background-color: accent-color;
 								if $light-accent {
 									color: black;
 								}
 							}
 							if $light-accent {
-								/* symbol */
-									.TwQz6c.S1Bjic path {
-										fill: black;
+								/* text */
+									.cJS2bf.Mk9PEf .T4joj:active {
+										color: black;
 									}
-									.TwQz6c.S1Bjic polygon[fill="#FFFFFF"] {
+								/* symbol */
+									.Oajigf .gwY7Cd, .Oajigf .U8lG7d, .cJS2bf.Mk9PEf .T4joj:active .gwY7Cd, .cJS2bf.Mk9PEf .T4joj:active .U8lG7d {
 										fill: black;
 									}
 							}
@@ -5515,7 +5517,7 @@
 							}
 			/* loading fail */
 				if result-containers {
-					.HPptj::before {
+					.fSXkBc::before {
 						content: "";
 						position: absolute;
 						height: 117px;
@@ -5528,12 +5530,12 @@
 					}
 				}
 				/* looking glass */
-					.A1Acbb {
+					.Klyate {
 						opacity: 1;
 						filter: colorize(main-text-off);
 					}
 				/* 'something went wrong' */
-					.ngwi7 {
+					.Q8OsXe {
 						color: main-text-off;
 					}
 				/* 'try again' button */
@@ -5541,7 +5543,7 @@
 						color: accent-color !important;
 					}
 					/* icon */
-						.nrhOde {
+						.PZUCge {
 							filter: colorize(accent-color);
 						}
 	/* language switch popup */
