@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.44
+@version 0.5.45
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4693,30 +4693,42 @@
 				/* items */
 					.sh-dr__short * {
 						color: main-text-off;
+					}
+				/* checkboxes */
+					.nZbkuc {
 						border-color: main-text-off;
 					}
-				/* checked boxes */
-					.nZbkuc.OCCxVb {
-						border-color: accent-color;
-					}
-					.nZbkuc .Kmfmkc {
-						background-color: accent-color;
-						if $light-accent {
-							background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfiBgYJKBEFTw+CAAAAfklEQVRIx+3UsQmAQAxA0V94Fk7lEBYuI9w2FirqWM5gERsPFEE4E1Dwfh1eEUIglXqznNqGmRG8DSMIpQ3jP8C4xNwwUwxT0ZJZMCtCd6EiGWj28f5ERTMA/kI5xmcrDtSA0zBnqtAwR2rR302gRP9zvA0TKAMG0H2/1K/aAJI2ZeMD/yVLAAAAAElFTkSuQmCC");
+					/* checked */
+						.nZbkuc.OCCxVb {
+							border-color: accent-color;
 						}
+						.nZbkuc .Kmfmkc {
+							background-color: accent-color;
+							if $light-accent {
+								background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAQAAABLCVATAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfiBgYJKBEFTw+CAAAAfklEQVRIx+3UsQmAQAxA0V94Fk7lEBYuI9w2FirqWM5gERsPFEE4E1Dwfh1eEUIglXqznNqGmRG8DSMIpQ3jP8C4xNwwUwxT0ZJZMCtCd6EiGWj28f5ERTMA/kI5xmcrDtSA0zBnqtAwR2rR302gRP9zvA0TKAMG0H2/1K/aAJI2ZeMD/yVLAAAAAElFTkSuQmCC");
+							}
+						}
+				/* radio buttons */
+					.JcqPK {
+						border-color: main-text-off;
 					}
-				/* selected radio buttons */
-					.JcqPK.FS9Ovd {
-						border-color: accent-color;
-					}
-					.JcqPK .Kmfmkc {
-						background-color: accent-color;
-					}
+					/* selected */
+						.JcqPK.FS9Ovd {
+							border-color: accent-color;
+						}
+						.JcqPK .Kmfmkc {
+							background-color: accent-color;
+						}
 				/* inputs */
 					.sh-dr__short input {
 						background-color: transparent;
 						color: main-text-em;
 					}
+				/* color select */
+					/* swatches */
+						.U3NcLd {
+							border-color: transparent;
+						}
 				/* go */
 					.LfUe1b {
 						background-color: transparent;
@@ -4730,10 +4742,6 @@
 						/* names */
 							.vjtvke, .vjtvke:link, .vjtvke:visited {
 								color: main-text-off;
-							}
-						/* checkboxes */
-							.nZbkuc {
-								border-color: main-text-off;
 							}
 			/* results */
 				/* header */
