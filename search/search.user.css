@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.43
+@version 0.5.44
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4843,18 +4843,105 @@
 											border-color: main-text-off transparent;
 										}
 										/* menu */
-											._-J {
+											._-V {
 												popout();
 											}
 											/* items */
-												._-I {
+												._-U {
 													color: main-text-off;
 												}
 												/* hover */
-													.sh-gs__rs-sl:hover, ._-I:hover {
+													.sh-gs__rs-sl:hover, ._-U:hover {
 														dropdown-hover();
 													}
-											/* create new */ //TODO
+												/* checkmark */
+													.gko-rs-current .gko-rs-sl-cm {
+														filter: colorize(main-text);
+													}
+												/* share status icon */
+													._-X {
+														filter: colorize(white);
+													}
+											/* separator */
+												.sh-gs__rs-sep {
+													border-color: main-border;
+												}
+											/* create new popup */
+												.goog-modalpopup, .modal-dialog {
+													background-color: main-bg;
+													box-shadow: 0 4px 16px alpha(black, 0.4);
+												}
+												.modal-dialog {
+													color: main-text;
+												}
+												/* title */
+													.modal-dialog-title {
+														color: main-text;
+														background-color: transparent;
+													}
+												/* close button */
+													.modal-dialog-title-close::after {
+														filter: colorize(main-text);
+													}
+												/* content */
+													.modal-dialog-content {
+														background-color: transparent;
+													}
+													/* input */
+														.jfk-textinput {
+															border-color: main-separator;
+															background-color: transparent;
+															color: main-text;
+														}
+														/* focus */
+															.jfk-textinput:focus {
+																border-color: accent-shifted(0deg, 10%, 4%);
+															}
+													/* buttons */
+														.modal-dialog-buttons button {
+															button();
+															background-color: main-bg-em;
+														}
+														/* hover */
+															.modal-dialog-buttons button:hover, .modal-dialog-buttons button:active {
+																button-hover();
+																background-color: main-bg-em;
+															}
+														/* disabled */
+															.modal-dialog-buttons button[disabled] {
+																background: main-bg-em;
+																border-color: main-separator;
+																color: main-text-disabled;
+															}
+													/* accent buttons */
+														.modal-dialog-buttons .goog-buttonset-action {
+															background-color: accent-shifted(0deg, 10%, 4%);
+															background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -7%, -1%));
+															border-color: accent-shifted(0deg, -5%, -5%);
+															if $light-accent {
+																color: black;
+															}
+														}
+														/* hover */
+															.modal-dialog-buttons .goog-buttonset-action:hover, .modal-dialog-buttons .goog-buttonset-action:active {
+																background-color: accent-shifted(0deg, -9%, -5%);
+																background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -9%, -5%));
+																border-color: accent-shifted(4deg, -30%, -16%);
+																if $light-accent {
+																	color: black;
+																}
+															}
+														/* disabled */
+															.modal-dialog-buttons .goog-buttonset-action[disabled] {
+																background-color: accent-shifted(0deg, 10%, 4%);
+																if $light-accent {
+																	color: black;
+																}
+															}
+												/* overlay */
+													.goog-modalpopup-bg, .modal-dialog-bg {
+														background-color: main-bg;
+													}
 								/* item carousel */
 									/* paging buttons */
 										.gko-pg {
