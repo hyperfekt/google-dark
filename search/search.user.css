@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.45
+@version 0.5.46
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4961,6 +4961,44 @@
 										.gko-pg-r {
 											filter: colorize(main-text-off);
 										}
+									/* items */
+										/* hover */
+											._-F:hover {
+												box-shadow: none;
+											}
+											._-F:hover > img {
+												box-shadow: 0 0 0 2px main-bg-off;
+											}
+										/* popout */
+											.sh-g__i-d-c {
+												background-color: main-bg;
+												border-color: popout-border;
+											}
+											/* caret */
+												/* inner */
+													._-J {
+														border-right-color: main-bg;
+													}
+												/* outer */
+													._-I {
+														border-right-color: popout-border;
+													}
+											/* title */
+												._-K {
+													color: main-link;
+												}
+											/* price */
+												.sh-g__p {
+													color: main-text;
+												}
+											/* source */
+												#gko-sp .sh-g__i-d-c-l, #gko-sp .sh-g__i-d-c-l:active, #gko-sp .sh-g__i-d-c-l:visited {
+													color: main-text-off;
+												}
+											/* delete button */
+												.sh-g__dlt {
+													filter: colorize(white);
+												}
 									/* empty frames */
 										.gko-itms-e .gko-i {
 											border-color: main-text-off;
