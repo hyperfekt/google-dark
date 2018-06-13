@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.47
+@version 0.5.48
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1197,6 +1197,37 @@
 			gloader-after();
 		}
 	/* main widgets */
+		/* suggested clip */
+			/* video */
+				/* time tooltip */
+					div[style*="background-color:#fff"][style*="color:#4285f4"] {
+						color: accent-color !important;
+						box-shadow: 0 0 4px black;
+					}
+					div[style*="background-color:#fff"][style*="color:#4285f4"] > span {
+						if $light-accent {
+							text-shadow: 0 0 4px black, 0 1px 4px black, 0 -1px 4px black, 1px 0 4px black, -1px 0 4px black;
+						}
+					}
+			/* indicator bar */
+				.JtyPib {
+					background-color: accent-color;
+					if $light-accent {
+						color: black;
+					}
+				}
+				/* caret */
+					.fmMNae polygon[fill="#4285f4"] {
+						fill: accent-color !important;
+					}
+			/* maximized (click on indicator bar) */
+				/* start of clip bar */
+					.GoIRO {
+						background-color: accent-color;
+						if $light-accent {
+							color: black;
+						}
+					}
 		/* calculator */
 			/* calculation */
 				.cwletbl {
