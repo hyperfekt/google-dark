@@ -253,7 +253,7 @@
 	}
 
 	wide-arrow-image($color) {
-		url("data:image/svg+xml,%3C?xml version='1.0' encoding='UTF-8'?%3E %3Csvg viewBox='0 0 192 66' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath fill='" + escape-color($color) + "' d='m0 0v18l96 48 96-48v-18l-96 48z'/%3E %3C/svg%3E");
+		url("data:image/svg+xml;utf8,<svg viewBox='0 0 192 66' xmlns='http://www.w3.org/2000/svg'><path fill='" + escape-color($color) + "' d='m0 0v18l96 48 96-48v-18l-96 48z'/> </svg>");
 	}
 
 	luminance($color) {
