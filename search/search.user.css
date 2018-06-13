@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.49
+@version 0.5.50
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1970,23 +1970,26 @@
 						border-color: main-separator;
 					}
 				/* expand arrow */
-					.O40DWe, .TCeXLd {
-						background-color: main-bg-em;
+					.O40DWe {
+						background-color: transparent;
+						background-image: wide-arrow-image(main-text-off);
+						background-size: 100% 100%;
+						height: 12px;
+						transition: transform 0.3s;
+						transition: bottom 0.3s;
+						bottom: -2px;
 					}
-					/* open */
-						.O40DWe::before {
-							border-top-color: main-bg-em;
-						}
-						.O40DWe::after {
-							border-top-color: main-bg-container;
-						}
-					/* close */
-						.TCeXLd::before {
-							border-bottom-color: main-bg-em;
-						}
-						.TCeXLd::after {
-							border-bottom-color: main-bg-container;
-						}
+					#flt-s-control.flt-s-expanded .O40DWe {
+						display: inline-block;
+						bottom: 0px;
+						transform: scaleY(-1);
+					}
+					.TCeXLd {
+						display: none !important;
+					}
+					.O40DWe::before, .O40DWe::after, .TCeXLd::before, .TCeXLd::after {
+						display: none;
+					}
 			/* flights */
 				/* TODO: reinstate, clashes with ad 
 				.flt-actionblock {
