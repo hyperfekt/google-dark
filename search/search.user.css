@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.5.50
+@version 0.6.0
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -5778,7 +5778,7 @@
 		}
 }
 
-/* Header And Footer */
+/* Header */
 @-moz-document regexp("https?://(ipv4|www|encrypted)\\.google\\.(com|([a-z]{2}))(\\.[a-z]{2})?(/+((webhp|search|gfe_rd|auth|gws_rd|#q|imghp|#gfe_rd|#safe|#pws|#tbs|#gws|#tbm|preferences|\\?)(?!.*(tbm=(lcl)|;mt;|;st;|;dt;|;nw;)).*)?)?") {
 	:root {
 		global-definitions();
@@ -6354,8 +6354,8 @@
 				}
 	/* footer */
 		#fbar {
-		background-color: footer-bg;
-		site-separator();
+			background-color: footer-bg;
+			site-separator();
 		}
 		/* internal borders */
 			.fbar {
@@ -6641,6 +6641,342 @@
 				.hh4xKf {
 					border-color: alpha(black, 0.8 * contrast);
 				}
+}
+
+/* advanced search page */
+@-moz-document regexp("https?://www\.google\.(com|([a-z]{2}))(\.[a-z]{2})?/advanced_search.*") {
+	:root {
+		global-definitions();
+	}
+
+	body {
+		background: main-background;
+		if result-containers {
+			background: main-bg;
+		}
+	}
+
+	/* header */
+		.gb_Qf {
+			background-color: header-bg;
+		}
+		/* products link (looks like app menu) */
+			.gb_da .gb_b {
+				filter: invert(1) brightness(contrast)
+			}
+		/* notification menu */
+			.gb_Pc.gb_bd.gb_R.gb_Qc {
+				display: none;
+			}
+	
+	/* body */
+		/* heading separator */
+			.appbar_b {
+				site-separator();
+			}
+		/* label prefix */
+			div.otByu div.I1Kbt, div.lFApYd {
+				color: main-text;
+			}
+		/* labels */
+			div.otByu div.FAcADc {
+				color: main-text-em;
+			}
+		/* inputs */
+			.jfk-textinput {
+				background-color: main-bg-em;
+				color: main-text;
+				border-color: main-separator;
+			}
+			/* focus */
+				.jfk-textinput:focus {
+					border-color: accent-shifted(0deg, 10%, 4%);
+				}
+		/* selects */
+			.goog-flat-menu-button {
+				select();
+				background-color: main-bg-em;
+				background-image: none;
+			}
+			/* dropdown indicator */
+				.goog-flat-menu-button-dropdown {
+					border-color: main-text-off transparent;
+				}
+			/* hover */
+				.goog-flat-menu-button.goog-flat-menu-button-hover {
+					select-hover();
+					color: main-text-em;
+					background-color: main-bg-em;
+					background-image: none;
+				}
+				/* dropdown indicator */
+					.goog-flat-menu-button-active .goog-flat-menu-button-dropdown, .goog-flat-menu-button-open .goog-flat-menu-button-dropdown, .goog-flat-menu-button-selected .goog-flat-menu-button-dropdown, .goog-flat-menu-button-hover .goog-flat-menu-button-dropdown {
+						border-color: main-text transparent;
+					}
+			/* focus */
+				.goog-flat-menu-button.goog-flat-menu-button-focused {
+					border-color: accent-shifted(0deg, 10%, 4%);
+				}
+			/* open */
+				.goog-flat-menu-button.goog-flat-menu-button-open, .goog-flat-menu-button.goog-flat-menu-button-active {
+					background-color: main-bg-em;
+					background-image: none;
+					color: main-text-em;
+					border-color: main-separator;
+				}
+				/* fanout */
+					.goog-menu {
+						popout();
+						background-color: main-bg-em;
+					}
+					/* items */
+						.goog-menuitem, .goog-tristatemenuitem, .goog-filterobsmenuitem {
+							color: main-text;
+						}
+						/* hover */
+							.goog-menuitem-highlight, .goog-menuitem-hover {
+								background-color: main-bg-off;
+								border: none; //keeps items from moving on hover
+								padding-top: 6px;
+								padding-bottom: 6px;
+							}
+							.goog-menuitem-highlight .goog-menuitem-content, .goog-menuitem-hover .goog-menuitem-content {
+								color: main-text-em;
+							}
+		/* operator hints */
+			/* heading */
+				div.otByu div.orcpGe {
+					color: main-text-minor;
+				}
+			/* instructions */
+				div.otByu div.cwqNnb {
+					color: main-text-off;
+				}
+				/* code */
+					div.otByu div.cwqNnb span.BFlQMb {
+						color: main-text-off;
+					}
+		/* links */
+			a {
+				color: main-link;
+			}
+			a:visited {
+				color: main-link;
+			}
+		/* separator */
+			div.Qy8Xkb {
+				border-color: main-border;
+			}
+		/* submit button */
+			.jfk-button-action {
+				background-color: accent-shifted(0deg, 10%, 4%);
+				background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -7%, -1%));
+				border-color: accent-shifted(0deg, -5%, -5%);
+				if $light-accent {
+					color: black;
+				}
+			}
+			/* hover */
+				.jfk-button-action:hover {
+					background-color: accent-shifted(0deg, -9%, -5%);
+					background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -9%, -5%));
+					border-color: accent-shifted(4deg, -30%, -16%);
+				}
+	
+	/* footer (copied from header & footer */
+		#fbar {
+			background-color: footer-bg;
+			site-separator();
+		}
+		/* internal borders */
+			.fbar {
+				border-color: footer-separator;
+			}
+		/* separator */
+			#swml {
+				border-color: footer-separator;
+			}
+		/* location */
+			/* country */
+				.b0KoTc {
+					color: footer-text-off;
+				}
+			/* city */
+				#swml {
+					color: footer-text-minor;
+				}
+				#swml a {
+					color: footer-text-off;
+				}
+				#swml a:hover {
+					color: footer-text;
+				}
+		/* links */
+			.fbar p, .fbar a, #fsettl, #fsett a {
+				color: footer-text-off;
+			}
+			.fbar a:hover, #fsett a:hover {
+				color: footer-text;
+			}
+}
+
+/* settings page */
+@-moz-document regexp("https?://www\.google\.(com|([a-z]{2}))(\.[a-z]{2})?/preferences.*") {
+	:root {
+		global-definitions();
+	}
+
+	body {
+		background: main-background;
+		if result-containers {
+			background: main-bg;
+		}
+		color: main-text;
+	}
+	
+	/* body */
+		/* header separator */
+			.sfbgg {
+				site-separator();
+			}
+		/* heading separator */
+			.appbar {
+				site-separator();
+			}
+		/* navigation */
+			/* item */
+				/* text */
+					.mitem a, .mitem a:hover {
+						color: main-text;	
+					}
+				/* hover */
+					.mitem:hover {
+						background-color: main-bg-off;
+					}
+				/* selected */
+					.msel, .msel a {
+						color: #dd4b39; //restores original style
+					}
+		/* body */
+			.sect {
+				color: main-text;
+				border-color: main-border;
+			}
+			/* links */
+				a {
+					color: main-link;
+				}
+			/* checkboxes */
+				.jfk-checkbox {
+					background-color: main-bg-em;
+					border-color: main-separator;
+				}
+				/* hover */
+					.jfk-checkbox-hover {
+						box-shadow: inset 0px 1px 1px alpha(black, 0.4);
+					}
+				/* focused */
+					.jfk-checkbox-focused {
+						border-color: accent-shifted(0deg, 10%, 4%);
+					}
+				/* checkmark */
+					.jfk-checkbox-checked .jfk-checkbox-checkmark {
+						filter: colorize(white);
+					}
+		/* safesearch locked icon */
+			.lockImg {
+				filter: colorize(main-text-off);
+			}
+			/* locking loading icon */
+				#statusIcon img {
+					filter: invert-with-bg(main-bg);
+				}
+			/* locking success icon */
+				#lockres img {
+					//TODO
+				}
+		/* slider */
+			.goog-slider li {
+				color: main-text;
+			}
+			/* thumb */
+				.goog-slider-thumb {
+					background-color: main-bg-em;
+					background-image: none;
+					border-color: main-text;
+				}
+				/* hover */
+					.goog-slider-thumb:hover {
+						background-color: main-bg-em;
+						background-image: none;
+						border-color: main-text;
+					}
+				/* focus */
+					.goog-slider:focus .goog-slider-thumb {
+						background-color: main-bg-em;
+						background-image: none;
+						border-color: main-text;
+					}
+			/* labels */
+				.sllabel {
+					color: main-text-off;
+				}
+		/* radio button */
+			.jfk-radiobutton-radio {
+				border-color: main-text;
+			}
+			/* checked */
+				.jfk-radiobutton-checked .jfk-radiobutton-radio::after {
+					background-color: main-text;
+					border-color: main-text;
+				}
+			/* hover */
+				.jfk-radiobutton:hover .jfk-radiobutton-radio {
+					border-color: main-text-em;
+				}
+			/* focused */
+				.jfk-radiobutton:focus .jfk-radiobutton-radio {
+					border-color: accent-shifted(0deg, 10%, 4%);
+				}
+		/* regions & languages */
+			/* show more */
+				/* arrow */
+					/* collapsed */
+						#regionanchormore .UyLz9e, #langanchormore .gbma {
+							border-top-color: main-link !important;
+						}
+					/* expanded */
+						#regionanchorless .UyLz9e, #langanchorless .gbma {
+							border-bottom-color: main-link !important;
+						}
+		/* submit button */
+			.jfk-button-action {
+				background-color: accent-shifted(0deg, 10%, 4%);
+				background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -7%, -1%));
+				border-color: accent-shifted(0deg, -5%, -5%);
+				if $light-accent {
+					color: black;
+				}
+			}
+			/* hover */
+				.jfk-button-action:hover {
+					background-color: accent-shifted(0deg, -9%, -5%);
+					background-image: linear-gradient(to bottom, accent-shifted(0deg, 10%, 4%), accent-shifted(0deg, -9%, -5%));
+					border-color: accent-shifted(4deg, -30%, -16%);
+				}
+		/* cancel button */
+			.jfk-button-standard, .jfk-button-standard.jfk-button-clear-outline {
+				button();
+				background-color: main-bg-em;
+			}
+			.jfk-button-standard.jfk-button-hover, .jfk-button-standard.jfk-button-clear-outline.jfk-button-hover {
+				button-hover();
+				background-color: main-bg-em;
+			}
+		/* sign in hint */
+			#Gm4Vke span {
+				color: main-text-off !important;
+			}
 }
 
 /* remove place */
