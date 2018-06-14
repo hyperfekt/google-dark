@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.6
+@version 0.6.7
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -605,6 +605,40 @@
 						padding-bottom: 1px;
 						padding-right: 1px;
 					}
+					/* Web of Trust extension popout */
+						.wot-popup-container .donut__popover, #warning-container .donut__popover, .donut-container .donut__popover, .wot-popup .donut__popover, .options .donut__popover, body.popup .donut__popover {
+							background-color: main-bg;
+							box-shadow:  alpha(black, 0.45) 0px 10px 20px 0px;
+						}
+						/* caret */
+							.wot-popup-container .donut__popover::after, #warning-container .donut__popover::after, .donut-container .donut__popover::after, .wot-popup .donut__popover::after, .options .donut__popover::after, body.popup .donut__popover::after {
+								border-right-color: main-bg;
+							}
+						/* header */
+							.wot-popup-container .donut__header, #warning-container .donut__header, .donut-container .donut__header, .wot-popup .donut__header, .options .donut__header, body.popup .donut__header {
+								border-color: main-separator;
+							}
+							/* domain */
+								.wot-popup-container .donut__header span, #warning-container .donut__header span, .donut-container .donut__header span, .wot-popup .donut__header span, .options .donut__header span, body.popup .donut__header span {
+									color: main-text;
+								}
+							/* settings button */
+								.wot-popup-container .donut__header .donut__header__btn, #warning-container .donut__header .donut__header__btn, .donut-container .donut__header .donut__header__btn, .wot-popup .donut__header .donut__header__btn, .options .donut__header .donut__header__btn, body.popup .donut__header .donut__header__btn {
+									filter: colorize(accent-color);
+								}
+						/* body */
+							/* container labels */
+								.wot-popup-container .security-container .security__label span, .wot-popup-container .security-container .reputation__label span, .wot-popup-container .reputation-container .security__label span, .wot-popup-container .reputation-container .reputation__label span, #warning-container .security-container .security__label span, #warning-container .security-container .reputation__label span, #warning-container .reputation-container .security__label span, #warning-container .reputation-container .reputation__label span, .donut-container .security-container .security__label span, .donut-container .security-container .reputation__label span, .donut-container .reputation-container .security__label span, .donut-container .reputation-container .reputation__label span, .wot-popup .security-container .security__label span, .wot-popup .security-container .reputation__label span, .wot-popup .reputation-container .security__label span, .wot-popup .reputation-container .reputation__label span, .options .security-container .security__label span, .options .security-container .reputation__label span, .options .reputation-container .security__label span, .options .reputation-container .reputation__label span, body.wot-popup .security-container .security__label span, body.wot-popup .security-container .reputation__label span, body.wot-popup .reputation-container .security__label span, body.wot-popup .reputation-container .reputation__label span {
+									color: main-text;
+								}
+						/* footer */
+							.wot-popup-container .donut__footer, #warning-container .donut__footer, .donut-container .donut__footer, .wot-popup .donut__footer, .options .donut__footer, body.popup .donut__footer {
+								border-color: main-separator;
+							}
+							/* scorecard link */
+								.wot-popup-container .donut__viewaway, #warning-container .donut__viewaway, .donut-container .donut__viewaway, .wot-popup .donut__viewaway, .options .donut__viewaway, body.popup .donut__viewaway {
+									color: accent-color;
+								}
 			/* text */
 				.s {
 					color: main-text;
