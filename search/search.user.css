@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.1
+@version 0.6.2
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4687,6 +4687,10 @@
 						.irc_mi {
 							box-shadow: 0 5px 35px alpha(black, .4 * contrast);
 						}
+					/* sub text */
+						.irc_hd {
+							color: transparent;
+						}
 					/* image dimensions */
 						.irc_idim {
 							color: main-text-off;
@@ -4694,6 +4698,10 @@
 					/* copyright notice */
 						.irc_bimg .Af3fH {
 							color: main-text-minor;
+						}
+					/* 'find out more' */
+						a.irc_help:hover {
+							color: main-text;
 						}
 				/* bottom links */
 					.irc_ft a {
