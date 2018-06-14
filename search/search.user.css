@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.0
+@version 0.6.1
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1676,68 +1676,82 @@
 									margin-top: 6px;
 								}
 					}
-				/* item */
-					.cu-container .mnr-c {
-						container();
-					}
-					.cu-container .mnr-c[style*="height:251px"] {
-						height: 255px !important;
-					}
-					.cu-container .mnr-c[style*="height:226px"] {
-						height: 230px !important;
-					}
-					.cu-container .mnr-c[style*="height:243px"] {
-						height: 247px !important;
-					}
-					/* thumbnail */
-						.pla-unit-img-container {
-							background-color: white;
+					/* item */
+						.cu-container .mnr-c {
+							container();
 						}
-						/* single column */
-							.Ew1SFd td:not(.I85Quc) {
-								background-color: white;
-							}
-					/* hover */
-						.pla-hovercard-container {
-							background-color: main-bg-container;
-							box-shadow: 0 2px 6px alpha(black, 0.8);
+						.cu-container .mnr-c[style*="height:251px"] {
+							height: 255px !important;
+						}
+						.cu-container .mnr-c[style*="height:226px"] {
+							height: 230px !important;
+						}
+						.cu-container .mnr-c[style*="height:243px"] {
+							height: 247px !important;
 						}
 						/* thumbnail */
-							.pla-unit-hovercard-img-container {
+							.pla-unit-img-container {
 								background-color: white;
 							}
-							.Gor6zc {
-								background-color: white;
+							/* single column */
+								.Ew1SFd td:not(.I85Quc) {
+									background-color: white;
+								}
+						/* hover */
+							.pla-hovercard-container {
+								background-color: main-bg-container;
+								box-shadow: 0 2px 6px alpha(black, 0.8);
 							}
-						/* info */
-							.ropLT {
-								padding-top: 4px;
-							}
-						/* price */
-							.i3YBTb {
-								color: main-text;
-							}
-						/* shipping cost */
-							.Mxmg3 {
-								color: main-text-off;
-							}
-					/* info */
-						.rwVHAc {
-							padding-top: 4px;
-						}
-						/* shipping cost */
-							.mxB4Q {
-								color: main-text-off;
-							}
-						/* ratings */
-							/* rating count */
-								.QhqGkb {
+							/* thumbnail */
+								.pla-unit-hovercard-img-container {
+									background-color: white;
+								}
+								.Gor6zc {
+									background-color: white;
+								}
+							/* info */
+								.ropLT {
+									padding-top: 4px;
+								}
+							/* price */
+								.i3YBTb {
+									color: main-text;
+								}
+							/* shipping cost */
+								.Mxmg3 {
 									color: main-text-off;
 								}
-					/* 'By Google' */
-						.FfKHB .KbpByd {
-							color: main-link;
+						/* info */
+							.rwVHAc {
+								padding-top: 4px;
+							}
+							/* shipping cost */
+								.mxB4Q {
+									color: main-text-off;
+								}
+							/* ratings */
+								/* rating count */
+									.QhqGkb {
+										color: main-text-off;
+									}
+						/* special offer */
+								/* icon */
+									.gyXcee > img {
+										filter: colorize(main-text-off);
+									}
+						/* 'By Google' */
+							.FfKHB .KbpByd {
+								color: main-link;
+							}
+					/* expand button */
+						.exp-button {
+							background-color: main-bg-em;
+							box-shadow: 0 0 0 1px alpha(black, 0.1), 0 4px 8px 0 alpha(black, 0.40);
 						}
+						/* icon */
+							.daicon {
+								filter: colorize(main-text);
+							}
 					/* 'view more from' card */
 						/* heading */
 							.le3V2d {
