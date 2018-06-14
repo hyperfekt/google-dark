@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.3
+@version 0.6.4
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -591,12 +591,18 @@
 					#res h3.r {
 						color: main-link;
 						overflow: unset;
+						display: flex;
 					}
 				/* link */
 					#res h3.r a {
 						overflow: hidden;
 						text-overflow: ellipsis;
 						display: block;
+					}
+				/* Web of Trust extension icon */
+					.donut-container {
+						align-self: center;
+						padding-bottom: 2px;
 					}
 			/* text */
 				.s {
