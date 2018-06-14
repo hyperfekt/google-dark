@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.15
+@version 0.6.16
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -3212,13 +3212,17 @@
 				}
 		/* animal sounds */
 			.het5x {
-				background-color: main-bg-container;
+				background-color: transparent;
 			}
 			/* header */
 				.GExYAc {
-					background-color: main-bg-container;
+					background-color: transparent;
 					border-color: main-border;
 				}
+				/* share button */
+					.UfSy3c svg g {
+						fill: accent-shifted(1deg, 11%, -11%);
+					}
 			/* card */
 				.het5x .m6cn6, .ZfSAad .m6cn6 {
 					background-color: main-bg-em;
