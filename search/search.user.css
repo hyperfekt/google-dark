@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.13
+@version 0.6.14
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -306,9 +306,16 @@
 	}
 	
 	/* user agent focus marker */
-		:focus {
-			outline: accent-color auto 1px;
-		}
+		/* Firefox */
+			:-moz-focusring {
+				outline: accent-color auto 1px;
+			}
+		/* Webkit */
+			@media (-webkit-min-device-pixel-ratio: 0) {
+				:focus {
+					outline: accent-color auto 1px;
+				}
+			}
 		/* restore original styles */
 			.lsb, .sbico-c, .gb_xb, .gb_b, .gb_fa, .gb_9b, .gb_Fa, .gb_fc, .gscp_a, .cF4V5c, .GSkImd, .U8shWc, .f0SwQ, .Lu0opc, .mGsL6, .Sb8Qvf, .AUiS2, .N90jdc, .HpcQd, .f0SwQ, .Sb8Qvf, .gLSAk, .ErsxPb, .HpcQd,  {
 				outline: none;
