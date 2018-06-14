@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.10
+@version 0.6.11
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2609,6 +2609,15 @@
 						.imspo_mt__pm-inf {
 							color: main-text;
 						}
+				/* match preview */
+					/* icon */
+						.gMTFD91jmVs__dlc-ic {
+							filter: colorize(accent-shifted(-2deg, -10%, -15%));
+						}
+					/* text */
+						.gMTFD91jmVs__dlc-no .gMTFD91jmVs__dlc-a:link, .gMTFD91jmVs__dlc-no .gMTFD91jmVs__dlc-a:visited {
+							color: accent-shifted(-2deg, -10%, -15%);
+						}
 				/* border */
 					.MoyuKc {
 						border-color: main-border;
@@ -2625,6 +2634,10 @@
 						.escM3kbeJJz__dlg-c {
 							color: main-text-off;
 						}
+						/* separating bullet */
+							.escM3kbeJJz__dls-bull {
+								color: main-text-off;
+							}
 						/* links */
 							.escM3kbeJJz__dlg-a:link, .escM3kbeJJz__dlg-a:visited {
 								color: main-text-off;
