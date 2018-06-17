@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.18
+@version 0.6.19
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -904,49 +904,58 @@
 							result-container();
 						}
 					}
-			/* source */
-				.QHTnWc {
-					color: main-source;
-				}
-			/* more link */
-				.qWfpFe, .qWfpFe svg {
-					color: main-link;
-				}
-			/* carousel */
-				/* answer count */
-					.pIpgAc.KZCcaf {
+				/* source */
+					.QHTnWc {
+						color: main-source;
+					}
+				/* more link */
+					.qWfpFe, .qWfpFe svg {
+						color: main-link;
+					}
+				/* carousel */
+					/* answer count */
+						.pIpgAc.KZCcaf {
+							color: main-text-off;
+						}
+					/* card */
+						.zDBTmf {
+							container();
+						}
+						.zDBTmf > div {
+							background-color: main-bg-container;
+							if result-containers {
+								background-color: main-bg;
+							}
+						}
+						/* header */
+							/* hover */
+								.EDUkIb:hover {
+									background-color: main-bg-off;
+								}
+							/* vote count */
+								.ATPAKc {
+									color: main-text-off;
+								}
+						/* text */
+							.eUrIee {
+								color: main-text;
+							}
+					/* paging buttons */
+						.c8dxme {
+							background-color: main-bg-em;
+							
+						}
+						.dY8Pzf {
+							box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast);
+						}
+			/* fact check */
+				/* labels */
+					.CkcVWd, .CkcVWd.Fuybue:visited {
 						color: main-text-off;
 					}
-				/* card */
-					.zDBTmf {
-						container();
-					}
-					.zDBTmf > div {
-						background-color: main-bg-container;
-						if result-containers {
-							background-color: main-bg;
-						}
-					}
-					/* header */
-						/* hover */
-							.EDUkIb:hover {
-								background-color: main-bg-off;
-							}
-						/* vote count */
-							.ATPAKc {
-								color: main-text-off;
-							}
-					/* text */
-						.eUrIee {
-							color: main-text;
-						}
-				/* paging buttons */
-					.c8dxme {
-						background-color: main-bg-em;
-						
-					}
-					.dY8Pzf {
-						box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast);
+				/* text */
+					.Cyt8W, .Cyt8W.Fuybue:visited {
+						color: main-text;
 					}
 		/* privacy notice */
 			/* heading */
@@ -3227,7 +3236,7 @@
 					}
 				/* pronunciation */
 					.het5x .m6cn6 .nm8ICe, .ZfSAad .m6cn6 .nm8ICe {
-						filter: invert-with-bg(main-bg-em);
+						filter: invert-with-bg(main-bg-em); // TODO: rework to accent color
 					}
 			/* 'more sounds' */
 				.EUjJDc {
