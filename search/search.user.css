@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.25
+@version 0.6.26
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -6168,20 +6168,20 @@
 				background-color: alpha(main-bg, 0.9 * contrast) !important;
 			}
 	/* menus */
-		.gb_hc {
+		.gb_gc {
 			filter: invert(1) brightness(contrast);
 		}
 		/* appmenu */
 			/* outer */
-				.gb_fa {
+				.gb_aa {
 					popout();
 				}
 			/* caret */
-				.gb_vb {
+				.gb_tb {
 					border-bottom-color: main-bg;
 				}
 			/* inner */
-				.gb_ia {
+				.gb_da {
 					background-color: main-bg;
 				}
 				/* titles */
@@ -6189,16 +6189,16 @@
 						color: main-text;
 					}
 					/* emphasis */
-					.gb_Z:hover .gb_3 {
+					.gb_T:hover .gb_X {
 						background: unset;
 					}
 				/* emphasis */
 					/* fix shift on hover */
-					.gb_Z a {
+					.gb_T a {
 						border: 1px solid transparent;
 						margin: 7px 1px;
 					}
-					.gb_Z:hover a {
+					.gb_T:hover a {
 						border-color: main-border;
 					}
 				/* add a shortcut */
@@ -6210,15 +6210,15 @@
 							color: main-text;
 						}
 				/* separator */
-					.gb_ka {
+					.gb_fa {
 						border-color: alpha(black, 0.4 * contrast);
 					}
 				/* more */
-					.gb_ja {
+					.gb_ea {
 						background-color: main-bg-off;
 					}
 				/* even more */
-					#gb a.gb_ja, #gb a.gb_ja:visited, #gb a.gb_ja:active, #gb a.gb_ka, #gb a.gb_ka:visited {
+					#gb a.gb_ea, #gb a.gb_ea:visited, #gb a.gb_ea:active, #gb a.gb_fa, #gb a.gb_fa:visited {
 						color: main-text;
 					}
 		/* notification menu */
@@ -6226,52 +6226,52 @@
 				popout(!important);
 			}
 			/* caret */
-				.gb_wb  {
+				.gb_ub  {
 					border-bottom-color: popout-border !important;
 				}
-				.gb_vb {
+				.gb_tb {
 					border-bottom-color: main-bg !important;
 				}
 		/* account menu */
 			/* active account */
 				/* email */
-					.gb_Ib {
+					.gb_Fb {
 						color: main-text-off;
 					}
 				/* links */
-					.gb_yb, #gb a.gb_yb.gb_yb, .gb_zb a, #gb .gb_zb.gb_zb a {
+					.gb_wb, #gb a.gb_wb.gb_wb, .gb_xb a, #gb .gb_xb.gb_xb a {
 						color: main-link;
 					}
 			/* 'my account' button */
-				.gb_Cb .gb_Jb {
+				.gb_Ab .gb_Hb {
 					background: accent-shifted(0deg, 10%, 4%);
 					border-color: accent-shifted(0deg, -5%, -5%);
 				}
-				.gb_Cb .gb_Jb:hover {
+				.gb_Ab .gb_Hb:hover {
 					background: accent-shifted(0deg, -9%, -5%);
 					border-color: accent-shifted(4deg, -30%, -16%);
 				}
 				if $light-accent {
 					/* label */
-						#gb .gb_Cb a.gb_Jb.gb_Jb {
+						#gb .gb_Ab a.gb_Hb.gb_Hb {
 							color: black;
 						}
 				}
 				
 			/* secondary accounts */
-				.gb_Qb {
+				.gb_Ob {
 					background-color: main-bg-off;
 					border-color: main-separator;
 				}
-				.gb_Sb:hover {
+				.gb_Qb:hover {
 					background-color: main-bg-em;
 				}
 				/* name */
-					.gb_3b {
+					.gb_1b {
 						color: main-text;
 					}
 				/* email */
-					.gb_4b {
+					.gb_2b {
 						color: main-text-off;
 					}
 				/* status */
@@ -6279,24 +6279,24 @@
 						color: main-text-off;
 					}
 			/* loading bar */
-				.gb_pb {
+				.gb_nb {
 					background-color: alpha(black, 0.5 * contrast);
 				}
 			/* footer */
-				.gb_Kb {
+				.gb_Ib {
 					background-color: main-bg-off;
 					border-color: main-separator;
 				}
 				/* buttons */
-					.gb_Ea {
+					.gb_za {
 						background-color: main-bg;
 						border-color: main-separator;
 					}
-					.gb_Kb .gb_Jb:hover {
+					.gb_Ib .gb_Hb:hover {
 						background-color: main-bg;
 						button-hover(2);
 					}
-					.gb_Ea, #gb a.gb_Ea.gb_Ea, .gb_Fa {
+					.gb_za, #gb a.gb_za.gb_za, .gb_Aa {
 						color: main-text-off;	
 					}
 
