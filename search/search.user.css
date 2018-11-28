@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.27
+@version 0.6.28
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1217,7 +1217,7 @@
 		}
 	/* question suggestion (people also ask) */
 		/* heading */
-			.MA9Une {
+			.JolIg {
 				color: main-text-off;
 			}
 		/* question */
@@ -1225,7 +1225,7 @@
 				background-color: transparent;
 			}
 			/* separators */
-				.u80vZ {
+				.cbphWd {
 					border-color: container-separator;
 				}
 			/* expand button */
@@ -1236,6 +1236,11 @@
 				/* expanded */
 					.nmtbia .aCBg7 {
 						opacity: 1;
+					}
+			/* answer */
+				/* date */
+					.Od5Jsd {
+						color: main-text-off;
 					}
 		/* loading icon */
 		g-loading-icon > img {
