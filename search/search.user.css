@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.31
+@version 0.6.32
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4208,6 +4208,11 @@
 								color: main-text !important;
 							}
 					// TODO
+				/* merchant description ("From") */
+					/* more */
+						.kno-fb-ctx span[style*="color:#1a0dab"] {
+							color: main-link !important;
+						}
 			/* cities */
 				/* hotels category */
 					.Q0mKHf .fl {
