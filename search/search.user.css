@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.32
+@version 0.6.33
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -217,6 +217,10 @@
 		padding: 2px 3px $important;
 	}
 
+	scrollbar($important = null) {
+		scrollbar-color: dark $important;
+	}
+
 /* functions */
 	quote($string) {
 		"" + $string + "" //WTF Stylus?
@@ -298,6 +302,8 @@
 @-moz-document regexp("https?://(ipv4|www|encrypted)\\.google\\.(com|([a-z]{2}))(\\.[a-z]{2})?(/+((webhp|search|gfe_rd|auth|gws_rd|#q|imghp|#gfe_rd|#safe|#pws|#tbs|#gws|#tbm|\\?)(?!.*(tbm=(lcl)|;mt;|;st;|;dt;|;nw;|;fp;)).*)?)?") {
 	:root {
 		global-definitions();
+
+		scrollbar();
 	}
 
 	body {
