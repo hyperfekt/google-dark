@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.46
+@version 0.6.47
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4960,14 +4960,62 @@
 					}
 				}
 		/* Images */
-			/* related image search terms (improvement over original) */
-				a.chip span.sq {
-					font-weight: bold !important;
-					text-shadow: 0 0 0.3em black !important;
+			/* related image search terms */
+				/* terms */
+					.Mw2I7 {
+						background-color: main-bg-off;
+						border-color: main-separator;
+						color: main-text;
+					}
+					/* selected */
+						.Mw2I7.LPW6zd {
+							background-color: main-bg-em;
+							border-color: main-separator;
+						}
+				/* navigation buttons */
+					.Lu0opc.SkGIjd[style*="background-color:"] {
+						background-color: main-bg-em !important;
+					}
+					/* arrow */
+						.BlOseb.SkGIjd .KkkQv, .k2Oeod.SkGIjd .S2C1T {
+							filter: colorize(main-text);
+						}
+			/* image boxes */
+				.iKjWAf {
+					background-color: main-bg;
 				}
-				a.chip.xchip span.sq {
-						text-shadow: none !important;
-				}
+				/* thumbnail */
+					.rg_l {
+						background-color: main-bg !important;
+					}
+					/* overlay */
+						.rg_anbg, .rg_ilmbg {
+							background-color: alpha(main-bg, 0.9);
+						}
+						/* icon */
+							.S2Caaf {
+								filter: colorize(darken(main-text, 20%));
+							}
+						/* text */
+							.rg_an, .rg_anbg, .rg_ilmbg {
+								color: main-text;
+							}
+				/* title */
+					.mVDMnf {
+						color: main-text;
+					}
+					/* hover */
+						.iKjWAf:hover .mVDMnf {
+							text-decoration-color: main-text;
+						}
+				/* domain */
+					.nJGrxf.FnqxG {
+						color: main-text-off;
+					}
+					/* hover */
+						.iKjWAf:hover .nJGrxf.FnqxG {
+							text-decoration-color: main-text-off;
+						}
 			/* selected */
 				/* main */
 					.irc_c {
@@ -4982,7 +5030,7 @@
 						background-color: main-bg-em;
 					}
 				/* caret */
-					#irc_pc {
+					#irc-pc {
 						border-bottom-color: main-bg-em;
 					}
 				/* close button */
@@ -5085,6 +5133,9 @@
 							text-align: center;
 						}
 				/* show more results (date select 'go') */
+					#smb {
+						border-color: main-separator;
+					}
 					.ksb:not(.flt-flipper) {
 						background-color: main-bg-em;
 						button()
@@ -6242,8 +6293,8 @@
 						background-color: alpha(main-bg, 0.9) !important;
 					}
 			/* camera icon */
-				.gsst_e {
-					filter: colorize(white);
+				.S3Wjs {
+					filter: colorize(main-text-off);
 				}
 				/* search by image popup */
 					#qbp {
