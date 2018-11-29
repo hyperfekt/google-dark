@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.40
+@version 0.6.41
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -6728,6 +6728,10 @@
 					color: footer-text-off;
 				}
 			/* city */
+				#swml-loc {
+					color: footer-text-off;
+				}
+			/* other */
 				#swml {
 					color: footer-text-minor;
 				}
