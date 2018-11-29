@@ -1604,13 +1604,24 @@
 							filter: colorize(main-text);
 						}
 			/* currency converter */
+				/* time and date */
+					.hqAUc {
+						color: main-text-off;
+					}
+				/* disclaimer */
+					.NXHf6d {
+						color: main-text-off;
+					}
 				/* amounts */
-					.IxBI8c {
+					.Hg3mWc {
 						background-color: main-bg-em;
 						border-color: main-separator;
 						-moz-appearance: textfield;
 					}
-					.IxBI8c:not(output):-moz-ui-invalid {
+					.Hg3mWc:focus {
+						color: main-text-em !important;
+					}
+					.Hg3mWc:not(output):-moz-ui-invalid {
 						box-shadow: none;
 					}
 				/* currencies */
@@ -1620,17 +1631,19 @@
 					}
 					/* overlayed */
 						.J8cLR {
-							border-radius: 2px;
 							border-color: main-separator;
 						}
 				/* graph */
-					#knowledge-currency__chart {
-						filter: invert-with-bg(main-bg-container);
-					}
-				/* disclaimer */
-					.a5jSWc {
-						padding-top: 0px;
-					}
+					/* days */
+						/* selected */
+							.fw-ch-sel .KWk7r.qUjgX {
+								background: main-bg-em;
+								color: accent-color;
+							}
+						/* other */
+							.NDTw3e.K7R36c {
+								color: main-text-off;
+							}
 			/* shop carousel */
 				if result-containers {
 					.commercial-unit-desktop-top {
