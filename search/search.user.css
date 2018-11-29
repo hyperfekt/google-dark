@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.33
+@version 0.6.34
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -887,6 +887,10 @@
 			/* tweet */
 				g-inner-card {
 					background-color: inherit;
+				}
+			/* cards */
+				.VoEfsd {
+					container();
 				}
 			/* stack overflow */
 				/* padding */
@@ -2259,11 +2263,6 @@
 					.bkWMgd > div:not(#brs):not(#imagebox_bigimages) > g-section-with-header .e2BEnf {
 						result-container();
 						margin-bottom: 12px;
-					}
-				}
-				if result-containers {
-					.VoEfsd {
-						container();
 					}
 				}
 			.KQvDId {
