@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.36
+@version 0.6.37
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -2256,6 +2256,104 @@
 					/* hover */
 						.wob_df:hover {
 							border-color: main-border;
+						}
+			/* timer / stopwatch */
+				/* tabs */
+					/* active */
+						.act-active-tab {
+							color: accent-color;
+							border-color: accent-color;
+						}
+						/* icon */
+							.act-active-stopwatch-icon, .act-active-timer-icon {
+								filter: colorize(accent-color);
+							}
+					/* inactive */
+						/* icon */
+							#act-tab-header .act-tab-link .act-icon-img {
+								filter: colorize(main-text-off);
+							}
+							.act-inactive-tab .act-icon-img {
+								opacity: 1;
+							}
+							/* hover */
+								#act-tab-header .act-tab-link:hover .act-icon-img {
+									filter: colorize(main-text);
+								}
+						/* label */
+							.act-inactive-tab {
+								color: main-text-off;
+							}
+							/* hover */
+								.act-tab-link.act-inactive-tab:hover {
+									color: main-text;
+								}
+				/* main area */
+					.act-switch-area {
+						background-color: inherit;
+					}
+					/* inactive */
+						.act-switch-area.act-background, .act-switch-area.act-covered-timer,
+						.act-foreground ~ .act-switch-area {
+							visibility: hidden;
+						}
+					/* top border */
+						.act-tim-fs-cnt {
+							border-color: main-border;
+						}
+					/* bottom separator */
+						.act-btn-row {
+							border-color: main-border;
+						}
+					/* input */
+						.act-tim-txt-cnt {
+							color: main-text;
+						}
+						.act-tim-txt-cnt > div[style*="background-color:white"] {
+							background-color: inherit !important;
+						}
+						/* timer */
+							.act-timer-section .act-tim-paused .act-tim-txt-cnt {
+								border-bottom-color: main-separator;
+							}
+							/* selected */
+								.act-timer-section .act-tim-paused .act-tim-focus {
+									border-color: accent-color;
+								}
+								/* prefilled */
+									.act-tim-unsure, .act-tim-unsure:hover, #act-tim-cnt .act-tim-unsure:active {
+										color: main-text-off;
+									}
+				/* footer */
+					/* progress bar */
+						/* active */
+							.act-prog {
+								background-color: accent-shifted(0deg, 10%, 4%);
+							}
+						/* paused / finished */
+							.act-tim-paused .act-prog, .act-tim-finished .act-prog {
+								background-color: main-bg-off;
+							}
+					/* left buttons */
+						/* start */
+							/* disabled */
+								.Ak3kIe[disabled] {
+									border-color: accent-shifted(0deg, -5%, -5%);
+									background-color: accent-shifted(0deg, 10%, 4%);
+									if $light-accent {
+										color: black;
+									}
+								}
+						/* reset */
+							/* disabled */
+								.fE5Rge[disabled] {
+									border-color: alpha(white, 0.2 * contrast);
+									color: alpha(white, 0.3 * contrast);
+								}
+					/* right buttons */
+						.act-icon-dark-gray {
+							filter: colorize(main-text-off);
+							opacity: 1;
 						}
 		/* top stories */
 			/* heading */
