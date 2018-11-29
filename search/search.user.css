@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.6.38
+@version 0.6.39
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -6325,9 +6325,26 @@
 				background-color: alpha(main-bg, 0.9 * contrast) !important;
 			}
 	/* menus */
-		.gb_gc {
-			filter: invert(1) brightness(contrast);
-		}
+		/* buttons */
+			/* appmenu / notification menu */
+				.gb_hc {
+					filter: invert(1) brightness(contrast);
+				}
+			/* sign in */
+				.gb_Aa {
+					border-color: accent-color;
+					background: linear-gradient(to bottom, accent-shifted(1deg, 0%, 2%), accent-shifted(0deg, -9%, -1%));
+				}
+				/* active */
+					.gb_Aa:active {
+						background: linear-gradient(to bottom, accent-shifted(1deg, -13%, -5%), accent-shifted(0deg, -26%, -7%));
+					}
+				/* label */
+					#gb a.gb_Aa.gb_Aa {
+						if $light-accent {
+							color: black;
+						}
+					}
 		/* appmenu */
 			/* outer */
 				.gb_aa {
@@ -6749,20 +6766,6 @@
 						border-radius: 2px;
 					}
 				}
-				/* sign in button */
-					.gb_Fa {
-						border-color: accent-color;
-						background: linear-gradient(to bottom, accent-shifted(1deg, 9%, 2%), accent-shifted(1deg, -9%, -1%))
-					}
-					.gb_Fa:active {
-						background: linear-gradient(to bottom, accent-shifted(1deg, -13%, -5%), accent-shifted(1deg, -26%, -7%));
-					}
-					if $light-accent {
-						/* label */
-							#gb a.gb_Fa.gb_Fa {
-								color: black;
-							}
-					}
 			/* left */
 				if result-containers {
 					#hptl::before {
