@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.2
+@version 0.7.3
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -5831,20 +5831,14 @@
 								box-shadow: none;
 							}
 						}
-						.u8H8Fd {
-							box-shadow: 0 1px 0 main-border;
-						}
 						if result-containers {
-							.jtEFhd .u8H8Fd {
+							.wRPYSe.u8H8Fd {
 								container();
-								border-bottom-right-radius: 2px;
-								border-bottom-left-radius: 2px;
-								background-color: main-bg-container;
-								width: 632px; //TODO: fit to right column
+								width: 630px; //TODO: fit to right column
 							}
-							.wRPYSe .u8H8Fd {
-								border-radius: 2px;
-							}
+						}
+						.u8H8Fd {
+							box-shadow: none;
 						}
 					/* selected */
 						.KYeOtb[aria-selected="true"] {
@@ -5937,7 +5931,7 @@
 							border-bottom-left-radius: 0px;
 							border-bottom-right-radius: 0px;
 							border-bottom-width: 0px;
-							width: 593px;
+							width: 590px;
 						}
 					}
 					/* breadcrumb */
@@ -5983,7 +5977,7 @@
 							}
 					/* tabs */
 						.qLJQNc {
-							width: 633px;
+							width: 630px;
 							background-color: main-bg;
 							if result-containers {
 								container();
@@ -7190,6 +7184,24 @@
 					.ftl:hover, #footer a:hover {
 						color: footer-text;
 					}
+}
+
+/* finance page */
+@-moz-document regexp("https?://(ipv4|www|encrypted)\\.google\\.(com|([a-z]{2}))(\\.[a-z]{2})?/.*tbm=fin.*") {
+	/* undo main SERP layout fix */
+		#res {
+			padding: 0 20px;
+		}
+	/* pre-result modules */
+		#taw {
+			margin-left: 4px;
+			width: 632px;
+		}
+	/* no result */
+		#topstuff {
+			margin-left: -16px;
+			width: 632px;
+		}
 }
 
 /* notification menu iframe */
