@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.8
+@version 0.7.9
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -584,7 +584,7 @@
 	/* results */
 		/* single entry */
 			if result-containers {
-				.bkWMgd .srg .g:not([data-hveid]) > div[data-hveid], .bkWMgd > .g[data-hveid] > div:not([class]) {
+				.bkWMgd .srg .g:not([data-hveid]) > div[data-hveid], .bkWMgd > .g[data-hveid] > div:not([class]):not([data-hveid]) {
 					result-container(true);
 				}
 				.srg .g[data-hveid]:not(#imagebox_bigimages):not(.g-blk):not(.obcontainer):not(#flun) {
