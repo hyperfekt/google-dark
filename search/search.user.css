@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.10
+@version 0.7.11
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -6402,7 +6402,7 @@
 			border-color: alpha(black, 0.5 * contrast);
 		}
 
-		#searchform:not(.minidiv) .sfbgg {
+		#searchform:not(.minidiv) .sfbgg, body > .sfbgg {
 			background-color: header-bg !important;
 			background-image: none;
 		}
