@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.3
+@version 0.7.4
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -6339,22 +6339,21 @@
 							}
 			/* loading fail */
 				if result-containers {
-					.fSXkBc::before {
+					.JuadA .fSXkBc::before {
 						content: "";
 						position: absolute;
-						height: 117px;
+						height: 245px;
 						width: 195px;
-						top: -162px;
+						top: -170px;
 						left: -34px;
 						z-index: -1;
-						border-radius: 2px;
 						container();
 					}
 				}
 				/* looking glass */
-					.Klyate {
+					.A1Acbb {
 						opacity: 1;
-						filter: colorize(main-text-off);
+						filter: colorize(darken(main-text-off, 15%));
 					}
 				/* 'something went wrong' */
 					.Q8OsXe {
