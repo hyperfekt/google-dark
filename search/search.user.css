@@ -6724,6 +6724,10 @@
 				.gb_tb {
 					border-bottom-color: main-bg !important;
 				}
+			/* caret if there is a managed by header */
+				.gb_Kb .gb_tb {
+					border-bottom-color: main-bg-em !important;
+				}
 		/* account menu */
 			/* managed by header */
 				.gb_Lb {
