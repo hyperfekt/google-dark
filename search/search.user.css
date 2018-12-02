@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.5
+@version 0.7.6
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -6443,7 +6443,7 @@
 					background: unset;
 				}
 				/* spell check */
-					.vdLsw span {
+					.vdLsw span, .gsc_b {
 						/* transparent background */
 							background-image: url("data:image/gif;base64,R0lGODlhCgAEAIABAP9CGv///yH5BAEKAAEALAAAAAAKAAQAAAIKjI8GcKvPgmuoAAA7");
 						/* move upwards */
