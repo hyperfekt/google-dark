@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.0
+@version 0.7.1
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -182,6 +182,7 @@
 		border: 1px solid main-border $important;
 		border-radius: 8px $important;
 		background-color: main-bg-container $important;
+		overflow: hidden;
 	}
 
 	select($important = null) {
@@ -2487,9 +2488,7 @@
 					}
 				}
 		/* map */
-			#lu_map {
-				border-top-left-radius: 8px;
-				border-top-right-radius: 8px;
+			.H93uF #lu_map {
 				width: 630px;
 			}
 			/* select opening hours */
@@ -3776,24 +3775,15 @@
 			.Y1mqLe {
 				min-height: unset;
 			}
+			.DI6Ufb {
+				padding-top: 20px;
+				padding-bottom: 20px;
+			}
 			/* images */
 				.kp-blk .img-brk {
 					border-top-left-radius: unset;
+					border-top-right-radius: unset;
 				}
-				/* complementary result */
-					.T1XAme.CxRsXb {
-						border-top-left-radius: 8px;
-					}
-					.izN3z {
-						border-top-right-radius: 8px;
-					}
-				/* classic knowledge panel */
-					.kp-blk .luib > div:first-child > div:first-child div, .kp-blk .luib > div:first-child > div:first-child img {
-						border-top-left-radius: 8px !important;
-					}
-					.kp-blk .luib > div:nth-child(2) > div:first-child img, .kp-blk .luib > div:nth-child(2) > div:first-child div {
-						border-top-right-radius: 8px !important;
-					}
 			/* title */
 				.kno-ecr-pt, .DRolee {
 					color: main-text;
