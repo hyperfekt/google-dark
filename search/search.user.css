@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.15
+@version 0.7.16
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -6736,6 +6736,10 @@
 				}
 				.gb_tb {
 					border-bottom-color: main-bg !important;
+				}
+			/* caret if there is a managed by header */
+				.gb_Kb .gb_tb {
+					border-bottom-color: main-bg-em !important;
 				}
 		/* account menu */
 			/* managed by header */
