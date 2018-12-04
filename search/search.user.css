@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.12
+@version 0.7.13
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -7208,6 +7208,10 @@
 				/* hover */
 					.ftl:hover, #footer a:hover {
 						color: footer-text;
+					}
+				/* settings popout */
+					#fsett {
+						popout();
 					}
 }
 
