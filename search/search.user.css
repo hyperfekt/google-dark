@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.19
+@version 0.7.20
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -742,6 +742,10 @@
 					}
 			/* ad */
 				if result-containers {
+					#center_col .C4eCVc {
+						padding-left: 0px;
+						padding-right: 0px;
+					}
 					.ads-ad {
 						padding-top: 6px;
 						padding-bottom: 6px;
