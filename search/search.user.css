@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.18
+@version 0.7.19
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -517,7 +517,6 @@
 		#resultStats {
 			color: main-text-off;
 			if result-containers {
-				border-radius: 2px;
 				container();
 				padding-right: 12px;
 			}
@@ -1693,7 +1692,6 @@
 								container();
 								width: 632px - $horizontal-padding * 2;
 								height: 21.6px;
-								border-radius: 2px;
 								padding: $vertical-padding $horizontal-padding;
 							}
 							.commercial-unit-desktop-top .v7hl4d, .yY236b .v7hl4d {
@@ -1732,7 +1730,6 @@
 								content: "";
 								z-index: -1;
 								container();
-								border-radius: 2px;
 							}
 
 							/* multicolumn */
@@ -5133,7 +5130,6 @@
 						top: -6px;
 						left: 0;
 						z-index: -1;
-						border-radius: 2px;
 						container();
 					}
 				}
@@ -7183,7 +7179,6 @@
 						content: "";
 						z-index: -1;
 						container();
-						border-radius: 2px;
 					}
 				}
 			/* left */
@@ -7199,7 +7194,6 @@
 						content: "";
 						z-index: -1;
 						container();
-						border-radius: 2px;
 					}
 				}
 				/* labels */
@@ -7268,7 +7262,7 @@
 					}
 					.szppmdbYutt__middle-slot-promo {
 						background-color: main-bg-container;
-						border-radius: 2px;
+						border-radius: 8px;
 						padding: 6px;
 						padding-left: 8px;
 					}
@@ -7277,7 +7271,7 @@
 				if result-containers {
 					#SIvCob {
 						background-color: main-bg-container;
-						border-radius: 2px;
+						border-radius: 8px;
 						padding-left: 8px;
 						padding-right: 6px;
 					}
