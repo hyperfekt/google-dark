@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.14
+@version 0.7.15
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -317,8 +317,10 @@
 
 
 	/* main */
-		#res {
-			padding: 0px;
+		if result-containers {
+			#res {
+				padding: 0px;
+			}
 		}
 		/* buttons */
 			.ab_button {
@@ -883,14 +885,16 @@
 			/* people also search for */
 				/* frame */
 					/* inner */
-					.AUiS2 {
-						border-color: main-border;
-					}
+						.AUiS2 {
+							border-color: main-border;
+						}
 				/* outer */
 					.exp-outline {
-						border-color: main-border;
 						if result-containers {
 							border-color: transparent;
+						} else {
+							container();
+							background-color: inherit;
 						}
 					}
 				/* heading */
@@ -1015,8 +1019,10 @@
 				}
 		/* info box */
 			.vk_c, .vk_cxp {
-				margin-left: 0px;
-				margin-right: 0px;
+				if result-containers {
+					margin-left: 0px;
+					margin-right: 0px;
+				}
 				background-color: main-bg;
 			}
 			.vk_c, .vk_cxp, #rhs .fIcnad {
@@ -1253,9 +1259,11 @@
 			border-color: main-border;
 		}
 	/* question suggestion (people also ask) */
-		#center_col .kp-blk {
-			margin-left: 0px;
-			margin-right: 0px;
+		if result-containers {
+			#center_col .kp-blk {
+				margin-left: 0px;
+				margin-right: 0px;
+			}
 		}
 		/* heading */
 			.JolIg {
@@ -2781,8 +2789,10 @@
 						}
 		/* stock */
 			.f196ee {
-				margin-left: 0px;
-				margin-right: 0px;
+				if result-containers {
+					margin-left: 0px;
+					margin-right: 0px;
+				}
 				container();
 			}
 			/* name, symbol and exchange */
@@ -3651,7 +3661,9 @@
 	/* footer */
 		/* extraresults */
 			#extrares {
-				padding: 0px;
+				if result-containers {
+					padding: 0px;
+				}
 			}
 		/* censorship notice */
 			if result-containers {
@@ -5635,10 +5647,10 @@
 									}
 				/* results */
 					/* 'did you mean' correction */
-						#taw > div[style*="padding"] {
-							padding: 0px !important;
-						}
 						if result-containers {
+							#taw > div[style*="padding"] {
+								padding: 0px !important;
+							}
 							#topstuff .sp_cnt, #topstuff .ssp { // TODO: find a way to prevent overlap with sponsored hint
 								margin-left: unset;
 								margin-right: unset;
