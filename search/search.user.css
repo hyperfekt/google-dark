@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.11
+@version 0.7.12
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -703,6 +703,9 @@
 							flex: none;
 							margin-left: $dash-spacing;
 						}
+				}
+				.iUh30 {
+					color: main-source;
 				}
 				.a, cite, cite a:link, cite a:visited, .cite, .cite:link, #nygTcd > i, .bc a:link {
 					color: main-source;
