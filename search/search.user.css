@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.17
+@version 0.7.18
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -4051,6 +4051,72 @@
 							.NFQFxe .rISBZc {
 								filter: drop-shadow(0px 0px 0.5px white);
 							}
+				/* audience reviews */
+					/* separator */
+						.jA1nid {
+							border-color: main-border;
+						}
+					/* 'new' marker */
+						.bXt9ye {
+							background-color: accent-color;
+							if $light-accent {
+								color: black;
+							}
+						}
+					/* avatar rating marker */
+						.WZBD7d {
+							background-color: main-bg-em;
+							box-shadow: 0 1px 2px 0 alpha(black, 0.3 * contrast);
+						}
+					/* 'posting publicly' */
+						.RJ3lSb {
+							color: main-text-off;
+						}
+					/* rating buttons */
+						.H0Ytud, .xpLNBf {
+							fill: main-text-minor;
+						}
+						/* hover */
+							.H0Ytud:hover, .xpLNBf:hover {
+								fill: main-text-off;
+							}
+					/* prompt */
+						.HF3S5b {
+							color: main-text-off;
+						}
+					/* review button */
+						.j4Iw3b[style*="color"] {
+							color: accent-shifted(1deg, -22%, -9%) !important;
+						}
+					/* 'help other viewers */
+						.mFI2Qb {
+							color: main-text;
+						}
+					/* review popup */
+						.fAwjXaCTMo5__content.mr5vfb {
+							box-shadow: 0 2px 4px alpha(black, 0.5 * contrast);
+							border-color: main-border;
+						}
+						/* overlay */
+							.Xz5tfb.fAwjXaCTMo5__visible {
+								background-color: main-bg-off;
+							}
+						/* header */
+							.foTEEb {
+								color: main-text;
+							}
+						/* user name */
+							.SssBqf {
+								color: main-text;
+							}
+						/* text area */
+							.ZKWNLd {
+								background-color: main-bg-em;
+								color: main-text;
+							}
+							.ZKWNLd::placeholder {
+								color: main-text;
+							}
 			/* bands */
 				/* available on (music services) */
 					/* separators */
@@ -4687,7 +4753,7 @@
 						}
 						/* overlay */
 							.lxG8Hd.fAwjXaCTMo5__visible {
-								opacity: 0.4;	
+								opacity: 0.4;
 							}
 						/* title */
 							.lPQUVe {
