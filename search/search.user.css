@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.16
+@version 0.7.17
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -298,7 +298,7 @@
 	}
 
 /* Main Body */
-@-moz-document regexp("https?://(ipv4|www|encrypted)\\.google\\.(com|([a-z]{2}))(\\.[a-z]{2})?(/+((webhp|search|gfe_rd|auth|gws_rd|finance|#q|imghp|#gfe_rd|#safe|#pws|#tbs|#gws|#tbm|\\?)(?!.*(tbm=(lcl)|;mt;|;st;|;dt;|;nw;|;fp;)).*)?)?") {
+@-moz-document regexp("https?://(ipv4|www|encrypted)\\.google\\.(com|([a-z]{2}))(\\.[a-z]{2})?(/+((webhp|search|gfe_rd|auth|gws_rd|finance|imgres|#q|imghp|#gfe_rd|#safe|#pws|#tbs|#gws|#tbm|\\?)(?!.*(tbm=(lcl)|;mt;|;st;|;dt;|;nw;|;fp;)).*)?)?") {
 	:root {
 		global-definitions();
 
