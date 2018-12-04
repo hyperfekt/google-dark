@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.13
+@version 0.7.14
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -6775,6 +6775,19 @@
 					.gb_5b {
 						color: main-text-off;
 					}
+				/* signed out menu */
+					.gb_Qb[selected="true"] > .gb_Tb {
+						background-color: alpha(main-bg-em, 0.85);
+					}
+					/* buttons */
+						.gb_Ub {
+							background-color: alpha(main-bg, 0.9);
+							button();
+						}
+						/* focused */
+							.gb_Qb[selected="true"] > .gb_Ub:focus {
+								background-color: alpha(main-bg-off, 0.9);
+							}
 			/* loading bar */
 				.gb_nb {
 					background-color: alpha(black, 0.5 * contrast);
