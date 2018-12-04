@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.20
+@version 0.7.21
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1692,11 +1692,13 @@
 						$vertical-padding = 6px;
 						$horizontal-padding = 12px;
 						/* main widget */
-							.commercial-unit-desktop-top .v7hl4d {
+							.commercial-unit-desktop-top .v7hl4d { //also used as hint for ads in image search
 								container();
-								width: 632px - $horizontal-padding * 2;
 								height: 21.6px;
 								padding: $vertical-padding $horizontal-padding;
+							}
+							.cu-container .commercial-unit-desktop-top .v7hl4d {
+								width: 632px - $horizontal-padding * 2;
 							}
 							.commercial-unit-desktop-top .v7hl4d, .yY236b .v7hl4d {
 								margin-left: 0px;
@@ -1767,6 +1769,7 @@
 					/* sponsored hint */
 						/* text */
 							.ptJHdc .richlist-wta, .ptJHdc .v7hl4d {
+								background: transparent;
 								color: main-text-off;
 							}
 							.commercial-unit .richlist-wta, .commercial-unit .v7hl4d {
@@ -5158,6 +5161,47 @@
 						.BlOseb.SkGIjd .KkkQv, .k2Oeod.SkGIjd .S2C1T {
 							filter: colorize(main-text);
 						}
+			/* ad carousel */
+				.ptJHdc {
+					background: transparent;
+				}
+				/* cards */
+					.hPFJud {
+						container();
+						background-color: main-bg-container();
+					}
+					/* price */
+						.e10twf {
+							color: main-text;
+						}
+					/* domain */
+						.LbUacb {
+							color: main-text-off;
+						}
+					/* shipping cost */
+						div.xxB45e {
+							color: main-text-off;
+						}
+					/* hover popdown */
+						.pla-hovercard-container {
+							box-shadow: 1px solid rgba(0,0,0,0.5 * contrast)
+						}
+						/* caret */
+							.plaha {
+								filter: colorize(main-bg-container); //TODO: unify (#28)
+							}
+						/* name */
+							.FjKb6d {
+								color: main-text;
+							}
+						/* info */
+							.kSARKd {
+								color: main-text-off;
+							}
+				/* separator */
+					.hgDUwe {
+						border-color: main-border;
+					}
 			/* image boxes */
 				if result-containers {
 					.rg_bx.rg_di.rg_el.ivg-i::before {
