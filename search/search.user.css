@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.24
+@version 0.7.25
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1694,6 +1694,7 @@
 						/* main widget */
 							.commercial-unit-desktop-top .v7hl4d { //also used as hint for ads in image search
 								container();
+								overflow: visible;
 								height: 21.6px;
 								padding: $vertical-padding $horizontal-padding;
 							}
@@ -5223,17 +5224,14 @@
 					}
 			/* image boxes */
 				if result-containers {
-					.rg_bx.rg_di.rg_el.ivg-i::before {
-						content: "";
-						position: absolute;
+					.rg_bx.rg_di.rg_el.ivg-i {
 						container();
-						width: calc(100% + 0.5px);
-						height: 100%;
-						left: -1px;
-						padding-bottom: 3px;
+						overflow: visible;
+						margin-left: -1px;
+						margin-right: 23px;
+						height: unset !important;
 					}
 				}
-				
 				/* thumbnail */
 					.rg_l {
 						background-color: transparent !important;
@@ -5258,8 +5256,7 @@
 					.iKjWAf {
 						background-color: transparent;
 						if result-containers {
-							padding-bottom: 6.6%; //bad hack to try and extend the clickable link area over the whole container
-							width: calc(100% + 1px);
+							padding-bottom: 5px;
 						}
 					}
 					/* title */
@@ -5755,6 +5752,7 @@
 								background-color: main-bg;
 								if result-containers {
 									container();
+									overflow: visible;
 									padding: 5px;
 								}
 							}
