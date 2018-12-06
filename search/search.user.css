@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.26
+@version 0.7.27
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1197,6 +1197,15 @@
 		.EDblX.DAVP1 > div > div:first-child {
 			padding-left: 0px;
 		}
+		/* pagination buttons */
+			g-fab {
+				background-color: main-bg-em !important;
+				color: main-text-off !important;
+				box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast) !important;
+			}
+			.Lu0opc.Lu0opc:hover g-fab {
+				color: main-text !important;
+			}
 	/* tweet carousel */
 		.rQgnxe {
 			margin: 0px;
@@ -1207,15 +1216,6 @@
 					result-container();
 					margin-bottom: 0px;
 				}
-			}
-		/* paging buttons */
-			g-fab {
-				background-color: main-bg-em !important;
-				color: main-text-off !important;
-				box-shadow: 0 0 0 1px alpha(black, 0.08 * contrast), 0 4px 8px 0 alpha(black, 0.4 * contrast) !important;
-			}
-			.Lu0opc.Lu0opc:hover g-fab {
-				color: main-text !important;
 			}
 		/* tweet */
 			/* links */
@@ -1681,7 +1681,7 @@
 							.NDTw3e.K7R36c {
 								color: main-text-off;
 							}
-			/* shop carousel */
+			/* shopping carousel */
 				if result-containers {
 					.commercial-unit-desktop-top {
 						padding: 4px !important;
@@ -1828,6 +1828,10 @@
 									margin-top: 6px;
 								}
 					}
+					/* pagination buttons (when hovering over carousel) */
+						.pla-carousel:hover g-left-button g-fab, .pla-carousel:hover g-right-button g-fab, .pla-carousel.pla-carousel-hvrd g-left-button g-fab, .pla-carousel.pla-carousel-hvrd g-right-button g-fab {
+							color: main-text !important;
+						}
 					/* item */
 						.cu-container .mnr-c {
 							container();
