@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.23
+@version 0.7.24
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -40,7 +40,7 @@
 @var text unfilled-star "Rating Star Background" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAgUlEQVQY042QQQqDQAxFX2xx42ARCoII3sD7X0csXXUluhmQdOE4zowuDHxCeIT8fLhb2sdzFqBy0yXk5XQJCydfohUNj9P5lVEmAc1pMRGa+YgFcWbeNB595RffXIK9JTUUGqlSaDYTWMD/+nS9ZGaQVSc6jOZij2yM1kFS9Z7TH6uMHsq9WjadAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAAA4AAAANCAQAAAAz1Zf0AAAAR0lEQVQY02Nk4GDACZiQOf+jcUr+j0aXZmJgINJYdMD4Pxmn1FImxqW4pBgYGCFeQXUITAP5DiJeEmYXzAUsMA5EgnEpsuMAsEwPjDLKA7oAAAAASUVORK5CYII=")
 @var text unfilled-stars "Rating Stars Background" url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAAANCAMAAADBs/NgAAAANlBMVEUAAABmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmZmbzm4XLAAAAEXRSTlMAECAwQFBgb3CQn6+wwM/g70u8YpgAAABUSURBVChTrcfLAYMgAAXBBeLfiNt/s15MA4/MbeBPvqOZnMbC5jYWuj3PfPtzz0mgXW+ulgXKrupe0kBVteZhVXXNw+lRD888xQVYLGn4NABazfIAiJcR1r5z2EMAAAAASUVORK5CYII=")
 @var text container-separator "Container Separator" alpha(black, 0.3 * contrast)
-@var text popout-border "Popout Border" alpha(black, 0.3 * contrast)
+@var text popout-border "Popout Border" darken(main-bg-off, 15%)
 @var checkbox result-containers "Result Containers" 0
 @var text accent-color "Accent Color" #4285f4
 
@@ -6787,27 +6787,27 @@
 	/* menus */
 		/* buttons */
 			/* appmenu / notification menu */
-				.gb_hc {
+				.gb_nc {
 					filter: invert(1) brightness(contrast);
 				}
 			/* sign in */
-				.gb_Aa {
+				.gb_Ba {
 					border-color: accent-color;
 					background: linear-gradient(to bottom, accent-shifted(1deg, 0%, 2%), accent-shifted(0deg, -9%, -1%));
 				}
 				/* active */
-					.gb_Aa:active {
+					.gb_Ba:active {
 						background: linear-gradient(to bottom, accent-shifted(1deg, -13%, -5%), accent-shifted(0deg, -26%, -7%));
 					}
 				/* label */
-					#gb a.gb_Aa.gb_Aa {
+					#gb a.gb_Ba.gb_Ba {
 						if $light-accent {
 							color: black;
 						}
 					}
 		/* appmenu */
 			/* outer */
-				.gb_aa {
+				.gb_ba {
 					popout();
 				}
 			/* caret */
@@ -6815,7 +6815,7 @@
 					border-bottom-color: main-bg;
 				}
 			/* inner */
-				.gb_da {
+				.gb_ea {
 					background-color: main-bg;
 				}
 				/* titles */
@@ -6823,7 +6823,7 @@
 						color: main-text;
 					}
 					/* emphasis */
-					.gb_T:hover .gb_X {
+					.gb_T:hover .gb_Z {
 						background: unset;
 					}
 				/* emphasis */
@@ -6836,23 +6836,27 @@
 						border-color: main-border;
 					}
 				/* add a shortcut */
-					.gb_qa {
+					.gb_ra {
 						box-shadow: 0 1px 2px alpha(black, 0.5 * contrast), 0 0 1px alpha(black, 0.5 * contrast);
 					}
 					/* title */
-						.gb_ra {
+						.gb_sa {
 							color: main-text;
 						}
+					/* link */
+						.gb_ua, #gb#gb .gb_ua {
+							color: accent-shifted(1deg, -6%, -2%);
+						}
 				/* separator */
-					.gb_fa {
+					.gb_ga {
 						border-color: alpha(black, 0.4 * contrast);
 					}
 				/* more */
-					.gb_ea {
+					.gb_fa {
 						background-color: main-bg-off;
 					}
 				/* even more */
-					#gb a.gb_ea, #gb a.gb_ea:visited, #gb a.gb_ea:active, #gb a.gb_fa, #gb a.gb_fa:visited {
+					#gb a.gb_fa, #gb a.gb_fa:visited, #gb a.gb_fa:active, #gb a.gb_ga, #gb a.gb_ga:visited {
 						color: main-text;
 					}
 		/* notification menu */
@@ -6861,71 +6865,74 @@
 			}
 			/* caret */
 				.gb_ub  {
-					border-bottom-color: popout-border !important;
-				}
-				.gb_tb {
 					border-bottom-color: main-bg !important;
 				}
-			/* caret if there is a managed by header */
-				.gb_Kb .gb_tb {
-					border-bottom-color: main-bg-em !important;
+				.gb_vb {
+					border-bottom-color: popout-border !important;
+				}
+			/* weird top right dot */
+				div[class="gb_ba gb_g"] {
+					border: none;
 				}
 		/* account menu */
 			/* managed by header */
 				.gb_Lb {
 					background-color: main-bg-em;
 				}
+				/* caret */
+					.gb_Kb .gb_tb {
+						border-bottom-color: main-bg-em !important;
+					}
 			/* active account */
 				/* email */
-					.gb_Fb {
+					.gb_Ib {
 						color: main-text-off;
 					}
-				/* links */
-					.gb_wb, #gb a.gb_wb.gb_wb, .gb_xb a, #gb .gb_xb.gb_xb a {
-						color: main-link;
-					}
-			/* 'my account' button */
-				.gb_Ab .gb_Hb {
+			/* links */
+				.gb_xb, #gb a.gb_xb.gb_xb, .gb_yb a, #gb .gb_yb.gb_yb a {
+					color: accent-shifted(1deg, -29%, -11%);
+				}
+			/* 'google account' button */
+				.gb_Bb .gb_Jb {
 					background: accent-shifted(0deg, 10%, 4%);
 					border-color: accent-shifted(0deg, -5%, -5%);
 				}
-				.gb_Ab .gb_Hb:hover {
+				.gb_Bb .gb_Jb:hover {
 					background: accent-shifted(0deg, -9%, -5%);
 					border-color: accent-shifted(4deg, -30%, -16%);
 				}
-				if $light-accent {
-					/* label */
-						#gb .gb_Ab a.gb_Hb.gb_Hb {
+				/* label */
+					if $light-accent {
+						#gb .gb_Bb a.gb_Jb.gb_Jb {
 							color: black;
 						}
-				}
-				
+					}
 			/* secondary accounts */
-				.gb_Ob {
+				.gb_Ub {
 					background-color: main-bg-off;
 					border-color: main-separator;
 				}
-				.gb_Qb:hover {
+				.gb_Wb:hover {
 					background-color: main-bg-em;
 				}
 				/* name */
-					.gb_1b {
+					.gb_7b {
 						color: main-text;
 					}
 				/* email */
-					.gb_2b {
+					.gb_8b {
 						color: main-text-off;
 					}
 				/* status */
-					.gb_5b {
+					.gb_9b {
 						color: main-text-off;
 					}
 				/* signed out menu */
-					.gb_Qb[selected="true"] > .gb_Tb {
+					.gb_Wb[selected="true"] > .gb_0b {
 						background-color: alpha(main-bg-em, 0.85);
 					}
 					/* buttons */
-						.gb_Ub {
+						.gb_1b {
 							background-color: alpha(main-bg, 0.9);
 							button();
 						}
@@ -6934,27 +6941,26 @@
 								background-color: alpha(main-bg-off, 0.9);
 							}
 			/* loading bar */
-				.gb_nb {
+				.gb_ob {
 					background-color: alpha(black, 0.5 * contrast);
 				}
 			/* footer */
-				.gb_Ib {
+				.gb_Kb {
 					background-color: main-bg-off;
 					border-color: main-separator;
 				}
 				/* buttons */
-					.gb_za {
+					.gb_Aa {
 						background-color: main-bg;
 						border-color: main-separator;
 					}
-					.gb_Ib .gb_Hb:hover {
+					.gb_Kb .gb_Jb:hover {
 						background-color: main-bg;
 						button-hover(2);
 					}
-					.gb_za, #gb a.gb_za.gb_za, .gb_Aa {
+					.gb_Aa, #gb a.gb_Aa.gb_Aa, .gb_Ba {
 						color: main-text-off;	
 					}
-
 	/* tabs */
 		#hdtb {
 			background-color: header-bg;
@@ -7217,54 +7223,32 @@
 		/* header */
 			/* right */
 				if result-containers {
-					.gb_nb {
-						padding: 0px;
-						margin-right: 30px !important;
-						margin-left: 30px !important;
+					.gb_dh {
+						container();
+						overflow: visible;
+						padding: 5px 15px;
+						margin-right: 10px !important;
+						min-width: 0 !important;
 					}
-					.gb_Sg, .gb_Rg {
-						min-width: unset !important;
-					}
-					.gb_S + .gb_Q.gb_R {
-						padding-left: 0;
-					}
-					.gb_Q.gb_R:last-child {
-						padding-right: 15px;
-					}
-					.gb_qe {
+					.gb_dh.gb_lb .gb_De {
 						padding-right: 0px;
 					}
-					.gb_S {
-						display: none !important;
-					}
-					.gb_Sg::before, .gb_Rg::before {
-						position: absolute;
-						width: calc(100% - 38px);
-						height: calc(100% + 12px);
-						left: 18px;
-						top: -6px;
-						content: "";
-						z-index: -1;
-						container();
+					.gb_dh.gb_lb .gb_De .gb_Q.gb_R:last-child {
+						padding-right: 15px;
 					}
 				}
 			/* left */
 				if result-containers {
-					#hptl::before {
-						position: absolute;
-						width: calc(100% + 5px);
-						height: calc(100% + 26px);
-						left: 5px;
-						top: -13px;
-						bottom: 0;
-						right: 0;
-						content: "";
-						z-index: -1;
+					#hptl {
 						container();
+						padding: 12.5px 15px;
+						margin-top: 0px;
+					}
+					#hptl a:first-child {
+						padding-left: 0px;
 					}
 				}
 				/* labels */
-
 					#hptl a {
 						color: main-text;
 						opacity: 1;
@@ -7395,8 +7379,8 @@
 		global-definitions();
 	}
 
-	body > c-wiz {
-		background-color: main-bg !important;
+	.gV6pJf {
+		background-color: main-bg;
 	}
 
 	/* loading bar */
