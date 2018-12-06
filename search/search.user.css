@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name Google Dark Search
-@version 0.7.27
+@version 0.7.28
 @description Recolors Google Search, highly customizable.
 @author hyperfekt
 @namespace net.hyperfekt
@@ -1486,6 +1486,13 @@
 						#div_for_graph > div:nth-child(2) {
 							background-color: main-bg;
 						}
+						#div_for_graph > div:nth-child(2) > div {
+							width: unset !important;
+						}
+						/* 3D graph */
+							#div_for_graph > div:nth-child(2) > div > canvas + div {
+								width: 100% !important;
+							}
 					}
 					#div_for_graph > div div[style*="box-shadow"] {
 						box-shadow: alpha(black, 0.8 * contrast) 0px 0px 5px inset !important;
