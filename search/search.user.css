@@ -6878,7 +6878,7 @@
 			}
 			/* caret */
 				.gb_ub  {
-					border-bottom-color: main-bg !important;
+					border-bottom-color: main-bg;
 				}
 				.gb_vb {
 					border-bottom-color: popout-border !important;
@@ -6894,7 +6894,7 @@
 				}
 				/* caret */
 					.gb_Mb .gb_ub {
-						border-bottom-color: main-bg-em !important;
+						border-bottom-color: main-bg-em;
 					}
 			/* active account */
 				/* email */
