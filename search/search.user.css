@@ -510,6 +510,10 @@
 			.sc {
 				background-color: transparent;
 			}
+	/* hide 2018 xmas image */
+		#easter-egg {
+			display: none
+		}
 	/* result count */
 		#appbar {
 			background-color: transparent;
