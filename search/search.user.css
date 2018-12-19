@@ -6564,7 +6564,7 @@
 			border-color: alpha(black, 0.5 * contrast);
 		}
 
-		#searchform:not(.minidiv) .sfbgg, body > .sfbgg {
+		#searchform .sfbgg, body > .sfbgg {
 			background-color: header-bg !important;
 			background-image: none;
 		}
