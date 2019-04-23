@@ -7811,6 +7811,24 @@
 			}
 }
 
+/* Fix inverted images */
+
+.gb_nc span{
+	filter: invert(1);
+}
+
+.gb_nc .gbip{
+	filter: invert(1);
+}
+
+.gb_nc img{
+	filter: invert(1);
+}
+
+.gb_nc .gb_Kb{
+	background: inherit;
+}
+
 /* remove place */
 @-moz-document regexp("https?://www\.google\.(com|([a-z]{2}))(\.[a-z]{2})?/local/place/rap/editattribute.*") {
 	:root {
