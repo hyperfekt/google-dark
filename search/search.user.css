@@ -3809,6 +3809,12 @@
 						}
 	/* knowledge panels */
 		/* main */
+			.osrp-blk {
+				border-color: main-border;
+			}
+			.osrp-blk div:empty {
+				border-color: main-separator !important;
+			}
 			.kp-blk, .TieM1d {
 				container();
 				if result-containers {
@@ -3827,6 +3833,16 @@
 				padding-bottom: 20px;
 			}
 			/* images */
+				.eoNQle.NFQFxe {
+					display: block;
+					min-width: auto;
+					min-height: auto;
+					max-width: auto;
+					max-height: auto;
+					width: auto;
+					height: auto;
+					overflow: auto;
+				}
 				.kp-blk .img-brk {
 					border-top-left-radius: unset;
 					border-top-right-radius: unset;
@@ -4070,7 +4086,7 @@
 							}
 				/* summary */
 					/* more */
-						.xXEKkb {
+						.k4DMHe .xXEKkb {
 							color: main-link !important;
 						}
 				/* critic reviews */
@@ -4874,9 +4890,12 @@
 		/* 'see results about' container (knowledge suggestions) */
 			/* heading */
 				.garHBe {
-					color: main-text;
+					color: main-text !important;
 				}
 			/* entry */
+				.y8Jpof {
+					border-color: main-separator !important;
+				}
 				.y8Jpof:hover {
 					background: main-bg-off;
 				}
