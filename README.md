@@ -1,5 +1,8 @@
 # Google Dark Search
 
+**This is pretty, but the maintenance effort to get good coverage is incredible - and as such no updates will be forthcoming.
+I now recommend using something like [Dark Reader](https://darkreader.org/) instead, which gets good results with much less effort.**
+
 This is a userstyle (or theme) to turn the Google Search website dark, also often described as 'Night Mode'.  
 
 The aim is to be highly customizable and extremely comprehensive.
