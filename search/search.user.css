@@ -6803,6 +6803,24 @@
 				.gb_nc {
 					filter: invert(1) brightness(contrast);
 				}
+	
+				/* Fix inverted images */
+	
+				.gb_nc span{
+					filter: invert(1);
+				}
+
+				.gb_nc .gbip{
+					filter: invert(1);
+				}
+
+				.gb_nc img{
+					filter: invert(1);
+				}
+
+				.gb_nc .gb_Kb{
+					background: inherit;
+				}
 			/* sign in */
 				.gb_Ba {
 					border-color: accent-color;
